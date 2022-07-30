@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3_回调ref中回调执行次数的问题</title>
+</head>
+<body>
+	<!-- 准备好一个"容器" -->
+	<div id="test"></div>
+	
+	<script src="/js/react.development.js"></script>
+	<script src="/js/react-dom.development.js"></script>
+	<script src="/js/babel.min.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+	<script type="text/babel">
+		//创建组件
+		class Demo extends React.Component{
+
+			state = {isPai:false}
+
+			showInfo = ()=>{
+				const {input1} = this
+				alert(input1.value)
+			}
+
+			changeWeather = ()=>{
+				//获取原来的状态
+				const {isPai} = this.state
+				//更新状态
+				this.setState({isPai:!isPai})
+			}
+
+			saveInput = (c)=>{
+				this.input1 = c;
+				console.log('@',c);
+			}
+
+			render(){
+				const {isPai} = this.state
+				return(
+					<div>
+						<h2>派大星是{isPai ? '大聪明':'骚话王'}</h2>
+						{/*<input ref={(c)=>{this.input1 = c;console.log('@',c);}} type="text"/><br/><br/>*/}
+						<input ref={this.saveInput} type="text"/><br/><br/>
+						<button onClick={this.showInfo}>点我提示输入的数据</button>
+						<button onClick={this.changeWeather}>点击切换头衔</button>
+					</div>
+				)
+			}
+		}
+		//渲染组件到页面
+		ReactDOM.render(<Demo/>,document.getElementById('test'))
+	</script>
+</body>
+</html>

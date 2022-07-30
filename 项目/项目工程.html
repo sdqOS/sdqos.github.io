@@ -1,0 +1,208 @@
+<html>
+<head>
+    <!-- 表达式形式:vue指令语法 v-指令名字+:+指令的参数=指令的表达式 -->
+    <!-- 格式是UTF-8 -->
+    <meta charset="UTF-8">
+<!-- 导入js文件 -->
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <script type="text/javascript" src="js/marked.js"></script>
+    <!-- moment.js 对日期进行格式化 -->
+    <script type="text/javascript" src="js/moment.js"></script>
+<!-- 导入css文件 -->
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <!-- div的id是notebook -->
+    <div id="notebook">
+        <!-- 侧边栏的类是side-bar -->
+        <aside class="side-bar">
+            <!-- div的类是toolbar -->
+            <div class="toolbar">
+                <!-- 按键  v-on 指令用于绑定HTML事件 click这里绑定点击事件 v-bind:title 表示标题是addButtonTitle-->
+                <button v-on:click="addNote" v-bind:title="addButtonTitle">
+                    <!-- 添加的图标 -->
+                    <i class="material-icons">add_box</i>
+                    新建笔记
+                </button>
+            </div>
+            <!-- div的id是notes -->
+            <div class="notes">
+                <!-- v-for来遍历对象 note类  绑定selectNote(note)事件 动态地切换 class -->
+                <div v-for="note in notes" class="note" v-on:click="selectNote(note)" v-bind:class="{selected:note === selectedNote}">
+                    <!-- 收藏的星星图标 -->
+                    <i class="icon material-icons" v-if="note.favorite">star</i>
+                    <!-- 显示添加的内容 -->
+                    {{note.title}}
+                </div>
+            </div>
+        </aside>
+    <!-- 内容模板 v-if为条件等于selectedNote -->
+    <template v-if="selectedNote">
+        <!-- 每节的内容 -->
+        <section class="main">
+            <!-- div的类是toolbar -->
+            <div class="toolbar">
+            <!-- 输入框 重命名 因为名字是双向绑定所以用v-model placeholder是提示信息-->
+            <input v-model="selectedNote.title" placeholder="请输入笔记标题">
+            <!-- 按键 绑定删除笔记的点击事件  -->
+            <button v-on:click="removeNote" title="删除笔记">
+                <!-- 垃圾桶图标 -->
+                <i class="material-icons">delete</i>
+            </button>
+            <!-- 按键 绑定收藏笔记的点击事件 -->
+            <button v-on:click="favoriteNote" title="收藏笔记">
+                <!-- 星星图标 -->
+                <i class="material-icons">{{selectedNote.favorite?'star':'star_border'}}</i>
+            </button> 
+            </div>
+            <!-- 双向绑定多行文本输入框 -->
+            <textarea v-model="selectedNote.content"></textarea>
+            <!-- div的类是toolbar status-bar -->
+            <div class="toolbar status-bar">
+                <!-- 总体是存放日期 -->
+                <span class="date">
+                    <span class="label">创建日期: </span>
+                    <span class="value">{{selectedNote.created | changeDate}}</span>
+                </span>
+                <!-- 总体是显示统计的行数 -->
+                <span class="lines">
+                    <span class="label">行数: </span>
+                    <span class="value">{{linesCount}}</span>
+                </span>
+                <!-- 总体是显示统计的单词数 -->
+                <span class="words">
+                    <span class="label">单词数: </span>
+                    <span class="value">{{wordsCount}}</span>
+                </span>
+                <!-- 总体是显示统计的字符数 -->
+                <span class="characters">
+                    <span class="label">字符数: </span>
+                    <span class="value">{{charactersCount}}</span>
+                </span>
+            </div>
+        </section>
+        <!-- 侧边栏 notePreview内容按普通 HTML 插入不会作为 Vue 模板进行编译。 -->
+        <aside class="preview" v-html="notePreview">
+        </aside>
+    </template>
+</div>
+<!-- 基本模板 -->
+<script type="text/javascript">
+    // 创建vue实例 
+    var app=new Vue({
+        
+        el:'#notebook',
+        data(){
+            // 返回逻辑判断
+            return{
+                notes:JSON.parse(localStorage.getItem('notes')) || [],
+                // 判断是否增加选项
+                selectedId:localStorage.getItem("selected-id") || null,
+            }
+        },
+        methods:{
+                    // 保存笔记并提示保存信息
+                    saveNote(v){
+                        localStorage.setItem('notes',JSON.stringify(this.notes))
+                        console.log("笔记已经保存! ",new Date())
+                    },
+                    addNote(){
+                        const time = Date.now()
+                        const note = 
+                        {
+                            id:String(time),
+                            // 新增信息
+                            title:'New Note' + (this.notes.length+1),
+                            // 默认提示信息
+                            content:'Hi,Wellcome to write a new note!',
+                            created:time,
+                            favorite:false,
+                        }
+                        this.notes.push(note)
+                    },
+                    selectNote(v){
+                        this.selectedId=v.id
+                    },
+                    // 删除的判断提示框
+                    removeNote(){
+                        if (this.selectedNote && confirm('确定删除笔记?'))
+                        {
+                            const index = this.notes.indexOf(this.selectedNote)
+                            if(index !== -1)
+                            {
+                                this.notes.splice(index,1)
+                                // splice()方向/从数组中添加/删除项目,然后返回被删除的项目
+                            }
+                        }
+                    },
+                    
+                    favoriteNote()
+                    {
+                        this.selectedNote.favorite=!this.selectedNote.favorite
+                    }
+                },
+        computed:{
+                notePreview(){
+                    return this.selectedNote?marked(this.selectedNote.content):''
+                },
+                addButtonTitle(){
+                    return this.notes.length+' note(s) already'
+                },
+                selectedNote(){
+                    return this.notes.find(note=>note.id===this.selectedId)
+                },
+                sortedNotes(){
+                    // 使用slice()创建新的副本排序, 不会触发源数组数据保存
+                    // 完成排序后修改v-for的显示内容
+                    return this.notes.slice().sort((a,b)=>a.created-b.created).sort((a,b)=>(a.favorite===b.favorite)?0:a.favorite?-1:1)
+                },
+                // 行数统计
+                linesCount(){
+                    if(this.selectedNote)
+                    {
+                        return this.selectedNote.content.split(/\r\n|\r|\n/).length
+                    }
+                },
+            // 单词数统计
+            wordsCount(){
+                if(this.selectedNote){
+                    var s = this.selectedNote.content;
+                    //将换行符转换为空格
+                    s = s.replace(/\n/g,'')
+                    // 排除开头和结尾的空格
+                    s = s.replace(/(^\s*)|(\s*$)/gi,'')
+                    // 将多个重复空格转换为一个
+                    s = s.replace(/\s\s+/gi,'')
+                    // 返回空格的数量
+                    return s.split(' ').length
+                }
+            },
+                    // 字符数
+                    charactersCount(){
+                        if(this.selectedNote){
+                        return this.selectedNote.content.split('').length
+                        }
+                    }
+            },
+            watch:{
+                notes:{
+                    handler:'saveNote',
+                    deep:true,
+                },
+                selectedId(v){
+                    localStorage.setItem('selected-id',v)
+                }
+            },
+            // 显示年月日
+            filters:{
+                changeDate(v){
+                    // console.log(v)
+                    // console.log(moment(v).format('DD/MM/YY,HH:mm'))
+                    return moment(v).format('YYYY-MM-DD')
+                }
+            },
+    })
+</script>
+</body>
+</html>

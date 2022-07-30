@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>React 实例</title>
+<script src="/js/react.development.js"></script>
+<script src="/js/react-dom.development.js"></script>
+<script src="/js/babel.min.js"></script>
+<link rel="stylesheet" href="/css/Subpage-style.css">
+<script src="/js/Subpage-js.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+    class MyNameIsStitch extends React.Component {
+      handleClick() {
+        this.refs.myInput.focus();
+      }
+      render() {
+        return (
+          <div>
+            <input type="text" ref="myInput" />
+            <input
+              type="button"
+              value="点我输入框获取焦点"
+              onClick={this.handleClick.bind(this)}
+            />
+          </div>
+        );
+      }
+    }
+    
+    ReactDOM.render(
+      <MyNameIsStitch />,
+      document.getElementById('example')
+    );
+    </script>
+    </body>
+</html>

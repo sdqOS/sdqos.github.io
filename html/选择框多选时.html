@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>选择框多选时</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+</head>
+<body>
+    <div id = "app7">
+        <div>请你选择你喜欢的季节:
+        <select v-model="selected"  multiple style="width: 50px;">
+            <option>春天</option>
+            <option>夏天</option>
+            <option>秋天</option>
+            <option>冬天</option>
+          </select>
+          <p>
+            你喜欢的季节是:{{selected}}
+            <br>
+            多选时按住, 往下拖
+          </p>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+        el:'#app7',
+        data : {
+            selected:["夏天","冬天"]
+        }
+    });
+    </script>
+</body>
+</html>

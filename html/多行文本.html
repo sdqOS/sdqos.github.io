@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>多行文本</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+
+</head>
+<body>
+    <div id = "app2">
+        <div>你的名字: 
+           <p style="white-space: pre-line;">{{ name }}</p>
+           <br>
+           <textarea v-model="name " placeholder="请输入你的名字"></textarea>
+           <p>
+               你的名字:{{name}}
+           </p>
+       </div>
+   </div>
+       <script>
+           var app = new Vue({
+           el:'#app2',
+           data : {
+               name : "史迪奇",
+           }
+       });
+       </script>
+</body>
+</html>

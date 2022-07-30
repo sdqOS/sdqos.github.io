@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>单个复选框</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+
+</head>
+<body>
+    <div id = "app3">
+        <div>
+            <p>
+                你的选择是: {{checked }}
+            </p>
+            <input type="checkbox" id="checkbox" v-model="checked">
+            <label for="checkbox">{{ checked }}</label>        
+        </div>
+    </div>
+        <script>
+            var app = new Vue({
+            el:'#app3',
+            data : {
+                checked : false,
+            }
+        });
+        </script>
+</body>
+</html>

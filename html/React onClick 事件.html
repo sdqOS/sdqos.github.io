@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>React 实例</title>
+<script src="/js/react.development.js"></script>
+<script src="/js/react-dom.development.js"></script>
+<script src="/js/babel.min.js"></script>
+<link rel="stylesheet" href="/css/Subpage-style.css">
+<script src="/js/Subpage-js.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+    
+    class MyNameIsStitch extends React.Component {
+      constructor(props) {
+          super(props);
+          this.state = {value: 'My name is Stitch'};
+          this.handleChange = this.handleChange.bind(this);
+      }
+      
+      handleChange(event) {
+        this.setState({value: '我叫史迪奇'})
+      }
+      render() {
+        var value = this.state.value;
+        return <div>
+                <button onClick={this.handleChange}>翻译</button>
+                <h4>{value}</h4>
+               </div>;
+      }
+    }
+    ReactDOM.render(
+      <MyNameIsStitch />,
+      document.getElementById('example')
+    );
+    </script>
+    </body>
+</html>

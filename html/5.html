@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+    <script src="/js/mathjax.js"></script>
+    <title>爬虫数据提取</title> -->
+</head>
+<body>
+
+<div class="mermaid">
+graph TB
+    A[" 数据解析 "]-->B[" json "]
+    A[" 数据解析 "]-->C[" 非结构化数据 "]
+    B[" 数据化数据 "]-->D[" json "]
+    D[" json "]-->E[" json模块 "]
+    D[" json "]-->F[" jsonpath模块 "]
+    B[" 数据化数据 "]-->H[" xml "]
+    H[" xml "]-->I[" re模块 "]
+    I[" re模块 "]-->J[" 正则语法 "]
+    H[" xml "]-->K[" lxml模块 "]
+    K[" lxml模块 "]-->L[" xpath语法 "]
+    C[" 非结构化数据 "]-->M[" html "]
+    M[" html "]-->N[" re模块 "]
+    N[" re模块 "]-->O[" 正则语法 "]
+    M[" html "]-->P[" lxml模块 "]
+    P[" lxml模块 "]-->Q[" xpath语法 "]
+    M[" html "]-->R[" beautifulsoup "]
+    R[" beautifulsoup "]-->S[" xpath语法 "]
+    R[" beautifulsoup "]-->T[" 正则语法 "]
+    R[" beautifulsoup "]-->U[" css选择器 "]
+    M[" html "]-->V[" pyquery "]
+    V[" pyquery "]-->W[" css选择器 "]
+</div>
+</body>
+<script src="/js/mermaid.min.js"></script>
+</html>

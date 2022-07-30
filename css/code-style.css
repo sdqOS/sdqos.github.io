@@ -1,0 +1,17 @@
+pre {
+    /* background-color: #ececfa !important; */
+    /*background-color: rgba(236, 236, 250, 0) !important; */
+}
+
+
+/* pre {
+    background-color: rgba(238, 238, 238, 0.5) !important;
+    backdrop-filter: blur(10px);
+} */
+
+pre span {
+    background-color: rgba(236, 236, 250, 0) !important;
+}
+
+
+/* #ffffff8c */

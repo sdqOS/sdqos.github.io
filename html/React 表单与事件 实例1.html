@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>React 实例</title>
+<script src="/js/react.development.js"></script>
+<script src="/js/react-dom.development.js"></script>
+<script src="/js/babel.min.js"></script>
+<link rel="stylesheet" href="/css/Subpage-style.css">
+<script src="/js/Subpage-js.js"></script>
+</head>
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+  class Content extends React.Component {
+    render() {
+      return  <div>
+              <input type="text" value={this.props.myDataProp} onChange={this.props.updateStateProp} /> 
+              <h4>{this.props.myDataProp}</h4>
+              </div>;
+    }
+  }
+  class HelloMessage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: '我叫史迪奇'};
+        this.handleChange = this.handleChange.bind(this);
+    }
+   
+    handleChange(event) {
+      this.setState({value: event.target.value});
+    }
+    render() {
+      var value = this.state.value;
+      return <div>
+              <Content myDataProp = {value} 
+                updateStateProp = {this.handleChange}></Content>
+             </div>;
+    }
+  }
+  ReactDOM.render(
+    <HelloMessage />,
+    document.getElementById('example')
+  );
+  </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>多选按钮</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+
+</head>
+<body>
+    <div id = "app5">
+        <div>
+            <input type="radio" id="男" value="男" v-model="sex">
+            <label for="男">男</label>
+            <br>
+            <input type="radio" id="女" value="女" v-model="sex">
+            <label for="女">女</label>
+            <p>
+                你选择的性别是: {{sex}}
+            </p>
+        </div>
+</div>
+    <script>
+        var app = new Vue({
+        el:'#app5',
+        data : {
+            sex :[]
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>多个复选框</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+
+</head>
+<body>
+    <div id = "app4">
+        <div>
+            <input type="checkbox" id="blue" value="蓝色" v-model="color">
+            <label for="blue">蓝色</label>
+            <input type="checkbox" id="red" value="红色" v-model="color">
+            <label for="red">红色</label>
+            <input type="checkbox" id="yellow" value="黄色" v-model="color">
+            <label for="yellow">黄色</label>
+            <p>
+                你选择的颜色是: {{color}}
+            </p>
+        </div>
+    </div>
+        <script>
+            var app = new Vue({
+            el:'#app4',
+            data : {
+                color : [],
+            }
+        });
+        </script>
+</body>
+</html>

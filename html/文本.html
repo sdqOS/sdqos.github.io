@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>文本</title>
+    <script src="/js/vue.js"></script>
+    <link rel="stylesheet" href="/css/Subpage-style.css">
+    <script src="/js/Subpage-js.js"></script>
+</head>
+<body>
+    <div id = "app1">
+        <div>
+           请输入你喜欢的城市<input type="text" v-model="cname">
+           <p>
+               你选择的城市:{{cname}}
+           </p>
+       </div>
+       <div>
+           回复评论: <input type="text" v-model="huifu">
+           <p>
+               你选回复是:{{huifu}}
+           </p>
+       </div>
+    </div>
+       <script>
+           var app = new Vue({
+           el:'#app1',
+           data : {
+               cname : "哈哈哈尔滨市",
+               huifu : "我叫史迪奇",
+           }
+       });
+       </script>
+</body>
+</html>
