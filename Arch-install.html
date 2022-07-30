@@ -205,7 +205,7 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>168
+					<span>文章</span>167
 					<span>标签</span>0
 					<span>分类</span>29
 				</div>		
@@ -974,13 +974,10 @@ var $main = document.querySelector('.main');
 <p><strong>然后正式分区</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cfdisk /dev/xxx   //你要变更的磁盘<br></code></pre></td></tr></table></figure>
 <p><strong>终于到这里了 这里是图形化界面很好查找</strong></p>
-<img src="https://pic.jitudisk.com/public/2022/07/01/5918ebf794c26.jpg" style="width: 750px; height: 100px;">
-
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7187dec0.jpg"></p>
 <p><strong>(New是新建) (Resize是调整大小) (Quit是退出) (Type是类型) (Heip是帮助) (Wrire是保存) (Dump是丢弃)</strong></p>
 <p><strong>步骤: 先点New建一个300M的文件, 然后点Type选择EFI System点击, 再点New建一个2G的文件, 然后点Type选择Linux swap点击, 最后点New建一个(根目录)主分区把剩下的所有内存用上, 然后点Type选择Linux filesystem点击, 然后Wrire回车, 并输入yes, 然后拍照, 点击Quit退出</strong></p>
-<img src="https://pic.jitudisk.com/public/2022/07/01/f8c81ba2963b0.jpg" style="width: 900px; height: 300px;">
-
-<p><strong>以防万一, 检查一下</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c718d2208.jpg"><br><strong>以防万一, 检查一下</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cfdisk -l<br></code></pre></td></tr></table></figure>
 <h1 id="第七步-格式化操作"><a href="#第七步-格式化操作" class="headerlink" title="第七步 格式化操作"></a>第七步 格式化操作</h1><p><strong>格式化主分区(根目录)</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkfs.ext4 /dev/xxx   //就是你刚刚Linux filesystem的<br></code></pre></td></tr></table></figure>
@@ -1035,8 +1032,7 @@ var $main = document.querySelector('.main');
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">umount -R /mnt<br></code></pre></td></tr></table></figure>
 <p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">reboot<br></code></pre></td></tr></table></figure>
-<img src="https://pic.jitudisk.com/public/2022/07/01/7edef4a31fd31.jpg" style="width: 318px; height: 144px;">
-
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c71885fe3.jpg"></p>
 <h1 id="第九步-安装到此为止-安装桌面玩下看"><a href="#第九步-安装到此为止-安装桌面玩下看" class="headerlink" title="第九步 安装到此为止 安装桌面玩下看"></a>第九步 安装到此为止 安装桌面玩下看</h1><h1 id="桌面环境"><a href="#桌面环境" class="headerlink" title="桌面环境"></a>桌面环境</h1><p><strong>创建用户 有利于提权</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">useradd -m -g users G wheel -s /bin/bash xxx     //xxx是你顺便起个用户名<br></code></pre></td></tr></table></figure>
 <p><strong>创建密码</strong></p>
@@ -1050,8 +1046,7 @@ var $main = document.querySelector('.main');
 <p><strong>开启一下32位支持库 有些程序还是32位 所以要装一些库</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/pacman.conf<br></code></pre></td></tr></table></figure>
 <p><strong>配置</strong></p>
-<img src="https://pic.jitudisk.com/public/2022/07/01/345af40ec28c7.jpg" style="width: 900px; height: 300px;">
-
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7187df06.jpg"></p>
 <p><strong>刷新数据库内容</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pacmam -Syyu<br></code></pre></td></tr></table></figure>
 <p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
