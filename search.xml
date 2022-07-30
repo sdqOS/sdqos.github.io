@@ -68,6 +68,50 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Bodhi Linux安装教程(老电脑的福利)</title>
+    <url>/Bodhi-Linux.html</url>
+    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
+<a id="more"></a>
+
+<p><strong>以下是我的电脑的参数</strong></p>
+<p><img src="https://pic.jitudisk.com/public/2022/07/02/119efc2eec86e.jpg"></p>
+<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
+<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
+<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install bcmwl-kernel-source<br></code></pre></td></tr></table></figure>
+
+<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出, 选择y后保存<br>blacklist acer-wmi   //最后一行加入<br></code></pre></td></tr></table></figure>
+
+<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei<br></code></pre></td></tr></table></figure>
+
+<p><strong>然后按照以下打开步骤</strong></p>
+<p><img src="https://pic.jitudisk.com/public/2022/07/02/41ca55edc2cea.jpg"></p>
+<p><img src="https://pic.jitudisk.com/public/2022/07/02/a02197e64b99f.jpg"></p>
+<p><img src="https://pic.jitudisk.com/public/2022/07/02/d7f30425c26bd.jpg"></p>
+<p><img src="https://pic.jitudisk.com/public/2022/07/02/c58a018722218.jpg"></p>
+<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包<br>sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要<br></code></pre></td></tr></table></figure>
+<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install vim   //vim是文本编辑软件<br></code></pre></td></tr></table></figure>
+<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
+<p><strong>安装火狐浏览器和中文语言包</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get remove firefox<br>sudo apt-get install -y firefox firefox-locale-zh-hans<br></code></pre></td></tr></table></figure>
+<p><strong>安装谷歌浏览器</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/<br>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源<br>sudo apt-get update<br>sudo apt-get install google-chrome-stable     //安装谷歌浏览器<br></code></pre></td></tr></table></figure>
+<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo add-apt-repository ppa:dawidd0811/neofetch<br>sudo apt-get update<br>sudo apt-get install neofetch<br>neofetch<br></code></pre></td></tr></table></figure>
+<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
+<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
+<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
+<p><img src="https://pic.jitudisk.com/public/2022/07/02/21e70884e5200.jpg"></p>
+<br>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Android ROM移植</title>
     <url>/Android-ROM-transplant.html</url>
     <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong><br><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;"></p>
@@ -263,50 +307,6 @@
 <h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
 <h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">pacman -S neofetch<br><br>neofetch<br></code></pre></td></tr></table></figure>
 
-<br>]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Bodhi Linux安装教程(老电脑的福利)</title>
-    <url>/Bodhi-Linux.html</url>
-    <content><![CDATA[<p><strong>本人是2008年的联想电脑, Bodhi Linux是我唯一能完美运行的带桌面的发行版</strong></p>
-<a id="more"></a>
-
-<p><strong>以下是我的电脑的参数</strong></p>
-<p><img src="https://pic.jitudisk.com/public/2022/07/02/119efc2eec86e.jpg"></p>
-<h1 id="第一步-安装Bodhi-Linux"><a href="#第一步-安装Bodhi-Linux" class="headerlink" title="第一步 安装Bodhi Linux"></a>第一步 安装Bodhi Linux</h1><p><strong>Bodhi Linux<a href="https://nchc.dl.sourceforge.net/project/bodhilinux/5.1.0/bodhi-5.1.0-64.iso">个人建议Standard版本</a>如果你想选择别的版本到<a href="https://www.bodhilinux.com/download/">官网找</a></strong></p>
-<p><a href="https://www.bilibili.com/video/BV1aW411C7NR">安装视频参考Ubantu的, 都是可视化界面安装</a></p>
-<h1 id="第二步-老电脑无法连接WIFI-所以终端输入以下命令"><a href="#第二步-老电脑无法连接WIFI-所以终端输入以下命令" class="headerlink" title="第二步 老电脑无法连接WIFI 所以终端输入以下命令"></a>第二步 老电脑无法连接WIFI 所以终端输入以下命令</h1><p><strong>建议用网线装机</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install bcmwl-kernel-source<br></code></pre></td></tr></table></figure>
-
-<p><strong>仍然没有的话 就在终端输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo nano /etc/modprobe.d/blacklist.conf   //nano命令ctrl+x退出, 选择y后保存<br>blacklist acer-wmi   //最后一行加入<br></code></pre></td></tr></table></figure>
-
-<h1 id="第三步-安装安装中文环境"><a href="#第三步-安装安装中文环境" class="headerlink" title="第三步 安装安装中文环境"></a>第三步 安装安装中文环境</h1><p><strong>安装中文字体和中文语言包</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install -y language-pack-zh-hans language-pack-zh-hans-base language-pack-gnome-zh-hans language-pack-gnome-zh-hans-base fonts-wqy-microhei<br></code></pre></td></tr></table></figure>
-
-<p><strong>然后按照以下打开步骤</strong></p>
-<p><img src="https://pic.jitudisk.com/public/2022/07/02/41ca55edc2cea.jpg"></p>
-<p><img src="https://pic.jitudisk.com/public/2022/07/02/a02197e64b99f.jpg"></p>
-<p><img src="https://pic.jitudisk.com/public/2022/07/02/d7f30425c26bd.jpg"></p>
-<p><img src="https://pic.jitudisk.com/public/2022/07/02/c58a018722218.jpg"></p>
-<h1 id="第四步安装输入法"><a href="#第四步安装输入法" class="headerlink" title="第四步安装输入法"></a>第四步安装输入法</h1><p><strong>这里<a href="https://pinyin.sogou.com/linux/">安装搜狗输入法</a></strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install fonts-droid-fallback zip   //安装它的依赖包<br>sudo dpkg -i xxx    //xxx为下载的包名 后缀名也要<br></code></pre></td></tr></table></figure>
-<h1 id="第五步安装一些常用软件"><a href="#第五步安装一些常用软件" class="headerlink" title="第五步安装一些常用软件"></a>第五步安装一些常用软件</h1><p><strong>例如安装vim</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install vim   //vim是文本编辑软件<br></code></pre></td></tr></table></figure>
-<p><strong>例如浏览器 它自身也有web浏览器 看个人喜欢</strong></p>
-<p><strong>安装火狐浏览器和中文语言包</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get remove firefox<br>sudo apt-get install -y firefox firefox-locale-zh-hans<br></code></pre></td></tr></table></figure>
-<p><strong>安装谷歌浏览器</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo wget http://www.linuxidc.com/files/repo/google-chrome.list -P /etc/apt/sources.list.d/<br>wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -     //先添加源<br>sudo apt-get update<br>sudo apt-get install google-chrome-stable     //安装谷歌浏览器<br></code></pre></td></tr></table></figure>
-<h1 id="安装neofetch"><a href="#安装neofetch" class="headerlink" title="安装neofetch"></a>安装neofetch</h1><p><strong>终端输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo add-apt-repository ppa:dawidd0811/neofetch<br>sudo apt-get update<br>sudo apt-get install neofetch<br>neofetch<br></code></pre></td></tr></table></figure>
-<p><strong>本人试了(CrunchBang Linux), (Zenix Linux), (antiX Linux), (Zenwalk Linux), (Xubuntu Linux), (Lubuntu Linux), (Tiny Core Linux), (SliTaz Linux), (Porteus Linux), (Puppy Linux), (Silverblue Linux), (4MLinux)等等带桌面的发行版然后就唯独Bodhi Linux最满意</strong></p>
-<p><strong>至于为什么要带桌面的发行版, 因为要日用偶尔看看B站什么的</strong></p>
-<p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
-<p><img src="https://pic.jitudisk.com/public/2022/07/02/21e70884e5200.jpg"></p>
 <br>]]></content>
       <categories>
         <category>Linux</category>
@@ -1532,6 +1532,264 @@ datatype *varname
       </categories>
   </entry>
   <entry>
+    <title>C语 数组</title>
+    <url>/C-Array.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><h4>一维数组的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+
+<h4>数组定义格式:</h4>
+
+<ul>
+<li>储存类型是任意项, 可以是 auto, static, extern 储存类型, 但没有 register 型</li>
+</ul>
+<ul>
+<li>数据类型可以是 int, float, char</li>
+</ul>
+<ul>
+<li>数据名符号标识符定义, 但不能与其它变量同名</li>
+</ul>
+<ul>
+<li>数组元素的下标是从0开始编号的, 否则会产生数组越界</li>
+</ul>
+<ul>
+<li>常量表达式中可以包含常量和符号, 不能包含变量</li>
+</ul>
+<br>
+
+<h4>一维数组的赋值例子:</h4>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-class"><span class="hljs-keyword">class</span>[5] =</span> &#123;<span class="hljs-number">90</span>,<span class="hljs-number">80</span>,<span class="hljs-number">88</span>,<span class="hljs-number">77</span>,<span class="hljs-number">66</span>&#125;<span class="hljs-comment">// 全部赋初值</span><br><span class="hljs-type">int</span> <span class="hljs-class"><span class="hljs-keyword">class</span>[5] =</span> &#123;<span class="hljs-number">90</span>,<span class="hljs-number">80</span>,<span class="hljs-number">88</span>&#125;<span class="hljs-comment">// 部分赋初值, 未赋值的元素默认为0</span><br><span class="hljs-type">int</span> <span class="hljs-class"><span class="hljs-keyword">class</span>[ ] =</span> &#123;<span class="hljs-number">90</span>,<span class="hljs-number">80</span>,<span class="hljs-number">88</span>,<span class="hljs-number">77</span>,<span class="hljs-number">66</span>&#125;<span class="hljs-comment">// 元素个数5 省略长度赋初值, 数组的长度(数组的元素个数) 根据赋初值的数决定</span><br><br><span class="hljs-comment">// 初值的个数不能超过长度</span><br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>一维数组的储存例子:</h4>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> SIZE 5 <span class="hljs-comment">// 定义5个数</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> a0,a1,a2,a3,a4;<br>    <span class="hljs-type">int</span> sdq[SIZE]; <span class="hljs-comment">// int是4个字节 5个数相当于 4*5</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(a0)); <span class="hljs-comment">// 输出4个字节</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;总字节数: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq)); <span class="hljs-comment">// 输出20个字节 int有4字节, 有5个数 4*5=20</span><br><br>    <span class="hljs-comment">// 数组长度 = 总字节数 / sizeof(类型)</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;长度: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq) / <span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)); <span class="hljs-comment">// int = a0</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;长度: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq) / <span class="hljs-keyword">sizeof</span>(a0)); <span class="hljs-comment">// a0 = int</span><br><br>    <span class="hljs-comment">// 总字节数 = sizeof(数组类型) * 数组个数(长度)  </span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="一维数组元素的引用"><a href="#一维数组元素的引用" class="headerlink" title="一维数组元素的引用"></a>一维数组元素的引用</h3><ul>
+<li>数组元素的实质为该数组所属数据类型的一个具有下标的变量, 故又称下标变量, 因此, 数组元素与具有相同数据类型的普通变量的引用完全相同</li>
+</ul>
+<ul>
+<li><h1 id="如果数组int-arr-N-则数组的下标为-0-N-1-即最大的下标为数组长度-1"><a href="#如果数组int-arr-N-则数组的下标为-0-N-1-即最大的下标为数组长度-1" class="headerlink" title="如果数组int arr[N]; 则数组的下标为: 0 ~ N-1 即最大的下标为数组长度-1"></a>如果数组int arr[N]; 则数组的下标为: 0 ~ N-1 即最大的下标为数组长度-1</h1></li>
+</ul>
+<h4>数组元素的引用形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 ]<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="一维数组元素的初始化"><a href="#一维数组元素的初始化" class="headerlink" title="一维数组元素的初始化"></a>一维数组元素的初始化</h3><ul>
+<li>注意: [ ]中括号不能省略</li>
+</ul>
+<ul>
+<li>可以对数组全部元素赋值 </li>
+</ul>
+<ul>
+<li>也可以对部分元素赋初值</li>
+</ul>
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组类型 数组名 [ 数组元素个数 ] = &#123; 值<span class="hljs-number">1</span>, 值 <span class="hljs-number">2</span>, ..., 值 n &#125;; <br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>一维数组的遍历例子:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> N 4 <span class="hljs-comment">// 定义4个数</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> a[M] = &#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span> &#125;; <span class="hljs-comment">//定义数组长度为3的一维数组</span><br><br>    <span class="hljs-comment">// 定义一个3行4列的二维数组 相当于3个数组长度为4的一维数组</span><br>    <span class="hljs-type">int</span> b[M][N] = &#123;&#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span> &#125;, &#123; <span class="hljs-number">0</span> &#125;, &#123; <span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span> &#125;&#125;;<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;M;i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,a[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h1 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h1><br>
+
+<h4>二维数组的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 行 ] [ 列 ];<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>二维数组的储存例子:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> M 3 <span class="hljs-comment">// 定义3个数</span></span><br><br><span class="hljs-meta"># <span class="hljs-keyword">define</span> N 4 <span class="hljs-comment">// 定义4个数</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> a[M]; <span class="hljs-comment">// 定义长度为3的一维数组</span><br><br>    <span class="hljs-comment">// 相当于3个数组长度为4的一维数组</span><br>    <span class="hljs-type">int</span> sdq[M][N]; <span class="hljs-comment">// 定义3行4列的二维数组 M行 N列</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;总字节数: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq)); <br><br>    <span class="hljs-comment">// 总字节数 = sizeof(数组类型) * 行数 * 列数  </span><br><br>    <span class="hljs-comment">// a[i][j]在数组中的位置的公式:  i * 总列数 * j</span><br>    <span class="hljs-comment">// 例如 a[1][2] 相当于 1 * 4 + 2 = 6</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="二维数组的初始化"><a href="#二维数组的初始化" class="headerlink" title="二维数组的初始化"></a>二维数组的初始化</h3><br>
+
+<h4>二维数组的初始化:</h4>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 按行全部赋初值</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123;&#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span> &#125;,&#123; <span class="hljs-number">40</span>,<span class="hljs-number">50</span>,<span class="hljs-number">60</span> &#125;&#125;;<br><br><span class="hljs-comment">// 按储存顺序全部赋初值</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123; <span class="hljs-number">100</span>,<span class="hljs-number">200</span>,<span class="hljs-number">300</span>,<span class="hljs-number">400</span>,<span class="hljs-number">500</span>,<span class="hljs-number">600</span> &#125;;<br><br><span class="hljs-comment">// 部分赋初值 (按存储顺序) 未赋值的元素均为零</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">40</span> &#125;;<br><br><span class="hljs-comment">// 部分赋初值 (按行)</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123;&#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span> &#125;,&#123; <span class="hljs-number">40</span> &#125;&#125;;<br><br><span class="hljs-comment">// 省略行数赋初值</span><br><span class="hljs-type">int</span> a[ ][<span class="hljs-number">3</span>] = &#123;&#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> &#125;,&#123; <span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span> &#125;,&#123; <span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span> &#125;&#125;;<br><span class="hljs-type">int</span> a[ ][<span class="hljs-number">3</span>] = &#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>,<span class="hljs-number">40</span>,<span class="hljs-number">50</span>,<span class="hljs-number">60</span>,<span class="hljs-number">70</span> &#125;;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>一维数组的遍历例子:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> M 3 <span class="hljs-comment">// 定义3个数</span></span><br><br><span class="hljs-meta"># <span class="hljs-keyword">define</span> N 4 <span class="hljs-comment">// 定义4个数</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> arr[M][N] = &#123;&#123; <span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>,<span class="hljs-number">10</span> &#125;, &#123;<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">11</span>&#125;, &#123; <span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">9</span>,<span class="hljs-number">12</span> &#125;&#125;&#125;; <span class="hljs-comment">//定义3行4列的二维数组</span><br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;M;i++) <span class="hljs-comment">// 行下标遍历</span><br>    &#123;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;N;j++) <span class="hljs-comment">// 列下标遍历</span><br>        &#123;<br>           <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\t&quot;</span>,a[i][j]); <br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>)<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+
+<h3 id="二维数组元素的引用"><a href="#二维数组元素的引用" class="headerlink" title="二维数组元素的引用"></a>二维数组元素的引用</h3><ul>
+<li>不论是一维数组还是二维数组, 都不能对数组进行整体引用, 只能对具体的元素进行访问</li>
+</ul>
+<ul>
+<li>在数组元素引用要特别注意下标越界, 因为系统不检查下标越界问题, 所以程序设计者要特别注意</li>
+</ul>
+<h4>数组元素的引用形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 <span class="hljs-number">1</span> ] [ 下标 <span class="hljs-number">2</span> ]<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="二维数组元素的初始化"><a href="#二维数组元素的初始化" class="headerlink" title="二维数组元素的初始化"></a>二维数组元素的初始化</h3><ul>
+<li>对数组全部元素赋值, 这时允许二维数组定义中缺省行下标, 但不能缺省列下标</li>
+</ul>
+<ul>
+<li>也可以对部分元素赋初值</li>
+</ul>
+<h1 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h1><h2 id="字符数组的定义"><a href="#字符数组的定义" class="headerlink" title="字符数组的定义"></a>字符数组的定义</h2><h4>一维数组的定义形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>二维数组的定义形式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 e1 ] [ 常量表达式 e2 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符数组元素的初始化"><a href="#字符数组元素的初始化" class="headerlink" title="字符数组元素的初始化"></a>字符数组元素的初始化</h3><ul>
+<li>定义数组同时又可以缺省数组定义的长度, 对于二维数组, 可以缺省行下标, 但不能省列下标</li>
+</ul>
+<ul>
+<li>可以用字符串常量初始化数组: 该初始化法自动在末尾一个字符后加 ‘ \0 ‘作为结束符, 用字符串常量方式赋值比用字符常量赋值方式每行要多占一个字节</li>
+</ul>
+<ul>
+<li>在初始化中, 如果提供的字符个数多余数组元素的个数, 则作为语法错误处理, 如果字符个数小于元素个数, 则多余的数组元素自动赋空格字符</li>
+</ul>
+<h1 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h1><h3 id="字符串输出函数-puts"><a href="#字符串输出函数-puts" class="headerlink" title="字符串输出函数 puts"></a>字符串输出函数 puts</h3><ul>
+<li>功能: 将一个字符串 ( 以 ‘ \0 ‘ 结束的字符序列 ) 输出到终端 用 puts 函数输出的字符串中可以包含转义字符</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">puts</span> (字符串数组名);<br></code></pre></td></tr></table></figure>
+<br>
+
+
+
+<h3 id="字符串输入函数-gets"><a href="#字符串输入函数-gets" class="headerlink" title="字符串输入函数 gets"></a>字符串输入函数 gets</h3><ul>
+<li>功能: 从键盘输入一个字符串到字符数组, 并且得到一个函数值, 该函数数值是字符数组的起始地址 </li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">gets (字符串数组名);<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符串连接函数-strcat"><a href="#字符串连接函数-strcat" class="headerlink" title="字符串连接函数 strcat"></a>字符串连接函数 strcat</h3><ul>
+<li>功能: 把字符数组 2 中的字符串接到字符数组 1中的字符串后面, 结果放在字符数组 1 中, 并取消字符数组 1 中的 ‘ \0 ‘, 函数调用后得到的返回值为字符数组 1 的首地址 </li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcat</span> ( 字符数组 <span class="hljs-number">1</span>, 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符串复制函数-strcpy"><a href="#字符串复制函数-strcpy" class="headerlink" title="字符串复制函数 strcpy"></a>字符串复制函数 strcpy</h3><ul>
+<li><p>功能: 把字符数组 2 复制到字符数组 1 中去, 串结束符 ‘ \0 ‘ 也一同复制, 字符数组 2 可以为字符串常量, 使用时要注意</p>
+<ol>
+<li><p>字符数组 1 必须定义得足够大, 以便能存放被复制的字符串, 字符数组 2 的长度</p>
+</li>
+<li><p>“ 字符数组 1 “ 必须写成数组名形式, 不能为字符串常量</p>
+</li>
+<li><p>不能用赋值语句将一个字符串常量或字符数组直接赋给一个字符数组 </p>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>使用时, 字符数组 1 必须足够大, 以便容纳连接后的新字符串 </li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcpy</span> ( 字符串数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="字符串比较函数-strcmp"><a href="#字符串比较函数-strcmp" class="headerlink" title="字符串比较函数 strcmp"></a>字符串比较函数 strcmp</h3><ul>
+<li>功能: 按照 ASCII 码顺序比较两个字符数组中的字符串, 由函数返回值可以比较结果, 也可以用于比较两个字符串常量或数组与字符串常量</li>
+</ul>
+<p><strong>比较结果:</strong></p>
+<ul>
+<li>字符串 1 == 字符串 2, 函数值为0</li>
+</ul>
+<ul>
+<li>字符串 1 &gt; 字符串 2, 函数值为正整数</li>
+</ul>
+<ul>
+<li>字符串 1 &lt; 字符串 2, 函数值为负整数</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcmp</span> ( 字符数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="检测字符串长度函数-strlen"><a href="#检测字符串长度函数-strlen" class="headerlink" title="检测字符串长度函数 strlen"></a>检测字符串长度函数 strlen</h3><ul>
+<li>功能: 该函数值为字符串实际长度, 即字符串中不包含 ‘ \0 ‘在内的字符个数</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strlen</span> ( 字符数组 );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="大写字母转换为小写字母函数-strlwr"><a href="#大写字母转换为小写字母函数-strlwr" class="headerlink" title="大写字母转换为小写字母函数 strlwr"></a>大写字母转换为小写字母函数 strlwr</h3><ul>
+<li>功能: 将字符串中大写字母转换成小写字母</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strlwr ( 字符数组 );<br></code></pre></td></tr></table></figure>
+<br>
+
+<h3 id="小写字母转换为大写字母-strupr"><a href="#小写字母转换为大写字母-strupr" class="headerlink" title="小写字母转换为大写字母 strupr"></a>小写字母转换为大写字母 strupr</h3><ul>
+<li>功能: 将字符串中小写字母转换成大写字母</li>
+</ul>
+<h4>字符串输出函数 puts的格式:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strupr ( 字符数组 );<br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C语 数据类型 运算符 表达式</title>
     <url>/C-type-operator-operator.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -2164,264 +2422,6 @@ graph TB
 </tr>
 </tbody></table>
 <br></h4>]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C语 数组</title>
-    <url>/C-Array.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h1><h4>一维数组的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;<br></code></pre></td></tr></table></figure>
-
-<br>
-
-
-<h4>数组定义格式:</h4>
-
-<ul>
-<li>储存类型是任意项, 可以是 auto, static, extern 储存类型, 但没有 register 型</li>
-</ul>
-<ul>
-<li>数据类型可以是 int, float, char</li>
-</ul>
-<ul>
-<li>数据名符号标识符定义, 但不能与其它变量同名</li>
-</ul>
-<ul>
-<li>数组元素的下标是从0开始编号的, 否则会产生数组越界</li>
-</ul>
-<ul>
-<li>常量表达式中可以包含常量和符号, 不能包含变量</li>
-</ul>
-<br>
-
-<h4>一维数组的赋值例子:</h4>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-type">int</span> <span class="hljs-class"><span class="hljs-keyword">class</span>[5] =</span> &#123;<span class="hljs-number">90</span>,<span class="hljs-number">80</span>,<span class="hljs-number">88</span>,<span class="hljs-number">77</span>,<span class="hljs-number">66</span>&#125;<span class="hljs-comment">// 全部赋初值</span><br><span class="hljs-type">int</span> <span class="hljs-class"><span class="hljs-keyword">class</span>[5] =</span> &#123;<span class="hljs-number">90</span>,<span class="hljs-number">80</span>,<span class="hljs-number">88</span>&#125;<span class="hljs-comment">// 部分赋初值, 未赋值的元素默认为0</span><br><span class="hljs-type">int</span> <span class="hljs-class"><span class="hljs-keyword">class</span>[ ] =</span> &#123;<span class="hljs-number">90</span>,<span class="hljs-number">80</span>,<span class="hljs-number">88</span>,<span class="hljs-number">77</span>,<span class="hljs-number">66</span>&#125;<span class="hljs-comment">// 元素个数5 省略长度赋初值, 数组的长度(数组的元素个数) 根据赋初值的数决定</span><br><br><span class="hljs-comment">// 初值的个数不能超过长度</span><br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>一维数组的储存例子:</h4>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> SIZE 5 <span class="hljs-comment">// 定义5个数</span></span><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> a0,a1,a2,a3,a4;<br>    <span class="hljs-type">int</span> sdq[SIZE]; <span class="hljs-comment">// int是4个字节 5个数相当于 4*5</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(a0)); <span class="hljs-comment">// 输出4个字节</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;总字节数: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq)); <span class="hljs-comment">// 输出20个字节 int有4字节, 有5个数 4*5=20</span><br><br>    <span class="hljs-comment">// 数组长度 = 总字节数 / sizeof(类型)</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;长度: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq) / <span class="hljs-keyword">sizeof</span>(<span class="hljs-type">int</span>)); <span class="hljs-comment">// int = a0</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;长度: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq) / <span class="hljs-keyword">sizeof</span>(a0)); <span class="hljs-comment">// a0 = int</span><br><br>    <span class="hljs-comment">// 总字节数 = sizeof(数组类型) * 数组个数(长度)  </span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="一维数组元素的引用"><a href="#一维数组元素的引用" class="headerlink" title="一维数组元素的引用"></a>一维数组元素的引用</h3><ul>
-<li>数组元素的实质为该数组所属数据类型的一个具有下标的变量, 故又称下标变量, 因此, 数组元素与具有相同数据类型的普通变量的引用完全相同</li>
-</ul>
-<ul>
-<li><h1 id="如果数组int-arr-N-则数组的下标为-0-N-1-即最大的下标为数组长度-1"><a href="#如果数组int-arr-N-则数组的下标为-0-N-1-即最大的下标为数组长度-1" class="headerlink" title="如果数组int arr[N]; 则数组的下标为: 0 ~ N-1 即最大的下标为数组长度-1"></a>如果数组int arr[N]; 则数组的下标为: 0 ~ N-1 即最大的下标为数组长度-1</h1></li>
-</ul>
-<h4>数组元素的引用形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 ]<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="一维数组元素的初始化"><a href="#一维数组元素的初始化" class="headerlink" title="一维数组元素的初始化"></a>一维数组元素的初始化</h3><ul>
-<li>注意: [ ]中括号不能省略</li>
-</ul>
-<ul>
-<li>可以对数组全部元素赋值 </li>
-</ul>
-<ul>
-<li>也可以对部分元素赋初值</li>
-</ul>
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组类型 数组名 [ 数组元素个数 ] = &#123; 值<span class="hljs-number">1</span>, 值 <span class="hljs-number">2</span>, ..., 值 n &#125;; <br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>一维数组的遍历例子:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> N 4 <span class="hljs-comment">// 定义4个数</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> a[M] = &#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span> &#125;; <span class="hljs-comment">//定义数组长度为3的一维数组</span><br><br>    <span class="hljs-comment">// 定义一个3行4列的二维数组 相当于3个数组长度为4的一维数组</span><br>    <span class="hljs-type">int</span> b[M][N] = &#123;&#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span> &#125;, &#123; <span class="hljs-number">0</span> &#125;, &#123; <span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span> &#125;&#125;;<br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;M;i++)<br>    &#123;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\n&quot;</span>,a[i]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h1 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h1><br>
-
-<h4>二维数组的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 数据类型 数组名 [ 行 ] [ 列 ];<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>二维数组的储存例子:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> M 3 <span class="hljs-comment">// 定义3个数</span></span><br><br><span class="hljs-meta"># <span class="hljs-keyword">define</span> N 4 <span class="hljs-comment">// 定义4个数</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> a[M]; <span class="hljs-comment">// 定义长度为3的一维数组</span><br><br>    <span class="hljs-comment">// 相当于3个数组长度为4的一维数组</span><br>    <span class="hljs-type">int</span> sdq[M][N]; <span class="hljs-comment">// 定义3行4列的二维数组 M行 N列</span><br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;总字节数: %d\n&quot;</span>,<span class="hljs-keyword">sizeof</span>(sdq)); <br><br>    <span class="hljs-comment">// 总字节数 = sizeof(数组类型) * 行数 * 列数  </span><br><br>    <span class="hljs-comment">// a[i][j]在数组中的位置的公式:  i * 总列数 * j</span><br>    <span class="hljs-comment">// 例如 a[1][2] 相当于 1 * 4 + 2 = 6</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="二维数组的初始化"><a href="#二维数组的初始化" class="headerlink" title="二维数组的初始化"></a>二维数组的初始化</h3><br>
-
-<h4>二维数组的初始化:</h4>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// 按行全部赋初值</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123;&#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span> &#125;,&#123; <span class="hljs-number">40</span>,<span class="hljs-number">50</span>,<span class="hljs-number">60</span> &#125;&#125;;<br><br><span class="hljs-comment">// 按储存顺序全部赋初值</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123; <span class="hljs-number">100</span>,<span class="hljs-number">200</span>,<span class="hljs-number">300</span>,<span class="hljs-number">400</span>,<span class="hljs-number">500</span>,<span class="hljs-number">600</span> &#125;;<br><br><span class="hljs-comment">// 部分赋初值 (按存储顺序) 未赋值的元素均为零</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">40</span> &#125;;<br><br><span class="hljs-comment">// 部分赋初值 (按行)</span><br><span class="hljs-type">int</span> a[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = &#123;&#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span> &#125;,&#123; <span class="hljs-number">40</span> &#125;&#125;;<br><br><span class="hljs-comment">// 省略行数赋初值</span><br><span class="hljs-type">int</span> a[ ][<span class="hljs-number">3</span>] = &#123;&#123; <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> &#125;,&#123; <span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span> &#125;,&#123; <span class="hljs-number">7</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span> &#125;&#125;;<br><span class="hljs-type">int</span> a[ ][<span class="hljs-number">3</span>] = &#123; <span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>,<span class="hljs-number">40</span>,<span class="hljs-number">50</span>,<span class="hljs-number">60</span>,<span class="hljs-number">70</span> &#125;;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>一维数组的遍历例子:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-meta"># <span class="hljs-keyword">define</span> M 3 <span class="hljs-comment">// 定义3个数</span></span><br><br><span class="hljs-meta"># <span class="hljs-keyword">define</span> N 4 <span class="hljs-comment">// 定义4个数</span></span><br><br><span class="hljs-type">int</span> <span class="hljs-title function_">main</span><span class="hljs-params">(<span class="hljs-type">void</span>)</span><br>&#123;<br>    <span class="hljs-type">int</span> arr[M][N] = &#123;&#123; <span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">7</span>,<span class="hljs-number">10</span> &#125;, &#123;<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">11</span>&#125;, &#123; <span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">9</span>,<span class="hljs-number">12</span> &#125;&#125;&#125;; <span class="hljs-comment">//定义3行4列的二维数组</span><br>    <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-type">int</span> j = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;M;i++) <span class="hljs-comment">// 行下标遍历</span><br>    &#123;<br>        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">0</span>;j&lt;N;j++) <span class="hljs-comment">// 列下标遍历</span><br>        &#123;<br>           <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d\t&quot;</span>,a[i][j]); <br>        &#125;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>)<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-
-<h3 id="二维数组元素的引用"><a href="#二维数组元素的引用" class="headerlink" title="二维数组元素的引用"></a>二维数组元素的引用</h3><ul>
-<li>不论是一维数组还是二维数组, 都不能对数组进行整体引用, 只能对具体的元素进行访问</li>
-</ul>
-<ul>
-<li>在数组元素引用要特别注意下标越界, 因为系统不检查下标越界问题, 所以程序设计者要特别注意</li>
-</ul>
-<h4>数组元素的引用形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数组名 [ 下标 <span class="hljs-number">1</span> ] [ 下标 <span class="hljs-number">2</span> ]<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="二维数组元素的初始化"><a href="#二维数组元素的初始化" class="headerlink" title="二维数组元素的初始化"></a>二维数组元素的初始化</h3><ul>
-<li>对数组全部元素赋值, 这时允许二维数组定义中缺省行下标, 但不能缺省列下标</li>
-</ul>
-<ul>
-<li>也可以对部分元素赋初值</li>
-</ul>
-<h1 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h1><h2 id="字符数组的定义"><a href="#字符数组的定义" class="headerlink" title="字符数组的定义"></a>字符数组的定义</h2><h4>一维数组的定义形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>二维数组的定义形式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">储存类型 <span class="hljs-type">char</span> 数组名 [ 常量表达式 e1 ] [ 常量表达式 e2 ] = &#123; 初始值 &#125;;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符数组元素的初始化"><a href="#字符数组元素的初始化" class="headerlink" title="字符数组元素的初始化"></a>字符数组元素的初始化</h3><ul>
-<li>定义数组同时又可以缺省数组定义的长度, 对于二维数组, 可以缺省行下标, 但不能省列下标</li>
-</ul>
-<ul>
-<li>可以用字符串常量初始化数组: 该初始化法自动在末尾一个字符后加 ‘ \0 ‘作为结束符, 用字符串常量方式赋值比用字符常量赋值方式每行要多占一个字节</li>
-</ul>
-<ul>
-<li>在初始化中, 如果提供的字符个数多余数组元素的个数, 则作为语法错误处理, 如果字符个数小于元素个数, 则多余的数组元素自动赋空格字符</li>
-</ul>
-<h1 id="字符串处理函数"><a href="#字符串处理函数" class="headerlink" title="字符串处理函数"></a>字符串处理函数</h1><h3 id="字符串输出函数-puts"><a href="#字符串输出函数-puts" class="headerlink" title="字符串输出函数 puts"></a>字符串输出函数 puts</h3><ul>
-<li>功能: 将一个字符串 ( 以 ‘ \0 ‘ 结束的字符序列 ) 输出到终端 用 puts 函数输出的字符串中可以包含转义字符</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">puts</span> (字符串数组名);<br></code></pre></td></tr></table></figure>
-<br>
-
-
-
-<h3 id="字符串输入函数-gets"><a href="#字符串输入函数-gets" class="headerlink" title="字符串输入函数 gets"></a>字符串输入函数 gets</h3><ul>
-<li>功能: 从键盘输入一个字符串到字符数组, 并且得到一个函数值, 该函数数值是字符数组的起始地址 </li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">gets (字符串数组名);<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符串连接函数-strcat"><a href="#字符串连接函数-strcat" class="headerlink" title="字符串连接函数 strcat"></a>字符串连接函数 strcat</h3><ul>
-<li>功能: 把字符数组 2 中的字符串接到字符数组 1中的字符串后面, 结果放在字符数组 1 中, 并取消字符数组 1 中的 ‘ \0 ‘, 函数调用后得到的返回值为字符数组 1 的首地址 </li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcat</span> ( 字符数组 <span class="hljs-number">1</span>, 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符串复制函数-strcpy"><a href="#字符串复制函数-strcpy" class="headerlink" title="字符串复制函数 strcpy"></a>字符串复制函数 strcpy</h3><ul>
-<li><p>功能: 把字符数组 2 复制到字符数组 1 中去, 串结束符 ‘ \0 ‘ 也一同复制, 字符数组 2 可以为字符串常量, 使用时要注意</p>
-<ol>
-<li><p>字符数组 1 必须定义得足够大, 以便能存放被复制的字符串, 字符数组 2 的长度</p>
-</li>
-<li><p>“ 字符数组 1 “ 必须写成数组名形式, 不能为字符串常量</p>
-</li>
-<li><p>不能用赋值语句将一个字符串常量或字符数组直接赋给一个字符数组 </p>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li>使用时, 字符数组 1 必须足够大, 以便容纳连接后的新字符串 </li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcpy</span> ( 字符串数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="字符串比较函数-strcmp"><a href="#字符串比较函数-strcmp" class="headerlink" title="字符串比较函数 strcmp"></a>字符串比较函数 strcmp</h3><ul>
-<li>功能: 按照 ASCII 码顺序比较两个字符数组中的字符串, 由函数返回值可以比较结果, 也可以用于比较两个字符串常量或数组与字符串常量</li>
-</ul>
-<p><strong>比较结果:</strong></p>
-<ul>
-<li>字符串 1 == 字符串 2, 函数值为0</li>
-</ul>
-<ul>
-<li>字符串 1 &gt; 字符串 2, 函数值为正整数</li>
-</ul>
-<ul>
-<li>字符串 1 &lt; 字符串 2, 函数值为负整数</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strcmp</span> ( 字符数组 <span class="hljs-number">1</span> , 字符数组 <span class="hljs-number">2</span> );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="检测字符串长度函数-strlen"><a href="#检测字符串长度函数-strlen" class="headerlink" title="检测字符串长度函数 strlen"></a>检测字符串长度函数 strlen</h3><ul>
-<li>功能: 该函数值为字符串实际长度, 即字符串中不包含 ‘ \0 ‘在内的字符个数</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-built_in">strlen</span> ( 字符数组 );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="大写字母转换为小写字母函数-strlwr"><a href="#大写字母转换为小写字母函数-strlwr" class="headerlink" title="大写字母转换为小写字母函数 strlwr"></a>大写字母转换为小写字母函数 strlwr</h3><ul>
-<li>功能: 将字符串中大写字母转换成小写字母</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strlwr ( 字符数组 );<br></code></pre></td></tr></table></figure>
-<br>
-
-<h3 id="小写字母转换为大写字母-strupr"><a href="#小写字母转换为大写字母-strupr" class="headerlink" title="小写字母转换为大写字母 strupr"></a>小写字母转换为大写字母 strupr</h3><ul>
-<li>功能: 将字符串中小写字母转换成大写字母</li>
-</ul>
-<h4>字符串输出函数 puts的格式:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">strupr ( 字符数组 );<br></code></pre></td></tr></table></figure>
-<br>]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -6485,104 +6485,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
-    <url>/Android-compile.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong></p>
-<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
-
-<a id="more"></a>
-
-<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a></p>
-<p><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
-<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 <a href="https://wiki.lineageos.org/">lineageos官方的wiki</a>选择合适的linux发行版(推荐ubuntu 16)推荐而已, 你可以是别的shell,都没问题</strong></p>
-<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)<br></code></pre></td></tr></table></figure>
-<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单, 直接设置里面换</strong></p>
-<p><strong>3.安装jdk, 需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
-
-<p><strong>4.安装 软件依赖</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev<br></code></pre></td></tr></table></figure>
-<p><strong>4.安装jdk, 需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字<br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-8-jdk<br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-7-jdk<br></code></pre></td></tr></table></figure>
-<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
-<p><strong>(2)在终端中输入以下内容, 新建bin文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/bin<br></code></pre></td></tr></table></figure>
-<p><strong>(3)输入以下内容, 将bin文件夹添加到环境变量中</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">PATH=~/bin:$PATH<br></code></pre></td></tr></table></figure>
-<p><strong>(4)接着输入以下内容, 下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
-
-<p><strong>如果你是欧洲人, 有钱买梯子 就省略上步直接输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
-<p><strong>(5)最后输入以下内容, 为repo文件添加运行权限</strong></p>
-<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">chmod a+x ~<span class="hljs-regexp">/bin/</span>repo<br></code></pre></td></tr></table></figure>
-<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端, 输入如下, 创建一个文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/los      //例如: los  名字你可以顺便起<br></code></pre></td></tr></table></figure>
-<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹, 输入如下</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los         //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(3) 由于使用repo拉取源码时, 会尝试访问官方的git源更新自己, 但由于是谷歌, 就无法正常访问, 所以在正式拉取前, 我们需要先做点修改打开主目录, 按组合键ctrl+H, 在显示的隐藏文件中, 打开.bashrc文件, 将如下内容复制到你的~/.bashrc最后一行, 保存退出</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export REPO_URL=&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;<br></code></pre></td></tr></table></figure>
-<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android, 进入如下界面, 这里就看到了拉取lineage-x.x的命令</p>
-<p><strong>(5) 获取源码default</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入邮箱和昵称</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git config --global user.email xxxxxx@xxxx   //你的邮箱<br>git config --global user.name xxxxxxxxx     //随便起一个英文昵称<br></code></pre></td></tr></table></figure>
-<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H, 显示隐藏内容)</strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c309862a0.jpg"></p>
-<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
-<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync<br></code></pre></td></tr></table></figure>
-<p><strong>或者</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync -c -f -j8 --force-sync --no-clone-bundle<br></code></pre></td></tr></table></figure>
-<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
-<p><strong>(2) 在搜索框中输入(设备代号), 会看到android_device_(品牌)_(设备代号)这一项</strong></p>
-<p><strong>(3) 点击android_device_(品牌)_(设备代号), 就可以看到device的所有内容</strong></p>
-<p><strong>(4) 点击右边的Clone or download, 然后复制如图中的蓝色内容, 这就是此device的下载地址</strong></p>
-<p><strong>(5) 组合键ctrl+alt+t, 打开终端</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los             //例如: los  你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入如下命令, 回车开始同步</strong></p>
-<p>解释一下:git clone就是拷贝到本地的命令, 那段网址就是我们上面复制的地址, -b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加, 加入同步源码会小点)<br></code></pre></td></tr></table></figure>
-<p><strong>(7) 我们需要拉取的项目如下</strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c3097c407.png"></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">android_device_(品牌)_(设备代号)<br><br>android_device_(品牌)_(处理器代号)-common<br><br>android_device_(品牌)_(厂家)_common<br><br>android_kernel_(品牌)_(处理器代号)<br><br>proprietary_vendor_(品牌) <br></code></pre></td></tr></table></figure>
-<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
-<p><strong>(9) 同样和同步其他项目一样</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)<br></code></pre></td></tr></table></figure>
-<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了, 你就按组合键ctrl+alt+t, 打开终端, 输入以下命令, 回车, 进入los             //你随便起名字的文件夹, 没有的话跳过这个环节</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los    //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(2) 初始化</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">. build/envsetup.sh<br></code></pre></td></tr></table></figure>
-<p><strong>(3) 输入如下命令, 回车</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">breakfast xxx  //自己的机型<br></code></pre></td></tr></table></figure>
-<p>如果有错误, 就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
-<p><strong>(4) 输入, 回车, 进行编译</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch xxx    //自己的机型<br></code></pre></td></tr></table></figure>
-<p>编译耗费的时间取决于你的电脑配置情况, 所以我不建议用虚拟机, 如果你电脑配置相当牛逼, 当我没说</p>
-<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install libssl-dev<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 回到正在编译的终端中, 重新输入如下命令, 等待编译的完成</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch //自己的机型<br></code></pre></td></tr></table></figure>
-<p><strong>(7) 编译完成后</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了, 可以复制到手机刷入了<br></code></pre></td></tr></table></figure>
-<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export USE_CCACHE=1 <br>export CCACHE_COMPRESS=1<br>ccache -M 50G 或者100G<br></code></pre></td></tr></table></figure>
-<p><strong>防止低内存编译出错 设置大小为</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;<br></code></pre></td></tr></table></figure>
-<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1><br>
-
-
-
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
     <title>人工智比赛</title>
     <url>/AI-trainer-match.html</url>
     <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
@@ -6898,6 +6800,104 @@ json格式文件 "]
 <br>]]></content>
       <categories>
         <category>人工智能</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
+    <url>/Android-compile.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong></p>
+<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
+
+<a id="more"></a>
+
+<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a></p>
+<p><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
+<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 <a href="https://wiki.lineageos.org/">lineageos官方的wiki</a>选择合适的linux发行版(推荐ubuntu 16)推荐而已, 你可以是别的shell,都没问题</strong></p>
+<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)<br></code></pre></td></tr></table></figure>
+<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单, 直接设置里面换</strong></p>
+<p><strong>3.安装jdk, 需要根据开发的android版本选择</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
+
+<p><strong>4.安装 软件依赖</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev<br></code></pre></td></tr></table></figure>
+<p><strong>4.安装jdk, 需要根据开发的android版本选择</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字<br></code></pre></td></tr></table></figure>
+<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-8-jdk<br></code></pre></td></tr></table></figure>
+<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-7-jdk<br></code></pre></td></tr></table></figure>
+<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
+<p><strong>(2)在终端中输入以下内容, 新建bin文件夹</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/bin<br></code></pre></td></tr></table></figure>
+<p><strong>(3)输入以下内容, 将bin文件夹添加到环境变量中</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">PATH=~/bin:$PATH<br></code></pre></td></tr></table></figure>
+<p><strong>(4)接着输入以下内容, 下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
+
+<p><strong>如果你是欧洲人, 有钱买梯子 就省略上步直接输入以下命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
+<p><strong>(5)最后输入以下内容, 为repo文件添加运行权限</strong></p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">chmod a+x ~<span class="hljs-regexp">/bin/</span>repo<br></code></pre></td></tr></table></figure>
+<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端, 输入如下, 创建一个文件夹</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/los      //例如: los  名字你可以顺便起<br></code></pre></td></tr></table></figure>
+<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹, 输入如下</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los         //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(3) 由于使用repo拉取源码时, 会尝试访问官方的git源更新自己, 但由于是谷歌, 就无法正常访问, 所以在正式拉取前, 我们需要先做点修改打开主目录, 按组合键ctrl+H, 在显示的隐藏文件中, 打开.bashrc文件, 将如下内容复制到你的~/.bashrc最后一行, 保存退出</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export REPO_URL=&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;<br></code></pre></td></tr></table></figure>
+<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android, 进入如下界面, 这里就看到了拉取lineage-x.x的命令</p>
+<p><strong>(5) 获取源码default</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 输入邮箱和昵称</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git config --global user.email xxxxxx@xxxx   //你的邮箱<br>git config --global user.name xxxxxxxxx     //随便起一个英文昵称<br></code></pre></td></tr></table></figure>
+<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H, 显示隐藏内容)</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c309862a0.jpg"></p>
+<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
+<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync<br></code></pre></td></tr></table></figure>
+<p><strong>或者</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync -c -f -j8 --force-sync --no-clone-bundle<br></code></pre></td></tr></table></figure>
+<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
+<p><strong>(2) 在搜索框中输入(设备代号), 会看到android_device_(品牌)_(设备代号)这一项</strong></p>
+<p><strong>(3) 点击android_device_(品牌)_(设备代号), 就可以看到device的所有内容</strong></p>
+<p><strong>(4) 点击右边的Clone or download, 然后复制如图中的蓝色内容, 这就是此device的下载地址</strong></p>
+<p><strong>(5) 组合键ctrl+alt+t, 打开终端</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los             //例如: los  你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 输入如下命令, 回车开始同步</strong></p>
+<p>解释一下:git clone就是拷贝到本地的命令, 那段网址就是我们上面复制的地址, -b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加, 加入同步源码会小点)<br></code></pre></td></tr></table></figure>
+<p><strong>(7) 我们需要拉取的项目如下</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c3097c407.png"></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">android_device_(品牌)_(设备代号)<br><br>android_device_(品牌)_(处理器代号)-common<br><br>android_device_(品牌)_(厂家)_common<br><br>android_kernel_(品牌)_(处理器代号)<br><br>proprietary_vendor_(品牌) <br></code></pre></td></tr></table></figure>
+<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
+<p><strong>(9) 同样和同步其他项目一样</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)<br></code></pre></td></tr></table></figure>
+<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了, 你就按组合键ctrl+alt+t, 打开终端, 输入以下命令, 回车, 进入los             //你随便起名字的文件夹, 没有的话跳过这个环节</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los    //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(2) 初始化</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">. build/envsetup.sh<br></code></pre></td></tr></table></figure>
+<p><strong>(3) 输入如下命令, 回车</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">breakfast xxx  //自己的机型<br></code></pre></td></tr></table></figure>
+<p>如果有错误, 就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
+<p><strong>(4) 输入, 回车, 进行编译</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch xxx    //自己的机型<br></code></pre></td></tr></table></figure>
+<p>编译耗费的时间取决于你的电脑配置情况, 所以我不建议用虚拟机, 如果你电脑配置相当牛逼, 当我没说</p>
+<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install libssl-dev<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 回到正在编译的终端中, 重新输入如下命令, 等待编译的完成</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch //自己的机型<br></code></pre></td></tr></table></figure>
+<p><strong>(7) 编译完成后</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了, 可以复制到手机刷入了<br></code></pre></td></tr></table></figure>
+<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export USE_CCACHE=1 <br>export CCACHE_COMPRESS=1<br>ccache -M 50G 或者100G<br></code></pre></td></tr></table></figure>
+<p><strong>防止低内存编译出错 设置大小为</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;<br></code></pre></td></tr></table></figure>
+<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1><br>
+
+
+
+]]></content>
+      <categories>
+        <category>Android</category>
       </categories>
   </entry>
   <entry>
@@ -9205,6 +9205,23 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
+<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
+<br>
+
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>毛概</title>
     <url>/Maogai-Mustback.html</url>
     <content><![CDATA[<p><strong>毛概学习笔记</strong></p>
@@ -10346,23 +10363,6 @@ json格式文件 "]
 <h3 id="二、科学发展观的主要内容"><a href="#二、科学发展观的主要内容" class="headerlink" title="二、科学发展观的主要内容"></a>二、科学发展观的主要内容</h3>]]></content>
       <categories>
         <category>考研必背</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
-<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
-<br>
-
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
-      <categories>
-        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
@@ -11668,20 +11668,6 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
-    <title>爬虫 爬猫猫图片(牢饭吃到饱)</title>
-    <url>/reptile-mao.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 所有用到的库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-comment"># 要爬的链接</span><br>url = <span class="hljs-string">&quot;http://www.ichong123.com/maomao&quot;</span><br><br><span class="hljs-comment"># 请求头</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span><br>&#125;<br><br>paqv = requests.get( url=url, headers=headers )<br><br><span class="hljs-comment"># 根据网站的编码来换</span><br>paqv.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span><br><br><span class="hljs-comment"># xiazai = paqv.text</span><br><br><span class="hljs-comment"># print(xiazai)</span><br><br><span class="hljs-comment"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br>sdq1 = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;&lt;div class=&quot;pet_s&quot;&gt;.*?&lt;img src=(?P&lt;mao&gt;.*?)width&#x27;</span>,re.S)<br>paq = sdq1.finditer(paqv.text)<br>a = <span class="hljs-number">1</span><br><span class="hljs-comment"># 用循环来依次下载</span><br><span class="hljs-keyword">for</span> it <span class="hljs-keyword">in</span> paq:<br>    time.sleep(<span class="hljs-number">3</span>)  <span class="hljs-comment">#休眠3秒</span><br>    ul = it.group(<span class="hljs-string">&#x27;mao&#x27;</span>)<br>    ul2 = <span class="hljs-built_in">eval</span>(ul)  <span class="hljs-comment">#eval()函数用来执行一个字符串表达式, 并返回表达式的值</span><br>    sdz = requests.get(ul2)<br><br>    <span class="hljs-comment"># 图片文件保存 选择路径</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">f&quot;E:/百度文档/mao/<span class="hljs-subst">&#123;a&#125;</span>.jpg&quot;</span>,<span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(sdz.content)<br>        f.close()<br>        a+=<span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猫猫下载完了&quot;</span>)<br></code></pre></td></tr></table></figure>
-<br>
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
     <url>/reptile-novel.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -11691,6 +11677,20 @@ option && myChart.setOption(option);
 <h1 id="爬小说的详细步骤"><a href="#爬小说的详细步骤" class="headerlink" title="爬小说的详细步骤"></a>爬小说的详细步骤</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> bs4.element <span class="hljs-keyword">import</span> PageElement<br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br><br><span class="hljs-comment"># 要爬的链接</span><br>a = <span class="hljs-string">&quot;12739599504227601#Catalog&quot;</span><br>url = <span class="hljs-string">&quot;https://www.readnovel.com/book/&quot;</span> + a<br><br><span class="hljs-comment"># 请求头</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span><br>&#125;<br><span class="hljs-comment"># .decode()指定编码</span><br>paqv = requests.get(url, headers=headers ).content.decode()<br>sdq1 = etree.HTML(paqv)<br>hrefs = sdq1.xpath(<span class="hljs-string">&#x27;//div[@class = &quot;volume&quot;]/ul/li/a/@href&#x27;</span>)<br><span class="hljs-keyword">for</span> href <span class="hljs-keyword">in</span> hrefs:<br>    it2 = <span class="hljs-string">&#x27;https:&#x27;</span>+href<br>    resp = requests.get(it2).content.decode()<br>    sdq2 = etree.HTML(resp)<br>    bcsj = sdq2.xpath(<span class="hljs-string">&#x27;//div[@class = &quot;ywskythunderfont&quot;]/p/text()&#x27;</span>)<br>    <span class="hljs-comment"># 把爬下来的数据保存</span><br>    <span class="hljs-keyword">for</span> neirong <span class="hljs-keyword">in</span> bcsj:<br>        s =<span class="hljs-string">&#x27;&#x27;</span>.join(neirong.split())        <br>        <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;1.txt&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,encoding=<span class="hljs-string">&#x27;UTF-8&#x27;</span>) <span class="hljs-keyword">as</span> f:<br>            f.write(s+<span class="hljs-string">&#x27;\n&#x27;</span>)<br></code></pre></td></tr></table></figure>
 <br>
 
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 爬猫猫图片(牢饭吃到饱)</title>
+    <url>/reptile-mao.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="http://www.ichong123.com/maomao">网址</a></strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 所有用到的库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-comment"># 要爬的链接</span><br>url = <span class="hljs-string">&quot;http://www.ichong123.com/maomao&quot;</span><br><br><span class="hljs-comment"># 请求头</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span><br>&#125;<br><br>paqv = requests.get( url=url, headers=headers )<br><br><span class="hljs-comment"># 根据网站的编码来换</span><br>paqv.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span><br><br><span class="hljs-comment"># xiazai = paqv.text</span><br><br><span class="hljs-comment"># print(xiazai)</span><br><br><span class="hljs-comment"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br>sdq1 = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;&lt;div class=&quot;pet_s&quot;&gt;.*?&lt;img src=(?P&lt;mao&gt;.*?)width&#x27;</span>,re.S)<br>paq = sdq1.finditer(paqv.text)<br>a = <span class="hljs-number">1</span><br><span class="hljs-comment"># 用循环来依次下载</span><br><span class="hljs-keyword">for</span> it <span class="hljs-keyword">in</span> paq:<br>    time.sleep(<span class="hljs-number">3</span>)  <span class="hljs-comment">#休眠3秒</span><br>    ul = it.group(<span class="hljs-string">&#x27;mao&#x27;</span>)<br>    ul2 = <span class="hljs-built_in">eval</span>(ul)  <span class="hljs-comment">#eval()函数用来执行一个字符串表达式, 并返回表达式的值</span><br>    sdz = requests.get(ul2)<br><br>    <span class="hljs-comment"># 图片文件保存 选择路径</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">f&quot;E:/百度文档/mao/<span class="hljs-subst">&#123;a&#125;</span>.jpg&quot;</span>,<span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(sdz.content)<br>        f.close()<br>        a+=<span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猫猫下载完了&quot;</span>)<br></code></pre></td></tr></table></figure>
+<br>
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -15766,31 +15766,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
-    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
-    <url>/HigherMathematics-Differential-Derivative.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
-<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
-<br>
-
-
-
-]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
     <title>导数与微分 (第二章)</title>
     <url>/HigherMathematics-derivative-differentiate.html</url>
     <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
@@ -15863,6 +15838,31 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>
 
 <br>]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
+    <url>/HigherMathematics-Differential-Derivative.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
+<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
+<br>
+
+
+
+]]></content>
       <categories>
         <category>跟我一起学数学</category>
       </categories>
