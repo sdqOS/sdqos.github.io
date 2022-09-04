@@ -1557,5 +1557,79 @@ svg[id^="mermaid-"] {
     }
 }
 
+/* -------评论系统---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#vcomments > div > div.wl-comment > div > div.wl-footer > div.wl-actions > a > svg, #vcomments > div > div.wl-comment > div,div.wl-card > div.wl-meta,#vcomments > div > div.wl-comment > div > div.wl-footer > div.wl-info > button.wl-btn.primary, #vcomments > div > div.wl-comment > div > div.wl-footer > div.wl-info > button{
+    background-color: rgba(0,0,0,0);
+}
 
+.wl-btn.primary{
+    border-color: rgba(0,0,0,0) !important;
+    background: rgba(0,0,0,0) !important;
+    /* color: rgb(255, 255, 255) !important; */
+    color: var(--waline-color) !important;
+}
+
+/* logo */
+#vcomments > div > div.wl-power,#vcomments > div > div.wl-power > a{
+    background-color: rgba(0,0,0,0) !important;
+    color:rgba(0,0,0,0) !important;
+}
+
+#vcomments > div > div.wl-comment > div > div.wl-footer > div.wl-info > button:nth-child(2){
+    background: rgba(0,0,0,0) !important;
+    color: rgba(0,0,0,0) !important;
+}
+
+.wl-btn {
+    border: 0px !important;
+}
+
+
+[data-waline] a{
+    color: var(--waline-color) !important;
+}
+
+/* 地区 浏览器 系统 */
+.wl-card .wl-meta>span {
+    background: rgba(0,0,0,0) !important;
+}
+
+/* 评论字体颜色 */
+#\36 3142de5afc96e49750f3ab1 > div.wl-card > div.wl-head > a > div.wl-card > div.wl-head {
+    color: rgb(255, 255, 255) !important;
+}
+
+:root {
+    --waline-font-size: 1.1rem !important;
+    --waline-border-color: rgba(0,0,0,0) !important;
+    --waline-white: rgba(0,0,0,0) !important;
+    /* --waline-white: rgba(0,0,0,0) !important; */
+    /* --waline-color:rgb(29, 29, 29) !important; */
+    /* --waline-theme-color: rgba(0,0,0,0) !important;  */
+    /* color: rgb(255, 255, 255) !important; */
+    /* --waline-active-color: rgba(0,0,0,0) !important;  */
+}
+
+/* 外边框 */
+/* .wl-comment{
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(25px);
+    border: 1pxsolidrgba(255,255,255,0.5);
+} */
+
+
+/* 登录后台 */
+comment > div > div.wl-footer > div.wl-info > button {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+#vcomments > div > div.wl-comment {
+    border-radius: 4px !important;
+    margin-bottom: 10px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    padding: 10px !important;
+}
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
