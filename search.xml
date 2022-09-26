@@ -68,6 +68,75 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Android ROM移植</title>
+    <url>/Android-ROM-transplant.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong><br><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;"></p>
+<a id="more"></a>
+
+<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
+<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
+<li>推荐sdat2</li>
+</ul>
+<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
+<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
+<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
+</ul>
+</li>
+</ul>
+<p><strong>可以开机之后 再进行以下操作</strong></p>
+<ul>
+<li>开机失败就替换fstab.qcom为官方</li>
+</ul>
+<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
+<li>1.机型验证<ul>
+<li>getprop开头的那行删除, 如果安装中断的话就是这行没删完,</li>
+</ul>
+</li>
+<li>2.分区挂卸<ul>
+<li>分区注意mmcblk0p字眼的记得改成官方的</li>
+</ul>
+</li>
+<li>3.删除底层文件刷入<ul>
+<li>底层文件一般在包里面, 正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
+</ul>
+</li>
+</ul>
+<p><strong>参考脚本 一般放在META-INF里面</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
+<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
+<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
+<ul>
+<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
+</ul>
+<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
+<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
+<li>以下文件替换或修改为官方</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
+<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换system/lib/hw/audio开头的 (64位多替换system/lib64/hw/audio) <br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏, 但32位可能会卡屏<br></code></pre></td></tr></table></figure>
+<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开, 没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
+<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件, 可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
+
+<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
+
+<h1>移植有风险, 不保证无bug</h1>
+
+<br>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
     <url>/Arch-install.html</url>
     <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
@@ -234,75 +303,6 @@
 <p><strong>关于这台电脑用的硬盘 大小80G 有9724个坏道 拆掉坏掉的戴尔一条三星的DDR2 才有2G内存可以体验</strong></p>
 <p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e52011c58d3.jpg"></p>
 <br>]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android ROM移植</title>
-    <url>/Android-ROM-transplant.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong><br><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;"></p>
-<a id="more"></a>
-
-<p><strong>此教程针对 高通和联发科 64位就多替换lib64 等有64字眼的</strong></p>
-<h1 id="移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件"><a href="#移植-刷机包-ROM-建议在Linux的平台是-下载个解压软件" class="headerlink" title="移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件"></a>移植 刷机包/ROM 建议在Linux的平台是 下载个解压软件</h1><ul>
-<li>推荐sdat2</li>
-</ul>
-<h2 id="移植boot-img"><a href="#移植boot-img" class="headerlink" title="移植boot.img"></a>移植boot.img</h2><ul>
-<li>步骤: 解压出官方booT和要移植包的boot, 替换进入官方<ul>
-<li>替换文件: dt.img和zlmagewe 没有这个文件的话就无视</li>
-</ul>
-</li>
-</ul>
-<p><strong>可以开机之后 再进行以下操作</strong></p>
-<ul>
-<li>开机失败就替换fstab.qcom为官方</li>
-</ul>
-<h2 id="刷机脚本修改"><a href="#刷机脚本修改" class="headerlink" title="刷机脚本修改"></a>刷机脚本修改</h2><ul>
-<li>1.机型验证<ul>
-<li>getprop开头的那行删除, 如果安装中断的话就是这行没删完,</li>
-</ul>
-</li>
-<li>2.分区挂卸<ul>
-<li>分区注意mmcblk0p字眼的记得改成官方的</li>
-</ul>
-</li>
-<li>3.删除底层文件刷入<ul>
-<li>底层文件一般在包里面, 正常的包有system(system.dat…), boot.img,META—INF, data其他多余的未知文件和文件夹就是底层文件, 这些必须删除, 不然就可能会黑砖</li>
-</ul>
-</li>
-</ul>
-<p><strong>参考脚本 一般放在META-INF里面</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ui_print(&quot;Patching firmware images...&quot;);<br>ifelse(msm.boot_update(&quot;main&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tz&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hyp&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpm&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/aboot&quot;);<br>), &quot;&quot;);<br>ifelse(msm.boot_update(&quot;backup&quot;), (<br>package_extract_file(&quot;firmware-update/tz.mbn&quot;, &quot;/dev/block/bootdevice/by-name/tzbak&quot;);<br>package_extract_file(&quot;firmware-update/hyp.mbn&quot;, &quot;/dev/block/bootdevice/by-name/hypbak&quot;);<br>package_extract_file(&quot;firmware-update/sbl1.mbn&quot;, &quot;/dev/block/bootdevice/by-name/sbl1bak&quot;);<br>package_extract_file(&quot;firmware-update/rpm.mbn&quot;, &quot;/dev/block/bootdevice/by-name/rpmbak&quot;);<br>package_extract_file(&quot;firmware-update/emmc_appsboot.mbn&quot;, &quot;/dev/block/bootdevice/by-name/abootbak&quot;);<br>), &quot;&quot;);<br>msm.boot_update(&quot;finalize&quot;);<br>package_extract_file(&quot;firmware-update/NON-HLOS.bin&quot;, &quot;/dev/block/bootdevice/by-name/modem&quot;);<br></code></pre></td></tr></table></figure>
-
-
-<h2 id="WIFI修复"><a href="#WIFI修复" class="headerlink" title="WIFI修复"></a>WIFI修复</h2><ul>
-<li>步骤: 以下文件或文件夹替换为官方 没有就不替换</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/firmware/wlan<br>system/etc/wifi<br>system/lib/modules/pronto<br>system/lib/modules/wlan.ko<br></code></pre></td></tr></table></figure>
-<p><strong>可以用WIFI之后 再进行以下操作</strong></p>
-<ul>
-<li>还是不行再看看boot.img里面的init.qcom.rc对比官方boot里面的init.qcom.rc修改 还不行就看刷机脚本, 改里面的wifi软链接</li>
-</ul>
-<h3 id="内存卡使用修复"><a href="#内存卡使用修复" class="headerlink" title="内存卡使用修复"></a>内存卡使用修复</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/etc/permissions/platform.xml<br></code></pre></td></tr></table></figure>
-<h3 id="修复按键"><a href="#修复按键" class="headerlink" title="修复按键"></a>修复按键</h3><ul>
-<li>以下文件替换或修改为官方</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">system/usr/icu<br>system/usr/idc<br><br>//不行再多替换 <br>system/usr/keylayout/Generic.kl<br></code></pre></td></tr></table></figure>
-<h3 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h3><p><strong>以下文件替换为官方</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">    方法1:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换etc/mixer开头的<br><br>    方法2:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换system/hw/audio.primary.msmxxxx.so(64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法3:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换system/lib/hw/audio开头的 (64位多替换system/lib64/hw/audio) <br><br>    方法4:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换以下:<br>    system/etc/mixer开头的<br>    system/lib/hw/audio.primary.msmxxxx.so<br>    (64位多替换system/lib64/hw/audio.primary.msmxxxx.so)<br><br>    方法5:对比system里面的bin、etc、lib、vendor/lib (64位多对比lib64、vendor/lib64) , 把官方包多余的加进去, 再替换以下:<br>    system/etc/audio和mixer开头的<br>    system/lib/hw/audio开头的<br>    (64位多替换system/lib64/hw/audio开头的)<br><br>注: lib和lib64文件夹里面的audio开头(不包括hw文件夹)64位替换了不卡屏, 但32位可能会卡屏<br></code></pre></td></tr></table></figure>
-<h3 id="修改型号"><a href="#修改型号" class="headerlink" title="修改型号"></a>修改型号</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 品牌<br>ro.product.brand=xiaomi<br>// 型号<br>ro.product.name=2<br>// 关于手机显示的型号<br>ro.product.model=redmi 2<br>// 分辨率<br>ro.sf.lcd_density=320 <br>// 这个也是有关型号的<br>ro.build.product=2<br>// 虚拟按键  1是关0是开, 没有这行的就加进去<br>qemu.hw.mainkeys=0 <br></code></pre></td></tr></table></figure>
-<h3 id="修复相机"><a href="#修复相机" class="headerlink" title="修复相机"></a>修复相机</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 把System/lib文件夹里面的文件替换成官方包的文件, 可以解决相机打开停止的BUG问题<br>libcamalgo.so<br>libcamera_client.so<br>libcameracustom.so<br>libcameraservice.so<br>libmhal.so<br>libmhalcontent.so<br>libmhaldrv.so<br>libmhalmdp.so<br>libmhalpipe.so<br>libmhalscenario.so<br>libmhalutility.so<br></code></pre></td></tr></table></figure>
-
-<h3 id="修复传感器"><a href="#修复传感器" class="headerlink" title="修复传感器"></a>修复传感器</h3><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">// 替换System/lib/hw  文件夹里面<br>sensors.default.so<br></code></pre></td></tr></table></figure>
-
-<h1>移植有风险, 不保证无bug</h1>
-
-<br>
-]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -2422,6 +2422,88 @@ graph TB
       </categories>
   </entry>
   <entry>
+    <title>C语 概述(程序结构)</title>
+    <url>/C-main().html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h1><ul>
+<li>一个完整的C语言程序是由一个且<font color="#FA8072">只能有一个 main() 函数 (又称主要函数)</font> 和 若干个其他函数结合而成, 或仅由一个 main() 构成</li>
+</ul>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
+<li><p><font color="#FA8072">函数</font>是C语言的<font color="#FA8072">基本单位</font>, 所有的C语言程序都是由一个 mian() 函数或一个 mian() 函数与多个其它函数构成的 mian() 函数的作用相当于其他高级语言的<font color="#FA8072">主程序</font> 其他函数的作用相当于子程序</p>
+</li>
+<li><p><font color="#FA8072">函数</font>一般包括数据的定义部分和执行部分 <font color="#FA8072">数据定义部分 (也称声明部分)</font>用于定义程序用到的所有<font color="#FA8072">变量的名字和变量类型</font>, 并可以对变量指定初值 执行部分用于完成程序所规定的各项操作</p>
+</li>
+<li><p>C语言程序总是从 mian() 函数开始执行 一个C语言开始执行 一个C语言程序总是从 mian() 函数开始执行, 而不论其在程序中位置如何 主函数执行完毕, 亦即程序执行完毕 习惯上将主函数  mian() 放在最前头</p>
+</li>
+</ul>
+<h1 id="函数的一般结构"><a href="#函数的一般结构" class="headerlink" title="函数的一般结构"></a>函数的一般结构</h1><ul>
+<li>任何函数(包括主函数 main() )都是由函数说明和函数体两部分组成</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">[函数类型] 函数名 (函数参数表)   <span class="hljs-comment">/* 函数说明部分 */</span><br>&#123;<br>    说明语句部分;   <span class="hljs-comment">/* 函数体部分 */</span><br>    执行语句部分；  <span class="hljs-comment">/* 函数体部分 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="语法符号约定"><a href="#语法符号约定" class="headerlink" title="语法符号约定"></a>语法符号约定</h3><ul>
+<li>[…]  方括号表示可选 (既可以指定也可以缺省)</li>
+<li>… 省略号表示前面的项可以重复</li>
+<li>| 表示是两侧的项必选其一 </li>
+</ul>
+<h3 id="函数说明"><a href="#函数说明" class="headerlink" title="函数说明"></a>函数说明</h3><ul>
+<li>由函数类型(可缺省) 函数名和函数参数表 三部分组成</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数据类型 参数<span class="hljs-number">1</span> [, 数据类型 参数<span class="hljs-number">2</span> .]<br></code></pre></td></tr></table></figure>
+<h3 id="函数体"><a href="#函数体" class="headerlink" title="函数体"></a>函数体</h3><ul>
+<li>大括号(必须配对使用)内的说明语句部分和执行【语句部分为函数体</li>
+</ul>
+<h4 id="说明语句部分"><a href="#说明语句部分" class="headerlink" title="说明语句部分"></a>说明语句部分</h4><ul>
+<li>说明语句部分由变量定义, 自定义类型定义, 自定义函数说明, 外部变量说明等部分组成, 其中变量定义是主要的</li>
+</ul>
+<h4 id="执行语句部分"><a href="#执行语句部分" class="headerlink" title="执行语句部分"></a>执行语句部分</h4><ul>
+<li>执行语句部分由若干条执行语句构成</li>
+</ul>
+<h4 id="源程序书写格式"><a href="#源程序书写格式" class="headerlink" title="源程序书写格式"></a>源程序书写格式</h4><ul>
+<li><p>所有语句都必须以分号 “;” 结束, 函数的最后一个语句也不例外</p>
+</li>
+<li><p>程序行的书写格式自由, 即允许一条内写几条语句, 也允许一条语句分成几行写</p>
+</li>
+<li><p>/* 要注释的代码 */ 必须按照注释格式注释</p>
+</li>
+<li><p>注释可以单站一行, 也可以跟在语句的后面, 如果一行写不下, 可另起一行继续写</p>
+</li>
+<li><p>注释中 /* 可以是任意中文 符合  */ 在非中文 环境显示乱码 但是不影响程序的执行</p>
+</li>
+</ul>
+<h1 id="C语言的编译过程"><a href="#C语言的编译过程" class="headerlink" title="C语言的编译过程:"></a>C语言的编译过程:</h1><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">编辑 -&gt; 预处理 -&gt; 编译 -&gt; 汇编 -&gt; 链接 -&gt; 运行<br></code></pre></td></tr></table></figure>
+<br>
+
+<h1 id="C语言的关键字"><a href="#C语言的关键字" class="headerlink" title="C语言的关键字"></a>C语言的关键字</h1><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">auto</span>: 声明自动变量<br><br><span class="hljs-keyword">break</span>: 跳出当前循环<br><br><span class="hljs-keyword">case</span>: 开关语句分支<br><br><span class="hljs-type">char</span>: 声明字符型变量或函数返回值类型<br><br><span class="hljs-keyword">const</span>: 声明只读变量<br><br><span class="hljs-keyword">continue</span>: 结束当前循环, 开始下一轮循环<br><br><span class="hljs-keyword">default</span>: 开关语句中的 <span class="hljs-string">&quot;默认&quot;</span> 分支<br><br><span class="hljs-keyword">do</span>: 循环语句的循环体<br><br><span class="hljs-type">double</span>: 声明双精度浮点型变量或函数返回值类型<br><br><span class="hljs-keyword">else</span>: 条件语句否定分支 (与<span class="hljs-keyword">if</span>连用 )<br><br><span class="hljs-class"><span class="hljs-keyword">enum</span>:</span> 声明枚举类型<br><br><span class="hljs-keyword">extern</span>: 声明变量或函数是在其它文件或本文件的其他位置定义<br><br><span class="hljs-type">float</span>: 声明浮点型变量或函数返回值类型<br><br><span class="hljs-keyword">for</span>: 一种循环语句<br><br><span class="hljs-keyword">goto</span>: 无条件跳转语句<br><br><span class="hljs-keyword">if</span>: 条件语句<br><br><span class="hljs-type">int</span>: 声明整型变量或函数<br><br><span class="hljs-type">long</span>: 声明长整型变量或函数返回值类型<br><br><span class="hljs-keyword">register</span>: 声明寄存器变量<br><br><span class="hljs-keyword">return</span>: 子程序返回语句 (可以带参数, 也可不带参数 )<br><br><span class="hljs-type">short</span>: 声明短整型变量或函数<br><br><span class="hljs-type">signed</span>: 声明有符号类型变量或函数<br><br><span class="hljs-keyword">sizeof</span>: 计算数据类型或变量长度 (即所占字节数 )<br><br><span class="hljs-keyword">static</span>: 声明静态变量<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span>:</span> 声明结构体类型<br><br><span class="hljs-keyword">switch</span>: 用于开关语句<br><br><span class="hljs-keyword">typedef</span>: 用以给数据类型取别名<br><br><span class="hljs-type">unsigned</span>: 声明无符号类型变量或函数<br><br><span class="hljs-class"><span class="hljs-keyword">union</span>:</span> 声明共用体类型<br><br><span class="hljs-type">void</span>: 声明函数无返回值或无参数, 声明无类型指针<br><br><span class="hljs-keyword">volatile</span>: 说明变量在程序执行中可被隐含地改变<br><br><span class="hljs-keyword">while</span>: 循环语句的循环条件<br></code></pre></td></tr></table></figure>
+<br>
+
+<h1 id="C语言中数据元素是基本单位-数据项是最小单位不可分割"><a href="#C语言中数据元素是基本单位-数据项是最小单位不可分割" class="headerlink" title="C语言中数据元素是基本单位, 数据项是最小单位不可分割"></a>C语言中数据元素是基本单位, 数据项是最小单位不可分割</h1><h2 id="C语言中-算法的复杂性"><a href="#C语言中-算法的复杂性" class="headerlink" title="C语言中 算法的复杂性"></a>C语言中 算法的复杂性</h2><ul>
+<li><h3 id="时间效率度量是-时间复杂性"><a href="#时间效率度量是-时间复杂性" class="headerlink" title="时间效率度量是 时间复杂性"></a>时间效率度量是 时间复杂性</h3><ul>
+<li>时间复杂性是指运行时间</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h3 id="算法复杂性量度是-空间复杂性"><a href="#算法复杂性量度是-空间复杂性" class="headerlink" title="算法复杂性量度是 空间复杂性"></a>算法复杂性量度是 空间复杂性</h3><ul>
+<li>空间复杂性是运行时候程序所占有空间变量</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h3 id="时空复杂性有最好情况和最坏情况-一般指的是平均复杂性"><a href="#时空复杂性有最好情况和最坏情况-一般指的是平均复杂性" class="headerlink" title="时空复杂性有最好情况和最坏情况, 一般指的是平均复杂性"></a>时空复杂性有最好情况和最坏情况, 一般指的是平均复杂性</h3></li>
+</ul>
+<br>
+]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C语 符号</title>
     <url>/C-Symbols.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -2768,6 +2850,26 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 </ul>
 <p>–&gt;</p>
 -->]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C语 填空题</title>
+    <url>/C-x.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<p>一个C程序至少包含一个 主函数 , 即  main函数</p>
+<p>一个函数由两部分组成, 它们是  函数的说明部分 和 函数体   </p>
+<p>函数体的范围是 最外层的一对大括弧内的部分    </p>
+<p>函数体一般包括  变量定义部分  和  执行部分   </p>
+<p>C语言是通过  输入和输出函数   来进行输入输出的</p>
+<p>在C语言中, 凡在一个标识符后面紧跟着一对圆括弧, 就表明它是一个  函数 </p>
+<p>主函数名后面的一对圆括号中间可以为空, 但一对圆括号不能 省略      </p>
+<p>在ASCII码表中可以看到每个小写字母的ASCII码比相应的大写字母 大32</p>
+<p>%d   int类型变量的值<br>%c   char类型变量的值<br>%f   float类型变量的值<br>%lf  double类型变量的值</p>
+]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -3191,26 +3293,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>C语 填空题</title>
-    <url>/C-x.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-
-<p>一个C程序至少包含一个 主函数 , 即  main函数</p>
-<p>一个函数由两部分组成, 它们是  函数的说明部分 和 函数体   </p>
-<p>函数体的范围是 最外层的一对大括弧内的部分    </p>
-<p>函数体一般包括  变量定义部分  和  执行部分   </p>
-<p>C语言是通过  输入和输出函数   来进行输入输出的</p>
-<p>在C语言中, 凡在一个标识符后面紧跟着一对圆括弧, 就表明它是一个  函数 </p>
-<p>主函数名后面的一对圆括号中间可以为空, 但一对圆括号不能 省略      </p>
-<p>在ASCII码表中可以看到每个小写字母的ASCII码比相应的大写字母 大32</p>
-<p>%d   int类型变量的值<br>%c   char类型变量的值<br>%f   float类型变量的值<br>%lf  double类型变量的值</p>
-]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
     <title>EJS常用标签</title>
     <url>/EJS.html</url>
     <content><![CDATA[<p><strong>EJS个人整理</strong></p>
@@ -3222,88 +3304,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 ]]></content>
       <categories>
         <category>EJS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C语 概述(程序结构)</title>
-    <url>/C-main().html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h1><ul>
-<li>一个完整的C语言程序是由一个且<font color="#FA8072">只能有一个 main() 函数 (又称主要函数)</font> 和 若干个其他函数结合而成, 或仅由一个 main() 构成</li>
-</ul>
-<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
-<li><p><font color="#FA8072">函数</font>是C语言的<font color="#FA8072">基本单位</font>, 所有的C语言程序都是由一个 mian() 函数或一个 mian() 函数与多个其它函数构成的 mian() 函数的作用相当于其他高级语言的<font color="#FA8072">主程序</font> 其他函数的作用相当于子程序</p>
-</li>
-<li><p><font color="#FA8072">函数</font>一般包括数据的定义部分和执行部分 <font color="#FA8072">数据定义部分 (也称声明部分)</font>用于定义程序用到的所有<font color="#FA8072">变量的名字和变量类型</font>, 并可以对变量指定初值 执行部分用于完成程序所规定的各项操作</p>
-</li>
-<li><p>C语言程序总是从 mian() 函数开始执行 一个C语言开始执行 一个C语言程序总是从 mian() 函数开始执行, 而不论其在程序中位置如何 主函数执行完毕, 亦即程序执行完毕 习惯上将主函数  mian() 放在最前头</p>
-</li>
-</ul>
-<h1 id="函数的一般结构"><a href="#函数的一般结构" class="headerlink" title="函数的一般结构"></a>函数的一般结构</h1><ul>
-<li>任何函数(包括主函数 main() )都是由函数说明和函数体两部分组成</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">[函数类型] 函数名 (函数参数表)   <span class="hljs-comment">/* 函数说明部分 */</span><br>&#123;<br>    说明语句部分;   <span class="hljs-comment">/* 函数体部分 */</span><br>    执行语句部分；  <span class="hljs-comment">/* 函数体部分 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="语法符号约定"><a href="#语法符号约定" class="headerlink" title="语法符号约定"></a>语法符号约定</h3><ul>
-<li>[…]  方括号表示可选 (既可以指定也可以缺省)</li>
-<li>… 省略号表示前面的项可以重复</li>
-<li>| 表示是两侧的项必选其一 </li>
-</ul>
-<h3 id="函数说明"><a href="#函数说明" class="headerlink" title="函数说明"></a>函数说明</h3><ul>
-<li>由函数类型(可缺省) 函数名和函数参数表 三部分组成</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数据类型 参数<span class="hljs-number">1</span> [, 数据类型 参数<span class="hljs-number">2</span> .]<br></code></pre></td></tr></table></figure>
-<h3 id="函数体"><a href="#函数体" class="headerlink" title="函数体"></a>函数体</h3><ul>
-<li>大括号(必须配对使用)内的说明语句部分和执行【语句部分为函数体</li>
-</ul>
-<h4 id="说明语句部分"><a href="#说明语句部分" class="headerlink" title="说明语句部分"></a>说明语句部分</h4><ul>
-<li>说明语句部分由变量定义, 自定义类型定义, 自定义函数说明, 外部变量说明等部分组成, 其中变量定义是主要的</li>
-</ul>
-<h4 id="执行语句部分"><a href="#执行语句部分" class="headerlink" title="执行语句部分"></a>执行语句部分</h4><ul>
-<li>执行语句部分由若干条执行语句构成</li>
-</ul>
-<h4 id="源程序书写格式"><a href="#源程序书写格式" class="headerlink" title="源程序书写格式"></a>源程序书写格式</h4><ul>
-<li><p>所有语句都必须以分号 “;” 结束, 函数的最后一个语句也不例外</p>
-</li>
-<li><p>程序行的书写格式自由, 即允许一条内写几条语句, 也允许一条语句分成几行写</p>
-</li>
-<li><p>/* 要注释的代码 */ 必须按照注释格式注释</p>
-</li>
-<li><p>注释可以单站一行, 也可以跟在语句的后面, 如果一行写不下, 可另起一行继续写</p>
-</li>
-<li><p>注释中 /* 可以是任意中文 符合  */ 在非中文 环境显示乱码 但是不影响程序的执行</p>
-</li>
-</ul>
-<h1 id="C语言的编译过程"><a href="#C语言的编译过程" class="headerlink" title="C语言的编译过程:"></a>C语言的编译过程:</h1><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">编辑 -&gt; 预处理 -&gt; 编译 -&gt; 汇编 -&gt; 链接 -&gt; 运行<br></code></pre></td></tr></table></figure>
-<br>
-
-<h1 id="C语言的关键字"><a href="#C语言的关键字" class="headerlink" title="C语言的关键字"></a>C语言的关键字</h1><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">auto</span>: 声明自动变量<br><br><span class="hljs-keyword">break</span>: 跳出当前循环<br><br><span class="hljs-keyword">case</span>: 开关语句分支<br><br><span class="hljs-type">char</span>: 声明字符型变量或函数返回值类型<br><br><span class="hljs-keyword">const</span>: 声明只读变量<br><br><span class="hljs-keyword">continue</span>: 结束当前循环, 开始下一轮循环<br><br><span class="hljs-keyword">default</span>: 开关语句中的 <span class="hljs-string">&quot;默认&quot;</span> 分支<br><br><span class="hljs-keyword">do</span>: 循环语句的循环体<br><br><span class="hljs-type">double</span>: 声明双精度浮点型变量或函数返回值类型<br><br><span class="hljs-keyword">else</span>: 条件语句否定分支 (与<span class="hljs-keyword">if</span>连用 )<br><br><span class="hljs-class"><span class="hljs-keyword">enum</span>:</span> 声明枚举类型<br><br><span class="hljs-keyword">extern</span>: 声明变量或函数是在其它文件或本文件的其他位置定义<br><br><span class="hljs-type">float</span>: 声明浮点型变量或函数返回值类型<br><br><span class="hljs-keyword">for</span>: 一种循环语句<br><br><span class="hljs-keyword">goto</span>: 无条件跳转语句<br><br><span class="hljs-keyword">if</span>: 条件语句<br><br><span class="hljs-type">int</span>: 声明整型变量或函数<br><br><span class="hljs-type">long</span>: 声明长整型变量或函数返回值类型<br><br><span class="hljs-keyword">register</span>: 声明寄存器变量<br><br><span class="hljs-keyword">return</span>: 子程序返回语句 (可以带参数, 也可不带参数 )<br><br><span class="hljs-type">short</span>: 声明短整型变量或函数<br><br><span class="hljs-type">signed</span>: 声明有符号类型变量或函数<br><br><span class="hljs-keyword">sizeof</span>: 计算数据类型或变量长度 (即所占字节数 )<br><br><span class="hljs-keyword">static</span>: 声明静态变量<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span>:</span> 声明结构体类型<br><br><span class="hljs-keyword">switch</span>: 用于开关语句<br><br><span class="hljs-keyword">typedef</span>: 用以给数据类型取别名<br><br><span class="hljs-type">unsigned</span>: 声明无符号类型变量或函数<br><br><span class="hljs-class"><span class="hljs-keyword">union</span>:</span> 声明共用体类型<br><br><span class="hljs-type">void</span>: 声明函数无返回值或无参数, 声明无类型指针<br><br><span class="hljs-keyword">volatile</span>: 说明变量在程序执行中可被隐含地改变<br><br><span class="hljs-keyword">while</span>: 循环语句的循环条件<br></code></pre></td></tr></table></figure>
-<br>
-
-<h1 id="C语言中数据元素是基本单位-数据项是最小单位不可分割"><a href="#C语言中数据元素是基本单位-数据项是最小单位不可分割" class="headerlink" title="C语言中数据元素是基本单位, 数据项是最小单位不可分割"></a>C语言中数据元素是基本单位, 数据项是最小单位不可分割</h1><h2 id="C语言中-算法的复杂性"><a href="#C语言中-算法的复杂性" class="headerlink" title="C语言中 算法的复杂性"></a>C语言中 算法的复杂性</h2><ul>
-<li><h3 id="时间效率度量是-时间复杂性"><a href="#时间效率度量是-时间复杂性" class="headerlink" title="时间效率度量是 时间复杂性"></a>时间效率度量是 时间复杂性</h3><ul>
-<li>时间复杂性是指运行时间</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h3 id="算法复杂性量度是-空间复杂性"><a href="#算法复杂性量度是-空间复杂性" class="headerlink" title="算法复杂性量度是 空间复杂性"></a>算法复杂性量度是 空间复杂性</h3><ul>
-<li>空间复杂性是运行时候程序所占有空间变量</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h3 id="时空复杂性有最好情况和最坏情况-一般指的是平均复杂性"><a href="#时空复杂性有最好情况和最坏情况-一般指的是平均复杂性" class="headerlink" title="时空复杂性有最好情况和最坏情况, 一般指的是平均复杂性"></a>时空复杂性有最好情况和最坏情况, 一般指的是平均复杂性</h3></li>
-</ul>
-<br>
-]]></content>
-      <categories>
-        <category>C语</category>
       </categories>
   </entry>
   <entry>
@@ -3751,6 +3751,38 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
+    <url>/Hexo-install.html</url>
+    <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h1><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
+<h1 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h1><p><strong>cd 到你想存放博客源码的一个目录里面, 这时会自动建立一个博客文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo init blog  //hexo init (博客名字自定义)<br></code></pre></td></tr></table></figure>
+
+<h1 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h1><p><strong>cd 进刚创建的博客文件夹, 安装依赖模块命令如下</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install<br></code></pre></td></tr></table></figure>
+<h1 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h1><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
+<h1 id="第五是-清除静态文件"><a href="#第五是-清除静态文件" class="headerlink" title="第五是 清除静态文件"></a>第五是 清除静态文件</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo clean<br></code></pre></td></tr></table></figure>
+<h1 id="第六是-生成静态文件和"><a href="#第六是-生成静态文件和" class="headerlink" title="第六是 生成静态文件和"></a>第六是 生成静态文件和</h1><p><strong>部署在GitHub 或者 Gitee服务器上, 生成静态文件, 生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo g<br></code></pre></td></tr></table></figure>
+<h1 id="第七是-部署"><a href="#第七是-部署" class="headerlink" title="第七是 部署"></a>第七是 部署</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo d<br></code></pre></td></tr></table></figure>
+<h1 id="第八是-本地运行"><a href="#第八是-本地运行" class="headerlink" title="第八是 本地运行"></a>第八是 本地运行</h1><p><strong>这里地址是localhost:4000</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></table></figure>
+<h1 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">site:(你的博客)  //直接复制命令百度搜索<br></code></pre></td></tr></table></figure>
+<h1 id="amp-的作用"><a href="#amp-的作用" class="headerlink" title="&amp;的作用"></a>&amp;的作用</h1><p><strong>表示清除静态文件和部署</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo clean &amp; hexo d <br></code></pre></td></tr></table></figure>
+<h1 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h1><p><strong>Ctrl+f搜索 permalink</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">permalink: :id.html   //填入:id.html<br></code></pre></td></tr></table></figure>
+<p><strong>然后在指定位置填入id即可 数字随意, 只要保证每篇文章里面的数字不要一样就行</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e522a942e0f.jpg"></p>
+<br>]]></content>
+      <categories>
+        <category>搭建博客</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java Swing 图形界面速背表(未完工)</title>
     <url>/Java-Swing.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -3836,38 +3868,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>关于Hexo搭建博客我所踩过的坑和小白安装教程</title>
-    <url>/Hexo-install.html</url>
-    <content><![CDATA[<p><strong>搭建博客笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="第一是-Hexo-环境搭建"><a href="#第一是-Hexo-环境搭建" class="headerlink" title="第一是 Hexo 环境搭建"></a>第一是 Hexo 环境搭建</h1><p>前提是需要安装 Node.js,不懂的可以百度下载然后按照<a href="https://www.bilibili.com/video/BV1wA411s7re?from=search&seid=11841654225437997570">B站的安装视频按照</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
-<h1 id="第二是-Hexo初始化博客"><a href="#第二是-Hexo初始化博客" class="headerlink" title="第二是 Hexo初始化博客"></a>第二是 Hexo初始化博客</h1><p><strong>cd 到你想存放博客源码的一个目录里面, 这时会自动建立一个博客文件夹</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo init blog  //hexo init (博客名字自定义)<br></code></pre></td></tr></table></figure>
-
-<h1 id="第三是-给安装博客依赖"><a href="#第三是-给安装博客依赖" class="headerlink" title="第三是 给安装博客依赖"></a>第三是 给安装博客依赖</h1><p><strong>cd 进刚创建的博客文件夹, 安装依赖模块命令如下</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">npm install<br></code></pre></td></tr></table></figure>
-<h1 id="第四是-找主题"><a href="#第四是-找主题" class="headerlink" title="第四是 找主题"></a>第四是 找主题</h1><p><strong>到这个 <a href="https://hexo.bootcss.com/themes/">Hexo网站</a> 去找主题</strong></p>
-<h1 id="第五是-清除静态文件"><a href="#第五是-清除静态文件" class="headerlink" title="第五是 清除静态文件"></a>第五是 清除静态文件</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo clean<br></code></pre></td></tr></table></figure>
-<h1 id="第六是-生成静态文件和"><a href="#第六是-生成静态文件和" class="headerlink" title="第六是 生成静态文件和"></a>第六是 生成静态文件和</h1><p><strong>部署在GitHub 或者 Gitee服务器上, 生成静态文件, 生成的静态文件在博客工程的 public文件夹下 到哪里找就行了</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo g<br></code></pre></td></tr></table></figure>
-<h1 id="第七是-部署"><a href="#第七是-部署" class="headerlink" title="第七是 部署"></a>第七是 部署</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo d<br></code></pre></td></tr></table></figure>
-<h1 id="第八是-本地运行"><a href="#第八是-本地运行" class="headerlink" title="第八是 本地运行"></a>第八是 本地运行</h1><p><strong>这里地址是localhost:4000</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></table></figure>
-<h1 id="查看你有没有被百度收录文章"><a href="#查看你有没有被百度收录文章" class="headerlink" title="查看你有没有被百度收录文章"></a>查看你有没有被百度收录文章</h1><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">site:(你的博客)  //直接复制命令百度搜索<br></code></pre></td></tr></table></figure>
-<h1 id="amp-的作用"><a href="#amp-的作用" class="headerlink" title="&amp;的作用"></a>&amp;的作用</h1><p><strong>表示清除静态文件和部署</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo clean &amp; hexo d <br></code></pre></td></tr></table></figure>
-<h1 id="改变文章链接规则"><a href="#改变文章链接规则" class="headerlink" title="改变文章链接规则"></a>改变文章链接规则</h1><p><strong>Ctrl+f搜索 permalink</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">permalink: :id.html   //填入:id.html<br></code></pre></td></tr></table></figure>
-<p><strong>然后在指定位置填入id即可 数字随意, 只要保证每篇文章里面的数字不要一样就行</strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e522a942e0f.jpg"></p>
-<br>]]></content>
-      <categories>
-        <category>搭建博客</category>
       </categories>
   </entry>
   <entry>
@@ -4568,6 +4568,25 @@ Object()           Object.prototype
 ]]></content>
   </entry>
   <entry>
+    <title>React AJAX</title>
+    <url>/React-AJAX.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><ul>
+<li><p>React 组件的数据可以通过 componentDidMount 方法中的 Ajax 来获取, 当从服务端获取数据时可以将数据存储在 state 中, 再用 this.setState 方法重新渲染 UI</p>
+</li>
+<li><p>当使用异步加载数据时, 在组件卸载前使用 componentWillUnmount 来取消未完成的请求</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class UserGist extends React.Component &#123;<br>  constructor(props) &#123;<br>      super(props);<br>      this.state = &#123;username: &#x27;&#x27;, lastGistUrl: &#x27;&#x27;&#125;;<br>  &#125;<br><br> <br>  componentDidMount() &#123;<br>    this.serverRequest = $.get(this.props.source, function (result) &#123;<br>      var lastGist = result[0];<br>      this.setState(&#123;<br>        username: lastGist.owner.login,<br>        lastGistUrl: lastGist.html_url<br>      &#125;);<br>    &#125;.bind(this));<br>  &#125;<br> <br>  componentWillUnmount() &#123;<br>    this.serverRequest.abort();<br>  &#125;<br> <br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        &#123;this.state.username&#125; 史迪奇的博客:<br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#123;this.state.lastGistUrl&#125;</span>&gt;</span>&#123;this.state.lastGistUrl&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br> <br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">UserGist</span> <span class="hljs-attr">source</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<br>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React Hooks</title>
     <url>/React-Hooks.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -4618,18 +4637,28 @@ Object()           Object.prototype
       </categories>
   </entry>
   <entry>
-    <title>React AJAX</title>
-    <url>/React-AJAX.html</url>
+    <title>React JSX进一步学习</title>
+    <url>/React-JSX-one.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><ul>
-<li><p>React 组件的数据可以通过 componentDidMount 方法中的 Ajax 来获取, 当从服务端获取数据时可以将数据存储在 state 中, 再用 this.setState 方法重新渲染 UI</p>
-</li>
-<li><p>当使用异步加载数据时, 在组件卸载前使用 componentWillUnmount 来取消未完成的请求</p>
+<h1 id="jsx语法规则"><a href="#jsx语法规则" class="headerlink" title="jsx语法规则:"></a>jsx语法规则:</h1><ul>
+<li>定义虚拟DOM时, 不要写引号</li>
+<li>标签中混入JS表达式时要用{}</li>
+<li>样式的类名指定不要用class, 要用className</li>
+<li>内联样式, 要用style=的形式去写</li>
+<li>只有一个根标签</li>
+<li>标签必须闭合</li>
+<li>标签首字母<ul>
+<li>若小写字母开头, 则将该标签转为html中同名元素, 若html中无该标签对应的同名元素, 则报错</li>
+<li>若大写字母开头, react就去渲染对应的组件, 若组件没有定义, 则报错</li>
+</ul>
 </li>
 </ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>class UserGist extends React.Component &#123;<br>  constructor(props) &#123;<br>      super(props);<br>      this.state = &#123;username: &#x27;&#x27;, lastGistUrl: &#x27;&#x27;&#125;;<br>  &#125;<br><br> <br>  componentDidMount() &#123;<br>    this.serverRequest = $.get(this.props.source, function (result) &#123;<br>      var lastGist = result[0];<br>      this.setState(&#123;<br>        username: lastGist.owner.login,<br>        lastGistUrl: lastGist.html_url<br>      &#125;);<br>    &#125;.bind(this));<br>  &#125;<br> <br>  componentWillUnmount() &#123;<br>    this.serverRequest.abort();<br>  &#125;<br> <br>  render() &#123;<br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        &#123;this.state.username&#125; 史迪奇的博客:<br>        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#123;this.state.lastGistUrl&#125;</span>&gt;</span>&#123;this.state.lastGistUrl&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br> <br>ReactDOM.render(<br>  <span class="hljs-tag">&lt;<span class="hljs-name">UserGist</span> <span class="hljs-attr">source</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> /&gt;</span>,<br>  document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">	<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>		.title&#123;<br>			background-color: orange;<br>			width: 333px;<br>		&#125;<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot;--&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入react核心库&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入react-dom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入babel&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> &gt;</span><br>		const myId = &#x27;Stitch&#x27;<br>		const myData = &#x27;My Name is Stitch&#x27;<br><br>		//1.创建虚拟DOM<br>		const VDOM = (<br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;myId.toLowerCase()&#125;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&#x27;<span class="hljs-attr">white</span>&#x27;,<span class="hljs-attr">fontSize:</span>&#x27;<span class="hljs-attr">29px</span>&#x27;&#125;&#125;&gt;</span>&#123;myData.toLowerCase()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;myId.toUpperCase()&#125;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&#x27;<span class="hljs-attr">white</span>&#x27;,<span class="hljs-attr">fontSize:</span>&#x27;<span class="hljs-attr">29px</span>&#x27;&#125;&#125;&gt;</span>&#123;myData.toLowerCase()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>/&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		)<br>		//2.渲染虚拟DOM到页面<br>		ReactDOM.render(VDOM,document.getElementById(&#x27;test&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>		<span class="hljs-comment">//模拟一些数据</span><br>		<span class="hljs-keyword">const</span> data = [<span class="hljs-string">&#x27;Angular&#x27;</span>,<span class="hljs-string">&#x27;React&#x27;</span>,<span class="hljs-string">&#x27;Vue&#x27;</span>]<br>		<span class="hljs-comment">//1.创建虚拟DOM</span><br>		<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">VDOM</span> = (<br>			&lt;div&gt;<br>				&lt;h1&gt;前端js框架列表&lt;/h1&gt;<br>				&lt;ul&gt;<br>					&#123;<br>						data.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">item,index</span>)=&gt;</span>&#123;<br>							<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br>						&#125;)<br>					&#125;<br>				&lt;/ul&gt;<br>			&lt;/div&gt;<br>		)<br>		<span class="hljs-comment">//2.渲染虚拟DOM到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="hljs-variable constant_">VDOM</span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">效果</font></p>
+<iframe id="iframe" src="/html/jsx小练习.html"></iframe>
 
 <br>]]></content>
       <categories>
@@ -4655,35 +4684,6 @@ Object()           Object.prototype
 <p><strong>JSX 中不能使用 if else 语句, 但可以使用 conditional (三元运算) 表达式来替代</strong></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br> var i = 3;<br>    ReactDOM.render(<br>    	<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    	  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i == 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#123;i != 3 ? &#x27;True!&#x27; : &#x27;False&#x27;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    	,<br>    	document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>    &#123;/*  创建数组  */&#125;<br>    var arr = [<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>安琪<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>,<br>      <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>鲁本<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br>    ];<br>    ReactDOM.render(<br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>&#123;arr&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>,<br>      document.getElementById(&#x27;example&#x27;)<br>    );<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React JSX进一步学习</title>
-    <url>/React-JSX-one.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="jsx语法规则"><a href="#jsx语法规则" class="headerlink" title="jsx语法规则:"></a>jsx语法规则:</h1><ul>
-<li>定义虚拟DOM时, 不要写引号</li>
-<li>标签中混入JS表达式时要用{}</li>
-<li>样式的类名指定不要用class, 要用className</li>
-<li>内联样式, 要用style=的形式去写</li>
-<li>只有一个根标签</li>
-<li>标签必须闭合</li>
-<li>标签首字母<ul>
-<li>若小写字母开头, 则将该标签转为html中同名元素, 若html中无该标签对应的同名元素, 则报错</li>
-<li>若大写字母开头, react就去渲染对应的组件, 若组件没有定义, 则报错</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">	<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>		.title&#123;<br>			background-color: orange;<br>			width: 333px;<br>		&#125;<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot;--&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入react核心库&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入react-dom&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;引入babel&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span> &gt;</span><br>		const myId = &#x27;Stitch&#x27;<br>		const myData = &#x27;My Name is Stitch&#x27;<br><br>		//1.创建虚拟DOM<br>		const VDOM = (<br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;myId.toLowerCase()&#125;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&#x27;<span class="hljs-attr">white</span>&#x27;,<span class="hljs-attr">fontSize:</span>&#x27;<span class="hljs-attr">29px</span>&#x27;&#125;&#125;&gt;</span>&#123;myData.toLowerCase()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&quot;title&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&#123;myId.toUpperCase()&#125;</span>&gt;</span><br>					<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&#123;&#123;color:</span>&#x27;<span class="hljs-attr">white</span>&#x27;,<span class="hljs-attr">fontSize:</span>&#x27;<span class="hljs-attr">29px</span>&#x27;&#125;&#125;&gt;</span>&#123;myData.toLowerCase()&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>				<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span>/&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		)<br>		//2.渲染虚拟DOM到页面<br>		ReactDOM.render(VDOM,document.getElementById(&#x27;test&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>		<span class="hljs-comment">//模拟一些数据</span><br>		<span class="hljs-keyword">const</span> data = [<span class="hljs-string">&#x27;Angular&#x27;</span>,<span class="hljs-string">&#x27;React&#x27;</span>,<span class="hljs-string">&#x27;Vue&#x27;</span>]<br>		<span class="hljs-comment">//1.创建虚拟DOM</span><br>		<span class="hljs-keyword">const</span> <span class="hljs-variable constant_">VDOM</span> = (<br>			&lt;div&gt;<br>				&lt;h1&gt;前端js框架列表&lt;/h1&gt;<br>				&lt;ul&gt;<br>					&#123;<br>						data.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">item,index</span>)=&gt;</span>&#123;<br>							<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&#123;index&#125;</span>&gt;</span>&#123;item&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br>						&#125;)<br>					&#125;<br>				&lt;/ul&gt;<br>			&lt;/div&gt;<br>		)<br>		<span class="hljs-comment">//2.渲染虚拟DOM到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="hljs-variable constant_">VDOM</span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">效果</font></p>
-<iframe id="iframe" src="/html/jsx小练习.html"></iframe>
-
 <br>]]></content>
       <categories>
         <category>React</category>
@@ -5248,6 +5248,22 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>SQL Server T-SQL 视图</title>
+    <url>/SQL-try.html</url>
+    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> 视图(字段别名) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表 <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> OPTION<br></code></pre></td></tr></table></figure>
+<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">insert</span> 视图 <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;数据&#x27;</span>) <br></code></pre></td></tr></table></figure>
+<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 视图<br></code></pre></td></tr></table></figure>
+<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">update</span> 视图 <span class="hljs-keyword">set</span> 修改的字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;修改的数据&#x27;</span> <span class="hljs-keyword">where</span> 匹配字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;匹配数据&#x27;</span> <br></code></pre></td></tr></table></figure>
+<br>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
     <title>大数据 Spark</title>
     <url>/Spark.html</url>
     <content><![CDATA[<p><strong>Spark个人整理</strong></p>
@@ -5281,22 +5297,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>SQL Server T-SQL 视图</title>
-    <url>/SQL-try.html</url>
-    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> 视图(字段别名) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表 <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> OPTION<br></code></pre></td></tr></table></figure>
-<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">insert</span> 视图 <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;数据&#x27;</span>) <br></code></pre></td></tr></table></figure>
-<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 视图<br></code></pre></td></tr></table></figure>
-<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">update</span> 视图 <span class="hljs-keyword">set</span> 修改的字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;修改的数据&#x27;</span> <span class="hljs-keyword">where</span> 匹配字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;匹配数据&#x27;</span> <br></code></pre></td></tr></table></figure>
-<br>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
     <title>String 比较</title>
     <url>/String-compare.html</url>
     <content><![CDATA[<p><strong>个人笔记</strong></p>
@@ -5306,25 +5306,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
 <p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Three.js 第一枪</title>
-    <url>/Three.html</url>
-    <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>第一枪<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>    body &#123;<br>    /* 边距 */<br>      margin: 0;<br>      overflow: hidden;<br>      /* 隐藏body窗口区域滚动条 */<br>    &#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-comment">&lt;!--这个是别人弄的网络连接--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    /**<br>     * 创建场景对象sdq=Scene<br>     */<br>    let sdq = new THREE.Scene();<br>    /**<br>     * 创建网格模型<br>     */<br>    // let wuti = new THREE.SphereGeometry(90, 50, 150); //创建一个球体几何对象(大小, 圆度, 弧度)<br>    let wuti = new THREE.BoxGeometry(150, 150, 150); //创建一个立方体几何对象Geometry,(宽, 高, 长); <br>    let material = new THREE.MeshLambertMaterial(&#123;<br>    //   物体颜色<br>        color: 0xDC143C<br>    &#125;); //材质对象Material<br>    var mesh = new THREE.Mesh(wuti, material); //网格模型对象Mesh<br>    sdq.add(mesh); //网格模型添加到场景中<br>    /**<br>     * 光源设置<br>     */<br>    //点光源<br>    var point = new THREE.PointLight(0xffffff);<br><br>    point.position.set(260, 600, 200); //点光源位置(亮点位置, 光源强弱, 亮点位置)<br>    sdq.add(point); //点光源添加到场景中<br>    //环境光 <br>    var ambient = new THREE.AmbientLight(0x444444);<br>    // 是否照射<br>    sdq.add(ambient);<br>    /**<br>     * 相机设置<br>     */<br>    let width = window.innerWidth; //窗口宽度<br>    let height = window.innerHeight; //窗口高度<br>    let k = width / height; //窗口宽高比<br>    let s = 250; //大小 数值越小越大<br>    //创建了一个正射投影相机对象<br>    let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);<br>    camera.position.set(200, 300, 200); //设置相机位置<br>    camera.lookAt(sdq.position); //设置相机方向(指向的场景对象)<br>    /**<br>     * 创建渲染器对象<br>     */<br>    let renderer = new THREE.WebGLRenderer();<br>    renderer.setSize(width, height);//设置渲染区域尺寸<br>    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色<br>    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象<br>    //执行渲染操作   指定场景 相机作为参数<br>    renderer.render(sdq, camera);<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">正方体</font></p>
-<iframe id="iframe" src="/html/正方体.html"></iframe>
-
-<p><font color="#DC143C">球体</font></p>
-<iframe id="iframe" src="/html/球体.html"></iframe>
-
-<br>
-]]></content>
-      <categories>
-        <category>Three.js</category>
-      </categories>
   </entry>
   <entry>
     <title>Three.js 向量</title>
@@ -5420,6 +5401,25 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <br>
 
 
+]]></content>
+      <categories>
+        <category>Three.js</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Three.js 第一枪</title>
+    <url>/Three.html</url>
+    <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>第一枪<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><br>    body &#123;<br>    /* 边距 */<br>      margin: 0;<br>      overflow: hidden;<br>      /* 隐藏body窗口区域滚动条 */<br>    &#125;<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>  <span class="hljs-comment">&lt;!--这个是别人弄的网络连接--&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    /**<br>     * 创建场景对象sdq=Scene<br>     */<br>    let sdq = new THREE.Scene();<br>    /**<br>     * 创建网格模型<br>     */<br>    // let wuti = new THREE.SphereGeometry(90, 50, 150); //创建一个球体几何对象(大小, 圆度, 弧度)<br>    let wuti = new THREE.BoxGeometry(150, 150, 150); //创建一个立方体几何对象Geometry,(宽, 高, 长); <br>    let material = new THREE.MeshLambertMaterial(&#123;<br>    //   物体颜色<br>        color: 0xDC143C<br>    &#125;); //材质对象Material<br>    var mesh = new THREE.Mesh(wuti, material); //网格模型对象Mesh<br>    sdq.add(mesh); //网格模型添加到场景中<br>    /**<br>     * 光源设置<br>     */<br>    //点光源<br>    var point = new THREE.PointLight(0xffffff);<br><br>    point.position.set(260, 600, 200); //点光源位置(亮点位置, 光源强弱, 亮点位置)<br>    sdq.add(point); //点光源添加到场景中<br>    //环境光 <br>    var ambient = new THREE.AmbientLight(0x444444);<br>    // 是否照射<br>    sdq.add(ambient);<br>    /**<br>     * 相机设置<br>     */<br>    let width = window.innerWidth; //窗口宽度<br>    let height = window.innerHeight; //窗口高度<br>    let k = width / height; //窗口宽高比<br>    let s = 250; //大小 数值越小越大<br>    //创建了一个正射投影相机对象<br>    let camera = new THREE.OrthographicCamera(-s * k, s * k, s, -s, 1, 1000);<br>    camera.position.set(200, 300, 200); //设置相机位置<br>    camera.lookAt(sdq.position); //设置相机方向(指向的场景对象)<br>    /**<br>     * 创建渲染器对象<br>     */<br>    let renderer = new THREE.WebGLRenderer();<br>    renderer.setSize(width, height);//设置渲染区域尺寸<br>    renderer.setClearColor(0xb9d3ff, 1); //设置背景颜色<br>    document.body.appendChild(renderer.domElement); //body元素中插入canvas对象<br>    //执行渲染操作   指定场景 相机作为参数<br>    renderer.render(sdq, camera);<br>  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">正方体</font></p>
+<iframe id="iframe" src="/html/正方体.html"></iframe>
+
+<p><font color="#DC143C">球体</font></p>
+<iframe id="iframe" src="/html/球体.html"></iframe>
+
+<br>
 ]]></content>
       <categories>
         <category>Three.js</category>
@@ -5820,6 +5820,63 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>Vue.js 表单输入绑定的基础用法</title>
+    <url>/Vue-usage.html</url>
+    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h1><!--more-->
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app1&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        请输入你喜欢的城市<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;cname&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你选择的城市:&#123;&#123;cname&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        回复评论: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;huifu&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你选回复是:&#123;&#123;huifu&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app1&#x27;,<br>        data : &#123;<br>            cname : &quot;哈哈哈尔滨市&quot;,<br>            huifu : &quot;我叫史迪奇&quot;,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/文本.html"></iframe>
+
+
+
+<h1 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app2&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>你的名字: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;white-space: pre-line;&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;name &quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入你的名字&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你的名字:&#123;&#123;name&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app2&#x27;,<br>        data : &#123;<br>            name : &quot;史迪奇&quot;,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/多行文本.html"></iframe>
+
+
+
+<h1 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app3&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你的选择是: &#123;&#123;checked &#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;checked&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123; checked &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>        <br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app3&#x27;,<br>        data : &#123;<br>            checked : false,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" scrolling="no" src="/html/单个复选框.html"></iframe>
+
+
+
+<h1 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app4&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;blue&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;蓝色&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;blue&quot;</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;红色&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;yellow&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;黄色&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;yellow&quot;</span>&gt;</span>黄色<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你选择的颜色是: &#123;&#123;color&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app4&#x27;,<br>        data : &#123;<br>            color : [],<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/多个复选框.html"></iframe>
+
+
+
+<h1 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app5&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;男&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;男&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;sex&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;男&quot;</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;女&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;女&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;sex&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;女&quot;</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>                你选择的性别是: &#123;&#123;sex&#125;&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app5&#x27;,<br>        data : &#123;<br>            sex :[]<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/单选按钮.html"></iframe>
+
+
+
+<h1 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app6&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            请你选择你喜欢的季节:<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;season&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 50px;&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>春天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>夏天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>秋天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>冬天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>        <br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你喜欢的季节是: &#123;&#123;season&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app6&#x27;,<br>        data : &#123;<br>            season: &quot;夏天&quot;,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/选择框单选时.html"></iframe>
+
+
+
+<h1 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app7&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>请你选择你喜欢的季节:<br>        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selected&quot;</span>  <span class="hljs-attr">multiple</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 50px;&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>春天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>夏天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>秋天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>冬天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你喜欢的季节是:&#123;&#123;selected&#125;&#125;<br>            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>            多选时按住, 往下拖<br>          <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app7&#x27;,<br>        data : &#123;<br>            selected:[&quot;夏天&quot;,&quot;冬天&quot;]<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><font color="#DC143C">直接实战</font></p>
+<iframe id="iframe" src="/html/选择框多选时.html"></iframe>
+
+<br>
+]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Arch wsl的傻瓜式安装 (有手就行)</title>
     <url>/Arch-Wsl-install.html</url>
     <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
@@ -6014,63 +6071,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
       </categories>
   </entry>
   <entry>
-    <title>Vue.js 表单输入绑定的基础用法</title>
-    <url>/Vue-usage.html</url>
-    <content><![CDATA[<p><strong>Vue.js个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="输入文本"><a href="#输入文本" class="headerlink" title="输入文本"></a>输入文本</h1><!--more-->
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app1&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        请输入你喜欢的城市<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;cname&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你选择的城市:&#123;&#123;cname&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        回复评论: <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;huifu&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你选回复是:&#123;&#123;huifu&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app1&#x27;,<br>        data : &#123;<br>            cname : &quot;哈哈哈尔滨市&quot;,<br>            huifu : &quot;我叫史迪奇&quot;,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/文本.html"></iframe>
-
-
-
-<h1 id="输入多行文本"><a href="#输入多行文本" class="headerlink" title="输入多行文本"></a>输入多行文本</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app2&quot;</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>你的名字: <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;white-space: pre-line;&quot;</span>&gt;</span>&#123;&#123; name &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;name &quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;请输入你的名字&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你的名字:&#123;&#123;name&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app2&#x27;,<br>        data : &#123;<br>            name : &quot;史迪奇&quot;,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/多行文本.html"></iframe>
-
-
-
-<h1 id="输入单个复选框"><a href="#输入单个复选框" class="headerlink" title="输入单个复选框"></a>输入单个复选框</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app3&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你的选择是: &#123;&#123;checked &#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;checked&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123; checked &#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>        <br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app3&#x27;,<br>        data : &#123;<br>            checked : false,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" scrolling="no" src="/html/单个复选框.html"></iframe>
-
-
-
-<h1 id="输入多个复选框"><a href="#输入多个复选框" class="headerlink" title="输入多个复选框"></a>输入多个复选框</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app4&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;blue&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;蓝色&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;blue&quot;</span>&gt;</span>蓝色<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;红色&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>红色<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;yellow&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;黄色&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;yellow&quot;</span>&gt;</span>黄色<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你选择的颜色是: &#123;&#123;color&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app4&#x27;,<br>        data : &#123;<br>            color : [],<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/多个复选框.html"></iframe>
-
-
-
-<h1 id="输入单选按钮"><a href="#输入单选按钮" class="headerlink" title="输入单选按钮"></a>输入单选按钮</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app5&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;男&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;男&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;sex&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;男&quot;</span>&gt;</span>男<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;女&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;女&quot;</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;sex&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;女&quot;</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>                你选择的性别是: &#123;&#123;sex&#125;&#125;<br>            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app5&#x27;,<br>        data : &#123;<br>            sex :[]<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/单选按钮.html"></iframe>
-
-
-
-<h1 id="输入选择框单选时"><a href="#输入选择框单选时" class="headerlink" title="输入选择框单选时"></a>输入选择框单选时</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app6&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>            请你选择你喜欢的季节:<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;season&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 50px;&quot;</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>春天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>夏天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>秋天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>冬天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>        <br>        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你喜欢的季节是: &#123;&#123;season&#125;&#125;<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app6&#x27;,<br>        data : &#123;<br>            season: &quot;夏天&quot;,<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/选择框单选时.html"></iframe>
-
-
-
-<h1 id="输入选择框多选时"><a href="#输入选择框多选时" class="headerlink" title="输入选择框多选时"></a>输入选择框多选时</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span> = <span class="hljs-string">&quot;app7&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>请你选择你喜欢的季节:<br>        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&quot;selected&quot;</span>  <span class="hljs-attr">multiple</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width: 50px;&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>春天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>夏天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>秋天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>冬天<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><br>            你喜欢的季节是:&#123;&#123;selected&#125;&#125;<br>            <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><br>            多选时按住, 往下拖<br>          <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>        var app = new Vue(&#123;<br>        el:&#x27;#app7&#x27;,<br>        data : &#123;<br>            selected:[&quot;夏天&quot;,&quot;冬天&quot;]<br>        &#125;<br>    &#125;);<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p><font color="#DC143C">直接实战</font></p>
-<iframe id="iframe" src="/html/选择框多选时.html"></iframe>
-
-<br>
-]]></content>
-      <categories>
-        <category>Vue.js</category>
-      </categories>
-  </entry>
-  <entry>
     <title>轻松理解json与python关系</title>
     <url>/json-python.html</url>
     <content><![CDATA[<p><strong>json笔记</strong></p>
@@ -6203,104 +6203,6 @@ json格式文件 "]
 <a id="more"></a>
 
 <h1 id><a href="#" class="headerlink" title></a><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e51c911a01f.jpg"></h1><h1 id="-1"><a href="#-1" class="headerlink" title></a><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e51c9119fd9.jpg" alt="下载"></h1><h1 id="声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡"><a href="#声明一下电话救援和电量救援并不是卡-而是给你时间去打开微信-QQ等等软件-然后时间一到就弹出界面-并不是卡" class="headerlink" title="声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡"></a>声明一下电话救援和电量救援并不是卡, 而是给你时间去打开微信,QQ等等软件, 然后时间一到就弹出界面, 并不是卡</h1><h1 id="真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器"><a href="#真无电买用法是死循环然后发热耗电-把电耗完了就不用买账了-蹭饭利器" class="headerlink" title="真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器"></a>真无电买用法是死循环然后发热耗电, 把电耗完了就不用买账了, 蹭饭利器</h1><h1 id="除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了"><a href="#除非然后不行就电话救援-设定好吃东西的时间-然后来个电话-然后去接一下电话-趁机开溜-然后微信发消息给同学-谎称家里有事先走了" class="headerlink" title="除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了"></a>除非然后不行就电话救援, 设定好吃东西的时间, 然后来个电话, 然后去接一下电话, 趁机开溜, 然后微信发消息给同学, 谎称家里有事先走了</h1><br>
-
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
-    <url>/Android-compile.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong></p>
-<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
-
-<a id="more"></a>
-
-<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a></p>
-<p><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
-<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 <a href="https://wiki.lineageos.org/">lineageos官方的wiki</a>选择合适的linux发行版(推荐ubuntu 16)推荐而已, 你可以是别的shell,都没问题</strong></p>
-<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)<br></code></pre></td></tr></table></figure>
-<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单, 直接设置里面换</strong></p>
-<p><strong>3.安装jdk, 需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
-
-<p><strong>4.安装 软件依赖</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev<br></code></pre></td></tr></table></figure>
-<p><strong>4.安装jdk, 需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字<br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-8-jdk<br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-7-jdk<br></code></pre></td></tr></table></figure>
-<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
-<p><strong>(2)在终端中输入以下内容, 新建bin文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/bin<br></code></pre></td></tr></table></figure>
-<p><strong>(3)输入以下内容, 将bin文件夹添加到环境变量中</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">PATH=~/bin:$PATH<br></code></pre></td></tr></table></figure>
-<p><strong>(4)接着输入以下内容, 下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
-
-<p><strong>如果你是欧洲人, 有钱买梯子 就省略上步直接输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
-<p><strong>(5)最后输入以下内容, 为repo文件添加运行权限</strong></p>
-<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">chmod a+x ~<span class="hljs-regexp">/bin/</span>repo<br></code></pre></td></tr></table></figure>
-<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端, 输入如下, 创建一个文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/los      //例如: los  名字你可以顺便起<br></code></pre></td></tr></table></figure>
-<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹, 输入如下</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los         //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(3) 由于使用repo拉取源码时, 会尝试访问官方的git源更新自己, 但由于是谷歌, 就无法正常访问, 所以在正式拉取前, 我们需要先做点修改打开主目录, 按组合键ctrl+H, 在显示的隐藏文件中, 打开.bashrc文件, 将如下内容复制到你的~/.bashrc最后一行, 保存退出</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export REPO_URL=&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;<br></code></pre></td></tr></table></figure>
-<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android, 进入如下界面, 这里就看到了拉取lineage-x.x的命令</p>
-<p><strong>(5) 获取源码default</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入邮箱和昵称</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git config --global user.email xxxxxx@xxxx   //你的邮箱<br>git config --global user.name xxxxxxxxx     //随便起一个英文昵称<br></code></pre></td></tr></table></figure>
-<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H, 显示隐藏内容)</strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c309862a0.jpg"></p>
-<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
-<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync<br></code></pre></td></tr></table></figure>
-<p><strong>或者</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync -c -f -j8 --force-sync --no-clone-bundle<br></code></pre></td></tr></table></figure>
-<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
-<p><strong>(2) 在搜索框中输入(设备代号), 会看到android_device_(品牌)_(设备代号)这一项</strong></p>
-<p><strong>(3) 点击android_device_(品牌)_(设备代号), 就可以看到device的所有内容</strong></p>
-<p><strong>(4) 点击右边的Clone or download, 然后复制如图中的蓝色内容, 这就是此device的下载地址</strong></p>
-<p><strong>(5) 组合键ctrl+alt+t, 打开终端</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los             //例如: los  你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入如下命令, 回车开始同步</strong></p>
-<p>解释一下:git clone就是拷贝到本地的命令, 那段网址就是我们上面复制的地址, -b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加, 加入同步源码会小点)<br></code></pre></td></tr></table></figure>
-<p><strong>(7) 我们需要拉取的项目如下</strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c3097c407.png"></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">android_device_(品牌)_(设备代号)<br><br>android_device_(品牌)_(处理器代号)-common<br><br>android_device_(品牌)_(厂家)_common<br><br>android_kernel_(品牌)_(处理器代号)<br><br>proprietary_vendor_(品牌) <br></code></pre></td></tr></table></figure>
-<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
-<p><strong>(9) 同样和同步其他项目一样</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)<br></code></pre></td></tr></table></figure>
-<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了, 你就按组合键ctrl+alt+t, 打开终端, 输入以下命令, 回车, 进入los             //你随便起名字的文件夹, 没有的话跳过这个环节</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los    //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(2) 初始化</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">. build/envsetup.sh<br></code></pre></td></tr></table></figure>
-<p><strong>(3) 输入如下命令, 回车</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">breakfast xxx  //自己的机型<br></code></pre></td></tr></table></figure>
-<p>如果有错误, 就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
-<p><strong>(4) 输入, 回车, 进行编译</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch xxx    //自己的机型<br></code></pre></td></tr></table></figure>
-<p>编译耗费的时间取决于你的电脑配置情况, 所以我不建议用虚拟机, 如果你电脑配置相当牛逼, 当我没说</p>
-<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install libssl-dev<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 回到正在编译的终端中, 重新输入如下命令, 等待编译的完成</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch //自己的机型<br></code></pre></td></tr></table></figure>
-<p><strong>(7) 编译完成后</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了, 可以复制到手机刷入了<br></code></pre></td></tr></table></figure>
-<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export USE_CCACHE=1 <br>export CCACHE_COMPRESS=1<br>ccache -M 50G 或者100G<br></code></pre></td></tr></table></figure>
-<p><strong>防止低内存编译出错 设置大小为</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;<br></code></pre></td></tr></table></figure>
-<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1><br>
-
-
 
 ]]></content>
       <categories>
@@ -6624,6 +6526,104 @@ json格式文件 "]
 ]]></content>
       <categories>
         <category>人工智能</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
+    <url>/Android-compile.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong></p>
+<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
+
+<a id="more"></a>
+
+<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a></p>
+<p><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
+<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 <a href="https://wiki.lineageos.org/">lineageos官方的wiki</a>选择合适的linux发行版(推荐ubuntu 16)推荐而已, 你可以是别的shell,都没问题</strong></p>
+<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)<br></code></pre></td></tr></table></figure>
+<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单, 直接设置里面换</strong></p>
+<p><strong>3.安装jdk, 需要根据开发的android版本选择</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
+
+<p><strong>4.安装 软件依赖</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev<br></code></pre></td></tr></table></figure>
+<p><strong>4.安装jdk, 需要根据开发的android版本选择</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字<br></code></pre></td></tr></table></figure>
+<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-8-jdk<br></code></pre></td></tr></table></figure>
+<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-7-jdk<br></code></pre></td></tr></table></figure>
+<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
+<p><strong>(2)在终端中输入以下内容, 新建bin文件夹</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/bin<br></code></pre></td></tr></table></figure>
+<p><strong>(3)输入以下内容, 将bin文件夹添加到环境变量中</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">PATH=~/bin:$PATH<br></code></pre></td></tr></table></figure>
+<p><strong>(4)接着输入以下内容, 下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
+
+<p><strong>如果你是欧洲人, 有钱买梯子 就省略上步直接输入以下命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
+<p><strong>(5)最后输入以下内容, 为repo文件添加运行权限</strong></p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">chmod a+x ~<span class="hljs-regexp">/bin/</span>repo<br></code></pre></td></tr></table></figure>
+<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端, 输入如下, 创建一个文件夹</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/los      //例如: los  名字你可以顺便起<br></code></pre></td></tr></table></figure>
+<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹, 输入如下</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los         //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(3) 由于使用repo拉取源码时, 会尝试访问官方的git源更新自己, 但由于是谷歌, 就无法正常访问, 所以在正式拉取前, 我们需要先做点修改打开主目录, 按组合键ctrl+H, 在显示的隐藏文件中, 打开.bashrc文件, 将如下内容复制到你的~/.bashrc最后一行, 保存退出</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export REPO_URL=&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;<br></code></pre></td></tr></table></figure>
+<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android, 进入如下界面, 这里就看到了拉取lineage-x.x的命令</p>
+<p><strong>(5) 获取源码default</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 输入邮箱和昵称</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git config --global user.email xxxxxx@xxxx   //你的邮箱<br>git config --global user.name xxxxxxxxx     //随便起一个英文昵称<br></code></pre></td></tr></table></figure>
+<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H, 显示隐藏内容)</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c309862a0.jpg"></p>
+<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
+<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync<br></code></pre></td></tr></table></figure>
+<p><strong>或者</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync -c -f -j8 --force-sync --no-clone-bundle<br></code></pre></td></tr></table></figure>
+<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
+<p><strong>(2) 在搜索框中输入(设备代号), 会看到android_device_(品牌)_(设备代号)这一项</strong></p>
+<p><strong>(3) 点击android_device_(品牌)_(设备代号), 就可以看到device的所有内容</strong></p>
+<p><strong>(4) 点击右边的Clone or download, 然后复制如图中的蓝色内容, 这就是此device的下载地址</strong></p>
+<p><strong>(5) 组合键ctrl+alt+t, 打开终端</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los             //例如: los  你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 输入如下命令, 回车开始同步</strong></p>
+<p>解释一下:git clone就是拷贝到本地的命令, 那段网址就是我们上面复制的地址, -b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加, 加入同步源码会小点)<br></code></pre></td></tr></table></figure>
+<p><strong>(7) 我们需要拉取的项目如下</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c3097c407.png"></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">android_device_(品牌)_(设备代号)<br><br>android_device_(品牌)_(处理器代号)-common<br><br>android_device_(品牌)_(厂家)_common<br><br>android_kernel_(品牌)_(处理器代号)<br><br>proprietary_vendor_(品牌) <br></code></pre></td></tr></table></figure>
+<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
+<p><strong>(9) 同样和同步其他项目一样</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)<br></code></pre></td></tr></table></figure>
+<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了, 你就按组合键ctrl+alt+t, 打开终端, 输入以下命令, 回车, 进入los             //你随便起名字的文件夹, 没有的话跳过这个环节</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los    //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(2) 初始化</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">. build/envsetup.sh<br></code></pre></td></tr></table></figure>
+<p><strong>(3) 输入如下命令, 回车</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">breakfast xxx  //自己的机型<br></code></pre></td></tr></table></figure>
+<p>如果有错误, 就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
+<p><strong>(4) 输入, 回车, 进行编译</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch xxx    //自己的机型<br></code></pre></td></tr></table></figure>
+<p>编译耗费的时间取决于你的电脑配置情况, 所以我不建议用虚拟机, 如果你电脑配置相当牛逼, 当我没说</p>
+<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install libssl-dev<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 回到正在编译的终端中, 重新输入如下命令, 等待编译的完成</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch //自己的机型<br></code></pre></td></tr></table></figure>
+<p><strong>(7) 编译完成后</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了, 可以复制到手机刷入了<br></code></pre></td></tr></table></figure>
+<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export USE_CCACHE=1 <br>export CCACHE_COMPRESS=1<br>ccache -M 50G 或者100G<br></code></pre></td></tr></table></figure>
+<p><strong>防止低内存编译出错 设置大小为</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;<br></code></pre></td></tr></table></figure>
+<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1><br>
+
+
+
+]]></content>
+      <categories>
+        <category>Android</category>
       </categories>
   </entry>
   <entry>
@@ -11417,6 +11417,103 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
+    <title>爬虫 报文(吃牢饭集合)</title>
+    <url>/reptile-message.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
+<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
+<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
+<thead>
+<tr>
+<th>GET</th>
+<th>HTTP</th>
+<th>1.1</th>
+<th>Host</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>方法</td>
+<td>路径</td>
+<td>协议版本</td>
+<td>发送请求的域名</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Content-Type</li>
+<li>Host (主机和端口号)</li>
+<li>Connection (链接类型/常链接)</li>
+<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
+<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
+<li>Referer (页面跳转处)</li>
+<li>Cookie (Cookie数据非常重要,)</li>
+<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
+</ul>
+
+<p><strong>请求头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">特别关注</th>
+<th align="center">以下几个请求头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Host</td>
+<td align="center">域名</td>
+</tr>
+<tr>
+<td align="center">Connection</td>
+<td align="center">常链接</td>
+</tr>
+<tr>
+<td align="center">UPgrade-Insecure-Requests</td>
+<td align="center">升级为HTTPS请求</td>
+</tr>
+<tr>
+<td align="center">User-Agent</td>
+<td align="center">用户代理</td>
+</tr>
+<tr>
+<td align="center">Refrer</td>
+<td align="center">页面跳转处, 防盗链</td>
+</tr>
+<tr>
+<td align="center">Cookie</td>
+<td align="center">保持状态, 用于跳过账号密码</td>
+</tr>
+</tbody></table>
+<p><strong>响应头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">特别关注</th>
+<th align="center">以下几个请求头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">HTTP/1.1</td>
+<td align="center">协议</td>
+</tr>
+<tr>
+<td align="center">200</td>
+<td align="center">状态码</td>
+</tr>
+<tr>
+<td align="center">Set-Cookie</td>
+<td align="center">cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
+</tr>
+</tbody></table>
+<br>
+
+
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 数据提取(吃牢饭集合)</title>
     <url>/reptile-Extraction.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -11516,117 +11613,6 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
-    <title>爬虫 报文(吃牢饭集合)</title>
-    <url>/reptile-message.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
-<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
-<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
-<thead>
-<tr>
-<th>GET</th>
-<th>HTTP</th>
-<th>1.1</th>
-<th>Host</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>方法</td>
-<td>路径</td>
-<td>协议版本</td>
-<td>发送请求的域名</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Content-Type</li>
-<li>Host (主机和端口号)</li>
-<li>Connection (链接类型/常链接)</li>
-<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
-<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
-<li>Referer (页面跳转处)</li>
-<li>Cookie (Cookie数据非常重要,)</li>
-<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
-</ul>
-
-<p><strong>请求头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">特别关注</th>
-<th align="center">以下几个请求头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Host</td>
-<td align="center">域名</td>
-</tr>
-<tr>
-<td align="center">Connection</td>
-<td align="center">常链接</td>
-</tr>
-<tr>
-<td align="center">UPgrade-Insecure-Requests</td>
-<td align="center">升级为HTTPS请求</td>
-</tr>
-<tr>
-<td align="center">User-Agent</td>
-<td align="center">用户代理</td>
-</tr>
-<tr>
-<td align="center">Refrer</td>
-<td align="center">页面跳转处, 防盗链</td>
-</tr>
-<tr>
-<td align="center">Cookie</td>
-<td align="center">保持状态, 用于跳过账号密码</td>
-</tr>
-</tbody></table>
-<p><strong>响应头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">特别关注</th>
-<th align="center">以下几个请求头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">HTTP/1.1</td>
-<td align="center">协议</td>
-</tr>
-<tr>
-<td align="center">200</td>
-<td align="center">状态码</td>
-</tr>
-<tr>
-<td align="center">Set-Cookie</td>
-<td align="center">cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
-</tr>
-</tbody></table>
-<br>
-
-
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</title>
-    <url>/reptile-python%E2%80%94node.js.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="node-js爬虫的详细步骤"><a href="#node-js爬虫的详细步骤" class="headerlink" title="node.js爬虫的详细步骤"></a>node.js爬虫的详细步骤</h1><h1 id="第一步-发送http请求-获取整个网页的内容"><a href="#第一步-发送http请求-获取整个网页的内容" class="headerlink" title="第一步 发送http请求, 获取整个网页的内容"></a>第一步 发送http请求, 获取整个网页的内容</h1><h1 id="第二步-通过cheerio对爬取的网页内容进行分析"><a href="#第二步-通过cheerio对爬取的网页内容进行分析" class="headerlink" title="第二步 通过cheerio对爬取的网页内容进行分析"></a>第二步 通过cheerio对爬取的网页内容进行分析</h1><h1 id="第三步-提取关键信息"><a href="#第三步-提取关键信息" class="headerlink" title="第三步 提取关键信息"></a>第三步 提取关键信息</h1><h1 id="使用download库进行批量下载"><a href="#使用download库进行批量下载" class="headerlink" title="使用download库进行批量下载"></a>使用download库进行批量下载</h1><br>
-
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 概念(牢饭吃到饱)</title>
     <url>/reptile-concept.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -11661,6 +11647,41 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
+    <title>爬虫 正则表达式(牢饭吃到饱)</title>
+    <url>/reptile-RegEx.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
+<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
+<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
+<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">.          <span class="hljs-comment"># 匹配除换行符以外的任意字符</span><br>    <br>\w         <span class="hljs-comment"># 匹配字母或数字或下划线</span><br>    <br>\s         <span class="hljs-comment"># 匹配任意的空白符</span><br>    <br>\d         <span class="hljs-comment"># 匹配数字</span><br>    <br>\n         <span class="hljs-comment"># 匹配一个换行符</span><br>    <br>\t         <span class="hljs-comment"># 匹配一个制表符</span><br>    <br>^          <span class="hljs-comment"># 匹配字符串的开始</span><br>    <br>$          <span class="hljs-comment"># 匹配字符串的结尾</span><br>    <br>\w         <span class="hljs-comment"># 匹配非字母或数字或下划线</span><br>    <br>\D         <span class="hljs-comment"># 匹配非数字</span><br>    <br>\S         <span class="hljs-comment"># 匹配非空白符</span><br>    <br>a|b        <span class="hljs-comment"># 匹配字符a或字符b</span><br>    <br>()         <span class="hljs-comment"># 匹配括号内的表达式, 也表示一个组</span><br>    <br>[]         <span class="hljs-comment"># 匹配字符中的字符    例如 [a-zA-z0-9]</span><br>    <br>[^]        <span class="hljs-comment"># 匹配除了字符组中字符的所有字符</span><br></code></pre></td></tr></table></figure>
+<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">*          <span class="hljs-comment"># 重复零次或更多次 </span><br><br>+          <span class="hljs-comment"># 重复一次或更多次</span><br><br>?          # 重复零次或一次  说白了就是出现或者不出现<br><br>&#123;n&#125;        <span class="hljs-comment"># 重复n次</span><br><br>&#123;n,&#125;       <span class="hljs-comment"># 重复n次或更多次</span><br><br>&#123;n,m&#125;      <span class="hljs-comment"># 重复n到m次</span><br></code></pre></td></tr></table></figure>
+<p><strong>贪婪匹配和惰性匹配</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">.*          <span class="hljs-comment"># 贪婪匹配      说白了就是尽可能多的匹配</span><br><br>.*?         # 惰性匹配      说白了就是尽可能少的匹配<br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 比Python功能更加强大的node.js简介(牢饭吃到饱)未完待续</title>
+    <url>/reptile-python%E2%80%94node.js.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="node-js爬虫的详细步骤"><a href="#node-js爬虫的详细步骤" class="headerlink" title="node.js爬虫的详细步骤"></a>node.js爬虫的详细步骤</h1><h1 id="第一步-发送http请求-获取整个网页的内容"><a href="#第一步-发送http请求-获取整个网页的内容" class="headerlink" title="第一步 发送http请求, 获取整个网页的内容"></a>第一步 发送http请求, 获取整个网页的内容</h1><h1 id="第二步-通过cheerio对爬取的网页内容进行分析"><a href="#第二步-通过cheerio对爬取的网页内容进行分析" class="headerlink" title="第二步 通过cheerio对爬取的网页内容进行分析"></a>第二步 通过cheerio对爬取的网页内容进行分析</h1><h1 id="第三步-提取关键信息"><a href="#第三步-提取关键信息" class="headerlink" title="第三步 提取关键信息"></a>第三步 提取关键信息</h1><h1 id="使用download库进行批量下载"><a href="#使用download库进行批量下载" class="headerlink" title="使用download库进行批量下载"></a>使用download库进行批量下载</h1><br>
+
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 爬小说(牢饭吃到饱)未完待续</title>
     <url>/reptile-novel.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -11685,27 +11706,6 @@ option && myChart.setOption(option);
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 所有用到的库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-comment"># 要爬的链接</span><br>url = <span class="hljs-string">&quot;http://www.ichong123.com/maomao&quot;</span><br><br><span class="hljs-comment"># 请求头</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span><br>&#125;<br><br>paqv = requests.get( url=url, headers=headers )<br><br><span class="hljs-comment"># 根据网站的编码来换</span><br>paqv.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span><br><br><span class="hljs-comment"># xiazai = paqv.text</span><br><br><span class="hljs-comment"># print(xiazai)</span><br><br><span class="hljs-comment"># 正则表达式 re.S单行匹配(正则解析比较多) re.M多行匹配()</span><br>sdq1 = re.<span class="hljs-built_in">compile</span>(<span class="hljs-string">r&#x27;&lt;div class=&quot;pet_s&quot;&gt;.*?&lt;img src=(?P&lt;mao&gt;.*?)width&#x27;</span>,re.S)<br>paq = sdq1.finditer(paqv.text)<br>a = <span class="hljs-number">1</span><br><span class="hljs-comment"># 用循环来依次下载</span><br><span class="hljs-keyword">for</span> it <span class="hljs-keyword">in</span> paq:<br>    time.sleep(<span class="hljs-number">3</span>)  <span class="hljs-comment">#休眠3秒</span><br>    ul = it.group(<span class="hljs-string">&#x27;mao&#x27;</span>)<br>    ul2 = <span class="hljs-built_in">eval</span>(ul)  <span class="hljs-comment">#eval()函数用来执行一个字符串表达式, 并返回表达式的值</span><br>    sdz = requests.get(ul2)<br><br>    <span class="hljs-comment"># 图片文件保存 选择路径</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">f&quot;E:/百度文档/mao/<span class="hljs-subst">&#123;a&#125;</span>.jpg&quot;</span>,<span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(sdz.content)<br>        f.close()<br>        a+=<span class="hljs-number">1</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;猫猫下载完了&quot;</span>)<br></code></pre></td></tr></table></figure>
 <br>
 ]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 正则表达式(牢饭吃到饱)</title>
-    <url>/reptile-RegEx.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="正则表达式的优点和缺点"><a href="#正则表达式的优点和缺点" class="headerlink" title="正则表达式的优点和缺点"></a>正则表达式的优点和缺点</h1><p><strong>优点: 速度快, 效率高, 准确度高</strong></p>
-<p><strong>缺点: 优点老手福利, 新手? ? ?</strong></p>
-<h1 id="正则表达式的概念"><a href="#正则表达式的概念" class="headerlink" title="正则表达式的概念"></a>正则表达式的概念</h1><p><strong>使用元字符进行排列组合用来匹配字符串</strong></p>
-<h1 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h1><p><strong>常用元字符</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">.          <span class="hljs-comment"># 匹配除换行符以外的任意字符</span><br>    <br>\w         <span class="hljs-comment"># 匹配字母或数字或下划线</span><br>    <br>\s         <span class="hljs-comment"># 匹配任意的空白符</span><br>    <br>\d         <span class="hljs-comment"># 匹配数字</span><br>    <br>\n         <span class="hljs-comment"># 匹配一个换行符</span><br>    <br>\t         <span class="hljs-comment"># 匹配一个制表符</span><br>    <br>^          <span class="hljs-comment"># 匹配字符串的开始</span><br>    <br>$          <span class="hljs-comment"># 匹配字符串的结尾</span><br>    <br>\w         <span class="hljs-comment"># 匹配非字母或数字或下划线</span><br>    <br>\D         <span class="hljs-comment"># 匹配非数字</span><br>    <br>\S         <span class="hljs-comment"># 匹配非空白符</span><br>    <br>a|b        <span class="hljs-comment"># 匹配字符a或字符b</span><br>    <br>()         <span class="hljs-comment"># 匹配括号内的表达式, 也表示一个组</span><br>    <br>[]         <span class="hljs-comment"># 匹配字符中的字符    例如 [a-zA-z0-9]</span><br>    <br>[^]        <span class="hljs-comment"># 匹配除了字符组中字符的所有字符</span><br></code></pre></td></tr></table></figure>
-<p><strong>量词: 控制前面的元字符出现的次数</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">*          <span class="hljs-comment"># 重复零次或更多次 </span><br><br>+          <span class="hljs-comment"># 重复一次或更多次</span><br><br>?          # 重复零次或一次  说白了就是出现或者不出现<br><br>&#123;n&#125;        <span class="hljs-comment"># 重复n次</span><br><br>&#123;n,&#125;       <span class="hljs-comment"># 重复n次或更多次</span><br><br>&#123;n,m&#125;      <span class="hljs-comment"># 重复n到m次</span><br></code></pre></td></tr></table></figure>
-<p><strong>贪婪匹配和惰性匹配</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">.*          <span class="hljs-comment"># 贪婪匹配      说白了就是尽可能多的匹配</span><br><br>.*?         # 惰性匹配      说白了就是尽可能少的匹配<br></code></pre></td></tr></table></figure>
-<br>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -12022,23 +12022,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <br>]]></content>
   </entry>
   <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/Thread-Process.html</url>
-    <content><![CDATA[<p><strong>概念</strong></p>
-<a id="more"></a>
-
-<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径, 就算在什么都不干的话, 里面会有(主线程)main线程, Java里面还有个一个收垃圾的gc线程</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Thread是线程的英文<br></code></pre></td></tr></table></figure>
-
-<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程, 进程是执行程序的一次执行过程是一个动态的概念</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Process是进程的英文<br></code></pre></td></tr></table></figure>
-<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程, 一个进程里面必须要有一个线程, 否则没有存在的意义</strong></p>
-<h1 id="注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行"><a href="#注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行"></a>注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行</h1><br>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>私有云配置(个人笔记)</title>
     <url>/Private-cloud.html</url>
     <content><![CDATA[<p><strong>要有Linux基础</strong></p>
@@ -12243,6 +12226,23 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       </categories>
   </entry>
   <entry>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/Thread-Process.html</url>
+    <content><![CDATA[<p><strong>概念</strong></p>
+<a id="more"></a>
+
+<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径, 就算在什么都不干的话, 里面会有(主线程)main线程, Java里面还有个一个收垃圾的gc线程</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Thread是线程的英文<br></code></pre></td></tr></table></figure>
+
+<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程, 进程是执行程序的一次执行过程是一个动态的概念</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Process是进程的英文<br></code></pre></td></tr></table></figure>
+<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程, 一个进程里面必须要有一个线程, 否则没有存在的意义</strong></p>
+<h1 id="注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行"><a href="#注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行"></a>注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行</h1><br>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>职教星2.8.2(搬运软件)</title>
     <url>/zjx2.8.1.html</url>
     <content><![CDATA[<p><strong>职教星2.8.2</strong></p>
@@ -12273,6 +12273,23 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 ]]></content>
   </entry>
   <entry>
+    <title>跟我一起学数学</title>
+    <url>/mathematics.html</url>
+    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
+<a id="more"></a>
+
+<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><code class="hljs gcode"><span class="hljs-comment">(首项 + 末项)</span> * 项数 / <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+
+
+<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
+<br>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>跟我一起学算法(概念章)</title>
     <url>/mathematics-concept.html</url>
     <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
@@ -12289,23 +12306,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <p><strong>常见的时间复杂度按照从低到高的顺序, 包括O(1)、O(logn)、O(n)、O(nlogn)、O(n2)等</strong></p>
 <h1 id="什么是空间复杂度"><a href="#什么是空间复杂度" class="headerlink" title="什么是空间复杂度"></a>什么是空间复杂度</h1><p><strong>空间复杂度是对一个算法在运行过程中临时占用存储空间大小的量度, 用大O表示, 记作S(n)=O(f(n))</strong></p>
 <p><strong>常见的空间复杂度按照从低到高的顺序, 包括O(1)、O(n)、O(n2)等其中递归算法的空间复杂度和递归深度成正比</strong></p>
-<br>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>跟我一起学数学</title>
-    <url>/mathematics.html</url>
-    <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
-<a id="more"></a>
-
-<h1 id="高斯算法"><a href="#高斯算法" class="headerlink" title="高斯算法"></a>高斯算法</h1><p><strong>用于解决 1+2+3+4+5+6+7……一直加到n</strong></p>
-<figure class="highlight gcode"><table><tr><td class="code"><pre><code class="hljs gcode"><span class="hljs-comment">(首项 + 末项)</span> * 项数 / <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
-
-
-<h1 id="衡量算法"><a href="#衡量算法" class="headerlink" title="衡量算法"></a>衡量算法</h1><p><strong>时间复杂度和空间复杂度</strong></p>
 <br>
 ]]></content>
       <categories>
@@ -12596,83 +12596,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 "∽"是相似符号，"≌"是全等号，"∥"是平行符号，"⊥"是垂直符号，"∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号，"⊆"是包含于符号，"⊇"是包含符号，"|"表示"能整除" (例如a|b 表示"a能整除b"，而  -->
 
 </h5></h5>]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>导数与微分 (第二章)</title>
-    <url>/HigherMathematics-derivative-differentiate.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="导数的概念与运算法则"><a href="#导数的概念与运算法则" class="headerlink" title="导数的概念与运算法则"></a>导数的概念与运算法则</h1><h2 id="考点1-导数的定义"><a href="#考点1-导数的定义" class="headerlink" title="考点1: 导数的定义"></a>考点1: 导数的定义</h2><h3>定义:</h3>
-
-<div class="shuxue">若$$\lim_{\triangle x\rightarrow\infty}\frac{f(\;x_0\;+\;\triangle x\;)-f(\;x_0\;)}{\triangle x}\\$$ 存在,则称 $$\;y=f(x)\;\\\\$$ 在 $$\;\;x_0\;\;\\\\$$ 处可导</div>
-
-<div class="shuxue">称该极限为,$$\;y=f(x)\;\\\\$$在$$\;\;x_0\;\;\\\\$$ 处的导数 </div>
-
-<div class="shuxue">记作: <span class="shuxue2">$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$${}_{\;x\;=\;x_0\;}\\\\$$</span></div>
-
-
-<h3>特别的:</h3>
-
-<div class="shuxue">$$f\;'\;(\;x_0\;)\;=\;\lim_{\triangle x\rightarrow0}\frac{f(\;x_0\;+\;\triangle x\;)\;-\;f\left(\;x_0\;\right)}{\triangle x}\\$$</div>
-
-<div class="shuxue">$$=\lim_{x\rightarrow0}\frac{f(\;x\;)\;-\;f\left(\;x_0\;\right)}{x\;-\;x_0}\\\\$$ </div>
-
-<div class="shuxue"><span>$$\;f\;'\;\left(\;x\;\right),\;\;\\\\$$</span><span>$$\;y\;'\;,\;\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span><span>$$\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span></div>
-
-<h3>导函数记作:</h3>
-
-<div class="shuxue"><span class="shuxue2">$$\;f\;'\;\left(\;x\;\right),\;\;y\;'\;,\;\frac{dy}{dx}\;$$</span></div>
-
-
-<h2 id="考点2-高阶导数"><a href="#考点2-高阶导数" class="headerlink" title="考点2: 高阶导数"></a>考点2: 高阶导数</h2><h3 id="求n阶段方法"><a href="#求n阶段方法" class="headerlink" title="求n阶段方法:"></a>求n阶段方法:</h3><h4>求出f(x)的前几阶导, 总结规律, 得n阶导</h4>
-
-<h4>高阶导数公式:</h4>
-
-<p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue"><span>$${(\;e\;^{x\;})}^{\;(\;n\;)}\;=\;e^x,$$</span><span>$$(\;e^{\;ax\;+\;b}\;)\;^{(\;n\;)}\;=\;a^{\;n\;}e\;^{ax\;+\;b},\;$$</span><span>$${(\;a^{x\;})}^{(\;n\;)}\;=\;{(\;\ln\;a\;)}^{\;n}\;a^{\;x}$$</span></div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue"><span>$$\left(\;x^n\;\right)^{(\;n\;)}\;=\;n!,\;$$</span><span>$$\left(\;x^m\;\right)^{(\;n\;)\;}\;=\;$$</span><span>$$0.\;( \;m < n\;)$$</span></div>
-
-
-<p><font color="#7bbfea">(3)</font></p>
-<div class="shuxue"><span>$${(\;\sin\;x\;)}^{\;(\;n\;)\;}=\;\sin\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;),\\\\$$</span><span>$${(\;\cos\;x)}^{\;(\;n\;)}\;=\;\cos\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;)\\\\$$</span></div>
-
-
-<h2 id="考点3-求隐函数的导数"><a href="#考点3-求隐函数的导数" class="headerlink" title="考点3: 求隐函数的导数"></a>考点3: 求隐函数的导数</h2><div class="shuxue">定义: 显函数 $$ \;y\; \;=\; f\; (\; x\; )\;$$, 隐函数$$ \;F \; ( \;x \;,\; y \; ) \; = \; 0\;$$</div>
-
-<h3>解题方法:</h3>
-
-<h4>方法一: 复合函数法</h4>
-
-<div class="shuxue">方程 $$\;F\;=\;(\;x\;,\;y\;)\;=\;0\;$$, 两边同时对$$\;x\;$$求导, 解出$$\;y'\;$$ </div>
-
-<div class="shuxue">注意: <span>$$\;x\;$$</span>是<span>$$\;y\;$$</span>的函数</div>
-
-<h4>方法二: 公式法</h4>
-
-<p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue">构造二次元函数 $$\;F\;=\;(\;x\;,\;y\;)\;$$</div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue">求偏导数 $$\;F_x\;(\;x\;,\;y\;),\;F_{y\;}(\;x\;,\;y\;)\;$$</div>
-
-<p><font color="#7bbfea">(3)</font></p>
-<div class="shuxue">带公式 $$\;\frac{dy}{dx}\;=\;-\;\frac{Fx\;(\;x\;,\;y\;)}{Fy\;(\;x\;,\;y\;)}$$</div>
-
-<h2 id="考点4-求参数方程的导数"><a href="#考点4-求参数方程的导数" class="headerlink" title="考点4: 求参数方程的导数"></a>考点4: 求参数方程的导数</h2><p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue">参数方程: $$\;\left\{\begin{array}{l}x\;=\;\varphi\;(\;t\;)\\y\;=\;\psi\;(\;t\;)\end{array}\right.\;$$</div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue">求导公式: $$\;\frac{dy}{dx}\;=\;\frac{dy\;/\;dt}{dx/\;dt}\;=\;\frac{\psi\;'\;(\;t\;)\;}{\varphi\;'\;(\;t\;)}$$</div>
-
-<div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>
-
-<br>]]></content>
       <categories>
         <category>跟我一起学数学</category>
       </categories>
@@ -15857,6 +15780,108 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
+    <title>导数与微分 (第二章)</title>
+    <url>/HigherMathematics-derivative-differentiate.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="导数的概念与运算法则"><a href="#导数的概念与运算法则" class="headerlink" title="导数的概念与运算法则"></a>导数的概念与运算法则</h1><h2 id="考点1-导数的定义"><a href="#考点1-导数的定义" class="headerlink" title="考点1: 导数的定义"></a>考点1: 导数的定义</h2><h3>定义:</h3>
+
+<div class="shuxue">若$$\lim_{\triangle x\rightarrow\infty}\frac{f(\;x_0\;+\;\triangle x\;)-f(\;x_0\;)}{\triangle x}\\$$ 存在,则称 $$\;y=f(x)\;\\\\$$ 在 $$\;\;x_0\;\;\\\\$$ 处可导</div>
+
+<div class="shuxue">称该极限为,$$\;y=f(x)\;\\\\$$在$$\;\;x_0\;\;\\\\$$ 处的导数 </div>
+
+<div class="shuxue">记作: <span class="shuxue2">$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$${}_{\;x\;=\;x_0\;}\\\\$$</span></div>
+
+
+<h3>特别的:</h3>
+
+<div class="shuxue">$$f\;'\;(\;x_0\;)\;=\;\lim_{\triangle x\rightarrow0}\frac{f(\;x_0\;+\;\triangle x\;)\;-\;f\left(\;x_0\;\right)}{\triangle x}\\$$</div>
+
+<div class="shuxue">$$=\lim_{x\rightarrow0}\frac{f(\;x\;)\;-\;f\left(\;x_0\;\right)}{x\;-\;x_0}\\\\$$ </div>
+
+<div class="shuxue"><span>$$\;f\;'\;\left(\;x\;\right),\;\;\\\\$$</span><span>$$\;y\;'\;,\;\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span><span>$$\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span></div>
+
+<h3>导函数记作:</h3>
+
+<div class="shuxue"><span class="shuxue2">$$\;f\;'\;\left(\;x\;\right),\;\;y\;'\;,\;\frac{dy}{dx}\;$$</span></div>
+
+
+<h2 id="考点2-高阶导数"><a href="#考点2-高阶导数" class="headerlink" title="考点2: 高阶导数"></a>考点2: 高阶导数</h2><h3 id="求n阶段方法"><a href="#求n阶段方法" class="headerlink" title="求n阶段方法:"></a>求n阶段方法:</h3><h4>求出f(x)的前几阶导, 总结规律, 得n阶导</h4>
+
+<h4>高阶导数公式:</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue"><span>$${(\;e\;^{x\;})}^{\;(\;n\;)}\;=\;e^x,$$</span><span>$$(\;e^{\;ax\;+\;b}\;)\;^{(\;n\;)}\;=\;a^{\;n\;}e\;^{ax\;+\;b},\;$$</span><span>$${(\;a^{x\;})}^{(\;n\;)}\;=\;{(\;\ln\;a\;)}^{\;n}\;a^{\;x}$$</span></div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue"><span>$$\left(\;x^n\;\right)^{(\;n\;)}\;=\;n!,\;$$</span><span>$$\left(\;x^m\;\right)^{(\;n\;)\;}\;=\;$$</span><span>$$0.\;( \;m < n\;)$$</span></div>
+
+
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue"><span>$${(\;\sin\;x\;)}^{\;(\;n\;)\;}=\;\sin\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;),\\\\$$</span><span>$${(\;\cos\;x)}^{\;(\;n\;)}\;=\;\cos\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;)\\\\$$</span></div>
+
+
+<h2 id="考点3-求隐函数的导数"><a href="#考点3-求隐函数的导数" class="headerlink" title="考点3: 求隐函数的导数"></a>考点3: 求隐函数的导数</h2><div class="shuxue">定义: 显函数 $$ \;y\; \;=\; f\; (\; x\; )\;$$, 隐函数$$ \;F \; ( \;x \;,\; y \; ) \; = \; 0\;$$</div>
+
+<h3>解题方法:</h3>
+
+<h4>方法一: 复合函数法</h4>
+
+<div class="shuxue">方程 $$\;F\;=\;(\;x\;,\;y\;)\;=\;0\;$$, 两边同时对$$\;x\;$$求导, 解出$$\;y'\;$$ </div>
+
+<div class="shuxue">注意: <span>$$\;x\;$$</span>是<span>$$\;y\;$$</span>的函数</div>
+
+<h4>方法二: 公式法</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">构造二次元函数 $$\;F\;=\;(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求偏导数 $$\;F_x\;(\;x\;,\;y\;),\;F_{y\;}(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue">带公式 $$\;\frac{dy}{dx}\;=\;-\;\frac{Fx\;(\;x\;,\;y\;)}{Fy\;(\;x\;,\;y\;)}$$</div>
+
+<h2 id="考点4-求参数方程的导数"><a href="#考点4-求参数方程的导数" class="headerlink" title="考点4: 求参数方程的导数"></a>考点4: 求参数方程的导数</h2><p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">参数方程: $$\;\left\{\begin{array}{l}x\;=\;\varphi\;(\;t\;)\\y\;=\;\psi\;(\;t\;)\end{array}\right.\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求导公式: $$\;\frac{dy}{dx}\;=\;\frac{dy\;/\;dt}{dx/\;dt}\;=\;\frac{\psi\;'\;(\;t\;)\;}{\varphi\;'\;(\;t\;)}$$</div>
+
+<div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>
+
+<br>]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
+    <url>/HigherMathematics-Differential-Derivative.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
+<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
+<br>
+
+
+
+]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数列的极限</title>
     <url>/limit-of-sequence.html</url>
     <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
@@ -15898,31 +15923,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 如"="是等号, "≈"是近似符号 (即约等于) , "≠"是不等号, ">"是大于符号, "<"是小于符号, "≥"是大于或等于符号 (也可写作"≮", 即不小于) , "≤"是小于或等于符号 (也可写作"≯", 即不大于) , "→ "表示变量变化的趋势
 
 "∽"是相似符号, "≌"是全等号, "∥"是平行符号, "⊥"是垂直符号, "∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号, "⊆"是包含于符号, "⊇"是包含符号, "|"表示"能整除" (例如a|b 表示"a能整除b", 而  -->
-
-]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
-    <url>/HigherMathematics-Differential-Derivative.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
-<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
-<br>
-
-
 
 ]]></content>
       <categories>
