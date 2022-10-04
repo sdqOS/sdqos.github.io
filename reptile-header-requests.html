@@ -2071,8 +2071,8 @@ $(document).ready(function () {
 $(document).ready(function () {
 	$(document).pjax('a[target!=_blank]', '.main', {fragment: '.main',timeout: 8000});
 
-	<!-- $(document).on('pjax:error', function() {
-		alert("正在向Turo星发送信号");
+	$(document).on('pjax:error', function() {
+		<!-- alert("正在向Turo星发送信号"); -->
 		  history.back();
 	});
 	
@@ -2083,7 +2083,7 @@ $(document).ready(function () {
 	$(document).on('pjax:end', function() {
 		//加载中...................
 		$(".main-content").delay(500).addClass("wrapShow");
-	}); -->
+	});
 	
 	$(document).on('ready pjax:end', function(event) {
 	linker();
