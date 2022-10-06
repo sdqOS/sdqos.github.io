@@ -137,37 +137,6 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS Flex样式</title>
-    <url>/CSS-Flex.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="任何一个容器都可以指定为-Flex-布局"><a href="#任何一个容器都可以指定为-Flex-布局" class="headerlink" title="任何一个容器都可以指定为 Flex 布局"></a>任何一个容器都可以指定为 Flex 布局</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="行内元素也可以使用-Flex-布局"><a href="#行内元素也可以使用-Flex-布局" class="headerlink" title="行内元素也可以使用 Flex 布局"></a>行内元素也可以使用 Flex 布局</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">display</span>: inline-flex;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="Webkit-内核的浏览器-必须加上-webkit前缀"><a href="#Webkit-内核的浏览器-必须加上-webkit前缀" class="headerlink" title="Webkit 内核的浏览器, 必须加上-webkit前缀"></a>Webkit 内核的浏览器, 必须加上-webkit前缀</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">display</span>: -webkit-flex; <span class="hljs-comment">/* Safari */</span><br>  <span class="hljs-attribute">display</span>: flex;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h2><p><strong>flex-direction属性决定主轴的方向(即项目的排列方向)</strong></p>
-<ul>
-<li>row(默认值): 主轴为水平方向, 起点在左端</li>
-<li>row-reverse: 主轴为水平方向, 起点在右端</li>
-<li>column: 主轴为垂直方向, 起点在上沿</li>
-<li>column-reverse: 主轴为垂直方向, 起点在下沿</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">flex-direction</span>: row | row-reverse | column | column-reverse;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="flex-wrap属性"><a href="#flex-wrap属性" class="headerlink" title="flex-wrap属性"></a>flex-wrap属性</h2><p><strong>默认情况下, 项目都排在一条线 (又称”轴线”)上flex-wrap属性定义, 如果一条轴线排不下, 如何换行</strong></p>
-<ul>
-<li>nowrap (默认): 不换行</li>
-<li>wrap: 换行, 第一行在上方</li>
-<li>wrap-reverse: 换行, 第一行在下方</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h2><p><strong>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式, 默认值为row nowrap</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;<br>&#125;<br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Arch系统包桌面傻瓜式安装 (有手就行)</title>
     <url>/Arch-install.html</url>
     <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
@@ -339,18 +308,32 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <title>CSS Flex样式</title>
+    <url>/CSS-Flex.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
 <a id="more"></a>
 
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
-<br>
-
-
-
-
-]]></content>
+<h1 id="任何一个容器都可以指定为-Flex-布局"><a href="#任何一个容器都可以指定为-Flex-布局" class="headerlink" title="任何一个容器都可以指定为 Flex 布局"></a>任何一个容器都可以指定为 Flex 布局</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="行内元素也可以使用-Flex-布局"><a href="#行内元素也可以使用-Flex-布局" class="headerlink" title="行内元素也可以使用 Flex 布局"></a>行内元素也可以使用 Flex 布局</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">display</span>: inline-flex;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="Webkit-内核的浏览器-必须加上-webkit前缀"><a href="#Webkit-内核的浏览器-必须加上-webkit前缀" class="headerlink" title="Webkit 内核的浏览器, 必须加上-webkit前缀"></a>Webkit 内核的浏览器, 必须加上-webkit前缀</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">display</span>: -webkit-flex; <span class="hljs-comment">/* Safari */</span><br>  <span class="hljs-attribute">display</span>: flex;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="flex-direction属性"><a href="#flex-direction属性" class="headerlink" title="flex-direction属性"></a>flex-direction属性</h2><p><strong>flex-direction属性决定主轴的方向(即项目的排列方向)</strong></p>
+<ul>
+<li>row(默认值): 主轴为水平方向, 起点在左端</li>
+<li>row-reverse: 主轴为水平方向, 起点在右端</li>
+<li>column: 主轴为垂直方向, 起点在上沿</li>
+<li>column-reverse: 主轴为垂直方向, 起点在下沿</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">flex-direction</span>: row | row-reverse | column | column-reverse;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="flex-wrap属性"><a href="#flex-wrap属性" class="headerlink" title="flex-wrap属性"></a>flex-wrap属性</h2><p><strong>默认情况下, 项目都排在一条线 (又称”轴线”)上flex-wrap属性定义, 如果一条轴线排不下, 如何换行</strong></p>
+<ul>
+<li>nowrap (默认): 不换行</li>
+<li>wrap: 换行, 第一行在上方</li>
+<li>wrap-reverse: 换行, 第一行在下方</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span>&#123;<br>  <span class="hljs-attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h2><p><strong>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式, 默认值为row nowrap</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<br>]]></content>
       <categories>
         <category>CSS</category>
       </categories>
@@ -373,6 +356,23 @@
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
+<br>
+
+
+
+
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -2504,82 +2504,6 @@ graph TB
       </categories>
   </entry>
   <entry>
-    <title>C语 结构体 共用体 检举类型</title>
-    <url>/C-struct-union-enum.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><ul>
-<li>概念: <strong>结构体是一种可以由自己定义的数据类型</strong></li>
-</ul>
-<ul>
-<li>结构体可以定义成全局变量也可以定义在函数里面成局部变量 </li>
-</ul>
-<ul>
-<li>先声明, 再定义</li>
-</ul>
-<h4>结构体的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员变量名<span class="hljs-number">1</span>;  <span class="hljs-comment">// 成员列表</span><br>    数据类型 成员变量名<span class="hljs-number">2</span>;  <span class="hljs-comment">// 成员列表</span><br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <span class="hljs-comment">// 成员列表</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="在声明类型的同时定义变量"><a href="#在声明类型的同时定义变量" class="headerlink" title="在声明类型的同时定义变量"></a>在声明类型的同时定义变量</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span> <br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 成员变量名<span class="hljs-number">2</span>;<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;变量名列表;<br></code></pre></td></tr></table></figure>
-<h3 id="省略结构体名-直接定义结构体变量"><a href="#省略结构体名-直接定义结构体变量" class="headerlink" title="省略结构体名, 直接定义结构体变量"></a>省略结构体名, 直接定义结构体变量</h3><ul>
-<li>注意: <strong>只能定义一次, 接下来不能再定义结构体变量</strong></li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 成员变量名<span class="hljs-number">2</span>;<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;变量名列表;<br></code></pre></td></tr></table></figure>
-<h3 id="结构体变量也可以定义数组"><a href="#结构体变量也可以定义数组" class="headerlink" title="结构体变量也可以定义数组"></a>结构体变量也可以定义数组</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span> <br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 数组变量名<span class="hljs-number">2</span> [ 数组 ];<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名 变量名 =</span> &#123; 成员<span class="hljs-number">1</span>, &#123; 数组<span class="hljs-number">1</span>, 数组<span class="hljs-number">2</span>, 数组<span class="hljs-number">3</span> &#125;, 成员<span class="hljs-number">3</span> &#125;<br></code></pre></td></tr></table></figure>
-<h1>结构体的普通变量 <font color="#DC143C">通过 . 来访问成员</font> <br> 结构体的指针变量 <font color="#DC143C">通过 -> 来访问成员</font>  <h1>
-
-
-<ul>
-<li><strong>给变量类型别名</strong></li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// #define 别名 要替换的数 (作用类似于)</span><br><span class="hljs-keyword">typedef</span> 数据类型 别名;   <span class="hljs-comment">// 区别 typedef 要声明数据类型 而 #define 不用</span><br><br>别名 变量名 = 赋值;<br></code></pre></td></tr></table></figure>
-<h3 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> 数据类型 名称;   <br>&#123;<br>    数据类型<span class="hljs-number">1</span> 变量名<span class="hljs-number">1</span>;<br>    数据类型<span class="hljs-number">2</span> 变量名<span class="hljs-number">2</span>;<br>    数据类型<span class="hljs-number">3</span> 变量名<span class="hljs-number">3</span>;<br>&#125;别名;<br><br><span class="hljs-comment">// 然后再调用</span><br><br>别名 要声明的变量 [数组];<br></code></pre></td></tr></table></figure>
-<h3 id="结合一起"><a href="#结合一起" class="headerlink" title="结合一起"></a>结合一起</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 成员变量名<span class="hljs-number">2</span>;<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;别名;  <span class="hljs-comment">// 定义别名后, 原先的结构体名称也可以用 </span><br></code></pre></td></tr></table></figure>
-<h1 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数据名 *指针 = &amp;地址;<br><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, b-&gt;成员)<br><span class="hljs-comment">// 或者</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, (*b).成员)<br></code></pre></td></tr></table></figure>
-<p><strong>注意: 访问成员用 . 点号</strong></p>
-<h1 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h1><h3 id="结构体和共用体的区别-共用体可以共用内存-结构体不行"><a href="#结构体和共用体的区别-共用体可以共用内存-结构体不行" class="headerlink" title="结构体和共用体的区别: 共用体可以共用内存, 结构体不行"></a>结构体和共用体的区别: 共用体可以共用内存, 结构体不行</h3><h2 id="共用体-1"><a href="#共用体-1" class="headerlink" title="共用体:"></a>共用体:</h2><br>
-
-<div class="mermaid">
-    graph LR
-    A[(" 共用体 ")]-->B[" 变量名1<br>变量名2<br>变量名3 "] 
-</div>
-
-<br>
-
-<h2 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体:"></a>结构体:</h2><br>
-
-<div class="mermaid">
-    graph LR
-    A[(" 结构体 ")]-->B[" 变量名1"]
-    A[(" 结构体 ")]-->C[" 变量名2"] 
-    A[(" 结构体 ")]-->D[" 变量名3"]  
-</div>
-
-<br>
-
-<h4>共用体的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">union</span> 共用体名</span><br>&#123;<br>    成员列表<br>&#125;;<br></code></pre></td></tr></table></figure>
-<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><ul>
-<li>枚举类型作用就是美化代码, 让代码由复杂到简单</li>
-</ul>
-<h4>枚举类型的定义:</h4>
-
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">enum</span> 标识名</span><br>&#123;<br>    枚举项<span class="hljs-number">0</span>, 枚举项<span class="hljs-number">1</span>, 枚举项<span class="hljs-number">2</span>; <br>&#125;;<br></code></pre></td></tr></table></figure>
-<p><strong>注意: 枚举项没赋值的情况下是从 0 开始, 赋值之后是从 赋值的那个值往后 依次加 1</strong></p>
-<br></h1></h1>]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
     <title>C语 符号</title>
     <url>/C-Symbols.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -2654,6 +2578,82 @@ A[" 其它关键字 (4个) "]-->E[" volatle "]
 </div>
 
 <br>]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C语 结构体 共用体 检举类型</title>
+    <url>/C-struct-union-enum.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h1><ul>
+<li>概念: <strong>结构体是一种可以由自己定义的数据类型</strong></li>
+</ul>
+<ul>
+<li>结构体可以定义成全局变量也可以定义在函数里面成局部变量 </li>
+</ul>
+<ul>
+<li>先声明, 再定义</li>
+</ul>
+<h4>结构体的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员变量名<span class="hljs-number">1</span>;  <span class="hljs-comment">// 成员列表</span><br>    数据类型 成员变量名<span class="hljs-number">2</span>;  <span class="hljs-comment">// 成员列表</span><br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <span class="hljs-comment">// 成员列表</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="在声明类型的同时定义变量"><a href="#在声明类型的同时定义变量" class="headerlink" title="在声明类型的同时定义变量"></a>在声明类型的同时定义变量</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span> <br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 成员变量名<span class="hljs-number">2</span>;<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;变量名列表;<br></code></pre></td></tr></table></figure>
+<h3 id="省略结构体名-直接定义结构体变量"><a href="#省略结构体名-直接定义结构体变量" class="headerlink" title="省略结构体名, 直接定义结构体变量"></a>省略结构体名, 直接定义结构体变量</h3><ul>
+<li>注意: <strong>只能定义一次, 接下来不能再定义结构体变量</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span><br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 成员变量名<span class="hljs-number">2</span>;<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;变量名列表;<br></code></pre></td></tr></table></figure>
+<h3 id="结构体变量也可以定义数组"><a href="#结构体变量也可以定义数组" class="headerlink" title="结构体变量也可以定义数组"></a>结构体变量也可以定义数组</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span> <br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 数组变量名<span class="hljs-number">2</span> [ 数组 ];<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;;<br><br><span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名 变量名 =</span> &#123; 成员<span class="hljs-number">1</span>, &#123; 数组<span class="hljs-number">1</span>, 数组<span class="hljs-number">2</span>, 数组<span class="hljs-number">3</span> &#125;, 成员<span class="hljs-number">3</span> &#125;<br></code></pre></td></tr></table></figure>
+<h1>结构体的普通变量 <font color="#DC143C">通过 . 来访问成员</font> <br> 结构体的指针变量 <font color="#DC143C">通过 -> 来访问成员</font>  <h1>
+
+
+<ul>
+<li><strong>给变量类型别名</strong></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-comment">// #define 别名 要替换的数 (作用类似于)</span><br><span class="hljs-keyword">typedef</span> 数据类型 别名;   <span class="hljs-comment">// 区别 typedef 要声明数据类型 而 #define 不用</span><br><br>别名 变量名 = 赋值;<br></code></pre></td></tr></table></figure>
+<h3 id="结构体数组"><a href="#结构体数组" class="headerlink" title="结构体数组"></a>结构体数组</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> 数据类型 名称;   <br>&#123;<br>    数据类型<span class="hljs-number">1</span> 变量名<span class="hljs-number">1</span>;<br>    数据类型<span class="hljs-number">2</span> 变量名<span class="hljs-number">2</span>;<br>    数据类型<span class="hljs-number">3</span> 变量名<span class="hljs-number">3</span>;<br>&#125;别名;<br><br><span class="hljs-comment">// 然后再调用</span><br><br>别名 要声明的变量 [数组];<br></code></pre></td></tr></table></figure>
+<h3 id="结合一起"><a href="#结合一起" class="headerlink" title="结合一起"></a>结合一起</h3><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> 结构体名&#123;</span><br>    数据类型 成员变量名<span class="hljs-number">1</span>;<br>    数据类型 成员变量名<span class="hljs-number">2</span>;<br>    数据类型 成员变量名<span class="hljs-number">3</span>;  <br>&#125;别名;  <span class="hljs-comment">// 定义别名后, 原先的结构体名称也可以用 </span><br></code></pre></td></tr></table></figure>
+<h1 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h1><figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C">数据名 *指针 = &amp;地址;<br><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, b-&gt;成员)<br><span class="hljs-comment">// 或者</span><br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, (*b).成员)<br></code></pre></td></tr></table></figure>
+<p><strong>注意: 访问成员用 . 点号</strong></p>
+<h1 id="共用体"><a href="#共用体" class="headerlink" title="共用体"></a>共用体</h1><h3 id="结构体和共用体的区别-共用体可以共用内存-结构体不行"><a href="#结构体和共用体的区别-共用体可以共用内存-结构体不行" class="headerlink" title="结构体和共用体的区别: 共用体可以共用内存, 结构体不行"></a>结构体和共用体的区别: 共用体可以共用内存, 结构体不行</h3><h2 id="共用体-1"><a href="#共用体-1" class="headerlink" title="共用体:"></a>共用体:</h2><br>
+
+<div class="mermaid">
+    graph LR
+    A[(" 共用体 ")]-->B[" 变量名1<br>变量名2<br>变量名3 "] 
+</div>
+
+<br>
+
+<h2 id="结构体-1"><a href="#结构体-1" class="headerlink" title="结构体:"></a>结构体:</h2><br>
+
+<div class="mermaid">
+    graph LR
+    A[(" 结构体 ")]-->B[" 变量名1"]
+    A[(" 结构体 ")]-->C[" 变量名2"] 
+    A[(" 结构体 ")]-->D[" 变量名3"]  
+</div>
+
+<br>
+
+<h4>共用体的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">union</span> 共用体名</span><br>&#123;<br>    成员列表<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h1 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h1><ul>
+<li>枚举类型作用就是美化代码, 让代码由复杂到简单</li>
+</ul>
+<h4>枚举类型的定义:</h4>
+
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">enum</span> 标识名</span><br>&#123;<br>    枚举项<span class="hljs-number">0</span>, 枚举项<span class="hljs-number">1</span>, 枚举项<span class="hljs-number">2</span>; <br>&#125;;<br></code></pre></td></tr></table></figure>
+<p><strong>注意: 枚举项没赋值的情况下是从 0 开始, 赋值之后是从 赋值的那个值往后 依次加 1</strong></p>
+<br></h1></h1>]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -3273,20 +3273,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>EJS常用标签</title>
-    <url>/EJS.html</url>
-    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
-<br>
-
-]]></content>
-      <categories>
-        <category>EJS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>C语 填空题</title>
     <url>/C-x.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -3304,6 +3290,20 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 ]]></content>
       <categories>
         <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>EJS常用标签</title>
+    <url>/EJS.html</url>
+    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
+<br>
+
+]]></content>
+      <categories>
+        <category>EJS</category>
       </categories>
   </entry>
   <entry>
@@ -4205,25 +4205,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>JavaScript 数据类型之(Map和Set)</title>
-    <url>/JavaScript-Map-Set.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*ES6 Map*/</span><br><span class="hljs-comment">/*学生的成绩, 学生的名字 两种方式*/</span><br><span class="hljs-keyword">var</span> names = [<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-string">&quot;强霸&quot;</span>];<br><span class="hljs-keyword">var</span> scores = [<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">36</span>]<br><span class="hljs-comment">/*另一种*/</span><br><span class="hljs-keyword">var</span> map = naw <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">36</span>]]);<br><span class="hljs-keyword">var</span> name = map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);    <span class="hljs-comment">/*通过key获得value*/</span> <br>map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;独眼霹雳&quot;</span>,<span class="hljs-number">60</span>);          <span class="hljs-comment">/*新增或修改*/</span> <br>map.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);              <span class="hljs-comment">/*删除*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">set.<span class="hljs-title function_">add</span>(<span class="hljs-number">3</span>)                 <span class="hljs-comment">/*添加*/</span>  <br>set.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);        <span class="hljs-comment">/*删除*/</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(set.<span class="hljs-title function_">has</span>(<span class="hljs-number">3</span>))    <span class="hljs-comment">/*是否包含某个元素*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*通过for of, for in 下标 */</span>  <br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> arr)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>遍历map</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> map)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>遍历set</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title function_">set</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> set)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>JavaScript 函数的定义和参数获取</title>
     <url>/JavaScript-function.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -4241,6 +4222,25 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// rest参数只能写在最后面, 必须用...标识</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">s,d,q,...rest</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;s=&gt;&quot;</span>+s);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;d=&gt;&quot;</span>+d);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;q=&gt;&quot;</span>+q);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rest);<br>&#125;<br></code></pre></td></tr></table></figure>
 <br>
 ]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript 数据类型之(Map和Set)</title>
+    <url>/JavaScript-Map-Set.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*ES6 Map*/</span><br><span class="hljs-comment">/*学生的成绩, 学生的名字 两种方式*/</span><br><span class="hljs-keyword">var</span> names = [<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-string">&quot;强霸&quot;</span>];<br><span class="hljs-keyword">var</span> scores = [<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">36</span>]<br><span class="hljs-comment">/*另一种*/</span><br><span class="hljs-keyword">var</span> map = naw <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">36</span>]]);<br><span class="hljs-keyword">var</span> name = map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);    <span class="hljs-comment">/*通过key获得value*/</span> <br>map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;独眼霹雳&quot;</span>,<span class="hljs-number">60</span>);          <span class="hljs-comment">/*新增或修改*/</span> <br>map.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);              <span class="hljs-comment">/*删除*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">set.<span class="hljs-title function_">add</span>(<span class="hljs-number">3</span>)                 <span class="hljs-comment">/*添加*/</span>  <br>set.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);        <span class="hljs-comment">/*删除*/</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(set.<span class="hljs-title function_">has</span>(<span class="hljs-number">3</span>))    <span class="hljs-comment">/*是否包含某个元素*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*通过for of, for in 下标 */</span>  <br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> arr)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>遍历map</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> map)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>遍历set</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title function_">set</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> set)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
+<br>]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -4458,6 +4458,19 @@ Object()           Object.prototype
       </categories>
   </entry>
   <entry>
+    <title>Java面向对象思维之getter和setter(作用)</title>
+    <url>/Object-oriented-getter-setter.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
+<h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
+<br>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Java核心面向对象之this</title>
     <url>/Object-oriented-this.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -4553,19 +4566,6 @@ Object()           Object.prototype
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>Java面向对象思维之getter和setter(作用)</title>
-    <url>/Object-oriented-getter-setter.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="getter"><a href="#getter" class="headerlink" title="getter"></a>getter</h1><p><strong>主要是给成员变量赋值, 做一定的保护</strong></p>
-<h1 id="setter"><a href="#setter" class="headerlink" title="setter"></a>setter</h1><p><strong>从成员变量中获取数据</strong></p>
-<br>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
   </entry>
   <entry>
     <title>React AJAX</title>
@@ -4867,46 +4867,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>React 模块与组件(模块与组件的理解)</title>
-    <url>/React-JSX-one.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><ul>
-<li><p>理解: 向外提供特定功能的js程序, 一般就是一个js文件</p>
-</li>
-<li><p>为什么要拆成模块: 随着业务逻辑增加, 代码越来越多且复杂</p>
-</li>
-<li><p>作用: 复用js, 简化js的编写, 提高js运行效率</p>
-</li>
-</ul>
-<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a><a href="/React-Component-oriented.html">组件</a></h1><ul>
-<li><p>理解: 用来实现局部功能效果的代码和资源的集合(html/css/js/image等等)</p>
-</li>
-<li><p>为什么要用组件:  一个界面的功能更复杂</p>
-</li>
-<li><p>作用: 复用编码, 简化项目编码, 提高运行效率</p>
-</li>
-</ul>
-<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><ul>
-<li>当应用的js都以模块来编写的, 这个应用就是一个模块化的应用</li>
-</ul>
-<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><ul>
-<li>当应用是以多组件的方式实现, 这个应用就是一个组件化的应用</li>
-</ul>
-<p><strong>工具推荐: React Developer Tools</strong></p>
-<ul>
-<li><p>Components: 观察这个网页有多少组件组成</p>
-</li>
-<li><p>Profiler: 用于记录网站的性能</p>
-</li>
-</ul>
-<br>]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
     <title>React 第一枪</title>
     <url>/React-Foundation.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -5128,6 +5088,19 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>React 面向组件编程</title>
+    <url>/React-Component-oriented.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上, 供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后, 发生了什么?<br>					React解析组件标签, 找到了MyNameIsStitch组件<br>					发现组件是使用类定义的, 随后new出来该类的实例, 并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React 表单与事件</title>
     <url>/React-form-event.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -5170,14 +5143,60 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>React 面向组件编程</title>
-    <url>/React-Component-oriented.html</url>
+    <title>React 模块与组件(模块与组件的理解)</title>
+    <url>/React-JSX-one.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
 <a id="more"></a>
 
-<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上, 供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后, 发生了什么?<br>					React解析组件标签, 找到了MyNameIsStitch组件<br>					发现组件是使用类定义的, 随后new出来该类的实例, 并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><ul>
+<li><p>理解: 向外提供特定功能的js程序, 一般就是一个js文件</p>
+</li>
+<li><p>为什么要拆成模块: 随着业务逻辑增加, 代码越来越多且复杂</p>
+</li>
+<li><p>作用: 复用js, 简化js的编写, 提高js运行效率</p>
+</li>
+</ul>
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a><a href="/React-Component-oriented.html">组件</a></h1><ul>
+<li><p>理解: 用来实现局部功能效果的代码和资源的集合(html/css/js/image等等)</p>
+</li>
+<li><p>为什么要用组件:  一个界面的功能更复杂</p>
+</li>
+<li><p>作用: 复用编码, 简化项目编码, 提高运行效率</p>
+</li>
+</ul>
+<h1 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h1><ul>
+<li>当应用的js都以模块来编写的, 这个应用就是一个模块化的应用</li>
+</ul>
+<h1 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h1><ul>
+<li>当应用是以多组件的方式实现, 这个应用就是一个组件化的应用</li>
+</ul>
+<p><strong>工具推荐: React Developer Tools</strong></p>
+<ul>
+<li><p>Components: 观察这个网页有多少组件组成</p>
+</li>
+<li><p>Profiler: 用于记录网站的性能</p>
+</li>
+</ul>
 <br>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React 受控组件与非受控组件</title>
+    <url>/React-Controlled-Uncontrolle.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="受控组件-推荐"><a href="#受控组件-推荐" class="headerlink" title="受控组件 (推荐)"></a>受控组件 (推荐)</h1><p><strong>特点: 现用现取</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建组件<br>		class Login extends React.Component&#123;<br>			handleSubmit = (event)=&gt;&#123;<br>				event.preventDefault() //阻止表单提交<br>				const &#123;username,password&#125; = this<br>				alert(`你输入的用户名是：$&#123;username.value&#125;,你输入的密码是：$&#123;password.value&#125;`)<br>			&#125;<br>			render()&#123;<br>				return(<br>					<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">&#123;this.handleSubmit&#125;</span>&gt;</span><br>						用户名：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;c</span> =&gt;</span> this.username = c&#125; type=&quot;text&quot; name=&quot;username&quot;/&gt;<br>						密码：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;c</span> =&gt;</span> this.password = c&#125; type=&quot;password&quot; name=&quot;password&quot;/&gt;<br>						<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>					<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>				)<br>			&#125;<br>		&#125;<br>		//渲染组件<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Login</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h1><p><strong>特点: 随着输入维护状态就是受控</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			handleSubmit = <span class="hljs-function">(<span class="hljs-params">event</span>)=&gt;</span>&#123;<br>				event.<span class="hljs-title function_">preventDefault</span>() <span class="hljs-comment">//阻止表单提交</span><br>				<span class="hljs-keyword">const</span> &#123;username,password&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(<span class="hljs-string">`你输入的用户名是：<span class="hljs-subst">$&#123;username.value&#125;</span>,你输入的密码是：<span class="hljs-subst">$&#123;password.value&#125;</span>`</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;form onSubmit=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">handleSubmit</span>&#125;&gt;<br>						用户名：&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">username</span> = c&#125; type=<span class="hljs-string">&quot;text&quot;</span> name=<span class="hljs-string">&quot;username&quot;</span>/&gt;<br>						密码：&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">password</span> = c&#125; type=<span class="hljs-string">&quot;password&quot;</span> name=<span class="hljs-string">&quot;password&quot;</span>/&gt;<br>						&lt;button&gt;登录&lt;/button&gt;<br>					&lt;/form&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Login</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+
+<br>
+
+]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -5208,25 +5227,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 ]]></content>
       <categories>
         <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React 受控组件与非受控组件</title>
-    <url>/React-Controlled-Uncontrolle.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="受控组件-推荐"><a href="#受控组件-推荐" class="headerlink" title="受控组件 (推荐)"></a>受控组件 (推荐)</h1><p><strong>特点: 现用现取</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建组件<br>		class Login extends React.Component&#123;<br>			handleSubmit = (event)=&gt;&#123;<br>				event.preventDefault() //阻止表单提交<br>				const &#123;username,password&#125; = this<br>				alert(`你输入的用户名是：$&#123;username.value&#125;,你输入的密码是：$&#123;password.value&#125;`)<br>			&#125;<br>			render()&#123;<br>				return(<br>					<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">&#123;this.handleSubmit&#125;</span>&gt;</span><br>						用户名：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;c</span> =&gt;</span> this.username = c&#125; type=&quot;text&quot; name=&quot;username&quot;/&gt;<br>						密码：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&#123;c</span> =&gt;</span> this.password = c&#125; type=&quot;password&quot; name=&quot;password&quot;/&gt;<br>						<span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>					<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>				)<br>			&#125;<br>		&#125;<br>		//渲染组件<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Login</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="非受控组件"><a href="#非受控组件" class="headerlink" title="非受控组件"></a>非受控组件</h1><p><strong>特点: 随着输入维护状态就是受控</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Login</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			handleSubmit = <span class="hljs-function">(<span class="hljs-params">event</span>)=&gt;</span>&#123;<br>				event.<span class="hljs-title function_">preventDefault</span>() <span class="hljs-comment">//阻止表单提交</span><br>				<span class="hljs-keyword">const</span> &#123;username,password&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(<span class="hljs-string">`你输入的用户名是：<span class="hljs-subst">$&#123;username.value&#125;</span>,你输入的密码是：<span class="hljs-subst">$&#123;password.value&#125;</span>`</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;form onSubmit=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">handleSubmit</span>&#125;&gt;<br>						用户名：&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">username</span> = c&#125; type=<span class="hljs-string">&quot;text&quot;</span> name=<span class="hljs-string">&quot;username&quot;</span>/&gt;<br>						密码：&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">password</span> = c&#125; type=<span class="hljs-string">&quot;password&quot;</span> name=<span class="hljs-string">&quot;password&quot;</span>/&gt;<br>						&lt;button&gt;登录&lt;/button&gt;<br>					&lt;/form&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Login</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-
-<br>
-
-]]></content>
-      <categories>
-        <category>React</category>
       </categories>
   </entry>
   <entry>
@@ -5472,23 +5472,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>TypeScript 使用Jquery库</title>
-    <url>/TypeScript-Jquery.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
-<ul>
-<li>密码: sdq3</li>
-</ul>
-<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br><br>    &lt;!-- 引入jquery --&gt;<br>    &lt;script src=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
-<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 解决报错问题 或者 npm i @types/jquery 和 cnpm i @types/jquery </span><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">$</span>: <span class="hljs-built_in">any</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>TypeScript 命名空间</title>
     <url>/TypeScript-NameSpace.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -5522,6 +5505,23 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>TypeScript 使用Jquery库</title>
+    <url>/TypeScript-Jquery.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<p><strong><a href="https://wwr.lanzoui.com/iFfQ7shdb4d">未打包文件</a></strong></p>
+<ul>
+<li>密码: sdq3</li>
+</ul>
+<h1 id="Jquery的引入"><a href="#Jquery的引入" class="headerlink" title="Jquery的引入"></a>Jquery的引入</h1><h3 id="html文件"><a href="#html文件" class="headerlink" title="html文件"></a>html文件</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br>&lt;html lang=<span class="hljs-string">&quot;en&quot;</span>&gt;<br>&lt;head&gt;<br>    &lt;meta charset=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;<br><br>    &lt;!-- 引入jquery --&gt;<br>    &lt;script src=<span class="hljs-string">&quot;https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js&quot;</span>&gt;&lt;/script&gt;<br>    &lt;script src=<span class="hljs-string">&quot;./page.ts&quot;</span>&gt;&lt;/script&gt;<br>   &lt;title&gt;史迪奇国王&lt;/title&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br>    <br>&lt;/body&gt;<br>&lt;/html&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="page-ts"><a href="#page-ts" class="headerlink" title="page.ts"></a>page.ts</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 解决报错问题 或者 npm i @types/jquery 和 cnpm i @types/jquery </span><br><span class="hljs-keyword">declare</span> <span class="hljs-keyword">var</span> <span class="hljs-attr">$</span>: <span class="hljs-built_in">any</span>;<br><br><span class="hljs-keyword">const</span> <span class="hljs-attr">sdq</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br><br>$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);<br>&#125;);<br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>TypeScript数据注解和类型推断</title>
     <url>/TypeScript-zjtd.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -5541,6 +5541,18 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 
 
 ]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TypeScript 枚举类型</title>
+    <url>/TypeScript-Enum.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="非常常见的一种类型"><a href="#非常常见的一种类型" class="headerlink" title="非常常见的一种类型"></a>非常常见的一种类型</h1><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-built_in">enum</span> <span class="hljs-title class_">Status</span> &#123;<br>  <span class="hljs-title class_">Reuben</span> = <span class="hljs-number">625</span>,<br>  <span class="hljs-title class_">Angel</span> = <span class="hljs-number">624</span>,<br>  <span class="hljs-title class_">Stitch</span> = <span class="hljs-number">626</span>,<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getServe</span>(<span class="hljs-params">status: <span class="hljs-built_in">any</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Reuben</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;鲁本&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Angel</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;安琪&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Stitch</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> result = <span class="hljs-title function_">getServe</span>(<span class="hljs-title class_">Status</span>.<span class="hljs-property">AngelStitch</span>);<br><br><span class="hljs-comment">// 可以凭实验品编号查询</span><br><span class="hljs-comment">// const result = getServe(626);</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`实验品<span class="hljs-subst">$&#123;result&#125;</span>`</span>);<br></code></pre></td></tr></table></figure>
+<br>]]></content>
       <categories>
         <category>TypeScript</category>
       </categories>
@@ -5567,18 +5579,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>TypeScript 枚举类型</title>
-    <url>/TypeScript-Enum.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="非常常见的一种类型"><a href="#非常常见的一种类型" class="headerlink" title="非常常见的一种类型"></a>非常常见的一种类型</h1><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-built_in">enum</span> <span class="hljs-title class_">Status</span> &#123;<br>  <span class="hljs-title class_">Reuben</span> = <span class="hljs-number">625</span>,<br>  <span class="hljs-title class_">Angel</span> = <span class="hljs-number">624</span>,<br>  <span class="hljs-title class_">Stitch</span> = <span class="hljs-number">626</span>,<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getServe</span>(<span class="hljs-params">status: <span class="hljs-built_in">any</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Reuben</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;鲁本&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Angel</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;安琪&quot;</span>;<br>  &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (status === <span class="hljs-title class_">Status</span>.<span class="hljs-property">Stitch</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> result = <span class="hljs-title function_">getServe</span>(<span class="hljs-title class_">Status</span>.<span class="hljs-property">AngelStitch</span>);<br><br><span class="hljs-comment">// 可以凭实验品编号查询</span><br><span class="hljs-comment">// const result = getServe(626);</span><br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`实验品<span class="hljs-subst">$&#123;result&#125;</span>`</span>);<br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>TypeScript 泛型</title>
     <url>/TypeScript-genericity.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -5590,6 +5590,24 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h1 id="类中使用泛型"><a href="#类中使用泛型" class="headerlink" title="类中使用泛型"></a>类中使用泛型</h1><h3 id="泛型类中基本使用"><a href="#泛型类中基本使用" class="headerlink" title="泛型类中基本使用"></a>泛型类中基本使用</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Syp</span> &lt;sdq&gt; &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> syps: sdq[]</span>) &#123;&#125;<br>  <span class="hljs-title function_">getSyp</span>(<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>): sdq &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">syps</span>[index];<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> syp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Syp</span>([<span class="hljs-string">&quot;史迪奇&quot;</span>, <span class="hljs-string">&quot;鲁本&quot;</span>, <span class="hljs-string">&quot;安琪&quot;</span>]);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syp.<span class="hljs-title function_">getSyp</span>(<span class="hljs-number">1</span>));<br></code></pre></td></tr></table></figure>
 <h3 id="泛型中的继承"><a href="#泛型中的继承" class="headerlink" title="泛型中的继承"></a>泛型中的继承</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">interface</span> SDQ&#123;<br>  <span class="hljs-attr">name</span>:<span class="hljs-built_in">string</span>;<br>&#125;<br><br><span class="hljs-comment">// 继承SDQ</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Syp</span> &lt;sdq <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SDQ</span>&gt; &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> syps: sdq[]</span>) &#123;&#125;<br>  <span class="hljs-title function_">getSyp</span>(<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">string</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">syps</span>[index].<span class="hljs-property">name</span>;<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> syp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Syp</span>([<br>  &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;史迪奇&quot;</span>&#125;,<br>  &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;鲁本&quot;</span>&#125;,<br>  &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;安琪&quot;</span>&#125;<br>]);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syp.<span class="hljs-title function_">getSyp</span>(<span class="hljs-number">0</span>));<br></code></pre></td></tr></table></figure>
 <h3 id="泛型的约束"><a href="#泛型的约束" class="headerlink" title="泛型的约束"></a>泛型的约束</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 约束: 要么是number要么是string</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Syp</span> &lt;sdq <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">number</span> | <span class="hljs-built_in">string</span>&gt; &#123;<br>  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"><span class="hljs-keyword">private</span> syps: sdq[]</span>) &#123;&#125;<br>  <span class="hljs-title function_">getSyp</span>(<span class="hljs-attr">index</span>: <span class="hljs-built_in">number</span>): sdq &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">syps</span>[index];<br>  &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> syp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Syp</span> &lt;<span class="hljs-built_in">string</span>&gt;([<span class="hljs-string">&quot;史迪奇&quot;</span>, <span class="hljs-string">&quot;鲁本&quot;</span>, <span class="hljs-string">&quot;安琪&quot;</span>]);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(syp.<span class="hljs-title function_">getSyp</span>(<span class="hljs-number">1</span>));<br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TypeScript 联合类型和类型保护</title>
+    <url>/TypeScript-Union-type-protection.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h1><p><strong>关键符好是 | 是联合类型</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-comment">// 联合类型的关键符合是 | </span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h1><p><strong>类型保护/类型断言</strong></p>
+<h2 id="as语法"><a href="#as语法" class="headerlink" title="as语法"></a>as语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// 可以通过断言number as Teacher然后直接调用skill方法</span><br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="in语法"><a href="#in语法" class="headerlink" title="in语法"></a>in语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">subjectTwo</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// in来判断number里有没有skill()方</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;skill&quot;</span> <span class="hljs-keyword">in</span> <span class="hljs-title class_">Number</span>) &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">skill</span>();<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">say</span>();<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="typeof语法"><a href="#typeof语法" class="headerlink" title="typeof语法"></a>typeof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">first: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>, second: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) &#123;<br><span class="hljs-comment">// typeof来判断是不是string</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> first === <span class="hljs-string">&quot;string&quot;</span> || <span class="hljs-keyword">typeof</span> second === <span class="hljs-string">&quot;string&quot;</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;first&#125;</span><span class="hljs-subst">$&#123;second&#125;</span>`</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> first + second;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="instanceof语法"><a href="#instanceof语法" class="headerlink" title="instanceof语法"></a>instanceof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdz</span>(<span class="hljs-params">first: <span class="hljs-built_in">object</span> | NumberObj, second: <span class="hljs-built_in">object</span> | NumberObj</span>) &#123;<br>  <span class="hljs-keyword">if</span> (first <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span> &amp;&amp; second <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span>) &#123;<br>    <span class="hljs-keyword">return</span> first.<span class="hljs-property">count</span> + second.<span class="hljs-property">count</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 <br>]]></content>
       <categories>
         <category>TypeScript</category>
@@ -5621,24 +5639,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>TypeScript 联合类型和类型保护</title>
-    <url>/TypeScript-Union-type-protection.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h1><p><strong>关键符好是 | 是联合类型</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-comment">// 联合类型的关键符合是 | </span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h1><p><strong>类型保护/类型断言</strong></p>
-<h2 id="as语法"><a href="#as语法" class="headerlink" title="as语法"></a>as语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDQ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">say</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><span class="hljs-comment">// 接口</span><br><span class="hljs-keyword">interface</span> SDZ &#123;<br>  <span class="hljs-attr">anjiao</span>: <span class="hljs-built_in">boolean</span>;<br>  <span class="hljs-attr">skill</span>: <span class="hljs-function">() =&gt;</span> &#123;&#125;;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">subject</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// 可以通过断言number as Teacher然后直接调用skill方法</span><br>  <span class="hljs-keyword">if</span>(<span class="hljs-title class_">Number</span>.<span class="hljs-property">anjiao</span>)&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDZ</span>).<span class="hljs-property">skill</span><br>  &#125;<span class="hljs-keyword">else</span>&#123;<br>    (<span class="hljs-title class_">Number</span> <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">SDQ</span>).<span class="hljs-property">say</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="in语法"><a href="#in语法" class="headerlink" title="in语法"></a>in语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">subjectTwo</span>(<span class="hljs-params"><span class="hljs-built_in">Number</span>: SDQ | SDZ</span>) &#123;<br><span class="hljs-comment">// in来判断number里有没有skill()方</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;skill&quot;</span> <span class="hljs-keyword">in</span> <span class="hljs-title class_">Number</span>) &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">skill</span>();<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title class_">Number</span>.<span class="hljs-title function_">say</span>();<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="typeof语法"><a href="#typeof语法" class="headerlink" title="typeof语法"></a>typeof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">first: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>, second: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) &#123;<br><span class="hljs-comment">// typeof来判断是不是string</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> first === <span class="hljs-string">&quot;string&quot;</span> || <span class="hljs-keyword">typeof</span> second === <span class="hljs-string">&quot;string&quot;</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">$&#123;first&#125;</span><span class="hljs-subst">$&#123;second&#125;</span>`</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> first + second;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="instanceof语法"><a href="#instanceof语法" class="headerlink" title="instanceof语法"></a>instanceof语法</h2><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdz</span>(<span class="hljs-params">first: <span class="hljs-built_in">object</span> | NumberObj, second: <span class="hljs-built_in">object</span> | NumberObj</span>) &#123;<br>  <span class="hljs-keyword">if</span> (first <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span> &amp;&amp; second <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">NumberObj</span>) &#123;<br>    <span class="hljs-keyword">return</span> first.<span class="hljs-property">count</span> + second.<span class="hljs-property">count</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
     <title>TypeScript调用接口</title>
     <url>/TypeScript-interface.html</url>
     <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
@@ -5649,38 +5649,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <p><strong>接口不仅能限制对象还可以限制类</strong></p>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">interface</span> Girl &#123;<br>    name : <span class="hljs-built_in">string</span>;<br>    age : <span class="hljs-built_in">number</span>;<br>    bust : <span class="hljs-built_in">number</span>;<br>    waistline ?: <span class="hljs-built_in">number</span>;<br>    [<span class="hljs-attr">propname</span>:<span class="hljs-built_in">string</span>]:<span class="hljs-built_in">any</span>;<br>    <span class="hljs-title function_">say</span>():<span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-keyword">interface</span> syp <span class="hljs-keyword">extends</span> Girl&#123;<br>    <span class="hljs-title function_">syp</span>():<span class="hljs-built_in">string</span><br>&#125;<br><br><span class="hljs-keyword">const</span> girl=&#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<br>    age : <span class="hljs-number">0</span>,<br>    bust : <span class="hljs-number">626</span>,<br>    <span class="hljs-attr">waistline</span>:<span class="hljs-number">999</span>,<br>    <span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;男&#x27;</span>,<br>    <span class="hljs-title function_">say</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;毁灭吧&quot;</span><br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">sdq</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Girl</span>&#123;<br>    <span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;鲁本&#x27;</span><br>    age : <span class="hljs-number">0</span><br>    bust : <span class="hljs-number">625</span><br>    <span class="hljs-attr">waistline</span>:<span class="hljs-number">999</span><br>    <span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;男&#x27;</span><br>    <span class="hljs-title function_">say</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;毁灭吧&quot;</span><br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">screenResume</span> = (<span class="hljs-params">girl:Girl</span>) =&gt; &#123;<br>    girl.<span class="hljs-property">age</span> &lt; <span class="hljs-number">24</span> &amp;&amp; girl.<span class="hljs-property">bust</span> &gt;= <span class="hljs-number">90</span> &amp;&amp; <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(girl.<span class="hljs-property">name</span> + <span class="hljs-string">&#x27;进入战场&#x27;</span>)<br>    girl.<span class="hljs-property">age</span> &gt;= <span class="hljs-number">24</span> || girl.<span class="hljs-property">bust</span> &lt; <span class="hljs-number">90</span> &amp;&amp; <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(girl.<span class="hljs-property">name</span> + <span class="hljs-string">&#x27;已死亡&#x27;</span>)<br>&#125;<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">getResume</span> = (<span class="hljs-params">girl:Girl</span>) =&gt; &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(girl.<span class="hljs-property">name</span>+<span class="hljs-string">&#x27;的年龄&#x27;</span>+girl.<span class="hljs-property">age</span>)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(girl.<span class="hljs-property">name</span>+<span class="hljs-string">&#x27;的实验品编号&#x27;</span>+girl.<span class="hljs-property">bust</span>)<br>    girl.<span class="hljs-property">waistline</span> &amp;&amp; <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(girl.<span class="hljs-property">name</span>+<span class="hljs-string">&#x27;的战斗力&#x27;</span>+girl.<span class="hljs-property">waistline</span>)<br>    girl.<span class="hljs-property">sex</span> &amp;&amp; <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(girl.<span class="hljs-property">name</span>+<span class="hljs-string">&#x27;的性别&#x27;</span>+girl.<span class="hljs-property">sex</span>)<br>&#125;<br><br><span class="hljs-title function_">screenResume</span>(girl)<br><span class="hljs-title function_">getResume</span>(girl)<br></code></pre></td></tr></table></figure>
 <br>
-]]></content>
-      <categories>
-        <category>TypeScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TypeScript 配置文件</title>
-    <url>/TypeScript-config.html</url>
-    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h1><p><strong>命令行输入</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">tsc -init<br></code></pre></td></tr></table></figure>
-<h1 id="常用tsconfig-json配置知识"><a href="#常用tsconfig-json配置知识" class="headerlink" title="常用tsconfig.json配置知识"></a>常用tsconfig.json配置知识</h1><h3 id="include-属性是用来指定要编译的文件的"><a href="#include-属性是用来指定要编译的文件的" class="headerlink" title="include 属性是用来指定要编译的文件的"></a>include 属性是用来指定要编译的文件的</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&#123;<br>  <span class="hljs-string">&quot;include&quot;</span>:[<span class="hljs-string">&quot;demo.ts&quot;</span>],<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>      <span class="hljs-comment">//any something</span><br>      <span class="hljs-comment">//........</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="exclude-除什么文件之外"><a href="#exclude-除什么文件之外" class="headerlink" title="exclude 除什么文件之外"></a>exclude 除什么文件之外</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&#123;<br>  <span class="hljs-string">&quot;exclude&quot;</span>:[<span class="hljs-string">&quot;demo.ts&quot;</span>],<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>      <span class="hljs-comment">//any something</span><br>      <span class="hljs-comment">//........</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="files-配置效果和include几乎一样"><a href="#files-配置效果和include几乎一样" class="headerlink" title="files 配置效果和include几乎一样"></a>files 配置效果和include几乎一样</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&#123;<br>  <span class="hljs-string">&quot;files&quot;</span>:[<span class="hljs-string">&quot;demo.ts&quot;</span>],<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>      <span class="hljs-comment">//any something</span><br>      <span class="hljs-comment">//........</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="常用complierOptions配置知识"><a href="#常用complierOptions配置知识" class="headerlink" title="常用complierOptions配置知识"></a>常用complierOptions配置知识</h1><h3 id="removeComments-属性"><a href="#removeComments-属性" class="headerlink" title="removeComments 属性"></a>removeComments 属性</h3><p><strong>作用: removeComments的值设置为true, 就是在js中不显示注释</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;removeComments&quot;</span>: <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
-<h3 id="strict-属性"><a href="#strict-属性" class="headerlink" title="strict 属性"></a>strict 属性</h3><p><strong>作用: 把这个设置为false或者注释掉, 意思是我们可以对设置一些不严格的写法</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;strict&quot;</span>: <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
-<h3 id="noImplicitAny-属性"><a href="#noImplicitAny-属性" class="headerlink" title="noImplicitAny 属性"></a>noImplicitAny 属性</h3><p><strong>作用: 允许你的注解类型 any 不用特意表明</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-<h3 id="strictNullChecks-属性"><a href="#strictNullChecks-属性" class="headerlink" title="strictNullChecks 属性"></a>strictNullChecks 属性</h3><p><strong>作用: 不强制检查 NULL 类型</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;strictNullChecks&quot;</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-<h3 id="rootDir属性-和-outDir属性"><a href="#rootDir属性-和-outDir属性" class="headerlink" title="rootDir属性 和 outDir属性"></a>rootDir属性 和 outDir属性</h3><p><strong>作用: 就是存放路径和生成路径</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./build&quot;</span> ,  <span class="hljs-comment">// 生成js的目录 </span><br><span class="hljs-string">&quot;rootDir&quot;</span>: <span class="hljs-string">&quot;./src&quot;</span>     <span class="hljs-comment">// 存放ts的目录</span><br></code></pre></td></tr></table></figure>
-<h3 id="sourceMap-属性"><a href="#sourceMap-属性" class="headerlink" title="sourceMap 属性"></a>sourceMap 属性</h3><p><strong>作用: 里面储存着位置信息</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-<h3 id="noUnusedLocals属性-和-noUnusedParameters属性"><a href="#noUnusedLocals属性-和-noUnusedParameters属性" class="headerlink" title="noUnusedLocals属性 和 noUnusedParameters属性"></a>noUnusedLocals属性 和 noUnusedParameters属性</h3><p><strong>作用: 提示未使用变量和未使用方法</strong></p>
-<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;noUnusedLocals&quot;</span>: <span class="hljs-literal">true</span>,       <span class="hljs-comment">//打包时进行提示未使用的变量    </span><br><span class="hljs-string">&quot;noUnusedParameters&quot;</span>: <span class="hljs-literal">true</span>    <span class="hljs-comment">//打包是进行提示未使用的方法</span><br></code></pre></td></tr></table></figure>
-<br>
-
 ]]></content>
       <categories>
         <category>TypeScript</category>
@@ -5720,6 +5688,38 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">const</span> sdq : <span class="hljs-built_in">string</span> [] = [<span class="hljs-string">&#x27;史迪奇&#x27;</span>,<span class="hljs-string">&#x27;独眼霹雳&#x27;</span>,<span class="hljs-string">&#x27;强霸&#x27;</span>]<br></code></pre></td></tr></table></figure>
 <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Experimentalarticle</span>&#123;&#125;<br><span class="hljs-keyword">const</span> sdq : <span class="hljs-title class_">Experimentalarticle</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Experimentalarticle</span>()<br><br><span class="hljs-keyword">const</span> sdz : <span class="hljs-function">()=&gt;</span><span class="hljs-built_in">string</span> = <span class="hljs-function">() =&gt;</span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;史迪奇&#x27;</span>&#125;<br></code></pre></td></tr></table></figure>
 <br>
+]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TypeScript 配置文件</title>
+    <url>/TypeScript-config.html</url>
+    <content><![CDATA[<p><strong>TypeScript学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="生成配置文件"><a href="#生成配置文件" class="headerlink" title="生成配置文件"></a>生成配置文件</h1><p><strong>命令行输入</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">tsc -init<br></code></pre></td></tr></table></figure>
+<h1 id="常用tsconfig-json配置知识"><a href="#常用tsconfig-json配置知识" class="headerlink" title="常用tsconfig.json配置知识"></a>常用tsconfig.json配置知识</h1><h3 id="include-属性是用来指定要编译的文件的"><a href="#include-属性是用来指定要编译的文件的" class="headerlink" title="include 属性是用来指定要编译的文件的"></a>include 属性是用来指定要编译的文件的</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&#123;<br>  <span class="hljs-string">&quot;include&quot;</span>:[<span class="hljs-string">&quot;demo.ts&quot;</span>],<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>      <span class="hljs-comment">//any something</span><br>      <span class="hljs-comment">//........</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="exclude-除什么文件之外"><a href="#exclude-除什么文件之外" class="headerlink" title="exclude 除什么文件之外"></a>exclude 除什么文件之外</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&#123;<br>  <span class="hljs-string">&quot;exclude&quot;</span>:[<span class="hljs-string">&quot;demo.ts&quot;</span>],<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>      <span class="hljs-comment">//any something</span><br>      <span class="hljs-comment">//........</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="files-配置效果和include几乎一样"><a href="#files-配置效果和include几乎一样" class="headerlink" title="files 配置效果和include几乎一样"></a>files 配置效果和include几乎一样</h3><figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript">&#123;<br>  <span class="hljs-string">&quot;files&quot;</span>:[<span class="hljs-string">&quot;demo.ts&quot;</span>],<br>  <span class="hljs-string">&quot;compilerOptions&quot;</span>: &#123;<br>      <span class="hljs-comment">//any something</span><br>      <span class="hljs-comment">//........</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="常用complierOptions配置知识"><a href="#常用complierOptions配置知识" class="headerlink" title="常用complierOptions配置知识"></a>常用complierOptions配置知识</h1><h3 id="removeComments-属性"><a href="#removeComments-属性" class="headerlink" title="removeComments 属性"></a>removeComments 属性</h3><p><strong>作用: removeComments的值设置为true, 就是在js中不显示注释</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;removeComments&quot;</span>: <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h3 id="strict-属性"><a href="#strict-属性" class="headerlink" title="strict 属性"></a>strict 属性</h3><p><strong>作用: 把这个设置为false或者注释掉, 意思是我们可以对设置一些不严格的写法</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;strict&quot;</span>: <span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+<h3 id="noImplicitAny-属性"><a href="#noImplicitAny-属性" class="headerlink" title="noImplicitAny 属性"></a>noImplicitAny 属性</h3><p><strong>作用: 允许你的注解类型 any 不用特意表明</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;noImplicitAny&quot;</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h3 id="strictNullChecks-属性"><a href="#strictNullChecks-属性" class="headerlink" title="strictNullChecks 属性"></a>strictNullChecks 属性</h3><p><strong>作用: 不强制检查 NULL 类型</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;strictNullChecks&quot;</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h3 id="rootDir属性-和-outDir属性"><a href="#rootDir属性-和-outDir属性" class="headerlink" title="rootDir属性 和 outDir属性"></a>rootDir属性 和 outDir属性</h3><p><strong>作用: 就是存放路径和生成路径</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;outDir&quot;</span>: <span class="hljs-string">&quot;./build&quot;</span> ,  <span class="hljs-comment">// 生成js的目录 </span><br><span class="hljs-string">&quot;rootDir&quot;</span>: <span class="hljs-string">&quot;./src&quot;</span>     <span class="hljs-comment">// 存放ts的目录</span><br></code></pre></td></tr></table></figure>
+<h3 id="sourceMap-属性"><a href="#sourceMap-属性" class="headerlink" title="sourceMap 属性"></a>sourceMap 属性</h3><p><strong>作用: 里面储存着位置信息</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;sourceMap&quot;</span>: <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
+<h3 id="noUnusedLocals属性-和-noUnusedParameters属性"><a href="#noUnusedLocals属性-和-noUnusedParameters属性" class="headerlink" title="noUnusedLocals属性 和 noUnusedParameters属性"></a>noUnusedLocals属性 和 noUnusedParameters属性</h3><p><strong>作用: 提示未使用变量和未使用方法</strong></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><code class="hljs TypeScript"><span class="hljs-string">&quot;noUnusedLocals&quot;</span>: <span class="hljs-literal">true</span>,       <span class="hljs-comment">//打包时进行提示未使用的变量    </span><br><span class="hljs-string">&quot;noUnusedParameters&quot;</span>: <span class="hljs-literal">true</span>    <span class="hljs-comment">//打包是进行提示未使用的方法</span><br></code></pre></td></tr></table></figure>
+<br>
+
 ]]></content>
       <categories>
         <category>TypeScript</category>
@@ -6627,6 +6627,141 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
+    <title>大数据 MaoReduce</title>
+    <url>/MaoReduce.html</url>
+    <content><![CDATA[<p><strong>MaoReduce个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="MaoReduce-定义"><a href="#MaoReduce-定义" class="headerlink" title="MaoReduce 定义"></a>MaoReduce 定义</h1><ul>
+<li><p>分布式运算程序的编程框,用于开发基于 Hadoop的数据分析的核心框架</p>
+</li>
+<li><p>使用: 用户编写的业务逻辑代码和自带默认组件一个完整的分布式运算程序, 并发运行在一个 Hadoop集群上</p>
+</li>
+</ul>
+<ul>
+<li><p>优点: </p>
+<ul>
+<li><p>易于编写: 用户只关心, 业务逻辑 实现框架的接口</p>
+</li>
+<li><p>良好的扩展性: 可以动态增加服务器, 解决动态资源不够的问题</p>
+</li>
+<li><p>高容错性: 任何一台机器挂掉, 可以将任意转移到其它节点上</p>
+</li>
+<li><p>适合海量数据计算 (TB/PB) 几千台服务器共同计算</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>缺点: </p>
+<ul>
+<li><p>不擅长实时计算 Mysql</p>
+</li>
+<li><p>不擅长流式计算 Sparkstreaming flink</p>
+</li>
+<li><p>不擅长DAG有向无环图计算 spark</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="MaoReduce运算程序一般分Map阶段和Reduce阶段-两个阶段"><a href="#MaoReduce运算程序一般分Map阶段和Reduce阶段-两个阶段" class="headerlink" title="MaoReduce运算程序一般分Map阶段和Reduce阶段 两个阶段"></a>MaoReduce运算程序一般分Map阶段和Reduce阶段 两个阶段</h2><ul>
+<li><p>Map阶段的并发MapTask, 完全并发运行, 互不相干</p>
+</li>
+<li><p>Reduce阶段的并发ReduceTask, 完全互不相干, 但是它们的数据依赖于上一个阶段的所有MapTask并发实例的输出</p>
+</li>
+<li><p>MaoReduce编程模型只能包含一个Map阶段和Reduce阶段, 如果用户的业务逻辑非常复杂, 那就只能多个MaoReduce程序, 串行运行</p>
+</li>
+</ul>
+<h2 id="MapReduce进程"><a href="#MapReduce进程" class="headerlink" title="MapReduce进程"></a>MapReduce进程</h2><ul>
+<li><p>MrAppMaster: 负责整个程序的过程调度及状态协调</p>
+</li>
+<li><p>MapTask: 负责Map阶段的整个数据处理流程</p>
+</li>
+<li><p>ReduceTask: 负责Reduce阶段的整个数据处理流程</p>
+</li>
+</ul>
+<h2 id="常用数据序列化类型"><a href="#常用数据序列化类型" class="headerlink" title="常用数据序列化类型"></a>常用数据序列化类型</h2><table>
+<thead>
+<tr>
+<th>Java类型</th>
+<th>Hadoop Writable</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Boolean</td>
+<td>BooleanWritable</td>
+</tr>
+<tr>
+<td>Byte</td>
+<td>ByteWritable</td>
+</tr>
+<tr>
+<td>Int</td>
+<td>IntWritable</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>FloatWritable</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>LongWritable</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>DoubleWritable</td>
+</tr>
+<tr>
+<td>String</td>
+<td>Text</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>MapWritable</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>ArrayWritable</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>NullWritable</td>
+</tr>
+</tbody></table>
+<h2 id="统计-次数信息"><a href="#统计-次数信息" class="headerlink" title="统计 次数信息"></a>统计 次数信息</h2><p><strong>用到的txt数据</strong></p>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">Stitch</span> <span class="hljs-comment">Stitch</span> <span class="hljs-comment">Stitch</span> <br><span class="hljs-comment">626</span><br><span class="hljs-comment">Angel Angel Angel Angel Angel</span> <span class="hljs-comment">Angel</span><br><span class="hljs-comment">624</span><br><span class="hljs-comment">Reuben</span> <span class="hljs-comment">Reuben</span> <br><span class="hljs-comment">625</span><br></code></pre></td></tr></table></figure>
+<h2 id="Mapper"><a href="#Mapper" class="headerlink" title="Mapper"></a>Mapper</h2><p><strong>(1). 将MapTask传给我们的文本内容先转换成String</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Stitch Stitch Stitch</span> <br></code></pre></td></tr></table></figure>
+<p><strong>(2). 根据空格将一行切分成单词</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Stitch</span> <br><span class="hljs-attribute">Stitch</span> <br><span class="hljs-attribute">Stitch</span> <br></code></pre></td></tr></table></figure>
+<p><strong>(3). 将单词输入为&lt;单词, 1&gt;</strong></p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Stitch</span>, <span class="hljs-number">1</span><br><span class="hljs-attribute">Stitch</span>, <span class="hljs-number">1</span><br><span class="hljs-attribute">Stitch</span>, <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><p><strong>(1). 汇总各个key的个数</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># value  key</span><br><br>Stitch, <span class="hljs-number">1</span><br>Stitch, <span class="hljs-number">1</span><br>Stitch, <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<p><strong>(2). 输出该key的总次数</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># value  key</span><br><br>Stitch, <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>Driver</strong></p>
+<p><strong>(1). 获取配置信息, 获取job对象实例</strong></p>
+<p><strong>(2). 指定本程序的jar保所在的本地路径</strong></p>
+<p><strong>(3). 关联Mapper/Reducer业务类</strong></p>
+<p><strong>(4). 指定Mapper输出数据的kv类型</strong></p>
+<p><strong>(5). 指定最终输出的数据的kv类型</strong></p>
+<p><strong>(6). 指定job的输入原始文件所在目录</strong></p>
+<p><strong>(7). 指定job的输出结果所在目录</strong></p>
+<p><strong>(8). 提交作业</strong></p>
+<br>
+
+
+
+
+]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+  </entry>
+  <entry>
     <title>人工智比赛</title>
     <url>/AI-trainer-match.html</url>
     <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
@@ -6942,141 +7077,6 @@ json格式文件 "]
 <br>]]></content>
       <categories>
         <category>人工智能</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>大数据 MaoReduce</title>
-    <url>/MaoReduce.html</url>
-    <content><![CDATA[<p><strong>MaoReduce个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="MaoReduce-定义"><a href="#MaoReduce-定义" class="headerlink" title="MaoReduce 定义"></a>MaoReduce 定义</h1><ul>
-<li><p>分布式运算程序的编程框,用于开发基于 Hadoop的数据分析的核心框架</p>
-</li>
-<li><p>使用: 用户编写的业务逻辑代码和自带默认组件一个完整的分布式运算程序, 并发运行在一个 Hadoop集群上</p>
-</li>
-</ul>
-<ul>
-<li><p>优点: </p>
-<ul>
-<li><p>易于编写: 用户只关心, 业务逻辑 实现框架的接口</p>
-</li>
-<li><p>良好的扩展性: 可以动态增加服务器, 解决动态资源不够的问题</p>
-</li>
-<li><p>高容错性: 任何一台机器挂掉, 可以将任意转移到其它节点上</p>
-</li>
-<li><p>适合海量数据计算 (TB/PB) 几千台服务器共同计算</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>缺点: </p>
-<ul>
-<li><p>不擅长实时计算 Mysql</p>
-</li>
-<li><p>不擅长流式计算 Sparkstreaming flink</p>
-</li>
-<li><p>不擅长DAG有向无环图计算 spark</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="MaoReduce运算程序一般分Map阶段和Reduce阶段-两个阶段"><a href="#MaoReduce运算程序一般分Map阶段和Reduce阶段-两个阶段" class="headerlink" title="MaoReduce运算程序一般分Map阶段和Reduce阶段 两个阶段"></a>MaoReduce运算程序一般分Map阶段和Reduce阶段 两个阶段</h2><ul>
-<li><p>Map阶段的并发MapTask, 完全并发运行, 互不相干</p>
-</li>
-<li><p>Reduce阶段的并发ReduceTask, 完全互不相干, 但是它们的数据依赖于上一个阶段的所有MapTask并发实例的输出</p>
-</li>
-<li><p>MaoReduce编程模型只能包含一个Map阶段和Reduce阶段, 如果用户的业务逻辑非常复杂, 那就只能多个MaoReduce程序, 串行运行</p>
-</li>
-</ul>
-<h2 id="MapReduce进程"><a href="#MapReduce进程" class="headerlink" title="MapReduce进程"></a>MapReduce进程</h2><ul>
-<li><p>MrAppMaster: 负责整个程序的过程调度及状态协调</p>
-</li>
-<li><p>MapTask: 负责Map阶段的整个数据处理流程</p>
-</li>
-<li><p>ReduceTask: 负责Reduce阶段的整个数据处理流程</p>
-</li>
-</ul>
-<h2 id="常用数据序列化类型"><a href="#常用数据序列化类型" class="headerlink" title="常用数据序列化类型"></a>常用数据序列化类型</h2><table>
-<thead>
-<tr>
-<th>Java类型</th>
-<th>Hadoop Writable</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Boolean</td>
-<td>BooleanWritable</td>
-</tr>
-<tr>
-<td>Byte</td>
-<td>ByteWritable</td>
-</tr>
-<tr>
-<td>Int</td>
-<td>IntWritable</td>
-</tr>
-<tr>
-<td>Float</td>
-<td>FloatWritable</td>
-</tr>
-<tr>
-<td>Long</td>
-<td>LongWritable</td>
-</tr>
-<tr>
-<td>Double</td>
-<td>DoubleWritable</td>
-</tr>
-<tr>
-<td>String</td>
-<td>Text</td>
-</tr>
-<tr>
-<td>Map</td>
-<td>MapWritable</td>
-</tr>
-<tr>
-<td>Array</td>
-<td>ArrayWritable</td>
-</tr>
-<tr>
-<td>Null</td>
-<td>NullWritable</td>
-</tr>
-</tbody></table>
-<h2 id="统计-次数信息"><a href="#统计-次数信息" class="headerlink" title="统计 次数信息"></a>统计 次数信息</h2><p><strong>用到的txt数据</strong></p>
-<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">Stitch</span> <span class="hljs-comment">Stitch</span> <span class="hljs-comment">Stitch</span> <br><span class="hljs-comment">626</span><br><span class="hljs-comment">Angel Angel Angel Angel Angel</span> <span class="hljs-comment">Angel</span><br><span class="hljs-comment">624</span><br><span class="hljs-comment">Reuben</span> <span class="hljs-comment">Reuben</span> <br><span class="hljs-comment">625</span><br></code></pre></td></tr></table></figure>
-<h2 id="Mapper"><a href="#Mapper" class="headerlink" title="Mapper"></a>Mapper</h2><p><strong>(1). 将MapTask传给我们的文本内容先转换成String</strong></p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Stitch Stitch Stitch</span> <br></code></pre></td></tr></table></figure>
-<p><strong>(2). 根据空格将一行切分成单词</strong></p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">Stitch</span> <br><span class="hljs-attribute">Stitch</span> <br><span class="hljs-attribute">Stitch</span> <br></code></pre></td></tr></table></figure>
-<p><strong>(3). 将单词输入为&lt;单词, 1&gt;</strong></p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">Stitch</span>, <span class="hljs-number">1</span><br><span class="hljs-attribute">Stitch</span>, <span class="hljs-number">1</span><br><span class="hljs-attribute">Stitch</span>, <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><p><strong>(1). 汇总各个key的个数</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># value  key</span><br><br>Stitch, <span class="hljs-number">1</span><br>Stitch, <span class="hljs-number">1</span><br>Stitch, <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-<p><strong>(2). 输出该key的总次数</strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># value  key</span><br><br>Stitch, <span class="hljs-number">3</span><br></code></pre></td></tr></table></figure>
-
-<p><strong>Driver</strong></p>
-<p><strong>(1). 获取配置信息, 获取job对象实例</strong></p>
-<p><strong>(2). 指定本程序的jar保所在的本地路径</strong></p>
-<p><strong>(3). 关联Mapper/Reducer业务类</strong></p>
-<p><strong>(4). 指定Mapper输出数据的kv类型</strong></p>
-<p><strong>(5). 指定最终输出的数据的kv类型</strong></p>
-<p><strong>(6). 指定job的输入原始文件所在目录</strong></p>
-<p><strong>(7). 指定job的输出结果所在目录</strong></p>
-<p><strong>(8). 提交作业</strong></p>
-<br>
-
-
-
-
-]]></content>
-      <categories>
-        <category>大数据</category>
       </categories>
   </entry>
   <entry>
@@ -8362,9 +8362,12 @@ json格式文件 "]
 <li><p>现实可能性</p>
 <p><font color="red"><strong>半殖民地半封建的中国社会, 是近代世界矛盾的焦点, 存在着内外部的各种矛盾这在客观上为中国共产党提供了利用矛盾, 建立和发展统一战线的可能性</strong></font></p>
 <ul>
-<li>第一, 工, 农, 城沛小资产阶级占全国人口的多数, 革命要求强烈是统一战线的主力军</li>
-<li>第二, 民族资产阶级能参加反帝反封建斗争, 但又缺乏革命的彻底性是统一战线中的中间派</li>
-<li>第三, 带买办性的大资产阶级中的某一个集团在某些特殊的历史条件下, 也可能成为统一战线中的暂时的同盟者</li>
+<li><p>第一, 工, 农, 城沛小资产阶级占全国人口的多数, 革命要求强烈是统一战线的主力军</p>
+</li>
+<li><p>第二, 民族资产阶级能参加反帝反封建斗争, 但又缺乏革命的彻底性是统一战线中的中间派</p>
+</li>
+<li><p>第三, 带买办性的大资产阶级中的某一个集团在某些特殊的历史条件下, 也可能成为统一战线中的暂时的同盟者</p>
+</li>
 </ul>
 </li>
 <li><p>革命统一战线联盟</p>
@@ -8373,10 +8376,14 @@ json格式文件 "]
 <li><p>党建立, 巩固和发展统一战线的实践经验</p>
 <p>主要在于这样几个方面: </p>
 <ol>
-<li>要建立巩固的工农联盟</li>
-<li>要正确对待资产阶级, 尤其是民族资产阶级在革命斗争中要依据革命的需要, 对资产阶级实行既联合又斗争的策略联合民族资产阶级要针对其两面性特点, 在联合的过程中要在思想上, 政治上, 组织上进行必要的斗争</li>
-<li>要采取区别对待的方针在革命进程中, 要坚持发展进步势力, 争取中间势方, 孤立顽固势力的策略方针</li>
-<li>要坚持独立自主的原则要保持党在政治上, 组织上和思想上的独立性</li>
+<li><p>要建立巩固的工农联盟</p>
+</li>
+<li><p>要正确对待资产阶级, 尤其是民族资产阶级在革命斗争中要依据革命的需要, 对资产阶级实行既联合又斗争的策略联合民族资产阶级要针对其两面性特点, 在联合的过程中要在思想上, 政治上, 组织上进行必要的斗争</p>
+</li>
+<li><p>要采取区别对待的方针在革命进程中, 要坚持发展进步势力, 争取中间势方, 孤立顽固势力的策略方针</p>
+</li>
+<li><p>要坚持独立自主的原则要保持党在政治上, 组织上和思想上的独立性</p>
+</li>
 </ol>
 </li>
 </ul>
@@ -8386,9 +8393,12 @@ json格式文件 "]
 <li><p>中国革命的主要形式是长期的武装斗争</p>
 <p>武装斗争是中国革命的特点和优点之一: 必要性</p>
 <ul>
-<li>近代中国半殖民地半封建的社会性质决定的</li>
-<li>中国反动统治阶级的残酷性决定的</li>
-<li>由于敌人的力量异常强大, 复杂的社会矛盾, 以及中国政治经济发展的不平衡性, 决定了中国革命的武装斗争将不可避免地要经历一个长期而曲折的过程</li>
+<li><p>近代中国半殖民地半封建的社会性质决定的</p>
+</li>
+<li><p>中国反动统治阶级的残酷性决定的</p>
+</li>
+<li><p>由于敌人的力量异常强大, 复杂的社会矛盾, 以及中国政治经济发展的不平衡性, 决定了中国革命的武装斗争将不可避免地要经历一个长期而曲折的过程</p>
+</li>
 </ul>
 </li>
 <li><p>武装斗争必须和非武装斗争相互配合</p>
@@ -8401,9 +8411,13 @@ json格式文件 "]
 </ul>
 <p><font color="orange"><strong>补充: 人民军队建设的基本原则</strong></font></p>
 <ol>
-<li>“党指挥枪”的原则财坚持党对军以的绝对领导/是建设新型人民军队的根本原则是保持人民军队无产阶级性质和建军宗旨的根本前提, 也是毛泽东建军思想的核心</li>
-<li>全心全意为人民服务是人民军队的唯一宗旨<br>是建设新型人民军队的基本前提, 也是人民军队一切行动的根本准则和一切工作的出发点与归宿它集中体现了人民军队的本质, 是人民军队立于不败之地的根本所在</li>
-<li>要坚持正确的战略战术原则形成了一整套以少胜多, 以弱胜强的人民战净的理论和一系列的战略战术原则</li>
+<li><p>“党指挥枪”的原则财坚持党对军以的绝对领导/是建设新型人民军队的根本原则是保持人民军队无产阶级性质和建军宗旨的根本前提, 也是毛泽东建军思想的核心</p>
+</li>
+<li><p>全心全意为人民服务是人民军队的唯一宗旨</p>
+<p>是建设新型人民军队的基本前提, 也是人民军队一切行动的根本准则和一切工作的出发点与归宿它集中体现了人民军队的本质, 是人民军队立于不败之地的根本所在</p>
+</li>
+<li><p>要坚持正确的战略战术原则形成了一整套以少胜多, 以弱胜强的人民战净的理论和一系列的战略战术原则</p>
+</li>
 </ol>
 <ul>
 <li><p>党的建设</p>
@@ -8478,8 +8492,10 @@ json格式文件 "]
 <h3 id="二-党在过渡时期的总路线"><a href="#二-党在过渡时期的总路线" class="headerlink" title="二, 党在过渡时期的总路线"></a>二, 党在过渡时期的总路线</h3><ul>
 <li><p>过渡时期总路线的提出</p>
 <ol>
-<li>1949年党的七届二中全会, 提出了使中国”稳步地由农业国转变为工业国, 由新民主主义国家转变为社会主义国家”即<br>“”两个转变”同时并举的思想</li>
-<li>从1949年至1952年, 党领导人民集中力量恢复国民经济, 继续完成民主革命遗留的任务与此同时, 没收官僚资本, 建立社会主义性质的国营经济在完成土地改革之后的农村, 及时开展互助合作运动在调整工商业过程中, 采取对私营工商业加工订货, 经销代销等方式, 广泛发展初级形式的国家资本主义等, 为全面向社会主义过渡莫定了基础</li>
+<li><p>1949年党的七届二中全会, 提出了使中国”稳步地由农业国转变为工业国, 由新民主主义国家转变为社会主义国家”即<br>“”两个转变”同时并举的思想</p>
+</li>
+<li><p>从1949年至1952年, 党领导人民集中力量恢复国民经济, 继续完成民主革命遗留的任务与此同时, 没收官僚资本, 建立社会主义性质的国营经济在完成土地改革之后的农村, 及时开展互助合作运动在调整工商业过程中, 采取对私营工商业加工订货, 经销代销等方式, 广泛发展初级形式的国家资本主义等, 为全面向社会主义过渡莫定了基础</p>
+</li>
 </ol>
 </li>
 <li><p>总路线的内容</p>
@@ -8538,11 +8554,16 @@ json格式文件 "]
 </li>
 <li><p>对个体手工业的社会主义改造</p>
 <ul>
-<li>方针: 积极领导, 稳步前进</li>
-<li>对手工业的社会主义改造经历的由小到大, 由低级到高级的具体三个步骤<ol>
-<li>第一步是办手工业供销小组供销小组由国营商业或供销合作社供给原料和包销产品, 具有社会主义萌芽性质</li>
-<li>第二步是办手工业供销合作社它具有半社会主义性质</li>
-<li>第三步是建立手工业生产合作社手工业者的生产资料全部归集体所有, 统一经营, 入社人员参加集体劳动, 实行按劳分配它是社会主义性质的集体经济组织</li>
+<li><p>方针: 积极领导, 稳步前进</p>
+</li>
+<li><p>对手工业的社会主义改造经历的由小到大, 由低级到高级的具体三个步骤</p>
+<ol>
+<li><p>第一步是办手工业供销小组供销小组由国营商业或供销合作社供给原料和包销产品, 具有社会主义萌芽性质</p>
+</li>
+<li><p>第二步是办手工业供销合作社它具有半社会主义性质</p>
+</li>
+<li><p>第三步是建立手工业生产合作社手工业者的生产资料全部归集体所有, 统一经营, 入社人员参加集体劳动, 实行按劳分配它是社会主义性质的集体经济组织</p>
+</li>
 </ol>
 </li>
 </ul>
@@ -8552,12 +8573,18 @@ json格式文件 "]
 <ul>
 <li><p>第一, 用<strong>和平赎买</strong>的方法改造资本主义工商业</p>
 <ol>
-<li>赎买的方式所谓赎买, 就是国家有偿地将私营企业改变为国营企业, 将资本主义私有制改变为社会主义公有制赎买的具体方式不是由国家支付一笔巨额补偿资金, 而是让资本家在一定年限内从企业经营所得中获取一部分利润</li>
-<li>和平赎买的积极作用(4个有利于)<ul>
-<li>有利于发挥私营工商业在国计民生方面的积极作用, 促进国民经济发展</li>
-<li>有利于争取和团结民族资产阶级, 有利于团结各民主党派和各界爱国民主人士, 巩固和发展统一战线</li>
-<li>有利于发挥民族资产阶级中大多数人的知识, 才能, 技术专长和管理经验</li>
-<li>有利于争取和团结那些原来同资产阶级相联系的知识分子为社会主义建设服务</li>
+<li><p>赎买的方式所谓赎买, 就是国家有偿地将私营企业改变为国营企业, 将资本主义私有制改变为社会主义公有制赎买的具体方式不是由国家支付一笔巨额补偿资金, 而是让资本家在一定年限内从企业经营所得中获取一部分利润</p>
+</li>
+<li><p>和平赎买的积极作用(4个有利于)</p>
+<ul>
+<li><p>有利于发挥私营工商业在国计民生方面的积极作用, 促进国民经济发展</p>
+</li>
+<li><p>有利于争取和团结民族资产阶级, 有利于团结各民主党派和各界爱国民主人士, 巩固和发展统一战线</p>
+</li>
+<li><p>有利于发挥民族资产阶级中大多数人的知识, 才能, 技术专长和管理经验</p>
+</li>
+<li><p>有利于争取和团结那些原来同资产阶级相联系的知识分子为社会主义建设服务</p>
+</li>
 </ul>
 </li>
 </ol>
@@ -8623,8 +8650,10 @@ json格式文件 "]
 </li>
 <li><p><font color="orange"><strong>出现失误和偏差的原因</strong></font></p>
 <ul>
-<li>在社会主义经济模式的选择和理解上过于单一追求纯粹的单一的社会主义经济成分</li>
-<li>在公有制实现形式的选择和理解上过于简单化只注意到集体所有制和全民所有制这两种基本形式, 而对社会主义改造基本完成以后公有制经济可以和非公有制经济共同发展缺乏认识</li>
+<li><p>在社会主义经济模式的选择和理解上过于单一追求纯粹的单一的社会主义经济成分</p>
+</li>
+<li><p>在公有制实现形式的选择和理解上过于简单化只注意到集体所有制和全民所有制这两种基本形式, 而对社会主义改造基本完成以后公有制经济可以和非公有制经济共同发展缺乏认识</p>
+</li>
 </ul>
 </li>
 <li><p><font color="orange"><strong>正确评价历史变革</strong></font></p>
@@ -8638,10 +8667,14 @@ json格式文件 "]
 </ul>
 <p><strong>(2016简答)</strong></p>
 <ol>
-<li>改革开放前的历史, 是党领导全国各族人民进行社会主义革命和建设并取得巨大历史成就的历史</li>
-<li>改革开放后的历史, 是党领导全国各族人民成功开创和发展中国特色社会主义的历史</li>
-<li>二者在本质上都是党领导人民进行社会主义建设的实践探索, 不能相互否定改革开放前社会主义实践探索为改革开放后社会主义的实践探索提供了重要条件, 改革开放后社会主义的实践探索是改革开放前社会主义实践探索的坚持, 改革和发展</li>
-<li>这是两个既有区别又有联系的时期联系并不只是时间上的顺延和承续, 而是在坚持社会主义发展方向, 基本制度, 根本任务, 奋斗目标基础上的联系重大区别主要是指在进行社会主义建设的思想指导方针政策, 实际工作上有很大差别, 也包括进行社会主义实践探索的内外条件, 实践基础等方面存在很大差别</li>
+<li><p>改革开放前的历史, 是党领导全国各族人民进行社会主义革命和建设并取得巨大历史成就的历史</p>
+</li>
+<li><p>改革开放后的历史, 是党领导全国各族人民成功开创和发展中国特色社会主义的历史</p>
+</li>
+<li><p>二者在本质上都是党领导人民进行社会主义建设的实践探索, 不能相互否定改革开放前社会主义实践探索为改革开放后社会主义的实践探索提供了重要条件, 改革开放后社会主义的实践探索是改革开放前社会主义实践探索的坚持, 改革和发展</p>
+</li>
+<li><p>这是两个既有区别又有联系的时期联系并不只是时间上的顺延和承续, 而是在坚持社会主义发展方向, 基本制度, 根本任务, 奋斗目标基础上的联系重大区别主要是指在进行社会主义建设的思想指导方针政策, 实际工作上有很大差别, 也包括进行社会主义实践探索的内外条件, 实践基础等方面存在很大差别</p>
+</li>
 </ol>
 <h2 id="第三节-社会主义制度在中国的确立"><a href="#第三节-社会主义制度在中国的确立" class="headerlink" title="第三节    社会主义制度在中国的确立"></a>第三节    社会主义制度在中国的确立</h2><h3 id="一-社会主义基本制度的确立"><a href="#一-社会主义基本制度的确立" class="headerlink" title="一, 社会主义基本制度的确立"></a>一, 社会主义基本制度的确立</h3><ul>
 <li><p>以公有制为基础的社会主义基本经济制度已经确立</p>
@@ -8652,23 +8685,36 @@ json格式文件 "]
 </li>
 <li><p>社会阶级关系发生根本变化</p>
 <ul>
-<li>帝国主义侵略势力已经被清除出中国大陆: </li>
-<li>官僚资产阶级已经在中国内地被消灭</li>
-<li>原来的地主和富农正在被改造成为自食其力的劳动者: </li>
-<li>民族资产阶级分子被改造成自食其力的社会主义劳动者</li>
-<li>工人阶级已经成为国家的领导阶级, 工人阶级队伍进一步壮大</li>
-<li>亿万农民和其他个体劳动者已经变成社会主义的集体劳动者</li>
-<li>广大劳动人民从此摆脱了被剥削被奴役的地位, 成为掌握生产资料的国家和社会的庄人以及掌握自己命运的主人</li>
+<li><p>帝国主义侵略势力已经被清除出中国大陆</p>
+</li>
+<li><p>官僚资产阶级已经在中国内地被消灭</p>
+</li>
+<li><p>原来的地主和富农正在被改造成为自食其力的劳动者</p>
+</li>
+<li><p>民族资产阶级分子被改造成自食其力的社会主义劳动者</p>
+</li>
+<li><p>工人阶级已经成为国家的领导阶级, 工人阶级队伍进一步壮大</p>
+</li>
+<li><p>亿万农民和其他个体劳动者已经变成社会主义的集体劳动者</p>
+</li>
+<li><p>广大劳动人民从此摆脱了被剥削被奴役的地位, 成为掌握生产资料的国家和社会的庄人以及掌握自己命运的主人</p>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="二-确立社会主义基本制度的重大意义"><a href="#二-确立社会主义基本制度的重大意义" class="headerlink" title="二, 确立社会主义基本制度的重大意义"></a>二, 确立社会主义基本制度的重大意义</h3><ul>
-<li>社会主义基本制度的确立是中国历史上最深刻最伟大的社会变革, 为当代中国一切发展进步奠定了制度基础, 也为中国特色社会主义制度的创新和发展提供了重要前提</li>
-<li>社会主义基本制度的确立, 极大地提高了工人阶级和广大劳动人民的积极性, 创造性, 极大地促进了我国社会生产力的发展</li>
-<li>促进了我国社会生产力突飞猛进的发展, 初步显示了社会主义的优越性我国工业化, 现代化建设取得的辉煌成就, 离不开选择了社会主义道路这个根本的前提条件</li>
-<li>社会主义基本制度的确立, 使广大劳动人民真正成为国家的主人这是中国几干年来阶级关系的最根本变革, 极天地师固和扩大了工人阶级领导的, 以工农联盟为基础的人民民主专政国家政权的阶级基础和经济基础</li>
-<li>中国社会主义基本制度的确立, 它进一步改变了世界政治经济格局, 增强了社会主义的力量, 对维护世界和平产生了积极影响</li>
-<li>社会主义基本制度的确立, 是以毛泽东为主要代表的中国共产党人对一个脱胎于半殖民地半封建的东方大国如何进行社会主义革命问题的系统回答和正确解决, 是马克思列宁主义关于社会主义革命理论在中国的正确运用和创造性发展的结果它不仅再次证明了马克思列宁主义的真理性, 而且以其独创性的理论原则和经验总结丰富和发展了科学社会主义理论</li>
+<li><p>社会主义基本制度的确立是中国历史上最深刻最伟大的社会变革, 为当代中国一切发展进步奠定了制度基础, 也为中国特色社会主义制度的创新和发展提供了重要前提</p>
+</li>
+<li><p>社会主义基本制度的确立, 极大地提高了工人阶级和广大劳动人民的积极性, 创造性, 极大地促进了我国社会生产力的发展</p>
+</li>
+<li><p>促进了我国社会生产力突飞猛进的发展, 初步显示了社会主义的优越性我国工业化, 现代化建设取得的辉煌成就, 离不开选择了社会主义道路这个根本的前提条件</p>
+</li>
+<li><p>社会主义基本制度的确立, 使广大劳动人民真正成为国家的主人这是中国几干年来阶级关系的最根本变革, 极天地师固和扩大了工人阶级领导的, 以工农联盟为基础的人民民主专政国家政权的阶级基础和经济基础</p>
+</li>
+<li><p>中国社会主义基本制度的确立, 它进一步改变了世界政治经济格局, 增强了社会主义的力量, 对维护世界和平产生了积极影响</p>
+</li>
+<li><p>社会主义基本制度的确立, 是以毛泽东为主要代表的中国共产党人对一个脱胎于半殖民地半封建的东方大国如何进行社会主义革命问题的系统回答和正确解决, 是马克思列宁主义关于社会主义革命理论在中国的正确运用和创造性发展的结果它不仅再次证明了马克思列宁主义的真理性, 而且以其独创性的理论原则和经验总结丰富和发展了科学社会主义理论</p>
+</li>
 </ul>
 <h1 id="第5章-社会主义建设道路初步探索的理论成果"><a href="#第5章-社会主义建设道路初步探索的理论成果" class="headerlink" title="第5章    社会主义建设道路初步探索的理论成果"></a>第5章    社会主义建设道路初步探索的理论成果</h1><h2 id="第一节-社会主义建设道路初步探索的重要思想成果"><a href="#第一节-社会主义建设道路初步探索的重要思想成果" class="headerlink" title="第一节    社会主义建设道路初步探索的重要思想成果"></a>第一节    社会主义建设道路初步探索的重要思想成果</h2><h3 id="一-调动一切积极因素为社会主义事业服务的思想"><a href="#一-调动一切积极因素为社会主义事业服务的思想" class="headerlink" title="一, 调动一切积极因素为社会主义事业服务的思想"></a>一, 调动一切积极因素为社会主义事业服务的思想</h3><p><font color="red"><strong>《论十大关系》</strong></font>是探索中国建设社会主义建设道路的(良好)开端</p>
 <p>1956年4月, 毛泽东发表了《论十大关系》的讲话, 提出”把国内外一切积极因素调动起来, 为社会主义事业服务”的社会主义建设的<strong>基本方针</strong>这是中国共产党人对中国社会主义建设道路总结, 探索的初步成果</p>
@@ -8722,9 +8768,12 @@ json格式文件 "]
 </li>
 </ul>
 <h3 id="二-正确认识和处理社会主义社会矛盾的思想-论述题重点"><a href="#二-正确认识和处理社会主义社会矛盾的思想-论述题重点" class="headerlink" title="二, 正确认识和处理社会主义社会矛盾的思想(论述题重点)"></a>二, 正确认识和处理社会主义社会矛盾的思想(论述题重点)</h3><ul>
-<li>毛泽东指出, 矛盾是普遍存在的, 社会主义社会同样宽满汤盾正是这些矛盾推动者社会主义社会不断向前发展要运用对立统一规律深刻分析社会主义社会的矛盾</li>
-<li>社会主义的基本矛盾: 仍然是生产关系和生产力之间的矛盾上层建筑和经济基础之间的矛盾<strong>社会主义社会的矛盾还是对抗性矛高, 而层非抗性的矛盾具有那相适应又相汤盾的特点可以福过社会主义制度本身还断得到解速</strong></li>
-<li>我国社会的主要矛盾和根本任务主要矛盾: 人民对建立先进的工业国的要求同落后的农业国的现实之间的矛盾, 人民对经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾</li>
+<li><p>毛泽东指出, 矛盾是普遍存在的, 社会主义社会同样宽满汤盾正是这些矛盾推动者社会主义社会不断向前发展要运用对立统一规律深刻分析社会主义社会的矛盾</p>
+</li>
+<li><p>社会主义的基本矛盾: 仍然是生产关系和生产力之间的矛盾上层建筑和经济基础之间的矛盾<strong>社会主义社会的矛盾还是对抗性矛高, 而层非抗性的矛盾具有那相适应又相汤盾的特点可以福过社会主义制度本身还断得到解速</strong></p>
+</li>
+<li><p>我国社会的主要矛盾和根本任务主要矛盾: 人民对建立先进的工业国的要求同落后的农业国的现实之间的矛盾, 人民对经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾</p>
+</li>
 </ul>
 <p><font color="red"><strong>工作重点</strong></font>: 转到技术革命和社会主义建设上, 全党学科学, 技术, 新本领</p>
 <ul>
@@ -8732,12 +8781,19 @@ json格式文件 "]
 <p>毛泽东强调, 社会主义社会的矛盾反应在政治上可以划分为敌我矛盾和人民内部矛盾, 是两种性质完全不同的矛盾</p>
 <p>毛泽东关于严格区分和正确处理两类不同性质矛盾的学说, 特别是关于正确处理人民内部矛盾是国家政治生活的主题的思想, 具有重大的实践意义和理论意义它为正确处理社会主义社会各种矛盾, 协调人与人之间的社会关系, 创造了有利于生产力发展的良好的社会环境和政治局面, 提供了基本的理论依据它以完整的理论形态, 独创性的内容, 丰富了马克思主义的理论宝库</p>
 <ul>
-<li><font color="orange"><strong>补充</strong></font>: <ul>
-<li>人民内部矛盾: 人民利益根本一致的基础上的矛盾是非对抗性的</li>
-<li>我国民族资本家有两面性, 工人阶级同民族资本家的矛盾属于人民内部矛盾</li>
-<li>在一定条件下, 两类不同性质的矛盾可以互相转化<br>处理方法: 采用专政和民主这样两种不同的方法</li>
-<li>专政: 运用人民民主专政的国家机器</li>
-<li>民主: 讨论, 批评, 说服教育</li>
+<li><p><font color="orange"><strong>补充:</strong></font></p>
+<ul>
+<li><p>人民内部矛盾: 人民利益根本一致的基础上的矛盾是非对抗性的</p>
+</li>
+<li><p>我国民族资本家有两面性, 工人阶级同民族资本家的矛盾属于人民内部矛盾</p>
+</li>
+<li><p>在一定条件下, 两类不同性质的矛盾可以互相转化</p>
+<p>处理方法: 采用专政和民主这样两种不同的方法</p>
+</li>
+<li><p>专政: 运用人民民主专政的国家机器</p>
+</li>
+<li><p>民主: 讨论, 批评, 说服教育</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -8747,12 +8803,18 @@ json格式文件 "]
 </ul>
 <p><strong>解决人民内部矛盾的总方针: 坚特用民主的方法</strong></p>
 <ol>
-<li>对于政治思想领域的人民内部矛盾, 实行”团结批评-团结”的方针, 坚持说服教育, 讨论的方法</li>
-<li>对于物质利益, 分配方面的人民内部矛盾, 实行统筹兼顾, 适当安排的方针, 兼顾国家, 集体和个人三方面的利益</li>
-<li>对于人民群众和政府机关的矛盾, 坚持民主集中制原则: </li>
-<li>对科学文化领域的矛盾, 实行”百花齐放, 百家争鸣”的方针</li>
-<li>对共产党与民主党派的矛盾, 实行在坚持社会主义道路和共产党领导的前提下, “长期共存, 互相监督”的方针</li>
-<li>对于民族间的矛盾, 实行民族平等, 团结互助的方针</li>
+<li><p>对于政治思想领域的人民内部矛盾, 实行”团结批评-团结”的方针, 坚持说服教育, 讨论的方法</p>
+</li>
+<li><p>对于物质利益, 分配方面的人民内部矛盾, 实行统筹兼顾, 适当安排的方针, 兼顾国家, 集体和个人三方面的利益</p>
+</li>
+<li><p>对于人民群众和政府机关的矛盾, 坚持民主集中制原则</p>
+</li>
+<li><p>对科学文化领域的矛盾, 实行”百花齐放, 百家争鸣”的方针</p>
+</li>
+<li><p>对共产党与民主党派的矛盾, 实行在坚持社会主义道路和共产党领导的前提下, “长期共存, 互相监督”的方针</p>
+</li>
+<li><p>对于民族间的矛盾, 实行民族平等, 团结互助的方针</p>
+</li>
 </ol>
 <ul>
 <li><p>正确处理人民内部矛盾的问题是社会主义国家政治生活的生题</p>
@@ -8761,11 +8823,16 @@ json格式文件 "]
 </ul>
 <p>补充: </p>
 <ul>
-<li><font color="orange"><strong>正确处理人民内部矛盾的方针是</strong></font><ol>
-<li>“团结一批评一团结”</li>
-<li>“统筹兼顾, 适当安排”</li>
-<li>“百花齐放, 百家争鸣”</li>
-<li>“长期共存, 互相监督”</li>
+<li><p><font color="orange"><strong>正确处理人民内部矛盾的方针是</strong></font></p>
+<ol>
+<li><p>“团结一批评一团结”</p>
+</li>
+<li><p>“统筹兼顾, 适当安排”</p>
+</li>
+<li><p>“百花齐放, 百家争鸣”</p>
+</li>
+<li><p>“长期共存, 互相监督”</p>
+</li>
 </ol>
 </li>
 </ul>
@@ -8811,9 +8878,12 @@ json格式文件 "]
 </li>
 </ul>
 <h2 id="第二节-社会主义建设道路初步探索的意义和教训"><a href="#第二节-社会主义建设道路初步探索的意义和教训" class="headerlink" title="第二节    社会主义建设道路初步探索的意义和教训"></a>第二节    社会主义建设道路初步探索的意义和教训</h2><h3 id="一-意义"><a href="#一-意义" class="headerlink" title="一, 意义"></a>一, 意义</h3><ul>
-<li>第一, 巩固和发展了我国社会主义制度</li>
-<li>第二, 为开创中国特色社会主义提供了宝贵经验, 理论准备和物质基础</li>
-<li>第三, 丰富了科学社会主义的理论和实践</li>
+<li><p>第一, 巩固和发展了我国社会主义制度</p>
+</li>
+<li><p>第二, 为开创中国特色社会主义提供了宝贵经验, 理论准备和物质基础</p>
+</li>
+<li><p>第三, 丰富了科学社会主义的理论和实践</p>
+</li>
 </ul>
 <h3 id="二-经验教训-2017论述"><a href="#二-经验教训-2017论述" class="headerlink" title="二, 经验教训(2017论述)"></a>二, 经验教训(2017论述)</h3><ul>
 <li>第一, 必须把马克思主义与中国实际相结合, 探索符合中国特点的社会道路</li>
@@ -8866,11 +8936,16 @@ json格式文件 "]
 </li>
 <li><p>2018辨析: 共同富裕是中国特色社会主义的根本原则</p>
 <ol>
-<li>正确(2分)</li>
-<li>共同富裕是中国特色社会主义根本原则它体现了社公主义的本质要求, 指明了社会主义发展的方向和目标(2分)</li>
-<li>共同富裕是科学社会主义的重要价值诉求(1分)</li>
-<li>共同富裕是社会主义优越性的重要体现(1分)</li>
-<li>共同富裕是中国特色社会主义的基本目标(1分)</li>
+<li><p>正确(2分)</p>
+</li>
+<li><p>共同富裕是中国特色社会主义根本原则它体现了社公主义的本质要求, 指明了社会主义发展的方向和目标(2分)</p>
+</li>
+<li><p>共同富裕是科学社会主义的重要价值诉求(1分)</p>
+</li>
+<li><p>共同富裕是社会主义优越性的重要体现(1分)</p>
+</li>
+<li><p>共同富裕是中国特色社会主义的基本目标(1分)</p>
+</li>
 </ol>
 </li>
 </ul>
@@ -9303,6 +9378,46 @@ json格式文件 "]
 ]]></content>
       <categories>
         <category>游戏</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
+    <url>/reptile-bs4-lxml.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1>Beautiful Soup4<h1>
+
+<h1 id="安装bs4"><a href="#安装bs4" class="headerlink" title="安装bs4"></a>安装bs4</h1><p><strong>打开cmd 输入以下内容</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install lxml<br></code></pre></td></tr></table></figure>
+<h1 id="find用法"><a href="#find用法" class="headerlink" title="find用法"></a>find用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">find(<span class="hljs-string">&quot;标签&quot;</span>, 属性:<span class="hljs-built_in">id</span> <span class="hljs-keyword">class</span>) <br>find(<span class="hljs-string">&quot;p&quot;</span>, <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;sdq&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="find-all用法"><a href="#find-all用法" class="headerlink" title="find_all用法"></a>find_all用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">find(<span class="hljs-string">&quot;标签&quot;</span>, 属性:<span class="hljs-built_in">id</span> <span class="hljs-keyword">class</span>).find_all(<span class="hljs-string">&quot;标签&quot;</span>)<br>find(<span class="hljs-string">&quot;p&quot;</span>, <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;sdq&quot;</span>).find_all(<span class="hljs-string">&quot;a&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 导入requests和bs4库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><span class="hljs-keyword">import</span> time<br><br>url = <span class="hljs-string">&quot;https://www.umei.cc/bizhitupian/weimeibizhi/&quot;</span><br>resp = requests.get(url)<br>resp.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span>  <span class="hljs-comment"># 处理乱码</span><br><br><span class="hljs-comment"># print(resp.text)</span><br><span class="hljs-comment"># 把源代码交给bs</span><br>main_page = BeautifulSoup(resp.text, <span class="hljs-string">&quot;html.parser&quot;</span>)<br>alist = main_page.find(<span class="hljs-string">&quot;div&quot;</span>, class_=<span class="hljs-string">&quot;TypeList&quot;</span>).find_all(<span class="hljs-string">&quot;a&quot;</span>)<br><span class="hljs-comment"># print(alist)</span><br><span class="hljs-keyword">for</span> a <span class="hljs-keyword">in</span> alist:<br>    href = a.get(<span class="hljs-string">&#x27;href&#x27;</span>)  <span class="hljs-comment"># 直接通过get就可以拿到属性的值</span><br>    <span class="hljs-comment"># 子页面的源代码</span><br>    child_resp = requests.get(href)<br>    child_resp.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span><br>    child_text = child_resp.text<br>    <span class="hljs-comment"># 从子页面中拿到图片的下载路径</span><br>    child = BeautifulSoup(child_text, <span class="hljs-string">&quot;html.parser&quot;</span>)<br>    p = child.find(<span class="hljs-string">&quot;p&quot;</span>, align=<span class="hljs-string">&quot;center&quot;</span>)<br>    img = p.find(<span class="hljs-string">&quot;img&quot;</span>)<br>    src = img.get(<span class="hljs-string">&quot;src&quot;</span>)<br>    <span class="hljs-comment"># 下载图片</span><br>    img_resp = requests.get(src)<br>    <span class="hljs-comment"># img_resp.content  # 这里拿到的是字节</span><br>    img_name = src.split(<span class="hljs-string">&quot;/&quot;</span>)[-<span class="hljs-number">1</span>]  <span class="hljs-comment"># 拿到url中的最后一个 / 以后的内容-1代表最后一个</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;img/&quot;</span>+img_name, mode=<span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(img_resp.content)  <span class="hljs-comment"># 图片内容写入文件</span><br><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在下载&quot;</span>, img_name)<br>    time.sleep(<span class="hljs-number">1</span>) <span class="hljs-comment">#停1秒</span><br><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;下载完了&quot;</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="lxml模块的使用"><a href="#lxml模块的使用" class="headerlink" title="lxml模块的使用"></a>lxml模块的使用</h1><h3 id="导入lxml的etree库"><a href="#导入lxml的etree库" class="headerlink" title="导入lxml的etree库"></a>导入lxml的etree库</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br></code></pre></td></tr></table></figure>
+<p>利用etree.HTML 将HTML字符串(bytes类型活str类型) 转化为Element对象 Element对象具有xpath的方法 返回结果列表</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">html = etree.HTML(text)     <span class="hljs-comment"># text为文本内容</span><br>ret_list = html.xpath(<span class="hljs-string">&quot;xpath语法规则字符串&quot;</span>)     <span class="hljs-comment"># 用xpath来解析</span><br></code></pre></td></tr></table></figure>
+<h3 id="导入lxml的etree-tostring函数的使用"><a href="#导入lxml的etree-tostring函数的使用" class="headerlink" title="导入lxml的etree.tostring函数的使用"></a>导入lxml的etree.tostring函数的使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br><br>html_str = <span class="hljs-string">&#x27;&#x27;&#x27; &lt;div&gt;&lt;ul&gt;</span><br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;first item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link2.html&quot;&gt;second item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-inactive&quot;&gt;&lt;a href=&quot;;link3.html&quot;&gt;third item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;fourth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-0&quot;&gt;&lt;a href=&quot;;link5.html&quot;&gt;fifth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;ul&gt;&lt;div&gt; <span class="hljs-string">&#x27;&#x27;&#x27;         </span><br><span class="hljs-comment"># 将html源码转换成element对象   etree.HTML()能够自动补全html缺失的标签</span><br>html = etree.HTML(html_str)<br><span class="hljs-comment"># 转换成String类型的数据        </span><br>handeled_html_str = etree.toString(html).decode()<br><span class="hljs-built_in">print</span>(handeled_html_str)<br></code></pre></td></tr></table></figure>
+<br></h1></h1>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
+<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
+<br>
+
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
+      <categories>
+        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
@@ -10447,46 +10562,6 @@ json格式文件 "]
 <h3 id="二、科学发展观的主要内容"><a href="#二、科学发展观的主要内容" class="headerlink" title="二、科学发展观的主要内容"></a>二、科学发展观的主要内容</h3>]]></content>
       <categories>
         <category>考研必背</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 Beautiful Soup(牢饭吃到饱)</title>
-    <url>/reptile-bs4-lxml.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1>Beautiful Soup4<h1>
-
-<h1 id="安装bs4"><a href="#安装bs4" class="headerlink" title="安装bs4"></a>安装bs4</h1><p><strong>打开cmd 输入以下内容</strong></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install lxml<br></code></pre></td></tr></table></figure>
-<h1 id="find用法"><a href="#find用法" class="headerlink" title="find用法"></a>find用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">find(<span class="hljs-string">&quot;标签&quot;</span>, 属性:<span class="hljs-built_in">id</span> <span class="hljs-keyword">class</span>) <br>find(<span class="hljs-string">&quot;p&quot;</span>, <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;sdq&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h1 id="find-all用法"><a href="#find-all用法" class="headerlink" title="find_all用法"></a>find_all用法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">find(<span class="hljs-string">&quot;标签&quot;</span>, 属性:<span class="hljs-built_in">id</span> <span class="hljs-keyword">class</span>).find_all(<span class="hljs-string">&quot;标签&quot;</span>)<br>find(<span class="hljs-string">&quot;p&quot;</span>, <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;sdq&quot;</span>).find_all(<span class="hljs-string">&quot;a&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h1 id="综合练习"><a href="#综合练习" class="headerlink" title="综合练习"></a>综合练习</h1><p><strong>打开这个<a href="https://www.umei.cc/bizhitupian/weimeibizhi/">网址</a></strong></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-comment"># 导入requests和bs4库</span><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><span class="hljs-keyword">import</span> time<br><br>url = <span class="hljs-string">&quot;https://www.umei.cc/bizhitupian/weimeibizhi/&quot;</span><br>resp = requests.get(url)<br>resp.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span>  <span class="hljs-comment"># 处理乱码</span><br><br><span class="hljs-comment"># print(resp.text)</span><br><span class="hljs-comment"># 把源代码交给bs</span><br>main_page = BeautifulSoup(resp.text, <span class="hljs-string">&quot;html.parser&quot;</span>)<br>alist = main_page.find(<span class="hljs-string">&quot;div&quot;</span>, class_=<span class="hljs-string">&quot;TypeList&quot;</span>).find_all(<span class="hljs-string">&quot;a&quot;</span>)<br><span class="hljs-comment"># print(alist)</span><br><span class="hljs-keyword">for</span> a <span class="hljs-keyword">in</span> alist:<br>    href = a.get(<span class="hljs-string">&#x27;href&#x27;</span>)  <span class="hljs-comment"># 直接通过get就可以拿到属性的值</span><br>    <span class="hljs-comment"># 子页面的源代码</span><br>    child_resp = requests.get(href)<br>    child_resp.encoding = <span class="hljs-string">&#x27;utf-8&#x27;</span><br>    child_text = child_resp.text<br>    <span class="hljs-comment"># 从子页面中拿到图片的下载路径</span><br>    child = BeautifulSoup(child_text, <span class="hljs-string">&quot;html.parser&quot;</span>)<br>    p = child.find(<span class="hljs-string">&quot;p&quot;</span>, align=<span class="hljs-string">&quot;center&quot;</span>)<br>    img = p.find(<span class="hljs-string">&quot;img&quot;</span>)<br>    src = img.get(<span class="hljs-string">&quot;src&quot;</span>)<br>    <span class="hljs-comment"># 下载图片</span><br>    img_resp = requests.get(src)<br>    <span class="hljs-comment"># img_resp.content  # 这里拿到的是字节</span><br>    img_name = src.split(<span class="hljs-string">&quot;/&quot;</span>)[-<span class="hljs-number">1</span>]  <span class="hljs-comment"># 拿到url中的最后一个 / 以后的内容-1代表最后一个</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;img/&quot;</span>+img_name, mode=<span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>        f.write(img_resp.content)  <span class="hljs-comment"># 图片内容写入文件</span><br><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;正在下载&quot;</span>, img_name)<br>    time.sleep(<span class="hljs-number">1</span>) <span class="hljs-comment">#停1秒</span><br><br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;下载完了&quot;</span>)<br></code></pre></td></tr></table></figure>
-<h1 id="lxml模块的使用"><a href="#lxml模块的使用" class="headerlink" title="lxml模块的使用"></a>lxml模块的使用</h1><h3 id="导入lxml的etree库"><a href="#导入lxml的etree库" class="headerlink" title="导入lxml的etree库"></a>导入lxml的etree库</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br></code></pre></td></tr></table></figure>
-<p>利用etree.HTML 将HTML字符串(bytes类型活str类型) 转化为Element对象 Element对象具有xpath的方法 返回结果列表</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">html = etree.HTML(text)     <span class="hljs-comment"># text为文本内容</span><br>ret_list = html.xpath(<span class="hljs-string">&quot;xpath语法规则字符串&quot;</span>)     <span class="hljs-comment"># 用xpath来解析</span><br></code></pre></td></tr></table></figure>
-<h3 id="导入lxml的etree-tostring函数的使用"><a href="#导入lxml的etree-tostring函数的使用" class="headerlink" title="导入lxml的etree.tostring函数的使用"></a>导入lxml的etree.tostring函数的使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br><br>html_str = <span class="hljs-string">&#x27;&#x27;&#x27; &lt;div&gt;&lt;ul&gt;</span><br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;first item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link2.html&quot;&gt;second item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-inactive&quot;&gt;&lt;a href=&quot;;link3.html&quot;&gt;third item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;fourth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-0&quot;&gt;&lt;a href=&quot;;link5.html&quot;&gt;fifth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;ul&gt;&lt;div&gt; <span class="hljs-string">&#x27;&#x27;&#x27;         </span><br><span class="hljs-comment"># 将html源码转换成element对象   etree.HTML()能够自动补全html缺失的标签</span><br>html = etree.HTML(html_str)<br><span class="hljs-comment"># 转换成String类型的数据        </span><br>handeled_html_str = etree.toString(html).decode()<br><span class="hljs-built_in">print</span>(handeled_html_str)<br></code></pre></td></tr></table></figure>
-<br></h1></h1>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
-<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
-<br>
-
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
-      <categories>
-        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
@@ -12132,23 +12207,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <br>]]></content>
   </entry>
   <entry>
-    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
-    <url>/Thread-Process.html</url>
-    <content><![CDATA[<p><strong>概念</strong></p>
-<a id="more"></a>
-
-<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径, 就算在什么都不干的话, 里面会有(主线程)main线程, Java里面还有个一个收垃圾的gc线程</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Thread是线程的英文<br></code></pre></td></tr></table></figure>
-
-<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程, 进程是执行程序的一次执行过程是一个动态的概念</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Process是进程的英文<br></code></pre></td></tr></table></figure>
-<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程, 一个进程里面必须要有一个线程, 否则没有存在的意义</strong></p>
-<h1 id="注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行"><a href="#注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行"></a>注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行</h1><br>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>私有云配置(个人笔记)</title>
     <url>/Private-cloud.html</url>
     <content><![CDATA[<p><strong>要有Linux基础</strong></p>
@@ -12350,6 +12408,23 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <br>]]></content>
       <categories>
         <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>什么是线程?什么是进程?线程与进程到底是什么关系</title>
+    <url>/Thread-Process.html</url>
+    <content><![CDATA[<p><strong>概念</strong></p>
+<a id="more"></a>
+
+<h1 id="什么是线程-学习进程最重要的还是学习线程"><a href="#什么是线程-学习进程最重要的还是学习线程" class="headerlink" title="什么是线程(学习进程最重要的还是学习线程)"></a>什么是线程(学习进程最重要的还是学习线程)</h1><p><strong>线程就是独立执行的路径, 就算在什么都不干的话, 里面会有(主线程)main线程, Java里面还有个一个收垃圾的gc线程</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Thread是线程的英文<br></code></pre></td></tr></table></figure>
+
+<h1 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h1><p><strong>把程序跑起来才叫做进程, 进程是执行程序的一次执行过程是一个动态的概念</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">Process是进程的英文<br></code></pre></td></tr></table></figure>
+<h1 id="线程与进程到底是什么关系"><a href="#线程与进程到底是什么关系" class="headerlink" title="线程与进程到底是什么关系"></a>线程与进程到底是什么关系</h1><p><strong>一个进程里面可以包含若干个线程, 一个进程里面必须要有一个线程, 否则没有存在的意义</strong></p>
+<h1 id="注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行"><a href="#注意-线程开启不一定马上执行-JVM去告诉操作系统-线程的处理-操作系统再去告诉-CPU怎么处理线程-由CPU调度执行" class="headerlink" title="注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行"></a>注意: 线程开启不一定马上执行, JVM去告诉操作系统 线程的处理, 操作系统再去告诉 CPU怎么处理线程, 由CPU调度执行</h1><br>]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
   <entry>
@@ -12706,218 +12781,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 "∽"是相似符号，"≌"是全等号，"∥"是平行符号，"⊥"是垂直符号，"∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号，"⊆"是包含于符号，"⊇"是包含符号，"|"表示"能整除" (例如a|b 表示"a能整除b"，而  -->
 
 </h5></h5>]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>导数与微分 (第二章)</title>
-    <url>/HigherMathematics-derivative-differentiate.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="导数的概念与运算法则"><a href="#导数的概念与运算法则" class="headerlink" title="导数的概念与运算法则"></a>导数的概念与运算法则</h1><h2 id="考点1-导数的定义"><a href="#考点1-导数的定义" class="headerlink" title="考点1: 导数的定义"></a>考点1: 导数的定义</h2><h3>定义:</h3>
-
-<div class="shuxue">若$$\lim_{\triangle x\rightarrow\infty}\frac{f(\;x_0\;+\;\triangle x\;)-f(\;x_0\;)}{\triangle x}\\$$ 存在,则称 $$\;y=f(x)\;\\\\$$ 在 $$\;\;x_0\;\;\\\\$$ 处可导</div>
-
-<div class="shuxue">称该极限为,$$\;y=f(x)\;\\\\$$在$$\;\;x_0\;\;\\\\$$ 处的导数 </div>
-
-<div class="shuxue">记作: <span class="shuxue2">$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$${}_{\;x\;=\;x_0\;}\\\\$$</span></div>
-
-
-<h3>特别的:</h3>
-
-<div class="shuxue">$$f\;'\;(\;x_0\;)\;=\;\lim_{\triangle x\rightarrow0}\frac{f(\;x_0\;+\;\triangle x\;)\;-\;f\left(\;x_0\;\right)}{\triangle x}\\$$</div>
-
-<div class="shuxue">$$=\lim_{x\rightarrow0}\frac{f(\;x\;)\;-\;f\left(\;x_0\;\right)}{x\;-\;x_0}\\\\$$ </div>
-
-<div class="shuxue"><span>$$\;f\;'\;\left(\;x\;\right),\;\;\\\\$$</span><span>$$\;y\;'\;,\;\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span><span>$$\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span></div>
-
-<h3>导函数记作:</h3>
-
-<div class="shuxue"><span class="shuxue2">$$\;f\;'\;\left(\;x\;\right),\;\;y\;'\;,\;\frac{dy}{dx}\;$$</span></div>
-
-
-<h2 id="考点2-高阶导数"><a href="#考点2-高阶导数" class="headerlink" title="考点2: 高阶导数"></a>考点2: 高阶导数</h2><h3 id="求n阶段方法"><a href="#求n阶段方法" class="headerlink" title="求n阶段方法:"></a>求n阶段方法:</h3><h4>求出f(x)的前几阶导, 总结规律, 得n阶导</h4>
-
-<h4>高阶导数公式:</h4>
-
-<p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue"><span>$${(\;e\;^{x\;})}^{\;(\;n\;)}\;=\;e^x,$$</span><span>$$(\;e^{\;ax\;+\;b}\;)\;^{(\;n\;)}\;=\;a^{\;n\;}e\;^{ax\;+\;b},\;$$</span><span>$${(\;a^{x\;})}^{(\;n\;)}\;=\;{(\;\ln\;a\;)}^{\;n}\;a^{\;x}$$</span></div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue"><span>$$\left(\;x^n\;\right)^{(\;n\;)}\;=\;n!,\;$$</span><span>$$\left(\;x^m\;\right)^{(\;n\;)\;}\;=\;$$</span><span>$$0.\;( \;m < n\;)$$</span></div>
-
-
-<p><font color="#7bbfea">(3)</font></p>
-<div class="shuxue"><span>$${(\;\sin\;x\;)}^{\;(\;n\;)\;}=\;\sin\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;),\\\\$$</span><span>$${(\;\cos\;x)}^{\;(\;n\;)}\;=\;\cos\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;)\\\\$$</span></div>
-
-
-<h2 id="考点3-求隐函数的导数"><a href="#考点3-求隐函数的导数" class="headerlink" title="考点3: 求隐函数的导数"></a>考点3: 求隐函数的导数</h2><div class="shuxue">定义: 显函数 $$ \;y\; \;=\; f\; (\; x\; )\;$$, 隐函数$$ \;F \; ( \;x \;,\; y \; ) \; = \; 0\;$$</div>
-
-<h3>解题方法:</h3>
-
-<h4>方法一: 复合函数法</h4>
-
-<div class="shuxue">方程 $$\;F\;=\;(\;x\;,\;y\;)\;=\;0\;$$, 两边同时对$$\;x\;$$求导, 解出$$\;y'\;$$ </div>
-
-<div class="shuxue">注意: <span>$$\;x\;$$</span>是<span>$$\;y\;$$</span>的函数</div>
-
-<h4>方法二: 公式法</h4>
-
-<p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue">构造二次元函数 $$\;F\;=\;(\;x\;,\;y\;)\;$$</div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue">求偏导数 $$\;F_x\;(\;x\;,\;y\;),\;F_{y\;}(\;x\;,\;y\;)\;$$</div>
-
-<p><font color="#7bbfea">(3)</font></p>
-<div class="shuxue">带公式 $$\;\frac{dy}{dx}\;=\;-\;\frac{Fx\;(\;x\;,\;y\;)}{Fy\;(\;x\;,\;y\;)}$$</div>
-
-<h2 id="考点4-求参数方程的导数"><a href="#考点4-求参数方程的导数" class="headerlink" title="考点4: 求参数方程的导数"></a>考点4: 求参数方程的导数</h2><p><font color="#7bbfea">(1)</font></p>
-<div class="shuxue">参数方程: $$\;\left\{\begin{array}{l}x\;=\;\varphi\;(\;t\;)\\y\;=\;\psi\;(\;t\;)\end{array}\right.\;$$</div>
-
-<p><font color="#7bbfea">(2)</font></p>
-<div class="shuxue">求导公式: $$\;\frac{dy}{dx}\;=\;\frac{dy\;/\;dt}{dx/\;dt}\;=\;\frac{\psi\;'\;(\;t\;)\;}{\varphi\;'\;(\;t\;)}$$</div>
-
-<div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>
-
-<br>]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
-    <url>/HigherMathematics-Differential-Derivative.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
-<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
-<br>
-
-
-
-]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>数列的极限</title>
-    <url>/limit-of-sequence.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="数列的定义"><a href="#数列的定义" class="headerlink" title="数列的定义"></a>数列的定义</h1><h4>概念</h4>
-
-<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E6%A6%82%E5%BF%B5.jpg"></p>
-<h4>数列的项</h4>
-
-<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
-<h1 id="数列极限的定义"><a href="#数列极限的定义" class="headerlink" title="数列极限的定义"></a>数列极限的定义</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
-<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E5%85%AC%E5%BC%8F.jpg"></p>
-<h1 id="收敛数列的性质"><a href="#收敛数列的性质" class="headerlink" title="收敛数列的性质"></a>收敛数列的性质</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%94%B6%E6%95%9B%E6%95%B0%E5%88%97%E7%9A%84%E6%80%A7%E8%B4%A8.jpg"></p>
-<br>
-
-<!-- ### 幂函数: y=Xα (α∈R是常数)
-
-### 指数函数:y=ax (a>0,a≠1)
-
-### 对数函数:y=loga x (a>0,a≠1)
-
-### 特别地,当a=e时,记作y=lnx
-
-###  -->
-
-<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B
-
-⊇是包含符号：A包含B-则B为A的子集或等于A
-
-⫋真包含：A真包含于B-则A为B的真子集, 若B={1, 2}, 则A={1}或{2}或空集
-
-运算符号：
-
-如加号 (+) , 减号 (－) , 乘号 (×或·) , 除号 (÷或/) , 两个集合的并集 (∪) , 交集 (∩) , 根号 (√￣) , 对数 (log, lg, ln, lb) , 比 (:) , 绝对值符号| |, 微分 (d) , 积分 (∫) , 闭合曲面 (曲线) 积分 (∮) 等
-
-关系符号：
-
-如"="是等号, "≈"是近似符号 (即约等于) , "≠"是不等号, ">"是大于符号, "<"是小于符号, "≥"是大于或等于符号 (也可写作"≮", 即不小于) , "≤"是小于或等于符号 (也可写作"≯", 即不大于) , "→ "表示变量变化的趋势
-
-"∽"是相似符号, "≌"是全等号, "∥"是平行符号, "⊥"是垂直符号, "∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号, "⊆"是包含于符号, "⊇"是包含符号, "|"表示"能整除" (例如a|b 表示"a能整除b", 而  -->
-
-]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>映射与函数</title>
-    <url>/mathematics-Mapping-function.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h1><h3 id="映射的3要素-定义域-x-值域范围-Y-对应法则-f"><a href="#映射的3要素-定义域-x-值域范围-Y-对应法则-f" class="headerlink" title="映射的3要素: 定义域(x)  值域范围(Y)  对应法则(f)"></a>映射的3要素: 定义域(x)  值域范围(Y)  对应法则(f)</h3><p><strong>注意: 高等数学里面X和x代表不同意思</strong></p>
-<ul>
-<li><p>X 是指变量</p>
-</li>
-<li><p>x 是指取值</p>
-</li>
-</ul>
-<h2 id="X-Y-非空集合-法则f-对X中每个元素x-唯一的与之对应"><a href="#X-Y-非空集合-法则f-对X中每个元素x-唯一的与之对应" class="headerlink" title="X Y 非空集合  法则f 对X中每个元素x 唯一的与之对应"></a>X Y 非空集合  法则f 对X中每个元素x 唯一的与之对应</h2><ul>
-<li>f 映射 f:X→Y  (y=f(x), x∈X)</li>
-</ul>
-<p><strong>注意: 这上面的Y 意思是 像 原像</strong></p>
-<p>定义域  Df    (Domain)<br>值域    Rf    (Range RfCY)</p>
-<p>y = f(x)<br>像   原像</p>
-<h1 id="映射的3种情况"><a href="#映射的3种情况" class="headerlink" title="映射的3种情况"></a>映射的3种情况</h1><h2 id="满射-多对一"><a href="#满射-多对一" class="headerlink" title="满射 (多对一)"></a>满射 (多对一)</h2><p><strong>没有映射 f:X→Y, 若 Rf = Y, 则称f为满射</strong></p>
-<h2 id="单射-一对一"><a href="#单射-一对一" class="headerlink" title="单射 (一对一)"></a>单射 (一对一)</h2><p><strong>若对x1, x2∈X, 当x1 ≠ x2时有f(x1) ≠ f(x2)则称为单射</strong></p>
-<h2 id="一一映射-或-双射"><a href="#一一映射-或-双射" class="headerlink" title="一一映射 或 双射"></a>一一映射 或 双射</h2><p><strong>满射加单射 即单又满的映射, 称为 “一一映射”</strong></p>
-<h2 id="逆映射"><a href="#逆映射" class="headerlink" title="逆映射"></a>逆映射</h2><p><strong>一定是是单射</strong></p>
-<h2 id="符合映射"><a href="#符合映射" class="headerlink" title="符合映射"></a>符合映射</h2><p><strong>注意: 符合的顺序不同它的映射也不同</strong></p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
-<li>解释: 函数是一种特殊的映射</li>
-</ul>
-<h3 id="函数的3要素-定义域-x-值域范围-Y-对应法则-f"><a href="#函数的3要素-定义域-x-值域范围-Y-对应法则-f" class="headerlink" title="函数的3要素: 定义域(x)  值域范围(Y)  对应法则(f)"></a>函数的3要素: 定义域(x)  值域范围(Y)  对应法则(f)</h3><p><strong>概念: 设数集D⊂R, 称映射 f:D→R为定义在D上的函数 记作 y=f(x) , x∈D</strong></p>
-<h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><h2 id="符号函数"><a href="#符号函数" class="headerlink" title="符号函数"></a>符号函数</h2><h2 id="函数的几种特性"><a href="#函数的几种特性" class="headerlink" title="函数的几种特性"></a>函数的几种特性</h2><p><strong>有界性</strong></p>
-<ul>
-<li><p>上界: ∃k1  f(x)≤k1 一个上界</p>
-</li>
-<li><p>上界: ∃k2  f(x)≥k2 一个下界</p>
-</li>
-<li><p>有界: ∃正数M  |f(x)|≤M 有界</p>
-</li>
-<li><p>无界: ∀正数M   x1∈x   |f(x)|&gt;M  既有上界也有下界</p>
-</li>
-</ul>
-<br>
-
-<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B
-
-⊇是包含符号：A包含B-则B为A的子集或等于A
-
-⫋真包含：A真包含于B-则A为B的真子集, 若B={1, 2}, 则A={1}或{2}或空集
-
-运算符号：
-
-如加号 (+) , 减号 (－) , 乘号 (×或·) , 除号 (÷或/) , 两个集合的并集 (∪) , 交集 (∩) , 根号 (√￣) , 对数 (log, lg, ln, lb) , 比 (:) , 绝对值符号| |, 微分 (d) , 积分 (∫) , 闭合曲面 (曲线) 积分 (∮) 等
-
-关系符号：
-
-如"="是等号, "≈"是近似符号 (即约等于) , "≠"是不等号, ">"是大于符号, "<"是小于符号, "≥"是大于或等于符号 (也可写作"≮", 即不小于) , "≤"是小于或等于符号 (也可写作"≯", 即不大于) , "→ "表示变量变化的趋势
-
-"∽"是相似符号, "≌"是全等号, "∥"是平行符号, "⊥"是垂直符号, "∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号, "⊆"是包含于符号, "⊇"是包含符号, "|"表示"能整除" (例如a|b 表示"a能整除b", 而  -->
-
-]]></content>
       <categories>
         <category>跟我一起学数学</category>
       </categories>
@@ -16099,6 +15962,218 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 ]]></content>
       <categories>
         <category>考研必背</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>导数与微分 (第二章)</title>
+    <url>/HigherMathematics-derivative-differentiate.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="导数的概念与运算法则"><a href="#导数的概念与运算法则" class="headerlink" title="导数的概念与运算法则"></a>导数的概念与运算法则</h1><h2 id="考点1-导数的定义"><a href="#考点1-导数的定义" class="headerlink" title="考点1: 导数的定义"></a>考点1: 导数的定义</h2><h3>定义:</h3>
+
+<div class="shuxue">若$$\lim_{\triangle x\rightarrow\infty}\frac{f(\;x_0\;+\;\triangle x\;)-f(\;x_0\;)}{\triangle x}\\$$ 存在,则称 $$\;y=f(x)\;\\\\$$ 在 $$\;\;x_0\;\;\\\\$$ 处可导</div>
+
+<div class="shuxue">称该极限为,$$\;y=f(x)\;\\\\$$在$$\;\;x_0\;\;\\\\$$ 处的导数 </div>
+
+<div class="shuxue">记作: <span class="shuxue2">$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$$f\;'\;(\;x_0\;)\;,\;\\\\$$</span><span>$${}_{\;x\;=\;x_0\;}\\\\$$</span></div>
+
+
+<h3>特别的:</h3>
+
+<div class="shuxue">$$f\;'\;(\;x_0\;)\;=\;\lim_{\triangle x\rightarrow0}\frac{f(\;x_0\;+\;\triangle x\;)\;-\;f\left(\;x_0\;\right)}{\triangle x}\\$$</div>
+
+<div class="shuxue">$$=\lim_{x\rightarrow0}\frac{f(\;x\;)\;-\;f\left(\;x_0\;\right)}{x\;-\;x_0}\\\\$$ </div>
+
+<div class="shuxue"><span>$$\;f\;'\;\left(\;x\;\right),\;\;\\\\$$</span><span>$$\;y\;'\;,\;\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span><span>$$\frac{\displaystyle dy}{\displaystyle dx}\;\\\\$$</span></div>
+
+<h3>导函数记作:</h3>
+
+<div class="shuxue"><span class="shuxue2">$$\;f\;'\;\left(\;x\;\right),\;\;y\;'\;,\;\frac{dy}{dx}\;$$</span></div>
+
+
+<h2 id="考点2-高阶导数"><a href="#考点2-高阶导数" class="headerlink" title="考点2: 高阶导数"></a>考点2: 高阶导数</h2><h3 id="求n阶段方法"><a href="#求n阶段方法" class="headerlink" title="求n阶段方法:"></a>求n阶段方法:</h3><h4>求出f(x)的前几阶导, 总结规律, 得n阶导</h4>
+
+<h4>高阶导数公式:</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue"><span>$${(\;e\;^{x\;})}^{\;(\;n\;)}\;=\;e^x,$$</span><span>$$(\;e^{\;ax\;+\;b}\;)\;^{(\;n\;)}\;=\;a^{\;n\;}e\;^{ax\;+\;b},\;$$</span><span>$${(\;a^{x\;})}^{(\;n\;)}\;=\;{(\;\ln\;a\;)}^{\;n}\;a^{\;x}$$</span></div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue"><span>$$\left(\;x^n\;\right)^{(\;n\;)}\;=\;n!,\;$$</span><span>$$\left(\;x^m\;\right)^{(\;n\;)\;}\;=\;$$</span><span>$$0.\;( \;m < n\;)$$</span></div>
+
+
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue"><span>$${(\;\sin\;x\;)}^{\;(\;n\;)\;}=\;\sin\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;),\\\\$$</span><span>$${(\;\cos\;x)}^{\;(\;n\;)}\;=\;\cos\;(\;x\;+\;\frac{n\;\mathrm\pi}2\;)\\\\$$</span></div>
+
+
+<h2 id="考点3-求隐函数的导数"><a href="#考点3-求隐函数的导数" class="headerlink" title="考点3: 求隐函数的导数"></a>考点3: 求隐函数的导数</h2><div class="shuxue">定义: 显函数 $$ \;y\; \;=\; f\; (\; x\; )\;$$, 隐函数$$ \;F \; ( \;x \;,\; y \; ) \; = \; 0\;$$</div>
+
+<h3>解题方法:</h3>
+
+<h4>方法一: 复合函数法</h4>
+
+<div class="shuxue">方程 $$\;F\;=\;(\;x\;,\;y\;)\;=\;0\;$$, 两边同时对$$\;x\;$$求导, 解出$$\;y'\;$$ </div>
+
+<div class="shuxue">注意: <span>$$\;x\;$$</span>是<span>$$\;y\;$$</span>的函数</div>
+
+<h4>方法二: 公式法</h4>
+
+<p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">构造二次元函数 $$\;F\;=\;(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求偏导数 $$\;F_x\;(\;x\;,\;y\;),\;F_{y\;}(\;x\;,\;y\;)\;$$</div>
+
+<p><font color="#7bbfea">(3)</font></p>
+<div class="shuxue">带公式 $$\;\frac{dy}{dx}\;=\;-\;\frac{Fx\;(\;x\;,\;y\;)}{Fy\;(\;x\;,\;y\;)}$$</div>
+
+<h2 id="考点4-求参数方程的导数"><a href="#考点4-求参数方程的导数" class="headerlink" title="考点4: 求参数方程的导数"></a>考点4: 求参数方程的导数</h2><p><font color="#7bbfea">(1)</font></p>
+<div class="shuxue">参数方程: $$\;\left\{\begin{array}{l}x\;=\;\varphi\;(\;t\;)\\y\;=\;\psi\;(\;t\;)\end{array}\right.\;$$</div>
+
+<p><font color="#7bbfea">(2)</font></p>
+<div class="shuxue">求导公式: $$\;\frac{dy}{dx}\;=\;\frac{dy\;/\;dt}{dx/\;dt}\;=\;\frac{\psi\;'\;(\;t\;)\;}{\varphi\;'\;(\;t\;)}$$</div>
+
+<div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>
+
+<br>]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
+    <url>/HigherMathematics-Differential-Derivative.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
+<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
+<br>
+
+
+
+]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数列的极限</title>
+    <url>/limit-of-sequence.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="数列的定义"><a href="#数列的定义" class="headerlink" title="数列的定义"></a>数列的定义</h1><h4>概念</h4>
+
+<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E6%A6%82%E5%BF%B5.jpg"></p>
+<h4>数列的项</h4>
+
+<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
+<h1 id="数列极限的定义"><a href="#数列极限的定义" class="headerlink" title="数列极限的定义"></a>数列极限的定义</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E7%9A%84%E9%A1%B9.jpg"></p>
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90%E7%9A%84%E5%85%AC%E5%BC%8F.jpg"></p>
+<h1 id="收敛数列的性质"><a href="#收敛数列的性质" class="headerlink" title="收敛数列的性质"></a>收敛数列的性质</h1><p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E6%94%B6%E6%95%9B%E6%95%B0%E5%88%97%E7%9A%84%E6%80%A7%E8%B4%A8.jpg"></p>
+<br>
+
+<!-- ### 幂函数: y=Xα (α∈R是常数)
+
+### 指数函数:y=ax (a>0,a≠1)
+
+### 对数函数:y=loga x (a>0,a≠1)
+
+### 特别地,当a=e时,记作y=lnx
+
+###  -->
+
+<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B
+
+⊇是包含符号：A包含B-则B为A的子集或等于A
+
+⫋真包含：A真包含于B-则A为B的真子集, 若B={1, 2}, 则A={1}或{2}或空集
+
+运算符号：
+
+如加号 (+) , 减号 (－) , 乘号 (×或·) , 除号 (÷或/) , 两个集合的并集 (∪) , 交集 (∩) , 根号 (√￣) , 对数 (log, lg, ln, lb) , 比 (:) , 绝对值符号| |, 微分 (d) , 积分 (∫) , 闭合曲面 (曲线) 积分 (∮) 等
+
+关系符号：
+
+如"="是等号, "≈"是近似符号 (即约等于) , "≠"是不等号, ">"是大于符号, "<"是小于符号, "≥"是大于或等于符号 (也可写作"≮", 即不小于) , "≤"是小于或等于符号 (也可写作"≯", 即不大于) , "→ "表示变量变化的趋势
+
+"∽"是相似符号, "≌"是全等号, "∥"是平行符号, "⊥"是垂直符号, "∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号, "⊆"是包含于符号, "⊇"是包含符号, "|"表示"能整除" (例如a|b 表示"a能整除b", 而  -->
+
+]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>映射与函数</title>
+    <url>/mathematics-Mapping-function.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h1><h3 id="映射的3要素-定义域-x-值域范围-Y-对应法则-f"><a href="#映射的3要素-定义域-x-值域范围-Y-对应法则-f" class="headerlink" title="映射的3要素: 定义域(x)  值域范围(Y)  对应法则(f)"></a>映射的3要素: 定义域(x)  值域范围(Y)  对应法则(f)</h3><p><strong>注意: 高等数学里面X和x代表不同意思</strong></p>
+<ul>
+<li><p>X 是指变量</p>
+</li>
+<li><p>x 是指取值</p>
+</li>
+</ul>
+<h2 id="X-Y-非空集合-法则f-对X中每个元素x-唯一的与之对应"><a href="#X-Y-非空集合-法则f-对X中每个元素x-唯一的与之对应" class="headerlink" title="X Y 非空集合  法则f 对X中每个元素x 唯一的与之对应"></a>X Y 非空集合  法则f 对X中每个元素x 唯一的与之对应</h2><ul>
+<li>f 映射 f:X→Y  (y=f(x), x∈X)</li>
+</ul>
+<p><strong>注意: 这上面的Y 意思是 像 原像</strong></p>
+<p>定义域  Df    (Domain)<br>值域    Rf    (Range RfCY)</p>
+<p>y = f(x)<br>像   原像</p>
+<h1 id="映射的3种情况"><a href="#映射的3种情况" class="headerlink" title="映射的3种情况"></a>映射的3种情况</h1><h2 id="满射-多对一"><a href="#满射-多对一" class="headerlink" title="满射 (多对一)"></a>满射 (多对一)</h2><p><strong>没有映射 f:X→Y, 若 Rf = Y, 则称f为满射</strong></p>
+<h2 id="单射-一对一"><a href="#单射-一对一" class="headerlink" title="单射 (一对一)"></a>单射 (一对一)</h2><p><strong>若对x1, x2∈X, 当x1 ≠ x2时有f(x1) ≠ f(x2)则称为单射</strong></p>
+<h2 id="一一映射-或-双射"><a href="#一一映射-或-双射" class="headerlink" title="一一映射 或 双射"></a>一一映射 或 双射</h2><p><strong>满射加单射 即单又满的映射, 称为 “一一映射”</strong></p>
+<h2 id="逆映射"><a href="#逆映射" class="headerlink" title="逆映射"></a>逆映射</h2><p><strong>一定是是单射</strong></p>
+<h2 id="符合映射"><a href="#符合映射" class="headerlink" title="符合映射"></a>符合映射</h2><p><strong>注意: 符合的顺序不同它的映射也不同</strong></p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<li>解释: 函数是一种特殊的映射</li>
+</ul>
+<h3 id="函数的3要素-定义域-x-值域范围-Y-对应法则-f"><a href="#函数的3要素-定义域-x-值域范围-Y-对应法则-f" class="headerlink" title="函数的3要素: 定义域(x)  值域范围(Y)  对应法则(f)"></a>函数的3要素: 定义域(x)  值域范围(Y)  对应法则(f)</h3><p><strong>概念: 设数集D⊂R, 称映射 f:D→R为定义在D上的函数 记作 y=f(x) , x∈D</strong></p>
+<h3 id="函数的定义"><a href="#函数的定义" class="headerlink" title="函数的定义"></a>函数的定义</h3><h2 id="符号函数"><a href="#符号函数" class="headerlink" title="符号函数"></a>符号函数</h2><h2 id="函数的几种特性"><a href="#函数的几种特性" class="headerlink" title="函数的几种特性"></a>函数的几种特性</h2><p><strong>有界性</strong></p>
+<ul>
+<li><p>上界: ∃k1  f(x)≤k1 一个上界</p>
+</li>
+<li><p>上界: ∃k2  f(x)≥k2 一个下界</p>
+</li>
+<li><p>有界: ∃正数M  |f(x)|≤M 有界</p>
+</li>
+<li><p>无界: ∀正数M   x1∈x   |f(x)|&gt;M  既有上界也有下界</p>
+</li>
+</ul>
+<br>
+
+<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B
+
+⊇是包含符号：A包含B-则B为A的子集或等于A
+
+⫋真包含：A真包含于B-则A为B的真子集, 若B={1, 2}, 则A={1}或{2}或空集
+
+运算符号：
+
+如加号 (+) , 减号 (－) , 乘号 (×或·) , 除号 (÷或/) , 两个集合的并集 (∪) , 交集 (∩) , 根号 (√￣) , 对数 (log, lg, ln, lb) , 比 (:) , 绝对值符号| |, 微分 (d) , 积分 (∫) , 闭合曲面 (曲线) 积分 (∮) 等
+
+关系符号：
+
+如"="是等号, "≈"是近似符号 (即约等于) , "≠"是不等号, ">"是大于符号, "<"是小于符号, "≥"是大于或等于符号 (也可写作"≮", 即不小于) , "≤"是小于或等于符号 (也可写作"≯", 即不大于) , "→ "表示变量变化的趋势
+
+"∽"是相似符号, "≌"是全等号, "∥"是平行符号, "⊥"是垂直符号, "∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号, "⊆"是包含于符号, "⊇"是包含符号, "|"表示"能整除" (例如a|b 表示"a能整除b", 而  -->
+
+]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
       </categories>
   </entry>
   <entry>
