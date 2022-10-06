@@ -2016,44 +2016,21 @@ $(document).ready(function () {
 	
 
  
-		<div class="sdq-pjax">
-        <script src="/js/pjax/jquery.pjax.js"></script>
-        <script type="text/javascript">
-			
-$(document).ready(function () {
-	$(document).pjax('a[target!=_blank]', '.main', {fragment: '.main',timeout: 8000});
-
-	$(document).on('pjax:error', function() {
-		<!-- alert("正在向Turo星发送信号"); -->
-		  history.back();
-	});
-	<!-- 浮动颜色 -->
-	$(document).on('pjax:start', function() {
-		//加载延迟中...................
-		$(".main-content").removeClass("wrapShow");
-	});
-	$(document).on('pjax:end', function() {
-		//加载中...................
-		$(".main-content").delay(500).addClass("wrapShow");
-	});
-	
-	$(document).on('ready pjax:end', function(event) {
+		<script type="text/javascript">
+			$(function(){
 	linker();
 	tocs();
 	copycodes();
 	postcolor();								 
 	styleS();
-	sdqlazyload();
-	sdqMathjax();
-	
-	}); /*end ready pjax*/
+	sdqlazyload(); 
+});
 
-<!-- 选中标题框框框变色 -->
-function linker(){
-<!-- /* 外链保护外链保护http://sdq3.ml */
 
-	  -->
-}
+<!-- function linker(){
+/* 外链保护http://sdq3.ml */
+	 
+} -->
 		
 	
 /* .sdq-post悬浮变色 */ 
@@ -2078,7 +2055,7 @@ var index = Math.floor((Math.random()*arr.length));
 }/* end hoverColor  */
 		
 	
-/*页面载入完成后，创建复制按钮*/
+/*页面载入完成后, 创建复制按钮*/
 function copycodes(){
 	
 	/* 代码高度 判断 */
@@ -2139,6 +2116,7 @@ function tocs(){
 	} else {
 		 window.onload = consoleTest;
 function consoleTest(){
+		<!-- console.log("\n %c vbj %c \n", "color: #FFF; background:#030307; padding:5px 0;", "background: #85adfede; padding:5px 0;"); -->
 		var str = function () {
 
         }
@@ -2203,26 +2181,6 @@ if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobi
 	}
 } /* end styleS */	
 
-
-/* 观察者模式 */
-function Observer(){
-	$('#sdq-logo').click( 
-		function () { 
-			alert("你是观察者");
-			$('.nav-list').addClass('sdq-none');
-			$('.sdq-bg').addClass('sdq-none');
-			$('.main-content').addClass('sdq-none');
-			$('.container-fluid').addClass('sdq-none');
-			$('#sdq-vbg').css("opacity","1");
-			$('#sdq-vbg').css("z-index","5201314");
-			$('.navbar').css("background-color","transparent");
-			$('.navbar').css("box-shadow","none");
-			$('#sdq-logo').css("position","relative");
-			$('#sdq-logo').css("left","-100px");
-			console.log("你是观察者null");
-			
-		});
-}/* end Observer */
 	
 													
 /* 图片懒加载 */
@@ -2264,87 +2222,10 @@ function sdqlazyload(){
     else{ window.onload = sdqlazyload; }
 
 
-	
-	
 
-});  /* end */
-
-								
-/* 公式功能 */
-function sdqMathjax(){
-	
-	// var $head = document.querySelector('head');
-	// var $wrapper = document.createElement("script");
-	// $wrapper.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-	// $head.appendChild($wrapper);
-	window.MathJax = {
-		loader: {load: ['input/asciimath']},
-		startup: {
-		  pageReady: function () {
-			//
-			// Synchronize menu renderer item with on-screen popup menu
-			//
-			var select = document.getElementById('Renderer');
-			if (select) {
-			  var renderer = MathJax.startup.document.menu.settings.renderer;
-			  var menu = MathJax.startup.document.menu.menu;
-			  var item = (menu.getPool ? menu.getPool() : menu.pool).lookup('renderer');
-			  select.value = renderer;
-			  if (renderer !== 'CHTML') item.setValue(renderer);
-			  item.registerCallback(function () {
-				var value = item.getValue();
-				if (value !== select.value) select.value = value;
-			  });
-			  window.setMode = function (renderer) {
-				if (item.getValue() !== renderer) item.setValue(renderer);
-			  }
-			  //
-			  //  Set up processing of input content
-			  //
-			  var input = document.getElementById('MathInput');
-			  var output = document.getElementById('MathPreview');
-			  var button = document.getElementById('renderHTML');
-			  output.innerHTML = input.value.trim();
-			  window.typesetInput = function () {
-				button.disabled = true;
-				output.innerHTML = input.value.trim();
-				MathJax.texReset();
-				MathJax.typesetClear();
-				MathJax.typesetPromise([output]).catch(function (err) {
-				  output.innerHTML = '';
-				  output.appendChild(document.createTextNode(err.message));
-				  console.error(err);
-				}).then(function () {
-				  button.disabled = false;
-				});
-			  }
-			  input.oninput = typesetInput;
-			}
-	  
-			return MathJax.startup.defaultPageReady();
-		  }
-		},
-		tex: {
-		  inlineMath: [['$', '$'], ['\\(', '\\)']],
-		  processEscapes: true
-		}
-	  };
-	var script = document.createElement('script');
-	script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-	script.setAttribute('id', 'MathJax-script');
-	document.head.appendChild(script);
-
-} /* end */
-
-/*  */
-function sdq11(){
 	
 
-} /* end */
-
-        </script>
-		</div>
-
+		</script>
 
 	
 	<link rel="stylesheet" type="text/css" href="/resources/toc/toc.css"> 
