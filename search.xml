@@ -3293,6 +3293,25 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>ES6 let知识</title>
+    <url>/ES6-let.html</url>
+    <content><![CDATA[<p><strong>ES6学习笔记</strong></p>
+<a id="more"></a>
+
+<h2 id="let声明变量"><a href="#let声明变量" class="headerlink" title="let声明变量"></a>let声明变量</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-comment">// 声明变量</span><br>    <span class="hljs-keyword">let</span> a;<br>    <span class="hljs-keyword">let</span> b, c, d;<br>    <span class="hljs-keyword">let</span> e = <span class="hljs-number">333</span>;<br>    <span class="hljs-comment">// 变量可以是数字 字符串 数组</span><br>    <span class="hljs-keyword">let</span> f = <span class="hljs-number">521</span>,g = <span class="hljs-string">&quot;我叫史迪奇&quot;</span>,h = [];<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="let变量不可重复利用"><a href="#let变量不可重复利用" class="headerlink" title="let变量不可重复利用"></a>let变量不可重复利用</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-comment">// 声明变量</span><br>    <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>    <span class="hljs-comment">// let sdq = &quot;史迪仔&quot;</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-comment">//  全局 函数 eval都属于块级作用域</span><br>    <span class="hljs-comment">// 像if else while for 都属于块级 都不支持let</span><br>    &#123;<br>        <span class="hljs-comment">// &#123;&#125;也是块级</span><br>        <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&#x27;史迪奇&#x27;</span>;<br>    &#125;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdz);<br>    <span class="hljs-keyword">let</span> sdz = <span class="hljs-string">&#x27;史迪仔&#x27;</span>; <br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="不影响作用域链"><a href="#不影响作用域链" class="headerlink" title="不影响作用域链"></a>不影响作用域链</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&#x27;史迪奇&#x27;</span>;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">SDQ</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br>    &#125;<br>    <span class="hljs-title function_">SDQ</span>()<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="点击变色的案例"><a href="#点击变色的案例" class="headerlink" title="点击变色的案例"></a>点击变色的案例</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;<br>        &lt;h2 <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;page-header&quot;</span>&gt;变色&lt;/h2&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/div&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/div&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Angel &quot;</span>&gt;安琪&lt;/div&gt;<br>    &lt;/div&gt;<br>    &lt;script&gt;<br>        <span class="hljs-comment">//获取div元素对象</span><br>        <span class="hljs-keyword">let</span> sdqs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByClassName</span>(<span class="hljs-string">&#x27;sdq&#x27;</span>);<br><br>        <span class="hljs-comment">//遍历并绑定事件</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i&lt;sdqs.<span class="hljs-property">length</span>;i++)&#123;<br>            sdqs[i].<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>                <span class="hljs-comment">//修改当前元素的背景颜色</span><br>                <span class="hljs-comment">// this.style.background = &#x27;#F08080&#x27;;</span><br>                sdqs[i].<span class="hljs-property">style</span>.<span class="hljs-property">background</span> = <span class="hljs-string">&#x27;#F08080&#x27;</span>;<br>            &#125;<br>        &#125;<br>    &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<iframe id="iframe" scrolling="no" src="/html/let案例.html"></iframe>
+
+<br>]]></content>
+      <categories>
+        <category>ES6</category>
+      </categories>
+  </entry>
+  <entry>
     <title>EJS常用标签</title>
     <url>/EJS.html</url>
     <content><![CDATA[<p><strong>EJS个人整理</strong></p>
@@ -3351,25 +3370,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 ]]></content>
       <categories>
         <category>Git</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ES6 let知识</title>
-    <url>/ES6-let.html</url>
-    <content><![CDATA[<p><strong>ES6学习笔记</strong></p>
-<a id="more"></a>
-
-<h2 id="let声明变量"><a href="#let声明变量" class="headerlink" title="let声明变量"></a>let声明变量</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-comment">// 声明变量</span><br>    <span class="hljs-keyword">let</span> a;<br>    <span class="hljs-keyword">let</span> b, c, d;<br>    <span class="hljs-keyword">let</span> e = <span class="hljs-number">333</span>;<br>    <span class="hljs-comment">// 变量可以是数字 字符串 数组</span><br>    <span class="hljs-keyword">let</span> f = <span class="hljs-number">521</span>,g = <span class="hljs-string">&quot;我叫史迪奇&quot;</span>,h = [];<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="let变量不可重复利用"><a href="#let变量不可重复利用" class="headerlink" title="let变量不可重复利用"></a>let变量不可重复利用</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-comment">// 声明变量</span><br>    <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&quot;史迪奇&quot;</span>;<br>    <span class="hljs-comment">// let sdq = &quot;史迪仔&quot;</span><br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-comment">//  全局 函数 eval都属于块级作用域</span><br>    <span class="hljs-comment">// 像if else while for 都属于块级 都不支持let</span><br>    &#123;<br>        <span class="hljs-comment">// &#123;&#125;也是块级</span><br>        <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&#x27;史迪奇&#x27;</span>;<br>    &#125;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="不存在变量提升"><a href="#不存在变量提升" class="headerlink" title="不存在变量提升"></a>不存在变量提升</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdz);<br>    <span class="hljs-keyword">let</span> sdz = <span class="hljs-string">&#x27;史迪仔&#x27;</span>; <br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="不影响作用域链"><a href="#不影响作用域链" class="headerlink" title="不影响作用域链"></a>不影响作用域链</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script&gt;<br>    <span class="hljs-keyword">let</span> sdq = <span class="hljs-string">&#x27;史迪奇&#x27;</span>;<br>    <span class="hljs-keyword">function</span> <span class="hljs-title function_">SDQ</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(sdq);<br>    &#125;<br>    <span class="hljs-title function_">SDQ</span>()<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="点击变色的案例"><a href="#点击变色的案例" class="headerlink" title="点击变色的案例"></a>点击变色的案例</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>    &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;<br>        &lt;h2 <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;page-header&quot;</span>&gt;变色&lt;/h2&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Stitch&quot;</span>&gt;史迪奇&lt;/div&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Reuben&quot;</span>&gt;鲁本&lt;/div&gt;<br>        &lt;div <span class="hljs-keyword">class</span>=<span class="hljs-string">&quot;Angel &quot;</span>&gt;安琪&lt;/div&gt;<br>    &lt;/div&gt;<br>    &lt;script&gt;<br>        <span class="hljs-comment">//获取div元素对象</span><br>        <span class="hljs-keyword">let</span> sdqs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementsByClassName</span>(<span class="hljs-string">&#x27;sdq&#x27;</span>);<br><br>        <span class="hljs-comment">//遍历并绑定事件</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;i&lt;sdqs.<span class="hljs-property">length</span>;i++)&#123;<br>            sdqs[i].<span class="hljs-property">onclick</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>                <span class="hljs-comment">//修改当前元素的背景颜色</span><br>                <span class="hljs-comment">// this.style.background = &#x27;#F08080&#x27;;</span><br>                sdqs[i].<span class="hljs-property">style</span>.<span class="hljs-property">background</span> = <span class="hljs-string">&#x27;#F08080&#x27;</span>;<br>            &#125;<br>        &#125;<br>    &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<iframe id="iframe" scrolling="no" src="/html/let案例.html"></iframe>
-
-<br>]]></content>
-      <categories>
-        <category>ES6</category>
       </categories>
   </entry>
   <entry>
@@ -5248,6 +5248,22 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>SQL Server T-SQL 视图</title>
+    <url>/SQL-try.html</url>
+    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> 视图(字段别名) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表 <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> OPTION<br></code></pre></td></tr></table></figure>
+<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">insert</span> 视图 <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;数据&#x27;</span>) <br></code></pre></td></tr></table></figure>
+<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 视图<br></code></pre></td></tr></table></figure>
+<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">update</span> 视图 <span class="hljs-keyword">set</span> 修改的字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;修改的数据&#x27;</span> <span class="hljs-keyword">where</span> 匹配字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;匹配数据&#x27;</span> <br></code></pre></td></tr></table></figure>
+<br>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
     <title>大数据 Spark</title>
     <url>/Spark.html</url>
     <content><![CDATA[<p><strong>Spark个人整理</strong></p>
@@ -5278,22 +5294,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <h1 id="Spark环境搭建-Local-本地模式"><a href="#Spark环境搭建-Local-本地模式" class="headerlink" title="Spark环境搭建-Local (本地模式)"></a>Spark环境搭建-Local (本地模式)</h1><h1 id="Spark环境搭载-Standalone-独立群"><a href="#Spark环境搭载-Standalone-独立群" class="headerlink" title="Spark环境搭载-Standalone (独立群)"></a>Spark环境搭载-Standalone (独立群)</h1><h1 id="Spark环境搭载-Standalone-HA-高可用模式"><a href="#Spark环境搭载-Standalone-HA-高可用模式" class="headerlink" title="Spark环境搭载-Standalone-HA (高可用模式)"></a>Spark环境搭载-Standalone-HA (高可用模式)</h1><h1 id="Spark环境搭载-Spark-On-Yarn-热门"><a href="#Spark环境搭载-Spark-On-Yarn-热门" class="headerlink" title="Spark环境搭载-Spark-On-Yarn (热门)"></a>Spark环境搭载-Spark-On-Yarn (热门)</h1><br>]]></content>
       <categories>
         <category>大数据</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SQL Server T-SQL 视图</title>
-    <url>/SQL-try.html</url>
-    <content><![CDATA[<p><strong>SQL Server个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">create</span> <span class="hljs-keyword">view</span> 视图(字段别名) <span class="hljs-keyword">as</span> <span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 表 <span class="hljs-keyword">WITH</span> <span class="hljs-keyword">CHECK</span> OPTION<br></code></pre></td></tr></table></figure>
-<h1 id="向视图插入数据"><a href="#向视图插入数据" class="headerlink" title="向视图插入数据"></a>向视图插入数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">insert</span> 视图 <span class="hljs-keyword">values</span>(<span class="hljs-string">&#x27;数据&#x27;</span>) <br></code></pre></td></tr></table></figure>
-<h1 id="查询视图数据"><a href="#查询视图数据" class="headerlink" title="查询视图数据"></a>查询视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">select</span> 字段 <span class="hljs-keyword">from</span> 视图<br></code></pre></td></tr></table></figure>
-<h1 id="修改-更新-视图数据"><a href="#修改-更新-视图数据" class="headerlink" title="修改(更新)视图数据"></a>修改(更新)视图数据</h1><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs SQL"><span class="hljs-keyword">update</span> 视图 <span class="hljs-keyword">set</span> 修改的字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;修改的数据&#x27;</span> <span class="hljs-keyword">where</span> 匹配字段<span class="hljs-operator">=</span><span class="hljs-string">&#x27;匹配数据&#x27;</span> <br></code></pre></td></tr></table></figure>
-<br>
-]]></content>
-      <categories>
-        <category>数据库</category>
       </categories>
   </entry>
   <entry>
@@ -5877,6 +5877,91 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
+    <url>/Arch-Wsl-install.html</url>
+    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
+<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
+
+<a id="more"></a>
+
+<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux<br></code></pre></td></tr></table></figure>
+<br>
+
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e5232864c3d.jpg"></p>
+<p><strong>按照提示重启电脑</strong></p>
+<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e523284e1bb.jpg"></p>
+<br>
+
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e523287db9e.jpg"></p>
+<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
+<p><strong>你已经安装zip版的</strong></p>
+<p><strong>没有必要安两次</strong></p>
+<p><strong>只用需要用到zip</strong></p>
+<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><br>
+
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e52328742c1.jpg"></p>
+<br>
+
+<p><strong>反正按照我这个改, 保存是ctrl + x 回车</strong></p>
+<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Arch.exe//这个是启动后的显示<br>[root@PC-NAME user]<span class="hljs-comment"># passwd       //这个是用户名输完名字输密码</span><br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Arch.exe<br>[root@PC-NAME]<span class="hljs-comment"># EDITOR=nano visudo</span><br>    %wheel      ALL=(ALL) ALL<br>    (setup sudoers file.)<br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME]<span class="hljs-comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span><br>(add user)<br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME user]<span class="hljs-comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span><br>(<span class="hljs-built_in">set</span> default user password)<br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME user]<span class="hljs-comment"># exit  //退出</span><br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Arch.exe config --default-user &#123;username&#125;<br>    (setting to default user)     //现在是root用户,不用加sudo<br></code></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo pacman-key --init<br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[user@PC-NAME]sudo pacman-key --init<br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME]sudo pacman-key --populate<br></code></pre></td></tr></table></figure>
+<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
+<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
+<br>
+
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e5232853c54.jpg"></p>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="hljs-variable">$repo</span>/os/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure>
+<br>
+
+<h4 id="然后就可以-更新软件包缓存"><a href="#然后就可以-更新软件包缓存" class="headerlink" title="然后就可以,更新软件包缓存"></a>然后就可以,更新软件包缓存</h4><br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo pacman -Syy<br></code></pre></td></tr></table></figure>
+<br>
+
+<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">pacman -S neofetch<br></code></pre></td></tr></table></figure>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">neofetch<br></code></pre></td></tr></table></figure>
+<br>
+
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e5232874b5a.jpg"></p>
+<br>
+
+<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1><br>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>adb 卸载 Anroid 内置应用</title>
     <url>/Anroid-Uninstall-built-in-apps.html</url>
     <content><![CDATA[<p><strong>Android学习笔记</strong></p>
@@ -5983,91 +6068,6 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 <br>]]></content>
       <categories>
         <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Arch wsl的傻瓜式安装 (有手就行)</title>
-    <url>/Arch-Wsl-install.html</url>
-    <content><![CDATA[<p><strong>本人是Arch教徒过来传一下教</strong> </p>
-<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
-
-<a id="more"></a>
-
-<h1 id="第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下"><a href="#第一步-程序与功能中打开-或者-以管理员身份打开-PowerShell-终端-输入命令如下" class="headerlink" title="第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下"></a>第一步 程序与功能中打开 或者 以管理员身份打开 PowerShell 终端 输入命令如下</h1><br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux<br></code></pre></td></tr></table></figure>
-<br>
-
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e5232864c3d.jpg"></p>
-<p><strong>按照提示重启电脑</strong></p>
-<h1 id="第二步-下载文件"><a href="#第二步-下载文件" class="headerlink" title="第二步 下载文件"></a>第二步 下载文件</h1><p><strong>然后下载<a href="https://github.com/yuk7/ArchWSL">Arch WSL</a></strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e523284e1bb.jpg"></p>
-<br>
-
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e523287db9e.jpg"></p>
-<p><strong>那个安装证书是给appx版的arch wsl用的</strong></p>
-<p><strong>你已经安装zip版的</strong></p>
-<p><strong>没有必要安两次</strong></p>
-<p><strong>只用需要用到zip</strong></p>
-<h1 id="第三步-配置Arch-Wsl"><a href="#第三步-配置Arch-Wsl" class="headerlink" title="第三步 配置Arch Wsl"></a>第三步 配置Arch Wsl</h1><br>
-
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e52328742c1.jpg"></p>
-<br>
-
-<p><strong>反正按照我这个改, 保存是ctrl + x 回车</strong></p>
-<h1 id="第四步-配置相关参数"><a href="#第四步-配置相关参数" class="headerlink" title="第四步 配置相关参数"></a>第四步 配置相关参数</h1><p><strong>这里会提示配置  按照我的方法配置</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Arch.exe//这个是启动后的显示<br>[root@PC-NAME user]<span class="hljs-comment"># passwd       //这个是用户名输完名字输密码</span><br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Arch.exe<br>[root@PC-NAME]<span class="hljs-comment"># EDITOR=nano visudo</span><br>    %wheel      ALL=(ALL) ALL<br>    (setup sudoers file.)<br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME]<span class="hljs-comment"># useradd -m -G wheel -s /bin/bash &#123;username&#125;</span><br>(add user)<br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME user]<span class="hljs-comment"># passwd &#123;username&#125;      //&#123;&#125;换成你的用户名,记住不需要打&#123;&#125;</span><br>(<span class="hljs-built_in">set</span> default user password)<br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME user]<span class="hljs-comment"># exit  //退出</span><br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Arch.exe config --default-user &#123;username&#125;<br>    (setting to default user)     //现在是root用户,不用加sudo<br></code></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo pacman-key --init<br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[user@PC-NAME]sudo pacman-key --init<br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">[root@PC-NAME]sudo pacman-key --populate<br></code></pre></td></tr></table></figure>
-<h1 id="第五步-安装完后操作"><a href="#第五步-安装完后操作" class="headerlink" title="第五步 安装完后操作"></a>第五步 安装完后操作</h1><p><strong>下面是<a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinux/">换源</a></strong></p>
-<p><strong>打开nano /etc/pacman.d/mirrorlist 然后再最顶端添加 切记去##</strong></p>
-<br>
-
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e5232853c54.jpg"></p>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">Server = https:mirrors.tuna.tsinghua.edu.cn/archlinux/<span class="hljs-variable">$repo</span>/os/<span class="hljs-variable">$arch</span><br></code></pre></td></tr></table></figure>
-<br>
-
-<h4 id="然后就可以-更新软件包缓存"><a href="#然后就可以-更新软件包缓存" class="headerlink" title="然后就可以,更新软件包缓存"></a>然后就可以,更新软件包缓存</h4><br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">sudo pacman -Syy<br></code></pre></td></tr></table></figure>
-<br>
-
-<h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">pacman -S neofetch<br></code></pre></td></tr></table></figure>
-<br>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">neofetch<br></code></pre></td></tr></table></figure>
-<br>
-
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e5232874b5a.jpg"></p>
-<br>
-
-<h1 id="这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看"><a href="#这个教程百分比可以看懂-如果你看不懂那只能说明你没认真去看" class="headerlink" title="这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看"></a>这个教程百分比可以看懂,如果你看不懂那只能说明你没认真去看</h1><h1 id="认认真真的反复去看你真的可以看懂的"><a href="#认认真真的反复去看你真的可以看懂的" class="headerlink" title="认认真真的反复去看你真的可以看懂的"></a>认认真真的反复去看你真的可以看懂的</h1><h1 id="然后发现并不难"><a href="#然后发现并不难" class="headerlink" title="然后发现并不难"></a>然后发现并不难</h1><br>]]></content>
-      <categories>
-        <category>Linux</category>
       </categories>
   </entry>
   <entry>
@@ -6529,104 +6529,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
-    <url>/Android-compile.html</url>
-    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong></p>
-<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
-
-<a id="more"></a>
-
-<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a></p>
-<p><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
-<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 <a href="https://wiki.lineageos.org/">lineageos官方的wiki</a>选择合适的linux发行版(推荐ubuntu 16)推荐而已, 你可以是别的shell,都没问题</strong></p>
-<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)<br></code></pre></td></tr></table></figure>
-<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单, 直接设置里面换</strong></p>
-<p><strong>3.安装jdk, 需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
-
-<p><strong>4.安装 软件依赖</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev<br></code></pre></td></tr></table></figure>
-<p><strong>4.安装jdk, 需要根据开发的android版本选择</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字<br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-8-jdk<br></code></pre></td></tr></table></figure>
-<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-7-jdk<br></code></pre></td></tr></table></figure>
-<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
-<p><strong>(2)在终端中输入以下内容, 新建bin文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/bin<br></code></pre></td></tr></table></figure>
-<p><strong>(3)输入以下内容, 将bin文件夹添加到环境变量中</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">PATH=~/bin:$PATH<br></code></pre></td></tr></table></figure>
-<p><strong>(4)接着输入以下内容, 下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
-
-<p><strong>如果你是欧洲人, 有钱买梯子 就省略上步直接输入以下命令</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
-<p><strong>(5)最后输入以下内容, 为repo文件添加运行权限</strong></p>
-<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">chmod a+x ~<span class="hljs-regexp">/bin/</span>repo<br></code></pre></td></tr></table></figure>
-<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端, 输入如下, 创建一个文件夹</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/los      //例如: los  名字你可以顺便起<br></code></pre></td></tr></table></figure>
-<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹, 输入如下</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los         //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(3) 由于使用repo拉取源码时, 会尝试访问官方的git源更新自己, 但由于是谷歌, 就无法正常访问, 所以在正式拉取前, 我们需要先做点修改打开主目录, 按组合键ctrl+H, 在显示的隐藏文件中, 打开.bashrc文件, 将如下内容复制到你的~/.bashrc最后一行, 保存退出</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export REPO_URL=&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;<br></code></pre></td></tr></table></figure>
-<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android, 进入如下界面, 这里就看到了拉取lineage-x.x的命令</p>
-<p><strong>(5) 获取源码default</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入邮箱和昵称</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git config --global user.email xxxxxx@xxxx   //你的邮箱<br>git config --global user.name xxxxxxxxx     //随便起一个英文昵称<br></code></pre></td></tr></table></figure>
-<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H, 显示隐藏内容)</strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c309862a0.jpg"></p>
-<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
-<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync<br></code></pre></td></tr></table></figure>
-<p><strong>或者</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync -c -f -j8 --force-sync --no-clone-bundle<br></code></pre></td></tr></table></figure>
-<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
-<p><strong>(2) 在搜索框中输入(设备代号), 会看到android_device_(品牌)_(设备代号)这一项</strong></p>
-<p><strong>(3) 点击android_device_(品牌)_(设备代号), 就可以看到device的所有内容</strong></p>
-<p><strong>(4) 点击右边的Clone or download, 然后复制如图中的蓝色内容, 这就是此device的下载地址</strong></p>
-<p><strong>(5) 组合键ctrl+alt+t, 打开终端</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los             //例如: los  你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 输入如下命令, 回车开始同步</strong></p>
-<p>解释一下:git clone就是拷贝到本地的命令, 那段网址就是我们上面复制的地址, -b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加, 加入同步源码会小点)<br></code></pre></td></tr></table></figure>
-<p><strong>(7) 我们需要拉取的项目如下</strong></p>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c3097c407.png"></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">android_device_(品牌)_(设备代号)<br><br>android_device_(品牌)_(处理器代号)-common<br><br>android_device_(品牌)_(厂家)_common<br><br>android_kernel_(品牌)_(处理器代号)<br><br>proprietary_vendor_(品牌) <br></code></pre></td></tr></table></figure>
-<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
-<p><strong>(9) 同样和同步其他项目一样</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)<br></code></pre></td></tr></table></figure>
-<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了, 你就按组合键ctrl+alt+t, 打开终端, 输入以下命令, 回车, 进入los             //你随便起名字的文件夹, 没有的话跳过这个环节</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los    //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
-<p><strong>(2) 初始化</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">. build/envsetup.sh<br></code></pre></td></tr></table></figure>
-<p><strong>(3) 输入如下命令, 回车</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">breakfast xxx  //自己的机型<br></code></pre></td></tr></table></figure>
-<p>如果有错误, 就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
-<p><strong>(4) 输入, 回车, 进行编译</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch xxx    //自己的机型<br></code></pre></td></tr></table></figure>
-<p>编译耗费的时间取决于你的电脑配置情况, 所以我不建议用虚拟机, 如果你电脑配置相当牛逼, 当我没说</p>
-<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install libssl-dev<br></code></pre></td></tr></table></figure>
-<p><strong>(6) 回到正在编译的终端中, 重新输入如下命令, 等待编译的完成</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch //自己的机型<br></code></pre></td></tr></table></figure>
-<p><strong>(7) 编译完成后</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了, 可以复制到手机刷入了<br></code></pre></td></tr></table></figure>
-<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export USE_CCACHE=1 <br>export CCACHE_COMPRESS=1<br>ccache -M 50G 或者100G<br></code></pre></td></tr></table></figure>
-<p><strong>防止低内存编译出错 设置大小为</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;<br></code></pre></td></tr></table></figure>
-<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1><br>
-
-
-
-]]></content>
-      <categories>
-        <category>Android</category>
-      </categories>
-  </entry>
-  <entry>
     <title>人工智比赛</title>
     <url>/AI-trainer-match.html</url>
     <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
@@ -6942,6 +6844,104 @@ json格式文件 "]
 <br>]]></content>
       <categories>
         <category>人工智能</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android同步源码和编译ROM傻瓜式 (有手就行)</title>
+    <url>/Android-compile.html</url>
+    <content><![CDATA[<p><strong>本人是用Arch, 顺便来传一下教</strong></p>
+<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c7189d153.jpg" style="width: 200px; height: 200px;">
+
+<a id="more"></a>
+
+<h1 id="第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin"><a href="#第一是-安装Linux-我以Ubuntu和deepin为例子-建议新手用deepin" class="headerlink" title="第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin"></a>第一是 安装Linux 我以Ubuntu和deepin为例子, 建议新手用deepin</h1><p><a href="https://www.bilibili.com/video/BV1aW411C7NR">Ubantu的安装视频</a></p>
+<p><a href="https://www.bilibili.com/video/BV1HW411Y73e">Deepin的安装视频</a></p>
+<h1 id="第二是-环境搭载"><a href="#第二是-环境搭载" class="headerlink" title="第二是 环境搭载"></a>第二是 环境搭载</h1><p><strong>1.明确自己要开发的android版本 参考 <a href="https://wiki.lineageos.org/">lineageos官方的wiki</a>选择合适的linux发行版(推荐ubuntu 16)推荐而已, 你可以是别的shell,都没问题</strong></p>
+<p><strong>2.更新自身ubuntu的软件源  替换到etc/apt/sources.list替换完毕后执行</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update //如果自身网速不好建议换国内源(清华 中科大 阿里)<br></code></pre></td></tr></table></figure>
+<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">个人建议清华</a></strong><br><strong>deepin就更简单, 直接设置里面换</strong></p>
+<p><strong>3.安装jdk, 需要根据开发的android版本选择</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get update<br></code></pre></td></tr></table></figure>
+
+<p><strong>4.安装 软件依赖</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev<br></code></pre></td></tr></table></figure>
+<p><strong>4.安装jdk, 需要根据开发的android版本选择</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install openjdk-x-jdk    //x 为jdk版本数字<br></code></pre></td></tr></table></figure>
+<p><strong>LineageOS 14.1-15.1: OpenJDK 1.8</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-8-jdk<br></code></pre></td></tr></table></figure>
+<p><strong>LineageOS 11.0-13.0: OpenJDK 1.7</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">install openjdk-7-jdk<br></code></pre></td></tr></table></figure>
+<h1 id="第三是-安装repo"><a href="#第三是-安装repo" class="headerlink" title="第三是 安装repo"></a>第三是 安装repo</h1><p><strong>(1) 推荐使用mokee开源的 <a href="https://bbs.mokeedev.com/t/topic/21">mokee repo1</a> 或者 <a href="https://tacke.wodemo.com/entry/466371">mokee repo2</a></strong></p>
+<p><strong>(2)在终端中输入以下内容, 新建bin文件夹</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/bin<br></code></pre></td></tr></table></figure>
+<p><strong>(3)输入以下内容, 将bin文件夹添加到环境变量中</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">PATH=~/bin:$PATH<br></code></pre></td></tr></table></figure>
+<p><strong>(4)接着输入以下内容, 下载repo文件到bin文件夹 输入这个请省略下面那一步</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
+
+<p><strong>如果你是欧洲人, 有钱买梯子 就省略上步直接输入以下命令</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo<br></code></pre></td></tr></table></figure>
+<p><strong>(5)最后输入以下内容, 为repo文件添加运行权限</strong></p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">chmod a+x ~<span class="hljs-regexp">/bin/</span>repo<br></code></pre></td></tr></table></figure>
+<h1 id="第四是-同步源码"><a href="#第四是-同步源码" class="headerlink" title="第四是 同步源码"></a>第四是 同步源码</h1><p><strong>(1) win+alt+t打开终端, 输入如下, 创建一个文件夹</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir ~/los      //例如: los  名字你可以顺便起<br></code></pre></td></tr></table></figure>
+<p><strong>(2) 进入(自己起好名字的文件夹)的文件夹, 输入如下</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los         //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(3) 由于使用repo拉取源码时, 会尝试访问官方的git源更新自己, 但由于是谷歌, 就无法正常访问, 所以在正式拉取前, 我们需要先做点修改打开主目录, 按组合键ctrl+H, 在显示的隐藏文件中, 打开.bashrc文件, 将如下内容复制到你的~/.bashrc最后一行, 保存退出</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export REPO_URL=&#x27;https://mirrors.tuna.tsinghua.edu.cn/git/git-repo&#x27;<br></code></pre></td></tr></table></figure>
+<p><strong>(4) 获取源码拉取地址</strong><br>访问<a href="https://github.com/LineageOS">lineage的开源地址库</a>点击android, 进入如下界面, 这里就看到了拉取lineage-x.x的命令</p>
+<p><strong>(5) 获取源码default</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo init -u git://github.com/los/android.git -b lineage-x.x       //例如: los 你随便起名字的文件夹和lineage版本<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 输入邮箱和昵称</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git config --global user.email xxxxxx@xxxx   //你的邮箱<br>git config --global user.name xxxxxxxxx     //随便起一个英文昵称<br></code></pre></td></tr></table></figure>
+<p><strong>打开lineageOS文件夹 (如果是空的按组合键ctrl+H, 显示隐藏内容)</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c309862a0.jpg"></p>
+<p>然后更改<a href="https://mirrors.tuna.tsinghua.edu.cn/help/lineageOS/">链接</a></p>
+<h1 id="第五是-拉取源码"><a href="#第五是-拉取源码" class="headerlink" title="第五是 拉取源码"></a>第五是 拉取源码</h1><p><strong>输入</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync<br></code></pre></td></tr></table></figure>
+<p><strong>或者</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">repo sync -c -f -j8 --force-sync --no-clone-bundle<br></code></pre></td></tr></table></figure>
+<h1 id="第六是-获取机型device"><a href="#第六是-获取机型device" class="headerlink" title="第六是 获取机型device"></a>第六是 获取机型device</h1><p><strong>(1) 我们进入<a href="https://github.com/LineageOS">lineage的开源项目网站</a></strong></p>
+<p><strong>(2) 在搜索框中输入(设备代号), 会看到android_device_(品牌)_(设备代号)这一项</strong></p>
+<p><strong>(3) 点击android_device_(品牌)_(设备代号), 就可以看到device的所有内容</strong></p>
+<p><strong>(4) 点击右边的Clone or download, 然后复制如图中的蓝色内容, 这就是此device的下载地址</strong></p>
+<p><strong>(5) 组合键ctrl+alt+t, 打开终端</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los             //例如: los  你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 输入如下命令, 回车开始同步</strong></p>
+<p>解释一下:git clone就是拷贝到本地的命令, 那段网址就是我们上面复制的地址, -b后面的lineage-x.x,表示lineage-x.x的分支；device/(品牌)/(设备代号)就是要下载到地方的路径</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/LineageOS/android_device_(品牌)_(设备代号).git -b lineage-x.x device/(品牌)/(设备代号) depth=1(可加可不加, 加入同步源码会小点)<br></code></pre></td></tr></table></figure>
+<p><strong>(7) 我们需要拉取的项目如下</strong></p>
+<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4c3097c407.png"></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">android_device_(品牌)_(设备代号)<br><br>android_device_(品牌)_(处理器代号)-common<br><br>android_device_(品牌)_(厂家)_common<br><br>android_kernel_(品牌)_(处理器代号)<br><br>proprietary_vendor_(品牌) <br></code></pre></td></tr></table></figure>
+<p><strong>(8) <a href="https://github.com/TheMuppets">vendor需要访问地址</a>然后搜索(你的品牌)就可以找到</strong></p>
+<p><strong>(9) 同样和同步其他项目一样</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git clone https://github.com/TheMuppets/proprietary_vendor_(品牌).git -b lineage-x.x vendor/(品牌)<br></code></pre></td></tr></table></figure>
+<h1 id="第七是-执行编译"><a href="#第七是-执行编译" class="headerlink" title="第七是 执行编译"></a>第七是 执行编译</h1><p><strong>(1)如果你退出了, 你就按组合键ctrl+alt+t, 打开终端, 输入以下命令, 回车, 进入los             //你随便起名字的文件夹, 没有的话跳过这个环节</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd ~/los    //例如: los 你随便起名字的文件夹<br></code></pre></td></tr></table></figure>
+<p><strong>(2) 初始化</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">. build/envsetup.sh<br></code></pre></td></tr></table></figure>
+<p><strong>(3) 输入如下命令, 回车</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">breakfast xxx  //自己的机型<br></code></pre></td></tr></table></figure>
+<p>如果有错误, 就根据错误提示到lineageOS目录检查device, kernel和vendor等是否正确</p>
+<p><strong>(4) 输入, 回车, 进行编译</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch xxx    //自己的机型<br></code></pre></td></tr></table></figure>
+<p>编译耗费的时间取决于你的电脑配置情况, 所以我不建议用虚拟机, 如果你电脑配置相当牛逼, 当我没说</p>
+<p><strong>(5)在我编译时出现了 fatal error: openssl/opensslv.h: No such file or directory 原因是libssl-dev没有安装</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo apt-get install libssl-dev<br></code></pre></td></tr></table></figure>
+<p><strong>(6) 回到正在编译的终端中, 重新输入如下命令, 等待编译的完成</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">brunch //自己的机型<br></code></pre></td></tr></table></figure>
+<p><strong>(7) 编译完成后</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">进入主目录\(你随便起名字的文件夹)\out\target\product\(设备代号)中就可以看到我们编译好的ROM了, 可以复制到手机刷入了<br></code></pre></td></tr></table></figure>
+<h1 id="另外设置ccache提高编译速度"><a href="#另外设置ccache提高编译速度" class="headerlink" title="另外设置ccache提高编译速度"></a>另外设置ccache提高编译速度</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export USE_CCACHE=1 <br>export CCACHE_COMPRESS=1<br>ccache -M 50G 或者100G<br></code></pre></td></tr></table></figure>
+<p><strong>防止低内存编译出错 设置大小为</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G&quot;<br></code></pre></td></tr></table></figure>
+<h1 id="祝福大家能自己动手做出属于自己的ROM"><a href="#祝福大家能自己动手做出属于自己的ROM" class="headerlink" title="祝福大家能自己动手做出属于自己的ROM"></a>祝福大家能自己动手做出属于自己的ROM</h1><br>
+
+
+
+]]></content>
+      <categories>
+        <category>Android</category>
       </categories>
   </entry>
   <entry>
@@ -9008,11 +9008,11 @@ json格式文件 "]
 </ul>
 <h3 id="一-“三个代表”重要形成的过程"><a href="#一-“三个代表”重要形成的过程" class="headerlink" title="一, “三个代表”重要形成的过程"></a>一, “三个代表”重要形成的过程</h3><p>2000年2月第一次提出</p>
 <p>2001年7月1日, 中国共产党成立80周年大会上全面阐述</p>
-<p>2002年, 江泽民第一次阐述内在联系: <font color="red"><strong>提出”贯彻‘三个代表’要求<em>关键在坚持与时俱进, 核心在保持党的先进性本质在</em>坚持执政为民</strong></font></p>
+<p>2002年, 江泽民第一次阐述内在联系: <font color="red"><strong>提出”贯彻‘三个代表’要求关键在坚持与时俱进, 核心在保持党的先进性本质在坚持执政为民</strong></font></p>
 <p>2002年11月, 党的十六大写入党章</p>
 <p>2004年又写进宪法</p>
 <h2 id="第二节-“三个代表”重要思想的核心观点和主要内容"><a href="#第二节-“三个代表”重要思想的核心观点和主要内容" class="headerlink" title="第二节    “三个代表”重要思想的核心观点和主要内容"></a>第二节    “三个代表”重要思想的核心观点和主要内容</h2><h3 id="一-“三个代表”重要思想的核心观点"><a href="#一-“三个代表”重要思想的核心观点" class="headerlink" title="一, “三个代表”重要思想的核心观点"></a>一, “三个代表”重要思想的核心观点</h3><ol>
-<li><p>中国共产党必须始终代<br>表中国先进生产力的发展要求</p>
+<li><p>中国共产党必须始终代表中国先进生产力的发展要求</p>
 <ul>
 <li>社会主义的根本任务是发展社会生产力<strong>始终代表中国先</strong></li>
 </ul>
@@ -9028,7 +9028,7 @@ json格式文件 "]
 <ul>
 <li><p><font color="red">科学技术是第一生产力, 是先讲生产力的集中体现和主要标志</font>科学的本质是创新科技进步和创新是发展生产力的决定因素</p>
 </li>
-<li><p>促进生产关系和上层建筑的各个方面不断体现先进生产力<br>的发展要求</p>
+<li><p>促进生产关系和上层建筑的各个方面不断体现先进生产力的发展要求</p>
 </li>
 </ul>
 <ol start="2">
@@ -9065,8 +9065,7 @@ json格式文件 "]
 </li>
 </ul>
 <h3 id="二-“三个代表”重要思想的主要内容"><a href="#二-“三个代表”重要思想的主要内容" class="headerlink" title="二, “三个代表”重要思想的主要内容"></a>二, “三个代表”重要思想的主要内容</h3><ol>
-<li><p>发展是党执政兴国的第一要务</p>
-<p>社会主义要强大, 要体现优越性, 关键在发展</p>
+<li><p>发展是党执政兴国的第一要务 社会主义要强大, 要体现优越性, 关键在发展</p>
 </li>
 <li><p>建设社会主义市场经济体制</p>
 <ul>
@@ -9317,6 +9316,46 @@ json格式文件 "]
 <figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python">html = etree.HTML(text)     <span class="hljs-comment"># text为文本内容</span><br>ret_list = html.xpath(<span class="hljs-string">&quot;xpath语法规则字符串&quot;</span>)     <span class="hljs-comment"># 用xpath来解析</span><br></code></pre></td></tr></table></figure>
 <h3 id="导入lxml的etree-tostring函数的使用"><a href="#导入lxml的etree-tostring函数的使用" class="headerlink" title="导入lxml的etree.tostring函数的使用"></a>导入lxml的etree.tostring函数的使用</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">from</span> lxml <span class="hljs-keyword">import</span> etree<br><br>html_str = <span class="hljs-string">&#x27;&#x27;&#x27; &lt;div&gt;&lt;ul&gt;</span><br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;first item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link2.html&quot;&gt;second item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-inactive&quot;&gt;&lt;a href=&quot;;link3.html&quot;&gt;third item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-1&quot;&gt;&lt;a href=&quot;;link1.html&quot;&gt;fourth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;li class=&quot;itrm-0&quot;&gt;&lt;a href=&quot;;link5.html&quot;&gt;fifth item&lt;/a&gt;&lt;/li&gt;<br>                &lt;ul&gt;&lt;div&gt; <span class="hljs-string">&#x27;&#x27;&#x27;         </span><br><span class="hljs-comment"># 将html源码转换成element对象   etree.HTML()能够自动补全html缺失的标签</span><br>html = etree.HTML(html_str)<br><span class="hljs-comment"># 转换成String类型的数据        </span><br>handeled_html_str = etree.toString(html).decode()<br><span class="hljs-built_in">print</span>(handeled_html_str)<br></code></pre></td></tr></table></figure>
 <br></h1></h1>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
+<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
+<br>
+
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 http和https(吃牢饭集合)</title>
+    <url>/reptile-http-https.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
+<ul>
+<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
+<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
+</ul>
+
+<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
+<ul>
+<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
+</ul>
+
+<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
+<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1><br>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -10466,46 +10505,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>爬虫 http和https(吃牢饭集合)</title>
-    <url>/reptile-http-https.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>HTTP: 超文本传输协议, 默认端口号是80</strong></p>
-<ul>
-<li>超文本: 是指超过文本, 不仅限于文本; 还包含图片, 音频等文件</li>
-<li>传输协议: 是指使用共用约定的固定格式来传递转换成字符串的超文本内容</li>
-</ul>
-
-<p><strong>HTTPS: HTTP + SSL(安全套接字层), 即带有安全套接字层的超文本传输协议, 默认端口号: 443</strong></p>
-<ul>
-<li>SSL对传输的内容(超文本, 也就是请求体或响应体)进行加密</li>
-</ul>
-
-<p><strong>可以打开浏览器访问一个url, 右键检查, 点击network, 点选一个url, 查看http协议的形式</strong></p>
-<h1 id="HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全"><a href="#HTTPS因为要加密缘故相比HTTP较慢一些-性能低一些-但是比HTTP更安全" class="headerlink" title="HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全"></a>HTTPS因为要加密缘故相比HTTP较慢一些,性能低一些, 但是比HTTP更安全</h1><br>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
-<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
-<br>
-
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 jsonpath模块(吃牢饭集合)</title>
     <url>/reptile-jsonpath.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -11086,205 +11085,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>爬虫 反爬知识大讲解(抓到即坐牢)</title>
-    <url>/reptile-prevent.html</url>
-    <content><![CDATA[<p><strong>好好劳改重新做人</strong></p>
-<a id="more"></a>
-
-<h1 id="通常反爬的三个方向"><a href="#通常反爬的三个方向" class="headerlink" title="通常反爬的三个方向"></a>通常反爬的三个方向</h1><ul>
-<li><p>基于身份识别进行反爬</p>
-<ul>
-<li><p>通过hraders中的User-Agent字段来反爬</p>
-<ul>
-<li><p>反爬原因: 爬虫默认情况下没有User-Agent, 而是使用模块默认设置</p>
-</li>
-<li><p>解决方法: 请求之前添加User-Agent即可或者使用User-Agent池来解决</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>通过referer字段或者是其他字段来反爬 </p>
-<ul>
-<li><p>反爬原因: 爬虫默认情况下不会带上referer字段, 服务器端通过判断请求头是否合法</p>
-</li>
-<li><p>解决方法: 添加referer字段</p>
-</li>
-</ul>
-</li>
-<li><p>通过cookie来反爬</p>
-<ul>
-<li><p>反爬原因: 通过检查cookie来查看发起请求的用户是否具备相应权限来进行反爬</p>
-</li>
-<li><p>解决方法: 进行模拟代理, 成功获取cookie之后在进行数据爬取</p>
-</li>
-</ul>
-</li>
-<li><p>通过从html静态文件中获取请求数据</p>
-<ul>
-<li><p>反爬原因: 通过增加获取请求参数的难度进行反爬</p>
-</li>
-<li><p>解决方法: 仔细分析抓到的每个包, 搞清楚请求之间的联系</p>
-</li>
-</ul>
-</li>
-<li><p>通过发生请求获取请求数据</p>
-<ul>
-<li><p>反爬原因: 通过增加获取请求参数的难度进行反爬</p>
-</li>
-<li><p>解决方法: 仔细分析抓到的每个包, 搞清楚请求之间的联系, 搞清楚请求参数的来源</p>
-</li>
-</ul>
-</li>
-<li><p>通过js生成请求参数</p>
-<ul>
-<li><p>反爬原因: js生成请求参数</p>
-</li>
-<li><p>解决方法: 分析js, 观察加密的实现过程, 通过js2py获取js的执行结果或者使用selenium来实现</p>
-</li>
-</ul>
-</li>
-<li><p>通过验证码来反爬</p>
-<ul>
-<li><p>反爬原因: 对方服务器通过弹出验证码来强制用户浏览行为</p>
-</li>
-<li><p>解决方法: 打码平台或者机器学习的方法识别验证码</p>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>基于爬虫行为进行反爬</p>
-<ul>
-<li><p>通过请求IP/账号单位时间内总请求数量进行反爬</p>
-<ul>
-<li><p>反爬原因: 正常浏览器请求网站, 速度不会太快, 同一个IP/账号大量请求了对方服务器, 有更大的可能性会被识别为爬虫</p>
-</li>
-<li><p>解决方法: 对应的通过购买高质量的IP的方式能够解决问题或者多账号</p>
-</li>
-</ul>
-</li>
-<li><p>通过同一账号/IP请求之间的间隔进行反爬</p>
-<ul>
-<li><p>反爬原因: 正常浏览器浏览网站请求之间的时间是随机的, 而爬虫前后两个请求之间间隔固定同时间隔较短</p>
-</li>
-<li><p>解决方法: 请求之间进行随机等待, 模拟真实用户操作, 在添加时间间隔后, 为了能够高速获取数据, 尽量使用代理池, 如果是账号则将账号请求之间设置随机睡眠</p>
-</li>
-</ul>
-</li>
-<li><p>通过对请求IP/账号每天请求次数设置阈值进行反爬</p>
-<ul>
-<li><p>反爬原因: 正常的浏览行为, 其一天次数是有限的, 通常超过某一个值, 服务器就会拒绝响应</p>
-</li>
-<li><p>解决方法: 对应的通过购买高质量的IP的方式能够解决问题或者多账号, 同时设置请求间随机休眠</p>
-</li>
-</ul>
-</li>
-<li><p>通过js实现跳转来反爬</p>
-<ul>
-<li><p>反爬原因: js实现页面跳转, 无法在源码中获取下一页的url</p>
-</li>
-<li><p>解决方法: 多次抓包获取跳转url, 分析规律</p>
-</li>
-</ul>
-</li>
-<li><p>通过蜜罐(陷阱)获取爬虫IP或代理IP</p>
-<ul>
-<li><p>反爬原因: 在爬虫获取链接进行请求的过程中, 爬虫会根据正则, xpath, css等方式进行后续链接的提取, 此时服务器端可以设置一个陷阱url, 会被提取规则获取, 但是正常用户无法获取, 这样就能有效的区分爬虫和正常用户</p>
-</li>
-<li><p>解决方法: 完成爬虫的编写之后, 使用代理批量爬取测试/仔细分析响应内容结构, 找出页面中存在的陷阱</p>
-</li>
-</ul>
-</li>
-<li><p>通过假数据反爬</p>
-<ul>
-<li><p>反爬原因: 向返回的响应中添加假数据库, 通常不会被正常用户看到</p>
-</li>
-<li><p>解决方法: 长期运行, 核对数据库中数据同实际数据的对应情况, 如果存在问题/仔细分析响应内容</p>
-</li>
-</ul>
-</li>
-<li><p>阻塞任务队列</p>
-<ul>
-<li><p>反爬原因: 通过生成大量垃圾url从而阻塞任务队列, 降低爬虫的实际工作效率</p>
-</li>
-<li><p>解决方法: 观察运行过程中请求响应状态/仔细分析源码获取垃圾url生成规则, 对url进行过滤</p>
-</li>
-</ul>
-</li>
-<li><p>阻塞网络IO</p>
-<ul>
-<li><p>反爬原因: 发送请求获取响应的过程实际上就是下载的过程, 在任务队列中混入一个大文件的url, 当爬虫在进行该请求是将会占用网络IO, 多线程下载会占用线程</p>
-</li>
-<li><p>解决方法: 观察运行过程中请求响应状态/多线程对请求线程计时/发送请求钱</p>
-</li>
-</ul>
-</li>
-<li><p>运维平台综合审计</p>
-<ul>
-<li><p>反爬原因: 通过运维平台进行综合管理, 通常采用复合型反爬策略, 多种手段同时使用</p>
-</li>
-<li><p>解决方法: 仔细分析, 长期运行测试目标网站, 检查数据采集速度多方面处理</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>基于数据加密进行反爬 </p>
-<ul>
-<li><p>自定义字体来实现反爬</p>
-<ul>
-<li><p>反爬原因: 使用自有字体文件</p>
-</li>
-<li><p>解决方法: 切换到手机版/解析字体文件进行翻译</p>
-</li>
-</ul>
-</li>
-<li><p>通过css来实现反爬</p>
-<ul>
-<li><p>反爬原因: 源码数据不为真正数据, 需要通过css位移才能产生真正数据</p>
-</li>
-<li><p>解决方法: 计算css的偏移</p>
-</li>
-</ul>
-</li>
-<li><p>通过js动态生成数据进行反爬</p>
-<ul>
-<li><p>反爬原因: 通过js动态生成</p>
-</li>
-<li><p>解决方法: 解析关键js, 获得数据生成流程, 模拟存储数据</p>
-</li>
-</ul>
-</li>
-<li><p>通过数据图片化实现反爬</p>
-<ul>
-<li><p>反爬原因: 通过数据图片化生成</p>
-</li>
-<li><p>解决方法: 通过使用图片解析引擎从图片解析数据</p>
-</li>
-</ul>
-</li>
-<li><p>通过编码格式进行反爬</p>
-<ul>
-<li><p>反爬原因: 不适合用默认编码格式, 在获取响应之后通常爬虫使用UTF-8格式进行解码, 此时解码结构将会是乱码或者报错</p>
-</li>
-<li><p>解决方法: 根据源码进行多格式解码或者真正的解码格式</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<br>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 代理(吃牢饭集合)</title>
     <url>/reptile-agent.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -11515,6 +11315,205 @@ option = {
 
 option && myChart.setOption(option);
 </script> -->]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 反爬知识大讲解(抓到即坐牢)</title>
+    <url>/reptile-prevent.html</url>
+    <content><![CDATA[<p><strong>好好劳改重新做人</strong></p>
+<a id="more"></a>
+
+<h1 id="通常反爬的三个方向"><a href="#通常反爬的三个方向" class="headerlink" title="通常反爬的三个方向"></a>通常反爬的三个方向</h1><ul>
+<li><p>基于身份识别进行反爬</p>
+<ul>
+<li><p>通过hraders中的User-Agent字段来反爬</p>
+<ul>
+<li><p>反爬原因: 爬虫默认情况下没有User-Agent, 而是使用模块默认设置</p>
+</li>
+<li><p>解决方法: 请求之前添加User-Agent即可或者使用User-Agent池来解决</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>通过referer字段或者是其他字段来反爬 </p>
+<ul>
+<li><p>反爬原因: 爬虫默认情况下不会带上referer字段, 服务器端通过判断请求头是否合法</p>
+</li>
+<li><p>解决方法: 添加referer字段</p>
+</li>
+</ul>
+</li>
+<li><p>通过cookie来反爬</p>
+<ul>
+<li><p>反爬原因: 通过检查cookie来查看发起请求的用户是否具备相应权限来进行反爬</p>
+</li>
+<li><p>解决方法: 进行模拟代理, 成功获取cookie之后在进行数据爬取</p>
+</li>
+</ul>
+</li>
+<li><p>通过从html静态文件中获取请求数据</p>
+<ul>
+<li><p>反爬原因: 通过增加获取请求参数的难度进行反爬</p>
+</li>
+<li><p>解决方法: 仔细分析抓到的每个包, 搞清楚请求之间的联系</p>
+</li>
+</ul>
+</li>
+<li><p>通过发生请求获取请求数据</p>
+<ul>
+<li><p>反爬原因: 通过增加获取请求参数的难度进行反爬</p>
+</li>
+<li><p>解决方法: 仔细分析抓到的每个包, 搞清楚请求之间的联系, 搞清楚请求参数的来源</p>
+</li>
+</ul>
+</li>
+<li><p>通过js生成请求参数</p>
+<ul>
+<li><p>反爬原因: js生成请求参数</p>
+</li>
+<li><p>解决方法: 分析js, 观察加密的实现过程, 通过js2py获取js的执行结果或者使用selenium来实现</p>
+</li>
+</ul>
+</li>
+<li><p>通过验证码来反爬</p>
+<ul>
+<li><p>反爬原因: 对方服务器通过弹出验证码来强制用户浏览行为</p>
+</li>
+<li><p>解决方法: 打码平台或者机器学习的方法识别验证码</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>基于爬虫行为进行反爬</p>
+<ul>
+<li><p>通过请求IP/账号单位时间内总请求数量进行反爬</p>
+<ul>
+<li><p>反爬原因: 正常浏览器请求网站, 速度不会太快, 同一个IP/账号大量请求了对方服务器, 有更大的可能性会被识别为爬虫</p>
+</li>
+<li><p>解决方法: 对应的通过购买高质量的IP的方式能够解决问题或者多账号</p>
+</li>
+</ul>
+</li>
+<li><p>通过同一账号/IP请求之间的间隔进行反爬</p>
+<ul>
+<li><p>反爬原因: 正常浏览器浏览网站请求之间的时间是随机的, 而爬虫前后两个请求之间间隔固定同时间隔较短</p>
+</li>
+<li><p>解决方法: 请求之间进行随机等待, 模拟真实用户操作, 在添加时间间隔后, 为了能够高速获取数据, 尽量使用代理池, 如果是账号则将账号请求之间设置随机睡眠</p>
+</li>
+</ul>
+</li>
+<li><p>通过对请求IP/账号每天请求次数设置阈值进行反爬</p>
+<ul>
+<li><p>反爬原因: 正常的浏览行为, 其一天次数是有限的, 通常超过某一个值, 服务器就会拒绝响应</p>
+</li>
+<li><p>解决方法: 对应的通过购买高质量的IP的方式能够解决问题或者多账号, 同时设置请求间随机休眠</p>
+</li>
+</ul>
+</li>
+<li><p>通过js实现跳转来反爬</p>
+<ul>
+<li><p>反爬原因: js实现页面跳转, 无法在源码中获取下一页的url</p>
+</li>
+<li><p>解决方法: 多次抓包获取跳转url, 分析规律</p>
+</li>
+</ul>
+</li>
+<li><p>通过蜜罐(陷阱)获取爬虫IP或代理IP</p>
+<ul>
+<li><p>反爬原因: 在爬虫获取链接进行请求的过程中, 爬虫会根据正则, xpath, css等方式进行后续链接的提取, 此时服务器端可以设置一个陷阱url, 会被提取规则获取, 但是正常用户无法获取, 这样就能有效的区分爬虫和正常用户</p>
+</li>
+<li><p>解决方法: 完成爬虫的编写之后, 使用代理批量爬取测试/仔细分析响应内容结构, 找出页面中存在的陷阱</p>
+</li>
+</ul>
+</li>
+<li><p>通过假数据反爬</p>
+<ul>
+<li><p>反爬原因: 向返回的响应中添加假数据库, 通常不会被正常用户看到</p>
+</li>
+<li><p>解决方法: 长期运行, 核对数据库中数据同实际数据的对应情况, 如果存在问题/仔细分析响应内容</p>
+</li>
+</ul>
+</li>
+<li><p>阻塞任务队列</p>
+<ul>
+<li><p>反爬原因: 通过生成大量垃圾url从而阻塞任务队列, 降低爬虫的实际工作效率</p>
+</li>
+<li><p>解决方法: 观察运行过程中请求响应状态/仔细分析源码获取垃圾url生成规则, 对url进行过滤</p>
+</li>
+</ul>
+</li>
+<li><p>阻塞网络IO</p>
+<ul>
+<li><p>反爬原因: 发送请求获取响应的过程实际上就是下载的过程, 在任务队列中混入一个大文件的url, 当爬虫在进行该请求是将会占用网络IO, 多线程下载会占用线程</p>
+</li>
+<li><p>解决方法: 观察运行过程中请求响应状态/多线程对请求线程计时/发送请求钱</p>
+</li>
+</ul>
+</li>
+<li><p>运维平台综合审计</p>
+<ul>
+<li><p>反爬原因: 通过运维平台进行综合管理, 通常采用复合型反爬策略, 多种手段同时使用</p>
+</li>
+<li><p>解决方法: 仔细分析, 长期运行测试目标网站, 检查数据采集速度多方面处理</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>基于数据加密进行反爬 </p>
+<ul>
+<li><p>自定义字体来实现反爬</p>
+<ul>
+<li><p>反爬原因: 使用自有字体文件</p>
+</li>
+<li><p>解决方法: 切换到手机版/解析字体文件进行翻译</p>
+</li>
+</ul>
+</li>
+<li><p>通过css来实现反爬</p>
+<ul>
+<li><p>反爬原因: 源码数据不为真正数据, 需要通过css位移才能产生真正数据</p>
+</li>
+<li><p>解决方法: 计算css的偏移</p>
+</li>
+</ul>
+</li>
+<li><p>通过js动态生成数据进行反爬</p>
+<ul>
+<li><p>反爬原因: 通过js动态生成</p>
+</li>
+<li><p>解决方法: 解析关键js, 获得数据生成流程, 模拟存储数据</p>
+</li>
+</ul>
+</li>
+<li><p>通过数据图片化实现反爬</p>
+<ul>
+<li><p>反爬原因: 通过数据图片化生成</p>
+</li>
+<li><p>解决方法: 通过使用图片解析引擎从图片解析数据</p>
+</li>
+</ul>
+</li>
+<li><p>通过编码格式进行反爬</p>
+<ul>
+<li><p>反爬原因: 不适合用默认编码格式, 在获取响应之后通常爬虫使用UTF-8格式进行解码, 此时解码结构将会是乱码或者报错</p>
+</li>
+<li><p>解决方法: 根据源码进行多格式解码或者真正的解码格式</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<br>]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
@@ -11938,6 +11937,111 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
+    <title>爬虫 请求头和响应头(吃牢饭集合)</title>
+    <url>/reptile-header.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h1><h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><p><strong>301是永久重定向, 之后的请求中客户端应该使用新的URI(即, 可以被浏览器缓存), 对于POST/PUT/DELETE请求 客户端不应该自动的重定向</strong></p>
+<p><strong>302是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
+<p><strong>303是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端应该使用GET请求来替代</strong></p>
+<p><strong>307是临时重定向, 之后资源可能会回到这个位置, 之后的请求中客户端应该使用旧的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
+<br>
+
+<!-- # 查看报文
+
+**点击Request Headers旁边的view parsed**
+
+**注意: view parsed没点之前其实是给你优化过的**
+
+# 报文格式
+
+GET|HTTP|1.1|Host|
+-|-|-|-|
+方法 | 路径 | 协议版本 |发送请求的域名
+
+<ul>
+<li>Content-Type</li>
+<li>Host (主机和端口号)</li>
+<li>Connection (链接类型/常链接)</li>
+<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
+<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
+<li>Referer (页面跳转处)</li>
+<li>Cookie (Cookie数据非常重要,)</li>
+<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
+</ul>
+
+**请求头表格形式**
+
+ 特别关注|以下几个请求头|| |
+-|-|-|-|
+Host | 域名 |  |
+Connection | 常链接 |  |
+UPgrade-Insecure-Requests | 升级为HTTPS请求 |  |
+User-Agent | 用户代理|  |
+Refrer | 页面跳转处, 防盗链 |  |
+Cookie | 保持状态, 用于跳过账号密码 |  |
+
+**响应头表格形式**
+
+ 特别关注|以下几个请求头|| |
+-|-|-|-|
+HTTP/1.1 | 协议 |  |
+200 | 状态码 |  |
+Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密码 |  |
+
+# 状态码
+
+**常见的状态码 (了解就行)**
+
+<ul>
+<li>200: 成功</li>
+<li>302: 跳转, 新的url在响应的Location头中给出</li>
+<li>303: 浏览器对于POST的响应进行重新定向至新的url</li>
+<li>307: 浏览器对应GET响应进行重新定向至新的url</li>
+<li>403: 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限)</li>
+<li>404: 找不到资源</li>
+<li>500: 服务器内部错误</li>
+<li>503: 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码</li>
+</ul>
+
+**常见状态码表格形式 (了解就行)**
+
+ 状态码|代表意思|| |
+-|-|-|-|
+200 | 成功 |  |
+302 | 跳转, 新的url在响应的Location头中给出 |  |
+303 | 浏览器对于POST的响应进行重新定向至新的url |  |
+307 | 浏览器对应GET响应进行重新定向至新的url |  |
+403 | 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限) |  |
+404 | 找不到资源 |  |
+500 | 服务器内部错误 |  |
+503 | 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码 |  |
+
+**总结 所有的状态码都不可信, 一切以是否从抓包得到的响应中获得到的数据为准 network中抓包得到的源码才是判断依据, elements中的源码是渲染之后的源码**
+
+ 请求过程||
+-|-|
+ 浏览器| 发送所有请求, 进行渲染 |  
+  爬虫| 发送所有请求, 不会渲染 |  
+
+
+ 请页面可分为||
+-|-|
+骨骼文件| html静态文件 |  
+肌肉文件| js/ajax请求 | 
+皮肤文件| css/font/图片等 |  
+
+**抓包过程: 根据发送请求的流程分别在 骨骼 / 肌肉 / 皮肤 响应中查找数据**
+
+
+ -->
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
     <url>/reptile-Baidutranslate.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -12271,111 +12375,6 @@ option && myChart.setOption(option);
 ]]></content>
   </entry>
   <entry>
-    <title>爬虫 请求头和响应头(吃牢饭集合)</title>
-    <url>/reptile-header.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="请求头"><a href="#请求头" class="headerlink" title="请求头"></a>请求头</h1><h1 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h1><p><strong>301是永久重定向, 之后的请求中客户端应该使用新的URI(即, 可以被浏览器缓存), 对于POST/PUT/DELETE请求 客户端不应该自动的重定向</strong></p>
-<p><strong>302是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
-<p><strong>303是由于未知原因重定向, 之后的请求中客户端不应该用新的URI, 对于POST/PUT/DELETE请求 客户端应该使用GET请求来替代</strong></p>
-<p><strong>307是临时重定向, 之后资源可能会回到这个位置, 之后的请求中客户端应该使用旧的URI, 对于POST/PUT/DELETE请求 客户端不应该自动重定向</strong></p>
-<br>
-
-<!-- # 查看报文
-
-**点击Request Headers旁边的view parsed**
-
-**注意: view parsed没点之前其实是给你优化过的**
-
-# 报文格式
-
-GET|HTTP|1.1|Host|
--|-|-|-|
-方法 | 路径 | 协议版本 |发送请求的域名
-
-<ul>
-<li>Content-Type</li>
-<li>Host (主机和端口号)</li>
-<li>Connection (链接类型/常链接)</li>
-<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
-<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
-<li>Referer (页面跳转处)</li>
-<li>Cookie (Cookie数据非常重要,)</li>
-<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
-</ul>
-
-**请求头表格形式**
-
- 特别关注|以下几个请求头|| |
--|-|-|-|
-Host | 域名 |  |
-Connection | 常链接 |  |
-UPgrade-Insecure-Requests | 升级为HTTPS请求 |  |
-User-Agent | 用户代理|  |
-Refrer | 页面跳转处, 防盗链 |  |
-Cookie | 保持状态, 用于跳过账号密码 |  |
-
-**响应头表格形式**
-
- 特别关注|以下几个请求头|| |
--|-|-|-|
-HTTP/1.1 | 协议 |  |
-200 | 状态码 |  |
-Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密码 |  |
-
-# 状态码
-
-**常见的状态码 (了解就行)**
-
-<ul>
-<li>200: 成功</li>
-<li>302: 跳转, 新的url在响应的Location头中给出</li>
-<li>303: 浏览器对于POST的响应进行重新定向至新的url</li>
-<li>307: 浏览器对应GET响应进行重新定向至新的url</li>
-<li>403: 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限)</li>
-<li>404: 找不到资源</li>
-<li>500: 服务器内部错误</li>
-<li>503: 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码</li>
-</ul>
-
-**常见状态码表格形式 (了解就行)**
-
- 状态码|代表意思|| |
--|-|-|-|
-200 | 成功 |  |
-302 | 跳转, 新的url在响应的Location头中给出 |  |
-303 | 浏览器对于POST的响应进行重新定向至新的url |  |
-307 | 浏览器对应GET响应进行重新定向至新的url |  |
-403 | 资源不可用; 服务器理解客户的请求, 但拒绝处理它(没有权限) |  |
-404 | 找不到资源 |  |
-500 | 服务器内部错误 |  |
-503 | 服务器又有维护或者负载过重未能应答, 在响应中可能会携带Retry-After响应头; 有可能是因为爬虫频繁访问url, 使得服务器忽视爬虫的请求, 最终返回503响应状态码 |  |
-
-**总结 所有的状态码都不可信, 一切以是否从抓包得到的响应中获得到的数据为准 network中抓包得到的源码才是判断依据, elements中的源码是渲染之后的源码**
-
- 请求过程||
--|-|
- 浏览器| 发送所有请求, 进行渲染 |  
-  爬虫| 发送所有请求, 不会渲染 |  
-
-
- 请页面可分为||
--|-|
-骨骼文件| html静态文件 |  
-肌肉文件| js/ajax请求 | 
-皮肤文件| css/font/图片等 |  
-
-**抓包过程: 根据发送请求的流程分别在 骨骼 / 肌肉 / 皮肤 响应中查找数据**
-
-
- -->
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>跟我一起学数学</title>
     <url>/mathematics.html</url>
     <content><![CDATA[<p><strong>走进数学的奇妙世界</strong></p>
@@ -12560,6 +12559,145 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 
 
 ]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>啥是函数</title>
+    <url>/HigherMathematics-function.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<li><p>设数集D⊂R,如果对D中每个数x,变量y按照一定法则在R中有唯一确定的数值与之对应, 则称y是x的函数</p>
+</li>
+<li><p>记为: y=f(x), x∈D</p>
+<ul>
+<li><p>x称为自变量</p>
+</li>
+<li><p>y称为因变量</p>
+</li>
+<li><p>D称为定义域</p>
+</li>
+</ul>
+</li>
+<li><p>记作Df  即Df=D</p>
+</li>
+</ul>
+<h1 id="值域"><a href="#值域" class="headerlink" title="值域"></a>值域</h1><ul>
+<li>函数值f(x)的全体所构成的集合称为函数f的<font color="#DC143C">值域</font>,记作R,或f(D),即Rf=f(D)={y|y=f(x)x∈D}</li>
+</ul>
+<h5>构成函数的要素: 定义域Df, 对应法则f<h5>
+
+
+<h1 id="函数的图形"><a href="#函数的图形" class="headerlink" title="函数的图形"></a>函数的图形</h1><ul>
+<li>在坐标平面上的点集C={(x,y)|y=f(x),x∈D}称为函数y=f(x)的图形</li>
+</ul>
+<h3 id="常数函数"><a href="#常数函数" class="headerlink" title="常数函数"></a>常数函数</h3><ul>
+<li>函数y=C,其中C为某确定的常数定义域为D=(-∞,+∞),值域为R={C},图形是一条平行于x轴的直线</li>
+</ul>
+<h3 id="绝对值函数"><a href="#绝对值函数" class="headerlink" title="绝对值函数"></a>绝对值函数</h3><figure class="highlight llvm"><table><tr><td class="code"><pre><code class="hljs llvm">      / -<span class="hljs-keyword">x</span><span class="hljs-punctuation">,</span> <span class="hljs-keyword">x</span>&lt;<span class="hljs-number">0</span><br>y<span class="hljs-operator">=</span>|<span class="hljs-keyword">x</span>|<span class="hljs-operator">=</span><br>      \ <span class="hljs-keyword">x</span><span class="hljs-punctuation">,</span> <span class="hljs-keyword">x</span>≥<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>定义域为D=(-∞,+∞)</p>
+</li>
+<li><p>值域Rf=[0,+∞)</p>
+</li>
+</ul>
+<h3 id="符号函数"><a href="#符号函数" class="headerlink" title="符号函数"></a>符号函数</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">       / 1, x&gt;0<br><span class="hljs-attribute">y</span>=sgnx=  0, <span class="hljs-attribute">x</span>=0<br>       \ -1, x&lt;0<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>定义域为D=(-∞,+∞)</p>
+</li>
+<li><p>值域Rf=[-1,0,1)</p>
+</li>
+<li><p>x=sgnx·|x| </p>
+</li>
+</ul>
+<h3 id="取整函数"><a href="#取整函数" class="headerlink" title="取整函数"></a>取整函数</h3><ul>
+<li><p>y=[x]的定义域为D=(-∞,+∞)</p>
+</li>
+<li><p>值域为整数集Z</p>
+</li>
+</ul>
+<h3 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h3><ul>
+<li>自变量在不同范围中, 对应则用不同的式子来表示</li>
+</ul>
+<h1 id="函数的特性"><a href="#函数的特性" class="headerlink" title="函数的特性"></a>函数的特性</h1><h3 id="函数的有界性"><a href="#函数的有界性" class="headerlink" title="函数的有界性"></a>函数的有界性</h3><h4>上界</h4>
+
+<ul>
+<li>设函数f(x)的定义域为D, 数集X⊂D, 如果存在数K1, 使得对任一 x∈X, 都有f(x)≤K1, 则称函数f(x)在X上有<font color="#CD4F39">上界</font>, 而K1称为函数f(x)在X上的一个<font color="#CD4F39">上界</font></li>
+</ul>
+<h4>下界</h4>
+
+<ul>
+<li>如果存在数K2, 使得对任一 x∈X, 都有f(x)≥K2, 则称函数f(x)在X上有<font color="#CD4F39">下界</font>, 而K2称为函数f(x)在X上的一个<font color="#CD4F39">下界</font></li>
+</ul>
+<h4>有界</h4>
+
+<ul>
+<li>如果存在正数M, 使得对任一 x∈X, 都有|f(x)|≤M, 则称函数f(x)在X上有<font color="#CD4F39">有界</font></li>
+</ul>
+<h4>无界</h4>
+
+<ul>
+<li>如果这样的M不存在, 则称函数f(x)在X上<font color="#CD4F39">无界</font></li>
+</ul>
+<h3 id="函数的单调性-单调函数"><a href="#函数的单调性-单调函数" class="headerlink" title="函数的单调性/单调函数"></a>函数的单调性/单调函数</h3><h4>单调增加</h4>
+
+<ul>
+<li>设函数发(x)的定义域为D, 区间I⊂D, 如果对于区间I内的任意两点x1及x2, 当x1&lt;x2时, 恒有 f(x1)&lt;f(x2), 则称函数f(x)在区间I内是单调增加</li>
+</ul>
+<h4>单调减少</h4>
+
+<ul>
+<li>如果对于区间I内的任意两点x1及x2, 当x1&lt;x2时, 恒有 f(x1)&gt;f(x2), 则称函数f(x)在区间I内是单调减少</li>
+</ul>
+<h3 id="函数的奇偶性"><a href="#函数的奇偶性" class="headerlink" title="函数的奇偶性"></a>函数的奇偶性</h3><h4>奇函数</h4>
+
+<ul>
+<li>设函数f(x)的定义域D关于原点对称, 如果任意x∈D, f(-x)=-f(x)  <font color="#CD4F39">原点对称</font></li>
+</ul>
+<p><strong>f(x)=sinx是奇函数</strong></p>
+<h4>偶函数</h4>
+
+<ul>
+<li>如果任意x∈D, f(-x)=f(x)  <font color="#CD4F39">Y轴对称</font></li>
+</ul>
+<p><strong>f(x)=cosx是偶函数</strong></p>
+<p><strong>f(x)=sinx + cosx是非奇非偶</strong></p>
+<h3 id="函数的周期性"><a href="#函数的周期性" class="headerlink" title="函数的周期性"></a>函数的周期性</h3><ul>
+<li>周期函数的周期是指最小正周期 sinx, cosx以2π为周期 tanx以π为周期</li>
+</ul>
+<ul>
+<li>设函数f(x)的定义域为D, 如果存在一个正数T, 使得对于任一x∈D有x±T∈D且 f(x+T)=f(x)则称f(x)为周期函数, T称为函数f(x)的周期</li>
+</ul>
+<h1 id="初等函数"><a href="#初等函数" class="headerlink" title="初等函数"></a>初等函数</h1><ul>
+<li>由常数和基本初等函数经过有限次的四则运算和有限次的函数复合步骤所构成的并可用一个式子表示的函数,称为初等函数</li>
+</ul>
+<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0.jpg"></p>
+<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0.jpg"></p>
+<br>
+<!-- ### 幂函数: y=Xα (α∈R是常数)
+
+<h3 id="指数函数-y-ax-a-gt-0-a≠1"><a href="#指数函数-y-ax-a-gt-0-a≠1" class="headerlink" title="指数函数:y=ax (a&gt;0,a≠1)"></a>指数函数:y=ax (a&gt;0,a≠1)</h3><h3 id="对数函数-y-loga-x-a-gt-0-a≠1"><a href="#对数函数-y-loga-x-a-gt-0-a≠1" class="headerlink" title="对数函数:y=loga x (a&gt;0,a≠1)"></a>对数函数:y=loga x (a&gt;0,a≠1)</h3><h3 id="特别地-当a-e时-记作y-lnx"><a href="#特别地-当a-e时-记作y-lnx" class="headerlink" title="特别地,当a=e时,记作y=lnx"></a>特别地,当a=e时,记作y=lnx</h3><h3 id="–-gt"><a href="#–-gt" class="headerlink" title="–&gt;"></a>–&gt;</h3><br>
+
+<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B。
+
+⊇是包含符号：A包含B-则B为A的子集或等于A。
+
+⫋真包含：A真包含于B-则A为B的真子集，若B={1，2}，则A={1}或{2}或空集。
+
+运算符号：
+
+如加号 (+) ，减号 (－) ，乘号 (×或·) ，除号 (÷或/) ，两个集合的并集 (∪) ，交集 (∩) ，根号 (√￣) ，对数 (log，lg，ln，lb) ，比 (:) ，绝对值符号| |，微分 (d) ，积分 (∫) ，闭合曲面 (曲线) 积分 (∮) 等。
+
+关系符号：
+
+如"="是等号，"≈"是近似符号 (即约等于) , "≠"是不等号，">"是大于符号，"<"是小于符号，"≥"是大于或等于符号 (也可写作"≮"，即不小于) , "≤"是小于或等于符号 (也可写作"≯"，即不大于) , "→ "表示变量变化的趋势。
+
+"∽"是相似符号，"≌"是全等号，"∥"是平行符号，"⊥"是垂直符号，"∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号，"⊆"是包含于符号，"⊇"是包含符号，"|"表示"能整除" (例如a|b 表示"a能整除b"，而  -->
+
+</h5></h5>]]></content>
       <categories>
         <category>跟我一起学数学</category>
       </categories>
@@ -15741,145 +15879,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 ]]></content>
       <categories>
         <category>考研必背</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>啥是函数</title>
-    <url>/HigherMathematics-function.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
-<li><p>设数集D⊂R,如果对D中每个数x,变量y按照一定法则在R中有唯一确定的数值与之对应, 则称y是x的函数</p>
-</li>
-<li><p>记为: y=f(x), x∈D</p>
-<ul>
-<li><p>x称为自变量</p>
-</li>
-<li><p>y称为因变量</p>
-</li>
-<li><p>D称为定义域</p>
-</li>
-</ul>
-</li>
-<li><p>记作Df  即Df=D</p>
-</li>
-</ul>
-<h1 id="值域"><a href="#值域" class="headerlink" title="值域"></a>值域</h1><ul>
-<li>函数值f(x)的全体所构成的集合称为函数f的<font color="#DC143C">值域</font>,记作R,或f(D),即Rf=f(D)={y|y=f(x)x∈D}</li>
-</ul>
-<h5>构成函数的要素: 定义域Df, 对应法则f<h5>
-
-
-<h1 id="函数的图形"><a href="#函数的图形" class="headerlink" title="函数的图形"></a>函数的图形</h1><ul>
-<li>在坐标平面上的点集C={(x,y)|y=f(x),x∈D}称为函数y=f(x)的图形</li>
-</ul>
-<h3 id="常数函数"><a href="#常数函数" class="headerlink" title="常数函数"></a>常数函数</h3><ul>
-<li>函数y=C,其中C为某确定的常数定义域为D=(-∞,+∞),值域为R={C},图形是一条平行于x轴的直线</li>
-</ul>
-<h3 id="绝对值函数"><a href="#绝对值函数" class="headerlink" title="绝对值函数"></a>绝对值函数</h3><figure class="highlight llvm"><table><tr><td class="code"><pre><code class="hljs llvm">      / -<span class="hljs-keyword">x</span><span class="hljs-punctuation">,</span> <span class="hljs-keyword">x</span>&lt;<span class="hljs-number">0</span><br>y<span class="hljs-operator">=</span>|<span class="hljs-keyword">x</span>|<span class="hljs-operator">=</span><br>      \ <span class="hljs-keyword">x</span><span class="hljs-punctuation">,</span> <span class="hljs-keyword">x</span>≥<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
-<ul>
-<li><p>定义域为D=(-∞,+∞)</p>
-</li>
-<li><p>值域Rf=[0,+∞)</p>
-</li>
-</ul>
-<h3 id="符号函数"><a href="#符号函数" class="headerlink" title="符号函数"></a>符号函数</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">       / 1, x&gt;0<br><span class="hljs-attribute">y</span>=sgnx=  0, <span class="hljs-attribute">x</span>=0<br>       \ -1, x&lt;0<br></code></pre></td></tr></table></figure>
-<ul>
-<li><p>定义域为D=(-∞,+∞)</p>
-</li>
-<li><p>值域Rf=[-1,0,1)</p>
-</li>
-<li><p>x=sgnx·|x| </p>
-</li>
-</ul>
-<h3 id="取整函数"><a href="#取整函数" class="headerlink" title="取整函数"></a>取整函数</h3><ul>
-<li><p>y=[x]的定义域为D=(-∞,+∞)</p>
-</li>
-<li><p>值域为整数集Z</p>
-</li>
-</ul>
-<h3 id="分段函数"><a href="#分段函数" class="headerlink" title="分段函数"></a>分段函数</h3><ul>
-<li>自变量在不同范围中, 对应则用不同的式子来表示</li>
-</ul>
-<h1 id="函数的特性"><a href="#函数的特性" class="headerlink" title="函数的特性"></a>函数的特性</h1><h3 id="函数的有界性"><a href="#函数的有界性" class="headerlink" title="函数的有界性"></a>函数的有界性</h3><h4>上界</h4>
-
-<ul>
-<li>设函数f(x)的定义域为D, 数集X⊂D, 如果存在数K1, 使得对任一 x∈X, 都有f(x)≤K1, 则称函数f(x)在X上有<font color="#CD4F39">上界</font>, 而K1称为函数f(x)在X上的一个<font color="#CD4F39">上界</font></li>
-</ul>
-<h4>下界</h4>
-
-<ul>
-<li>如果存在数K2, 使得对任一 x∈X, 都有f(x)≥K2, 则称函数f(x)在X上有<font color="#CD4F39">下界</font>, 而K2称为函数f(x)在X上的一个<font color="#CD4F39">下界</font></li>
-</ul>
-<h4>有界</h4>
-
-<ul>
-<li>如果存在正数M, 使得对任一 x∈X, 都有|f(x)|≤M, 则称函数f(x)在X上有<font color="#CD4F39">有界</font></li>
-</ul>
-<h4>无界</h4>
-
-<ul>
-<li>如果这样的M不存在, 则称函数f(x)在X上<font color="#CD4F39">无界</font></li>
-</ul>
-<h3 id="函数的单调性-单调函数"><a href="#函数的单调性-单调函数" class="headerlink" title="函数的单调性/单调函数"></a>函数的单调性/单调函数</h3><h4>单调增加</h4>
-
-<ul>
-<li>设函数发(x)的定义域为D, 区间I⊂D, 如果对于区间I内的任意两点x1及x2, 当x1&lt;x2时, 恒有 f(x1)&lt;f(x2), 则称函数f(x)在区间I内是单调增加</li>
-</ul>
-<h4>单调减少</h4>
-
-<ul>
-<li>如果对于区间I内的任意两点x1及x2, 当x1&lt;x2时, 恒有 f(x1)&gt;f(x2), 则称函数f(x)在区间I内是单调减少</li>
-</ul>
-<h3 id="函数的奇偶性"><a href="#函数的奇偶性" class="headerlink" title="函数的奇偶性"></a>函数的奇偶性</h3><h4>奇函数</h4>
-
-<ul>
-<li>设函数f(x)的定义域D关于原点对称, 如果任意x∈D, f(-x)=-f(x)  <font color="#CD4F39">原点对称</font></li>
-</ul>
-<p><strong>f(x)=sinx是奇函数</strong></p>
-<h4>偶函数</h4>
-
-<ul>
-<li>如果任意x∈D, f(-x)=f(x)  <font color="#CD4F39">Y轴对称</font></li>
-</ul>
-<p><strong>f(x)=cosx是偶函数</strong></p>
-<p><strong>f(x)=sinx + cosx是非奇非偶</strong></p>
-<h3 id="函数的周期性"><a href="#函数的周期性" class="headerlink" title="函数的周期性"></a>函数的周期性</h3><ul>
-<li>周期函数的周期是指最小正周期 sinx, cosx以2π为周期 tanx以π为周期</li>
-</ul>
-<ul>
-<li>设函数f(x)的定义域为D, 如果存在一个正数T, 使得对于任一x∈D有x±T∈D且 f(x+T)=f(x)则称f(x)为周期函数, T称为函数f(x)的周期</li>
-</ul>
-<h1 id="初等函数"><a href="#初等函数" class="headerlink" title="初等函数"></a>初等函数</h1><ul>
-<li>由常数和基本初等函数经过有限次的四则运算和有限次的函数复合步骤所构成的并可用一个式子表示的函数,称为初等函数</li>
-</ul>
-<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0.jpg"></p>
-<p><img src="/images/%E5%AD%A6%E6%95%B0%E5%AD%A6/%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0.jpg"></p>
-<br>
-<!-- ### 幂函数: y=Xα (α∈R是常数)
-
-<h3 id="指数函数-y-ax-a-gt-0-a≠1"><a href="#指数函数-y-ax-a-gt-0-a≠1" class="headerlink" title="指数函数:y=ax (a&gt;0,a≠1)"></a>指数函数:y=ax (a&gt;0,a≠1)</h3><h3 id="对数函数-y-loga-x-a-gt-0-a≠1"><a href="#对数函数-y-loga-x-a-gt-0-a≠1" class="headerlink" title="对数函数:y=loga x (a&gt;0,a≠1)"></a>对数函数:y=loga x (a&gt;0,a≠1)</h3><h3 id="特别地-当a-e时-记作y-lnx"><a href="#特别地-当a-e时-记作y-lnx" class="headerlink" title="特别地,当a=e时,记作y=lnx"></a>特别地,当a=e时,记作y=lnx</h3><h3 id="–-gt"><a href="#–-gt" class="headerlink" title="–&gt;"></a>–&gt;</h3><br>
-
-<!-- ⊆是包含于符号：A包含于B-则A为B的子集或等于B。
-
-⊇是包含符号：A包含B-则B为A的子集或等于A。
-
-⫋真包含：A真包含于B-则A为B的真子集，若B={1，2}，则A={1}或{2}或空集。
-
-运算符号：
-
-如加号 (+) ，减号 (－) ，乘号 (×或·) ，除号 (÷或/) ，两个集合的并集 (∪) ，交集 (∩) ，根号 (√￣) ，对数 (log，lg，ln，lb) ，比 (:) ，绝对值符号| |，微分 (d) ，积分 (∫) ，闭合曲面 (曲线) 积分 (∮) 等。
-
-关系符号：
-
-如"="是等号，"≈"是近似符号 (即约等于) , "≠"是不等号，">"是大于符号，"<"是小于符号，"≥"是大于或等于符号 (也可写作"≮"，即不小于) , "≤"是小于或等于符号 (也可写作"≯"，即不大于) , "→ "表示变量变化的趋势。
-
-"∽"是相似符号，"≌"是全等号，"∥"是平行符号，"⊥"是垂直符号，"∝"是正比例符号 (表示反比例时可以利用倒数关系) , "∈"是属于符号，"⊆"是包含于符号，"⊇"是包含符号，"|"表示"能整除" (例如a|b 表示"a能整除b"，而  -->
-
-</h5></h5>]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
       </categories>
   </entry>
   <entry>
