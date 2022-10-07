@@ -1052,6 +1052,66 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 
 
 		 	
+				<style>
+#wl-edit {
+	background: url('https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4ca0c79d47.gif') no-repeat !important;
+	background-size: auto 133px!important;
+    background-position: right !important;
+}
+</style>
+<div id="vcomments" class="comment">
+
+</div>
+<script>
+
+	Waline.init({
+		el: '#vcomments',
+		serverURL: 'https://comments.sdq3.ml/'
+	});
+
+	// window.valine = new Valine({
+	// 	el: '#vcomments',
+	// 	appId: '',
+	// 	appKey: '',
+	// 	avatar: '',
+	// 	placeholder: '',
+	// 	path: window.location.pathname,   //[重点] 记得添加path路径
+	// 	enableQQ:'true'
+	// });
+	
+    // 使用方法 https://valine.js.org/quickstart.html
+	/*
+		var $vcomments = document.querySelector('.comment');
+		var $div= document.createElement('div');
+		$div.setAttribute("id","#vcomments");
+		$vcomments.appendChild($div);
+    new Valine({
+        el: '#vcomments',
+        appId: '',
+        appKey: '',
+		avatar: '',
+        placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写, 支持markdown 格式编写 ',
+    });*/
+        //placeholder: '输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写, 支持markdown 格式编写 ',
+</script>
+
+<!-- <script>
+$(function() 
+	$(window).load(function(){
+	// 去valine版权
+	$('.info').css("display","none");
+	// 去valine位移
+	$('.vmeta').css("padding-right","66px");
+	$('.vcontrol').css("padding-right","66px");
+	$('.vctrl').css("padding-right","66px");
+	$('#veditor').removeAttr("placeholder");
+	$("#veditor").attr("placeholder","输入前请确认 <昵称> <邮箱> <你的网站> 是否已填写, 支持markdown 格式编写 ");
+	$('.v .vwrap .vheader .vinput:nth-child(3)').removeAttr("placeholder");
+	$(".v .vwrap .vheader .vinput:nth-child(3)").attr("placeholder","你的HOME(例: https://www.baidu.com)");
+	$(".info").after(" <p>&copy; </p>");
+})
+</script> -->
+			
 		
 	  
 	
