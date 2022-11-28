@@ -1592,7 +1592,7 @@ svg[id^="mermaid-"] {
     background: rgba(0,0,0,0) !important;
 }
 /* 评论字体颜色 */
-#\36 3142de5afc96e49750f3ab1 > div.wl-card > div.wl-head > a > div.wl-card > div.wl-head {
+#vcomments > div > div.wl-comment > div > div.wl-footer > div.wl-info > button:nth-child(2) {
     color: rgb(255, 255, 255) !important;
 }
 :root {
@@ -1634,8 +1634,17 @@ svg[id^="mermaid-"] {
     height: 11.9333rem !important;
 }
 
+/* 评论的虚线 */
+.wl-card .wl-quote {
+    border-left: 0px !important;
+}
 .wl-btn{
     color: rgba(0,0,0,0) !important;
+}
+
+/* 框框锁定大小 */
+.sdq-post:hover {
+    padding: 5% !important;
 }
 
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */

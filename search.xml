@@ -2659,6 +2659,202 @@ A[" 其它关键字 (4个) "]-->E[" volatle "]
       </categories>
   </entry>
   <entry>
+    <title>C语 选择结构程序设计</title>
+    <url>/C-if.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+<h5>C语言提供了两种类型的选择结构</h5>
+
+<ul>
+<li>条件选择结构: 根据给定的条件表达式进行判断, 决定执行某个分支中的程序段</li>
+</ul>
+<ul>
+<li>开关选择结构: 根据给定的整型表达式的值进行判断, 然后决定执行多个分支中的某个分支</li>
+</ul>
+<h1 id="程序流程图"><a href="#程序流程图" class="headerlink" title="程序流程图"></a>程序流程图</h1><div class="mermaid">
+    graph LR
+    A([" 起始框 "])
+
+<pre><code>E[/&quot; 输入/输出框&quot; /]
+
+B&#123;&quot; 判断框 &quot;&#125;
+
+D[&quot; 处理框 &quot;]--&gt;流程线C((&quot; 连接点 &quot;))</code></pre>
+</div>
+
+
+<h1 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h1><h2 id="if的三种格式"><a href="#if的三种格式" class="headerlink" title="if的三种格式"></a>if的三种格式</h2><h3 id="单分支选择结构"><a href="#单分支选择结构" class="headerlink" title="单分支选择结构"></a>单分支选择结构</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句; &#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>单分支选择结构图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TB
+    A([" 开始 "])-->B{" 表达式 "}
+    B{" 表达式 "}--非0 / 真-->D[" 语句 "]
+    D[" 语句 "]-->E[" 结果 "]
+    B{" 表达式 "}--0 / 假-->E[" 结果 "]
+</div>
+
+<h3 id="双分支选择结构"><a href="#双分支选择结构" class="headerlink" title="双分支选择结构"></a>双分支选择结构</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span><br>&#123; 语句<span class="hljs-number">2</span>; &#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>双分支选择结构图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TB
+    A([" 开始 "])-->B{" 表达式 "}
+    B{" 表达式 "}--真-->D[" A "]
+    B{" 表达式 "}--假-->F[" B "]
+    D[" A "]-->E[" 结果 "]
+    F[" B "]-->E[" 结果 "]
+</div>
+
+<h3 id="多分支选择结构"><a href="#多分支选择结构" class="headerlink" title="多分支选择结构"></a>多分支选择结构</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> ) &#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) &#123; 语句<span class="hljs-number">2</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">3</span> ) &#123; 语句<span class="hljs-number">3</span>; &#125;<br>...<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式n ) &#123; 语句n; &#125;<br><span class="hljs-keyword">else</span> &#123; 语句 n+<span class="hljs-number">1</span>; &#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>多分支选择结构图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TD
+    A([" 开始 "])-->B{" 表达式1 "}
+    B{" 表达式1 "}--非0/真-->D[" 语句1 "]
+    B{" 表达式1 "}--0/假-->C{" 表达式2 "}
+
+<pre><code>C&#123;&quot; 表达式2 &quot;&#125;--0/假--&gt;F&#123;&quot; 表达式3 &quot;&#125;
+C&#123;&quot; 表达式2 &quot;&#125;--非0/真--&gt;G[&quot; 语句2 &quot;]
+
+F&#123;&quot; 表达式3 &quot;&#125;--0/假--&gt;H&#123;&quot; 表达式4 &quot;&#125;
+F&#123;&quot; 表达式3 &quot;&#125;--非0/真--&gt;I[&quot; 语句3 &quot;]
+
+H&#123;&quot; 表达式4 &quot;&#125;--0/假--&gt;J[&quot; 语句5 &quot;]
+H&#123;&quot; 表达式4 &quot;&#125;--非0/真--&gt;K[&quot; 语句4 &quot;]
+
+D[&quot; 语句1 &quot;]--&gt;L[&quot; 结果 &quot;]
+G[&quot; 语句2 &quot;]--&gt;L[&quot; 结果 &quot;]
+I[&quot; 语句3 &quot;]--&gt;L[&quot; 结果 &quot;]
+J[&quot; 语句4 &quot;]--&gt;L[&quot; 结果 &quot;]
+K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
+</div>
+
+<h3 id="if-语句的嵌套"><a href="#if-语句的嵌套" class="headerlink" title="if 语句的嵌套"></a>if 语句的嵌套</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) 语句<span class="hljs-number">21</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">22</span>;<br><br><span class="hljs-comment">// 其中要注意以下两种if语句结构的差别</span><br><br><span class="hljs-comment">// 第一种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><br><span class="hljs-comment">// 第二种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    &#123; <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>; &#125;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>双分支选择结构图</h4>
+
+<br>
+
+<h2 id="多分支选择语句-switch-语句"><a href="#多分支选择语句-switch-语句" class="headerlink" title="多分支选择语句 ( switch 语句 )"></a>多分支选择语句 ( switch 语句 )</h2><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式 )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">1</span>: 语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">2</span>: 语句组<span class="hljs-number">2</span>; <span class="hljs-keyword">break</span>;<br>    ...<br>    <span class="hljs-keyword">case</span> 常量表达式n: 语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:          语句组n+<span class="hljs-number">1</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>switch语句执行流程图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TB
+    A([" 开始 "])-->B{" 表达式 "}
+    B{" 表达式 "}--值1-->F[" 语句1 "]
+    B{" 表达式 "}--值2-->G[" 语句2 "]
+    B{" 表达式 "}--值n-->H[" 语句n "]
+    B{" 表达式 "}--default-->I[" 语句n+1 "]
+    F[" 语句1 "]-->E[" 结果 "]
+    G[" 语句2 "]-->E[" 结果 "]
+    H[" 语句n "]-->E[" 结果 "]
+    I[" 语句n+1 "]-->E[" 结果 "]
+</div>
+
+<ol>
+<li><p>switch 后面小括号里的表达式可以是任何类型的, 其常用的是字符或整型表达式</p>
+</li>
+<li><p>case 后面的常量表达式是由常量组成的表达式, 其中的使用常量表达式的值必须互不相同, 且常量表达式的值必须与 switch 后面表达式的值类型相同</p>
+</li>
+<li><p>语句组是由若干个语句组成的, 但不需要用大括号括起来, 其中的语句可以是任何 C语言 的可执行语句, 当然也可以是另一个 switch 语句 ( 称为嵌套 switch 语句 ) ,即 switch 语句也是可以嵌套使用</p>
+</li>
+<li><p>break 是 C语言的一种语句, 其功能是跳出当前 switch 语句, 在  switch 语句中 当执行某个语句组后, 后面若有 break , 变退出该  switch 语句, 如果省略了 break 语句, 则执行完某个语句组后, 将连续执行其后的语句组, 直至遇到下一个 break 语句, 如果后面没有 break 语句, 则一直执行到 switch 语句的最后一个语句</p>
+</li>
+<li><p>在书写格式上, 所有的 case 应对齐, 每个 case 后的语句缩格并对齐, 以方便看出各个分支的条件依据和应执行的操作</p>
+</li>
+<li><p>注意 case 和常量表达式之间要有空格</p>
+</li>
+<li><p>当  switch 后面表达式的值与某个 case 后面常量表达式的值一直时, 就会执行该 case 后面的语句组, 若所有 case 后面常量表达式的值和 switch 后面表达式的值都不相同时, 便执行 default 后面的语句组</p>
+</li>
+<li><p>default 语句可以省略</p>
+</li>
+<li><p>case 和 default 语句的出现次序是任意的, 可以变换位置, 这并不影响 switch 的功能, 如可以先出现 “ default : … “, 再出现 “ case ‘B’ : … “, 然后是 “ case ‘A’ : … “</p>
+</li>
+<li><p>可将相同操作的 case 语句及对应的常量表达式连续排序, 其对应操作的语句组及 break 只在最后一个 case 语句后出现</p>
+</li>
+</ol>
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式<span class="hljs-number">1</span> )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">2</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">3</span>:      语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br><br>    ...                      ...<br><br>    <span class="hljs-keyword">case</span> 常用表达式 n<span class="hljs-number">-1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 n:      语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:               语句组 n+<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<!-- 
++ [矩形]
+
+- [[暂不支持]]
+
+- [(圆柱)]
+
+- [{暂不支持}]
+
+- [/平行四边形/]
+
+- [\平行四边形\]
+
+- [/梯形\]
+
+- [\梯形/]
+
++ (圆角矩形)
+
+- ((圆形))
+
+- ([体育场])
+
+- ({暂不支持})
+
++ {菱形}
+
+- 
+
+<ul>
+<li><p>{[暂不支持]}</p>
+</li>
+<li><p>{(暂不支持)}</p>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>不对称矩形] </p>
+</blockquote>
+</li>
+</ul>
+<p>–&gt;</p>
+-->]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C语 顺序结构程序设计</title>
     <url>/C-Sequence-Structure.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -3072,202 +3268,6 @@ A[" 其它关键字 (4个) "]-->E[" volatle "]
 <br>
 
 <br>]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C语 选择结构程序设计</title>
-    <url>/C-if.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-<h5>C语言提供了两种类型的选择结构</h5>
-
-<ul>
-<li>条件选择结构: 根据给定的条件表达式进行判断, 决定执行某个分支中的程序段</li>
-</ul>
-<ul>
-<li>开关选择结构: 根据给定的整型表达式的值进行判断, 然后决定执行多个分支中的某个分支</li>
-</ul>
-<h1 id="程序流程图"><a href="#程序流程图" class="headerlink" title="程序流程图"></a>程序流程图</h1><div class="mermaid">
-    graph LR
-    A([" 起始框 "])
-
-<pre><code>E[/&quot; 输入/输出框&quot; /]
-
-B&#123;&quot; 判断框 &quot;&#125;
-
-D[&quot; 处理框 &quot;]--&gt;流程线C((&quot; 连接点 &quot;))</code></pre>
-</div>
-
-
-<h1 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h1><h2 id="if的三种格式"><a href="#if的三种格式" class="headerlink" title="if的三种格式"></a>if的三种格式</h2><h3 id="单分支选择结构"><a href="#单分支选择结构" class="headerlink" title="单分支选择结构"></a>单分支选择结构</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句; &#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>单分支选择结构图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TB
-    A([" 开始 "])-->B{" 表达式 "}
-    B{" 表达式 "}--非0 / 真-->D[" 语句 "]
-    D[" 语句 "]-->E[" 结果 "]
-    B{" 表达式 "}--0 / 假-->E[" 结果 "]
-</div>
-
-<h3 id="双分支选择结构"><a href="#双分支选择结构" class="headerlink" title="双分支选择结构"></a>双分支选择结构</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span><br>&#123; 语句<span class="hljs-number">2</span>; &#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>双分支选择结构图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TB
-    A([" 开始 "])-->B{" 表达式 "}
-    B{" 表达式 "}--真-->D[" A "]
-    B{" 表达式 "}--假-->F[" B "]
-    D[" A "]-->E[" 结果 "]
-    F[" B "]-->E[" 结果 "]
-</div>
-
-<h3 id="多分支选择结构"><a href="#多分支选择结构" class="headerlink" title="多分支选择结构"></a>多分支选择结构</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> ) &#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) &#123; 语句<span class="hljs-number">2</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">3</span> ) &#123; 语句<span class="hljs-number">3</span>; &#125;<br>...<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式n ) &#123; 语句n; &#125;<br><span class="hljs-keyword">else</span> &#123; 语句 n+<span class="hljs-number">1</span>; &#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>多分支选择结构图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TD
-    A([" 开始 "])-->B{" 表达式1 "}
-    B{" 表达式1 "}--非0/真-->D[" 语句1 "]
-    B{" 表达式1 "}--0/假-->C{" 表达式2 "}
-
-<pre><code>C&#123;&quot; 表达式2 &quot;&#125;--0/假--&gt;F&#123;&quot; 表达式3 &quot;&#125;
-C&#123;&quot; 表达式2 &quot;&#125;--非0/真--&gt;G[&quot; 语句2 &quot;]
-
-F&#123;&quot; 表达式3 &quot;&#125;--0/假--&gt;H&#123;&quot; 表达式4 &quot;&#125;
-F&#123;&quot; 表达式3 &quot;&#125;--非0/真--&gt;I[&quot; 语句3 &quot;]
-
-H&#123;&quot; 表达式4 &quot;&#125;--0/假--&gt;J[&quot; 语句5 &quot;]
-H&#123;&quot; 表达式4 &quot;&#125;--非0/真--&gt;K[&quot; 语句4 &quot;]
-
-D[&quot; 语句1 &quot;]--&gt;L[&quot; 结果 &quot;]
-G[&quot; 语句2 &quot;]--&gt;L[&quot; 结果 &quot;]
-I[&quot; 语句3 &quot;]--&gt;L[&quot; 结果 &quot;]
-J[&quot; 语句4 &quot;]--&gt;L[&quot; 结果 &quot;]
-K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
-</div>
-
-<h3 id="if-语句的嵌套"><a href="#if-语句的嵌套" class="headerlink" title="if 语句的嵌套"></a>if 语句的嵌套</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) 语句<span class="hljs-number">21</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">22</span>;<br><br><span class="hljs-comment">// 其中要注意以下两种if语句结构的差别</span><br><br><span class="hljs-comment">// 第一种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><br><span class="hljs-comment">// 第二种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    &#123; <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>; &#125;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>双分支选择结构图</h4>
-
-<br>
-
-<h2 id="多分支选择语句-switch-语句"><a href="#多分支选择语句-switch-语句" class="headerlink" title="多分支选择语句 ( switch 语句 )"></a>多分支选择语句 ( switch 语句 )</h2><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式 )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">1</span>: 语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">2</span>: 语句组<span class="hljs-number">2</span>; <span class="hljs-keyword">break</span>;<br>    ...<br>    <span class="hljs-keyword">case</span> 常量表达式n: 语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:          语句组n+<span class="hljs-number">1</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>switch语句执行流程图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TB
-    A([" 开始 "])-->B{" 表达式 "}
-    B{" 表达式 "}--值1-->F[" 语句1 "]
-    B{" 表达式 "}--值2-->G[" 语句2 "]
-    B{" 表达式 "}--值n-->H[" 语句n "]
-    B{" 表达式 "}--default-->I[" 语句n+1 "]
-    F[" 语句1 "]-->E[" 结果 "]
-    G[" 语句2 "]-->E[" 结果 "]
-    H[" 语句n "]-->E[" 结果 "]
-    I[" 语句n+1 "]-->E[" 结果 "]
-</div>
-
-<ol>
-<li><p>switch 后面小括号里的表达式可以是任何类型的, 其常用的是字符或整型表达式</p>
-</li>
-<li><p>case 后面的常量表达式是由常量组成的表达式, 其中的使用常量表达式的值必须互不相同, 且常量表达式的值必须与 switch 后面表达式的值类型相同</p>
-</li>
-<li><p>语句组是由若干个语句组成的, 但不需要用大括号括起来, 其中的语句可以是任何 C语言 的可执行语句, 当然也可以是另一个 switch 语句 ( 称为嵌套 switch 语句 ) ,即 switch 语句也是可以嵌套使用</p>
-</li>
-<li><p>break 是 C语言的一种语句, 其功能是跳出当前 switch 语句, 在  switch 语句中 当执行某个语句组后, 后面若有 break , 变退出该  switch 语句, 如果省略了 break 语句, 则执行完某个语句组后, 将连续执行其后的语句组, 直至遇到下一个 break 语句, 如果后面没有 break 语句, 则一直执行到 switch 语句的最后一个语句</p>
-</li>
-<li><p>在书写格式上, 所有的 case 应对齐, 每个 case 后的语句缩格并对齐, 以方便看出各个分支的条件依据和应执行的操作</p>
-</li>
-<li><p>注意 case 和常量表达式之间要有空格</p>
-</li>
-<li><p>当  switch 后面表达式的值与某个 case 后面常量表达式的值一直时, 就会执行该 case 后面的语句组, 若所有 case 后面常量表达式的值和 switch 后面表达式的值都不相同时, 便执行 default 后面的语句组</p>
-</li>
-<li><p>default 语句可以省略</p>
-</li>
-<li><p>case 和 default 语句的出现次序是任意的, 可以变换位置, 这并不影响 switch 的功能, 如可以先出现 “ default : … “, 再出现 “ case ‘B’ : … “, 然后是 “ case ‘A’ : … “</p>
-</li>
-<li><p>可将相同操作的 case 语句及对应的常量表达式连续排序, 其对应操作的语句组及 break 只在最后一个 case 语句后出现</p>
-</li>
-</ol>
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式<span class="hljs-number">1</span> )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">2</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">3</span>:      语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br><br>    ...                      ...<br><br>    <span class="hljs-keyword">case</span> 常用表达式 n<span class="hljs-number">-1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 n:      语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:               语句组 n+<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<!-- 
-+ [矩形]
-
-- [[暂不支持]]
-
-- [(圆柱)]
-
-- [{暂不支持}]
-
-- [/平行四边形/]
-
-- [\平行四边形\]
-
-- [/梯形\]
-
-- [\梯形/]
-
-+ (圆角矩形)
-
-- ((圆形))
-
-- ([体育场])
-
-- ({暂不支持})
-
-+ {菱形}
-
-- 
-
-<ul>
-<li><p>{[暂不支持]}</p>
-</li>
-<li><p>{(暂不支持)}</p>
-</li>
-</ul>
-<ul>
-<li><blockquote>
-<p>不对称矩形] </p>
-</blockquote>
-</li>
-</ul>
-<p>–&gt;</p>
--->]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -9404,23 +9404,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>爬虫 cookie(吃牢饭集合)</title>
-    <url>/reptile-cookie.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
-<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
-<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
-<br>
-
-<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>毛概</title>
     <url>/Maogai-Mustback.html</url>
     <content><![CDATA[<p><strong>毛概学习笔记</strong></p>
@@ -10565,6 +10548,23 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
+    <title>爬虫 cookie(吃牢饭集合)</title>
+    <url>/reptile-cookie.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="headers中携带cookie"><a href="#headers中携带cookie" class="headerlink" title="headers中携带cookie"></a>headers中携带cookie</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    <span class="hljs-string">&quot;Cookie&quot;</span>: <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br>&#125;<br><br>respinse = requests.get(url, headers=headers,)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(respinse.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(respinse.content)<br></code></pre></td></tr></table></figure>
+<h1 id="构建cookie字典"><a href="#构建cookie字典" class="headerlink" title="构建cookie字典"></a>构建cookie字典</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://github.com/sdqOS&#x27;</span><br><br><span class="hljs-comment"># 构造请求头字典</span><br>headers = &#123;<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.72 Safari/537.36&quot;</span>,<br>    &#125;<br><br>temp = <span class="hljs-string">&quot;_octo=GH1.1.1829904439.1611247247; _device_id=326c46400086ed13ec278dc836662948; _locale=ko; _locale_experiment=ko; tz=Asia%2FShanghai; has_recent_activity=1; user_session=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; __Host-user_session_same_site=zW4-2Xj6Rnda4YLHfsc5pFcRYfJB60BCft6Iwqh31V1lM6eU; tz=Asia%2FShanghai; color_mode=%7B%22color_mode%22%3A%22auto%22%2C%22light_theme%22%3A%7B%22name%22%3A%22light%22%2C%22color_mode%22%3A%22light%22%7D%2C%22dark_theme%22%3A%7B%22name%22%3A%22dark%22%2C%22color_mode%22%3A%22dark%22%7D%7D; logged_in=yes; dotcom_user=sdqOS; _gh_sess=l41S%2BZNr%2F%2Bmx5Y2taob81ssga5CdD5drTY7IWcDY5vIxraTrsep8btIIkpvggyDxCYtFq1Q5q6hzDGNpRs8nTJjCbZqYCGpOEUM4W20s1%2Bxo0d6WnhQZ5W8eO96d60q4p%2BF8eeSGxrdBQBL5zLIZ8uyAD%2BuRaUZL7ZoARDh7qYNssds5cOLTSlkzqJMoHUR2Yp2wy%2FNKMTEIs40hwMdjF2bbbTE4Cah3Srm29no9Lw3fvC7Z4uFLWQtzwMLwE7KEImrKAODH2dTZeYVyxBRfX5iyyA8qpO0wg%2FyAivegnpLQyQXZGQ3%2BTr4zNxEcy2Utqkhd%2FwdRQ%2Bk%2BGR2ibrXxoE3L28fyD0zqywpmxLbKmqWqkum%2B9BK99UHuFkdmUtOzdifjbYekleDfDETDUPAF3Ubvkc3pwvnlZZC66jZzX9mvbElHZlOpE8eLncyGc5jmTYBgVseIwxGs13ZkvEfZ76debhVyRHABDyfAgNsiZWHcz4I34WbPele1GjNF2qF4Fhn03cy%2FktvUW4F7pcXhx2ABKqcVNDqXtd%2BKWkdRDivx5fxtu8i1%2BE5FDuvSF%2FM8eUGjX%2FPs%2B%2BoiJ06SmbybI%2FMBoi6YLCwD4Z0iVrx1EENzH54Oknn3NTQoIHOpzgYFx4l6HzJbiTAIIZeApYhEwD82zuvditr5EaPUApQQuVdm6vXNyvFq%2B%2BLHglipgI6WXCwV1vp7GU%2FtZw6EsMX5RR2zdKnsQODuy92uTEMAnnS7ECkqUh0OUuiSNXsa6lWNqCiJId7MgEE4gkSTQawWO775i98vP2Rx6%2B%2BVkdQsYFOgYxiYZgbI%2BQCyak8YbIZXWbXtBziGYILPZM8zdm1vVJWXdgcBZfF90jZSGkr7EgNqVBQuVCHZNg9ZxmmRZ54J1K28e6r2UL7HLb5%2F3MycVrhQUelq8wPY--TcRWY%2B%2FTS0Zgmyhj--k8C1M7YSHlzTdGPKtUMwoQ%3D%3D&quot;</span><br><br><br>cookie_list = temp.split(<span class="hljs-string">&#x27;; &#x27;</span>)<br><br><span class="hljs-comment"># 熟练方案</span><br><br>cookies = &#123; cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[<span class="hljs-number">0</span>]:cookie.split(<span class="hljs-string">&#x27;=&#x27;</span>)[-<span class="hljs-number">1</span>] <span class="hljs-keyword">for</span> cookie <span class="hljs-keyword">in</span> cookie_list&#125;<br><br><span class="hljs-comment"># 稳妥方案</span><br><span class="hljs-comment"># cookies = &#123;&#125;</span><br><br><span class="hljs-comment"># for cookie in cookie_list:</span><br><span class="hljs-comment">#     cookies[cookie.split(&#x27;=&#x27;)[0]] = cookie.split(&#x27;=&#x27;)[-1]</span><br><br><span class="hljs-comment"># print(cookies)</span><br><br><span class="hljs-comment"># # 构造cookie字典</span><br><br>response = requests.get(url, headers=headers,cookies=cookies)<br><br><span class="hljs-comment"># 看看是给谁发请求</span><br><span class="hljs-built_in">print</span>(response.url)<br><br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;github3.html&#x27;</span>, <span class="hljs-string">&#x27;wb&#x27;</span>)<span class="hljs-keyword">as</span> f:<br>    f.write(response.content)<br></code></pre></td></tr></table></figure>
+<h1 id="cookieJar对象转换成cookie字典方法"><a href="#cookieJar对象转换成cookie字典方法" class="headerlink" title="cookieJar对象转换成cookie字典方法"></a>cookieJar对象转换成cookie字典方法</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&#x27;https://www.baidu.com&#x27;</span><br><br><span class="hljs-comment"># 设置(timeout)访问时长为3秒, 然后就断开</span><br>response = response.get(url, timeout=<span class="hljs-number">3</span>)<br><br><span class="hljs-built_in">print</span>(response.cookies)<br><br><span class="hljs-comment"># 将对象转字典</span><br>dict_cookie = requests.utils.dict_from_cookiejar(response.cookies)<br><span class="hljs-built_in">print</span>(dict_cookie)<br><br><span class="hljs-comment"># 将字典转换为对象</span><br>jar_cookies = requests.utils.cookiejar_from_dict(dict_cookies)<br><span class="hljs-built_in">print</span>(jar_cookies)<br></code></pre></td></tr></table></figure>
+<br>
+
+<!--副作用丢失域名 这个不要紧我们自己知道这个cookie对应哪个域名的-->
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>爬虫 http和https(吃牢饭集合)</title>
     <url>/reptile-http-https.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -10991,17 +10991,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>爬虫 verify参数与CA证书(吃牢饭集合)</title>
-    <url>/reptile-verify-CA.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 例如校园网</span><br>url = <span class="hljs-string">&quot;https://sam.huat.edu.cn:8443/selfservice/&quot;</span><br><br>response = requests.get(url, verify=<span class="hljs-literal">False</span>)<br><br><span class="hljs-built_in">print</span>(response.content)<br><span class="hljs-built_in">print</span>(response.text)<br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 图像识别引擎(牢饭吃到饱)</title>
     <url>/reptile-tesseract.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -11027,6 +11016,17 @@ json格式文件 "]
 </ul>
 </li>
 </ul>
+<br>]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 verify参数与CA证书(吃牢饭集合)</title>
+    <url>/reptile-verify-CA.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-comment"># 例如校园网</span><br>url = <span class="hljs-string">&quot;https://sam.huat.edu.cn:8443/selfservice/&quot;</span><br><br>response = requests.get(url, verify=<span class="hljs-literal">False</span>)<br><br><span class="hljs-built_in">print</span>(response.content)<br><span class="hljs-built_in">print</span>(response.text)<br></code></pre></td></tr></table></figure>
 <br>]]></content>
       <categories>
         <category>爬虫</category>
@@ -12020,26 +12020,6 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
-    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
-    <url>/reptile-Baidutranslate.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-
-<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
-<p><strong>打开cmd输入以下代码</strong></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install requests<br></code></pre></td></tr></table></figure>
-<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;https://fanyi.baidu.com/sug&quot;</span><br><br>s = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入你要翻译的英文单词&quot;</span>)<br><br>dat = &#123;<br>        <span class="hljs-string">&quot;kw&quot;</span>:s<br>    &#125;<br><br>tou = &#123;<br>    <span class="hljs-string">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36&quot;</span><br>&#125;<br><br>pachon = requests.post(url,headers=tou,data=dat)<br><br><span class="hljs-built_in">print</span>(pachon)<br><br><span class="hljs-built_in">print</span>(pachon.json())<br><br>pachon.close()  <span class="hljs-comment">#断开/关闭连接, 一定要断开</span><br></code></pre></td></tr></table></figure>
-<br>
-
-
-
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 请求头和响应头(吃牢饭集合)</title>
     <url>/reptile-header.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -12139,6 +12119,26 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 
 
  -->
+]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 访问百度翻译(牢饭吃到饱)</title>
+    <url>/reptile-Baidutranslate.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+
+<h1 id="导入requests"><a href="#导入requests" class="headerlink" title="导入requests"></a>导入requests</h1><!--more-->
+<p><strong>打开cmd输入以下代码</strong></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><code class="hljs PowerShell">pip install requests<br></code></pre></td></tr></table></figure>
+<h1 id="百度翻译案例"><a href="#百度翻译案例" class="headerlink" title="百度翻译案例"></a>百度翻译案例</h1><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">import</span> requests<br><br>url = <span class="hljs-string">&quot;https://fanyi.baidu.com/sug&quot;</span><br><br>s = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入你要翻译的英文单词&quot;</span>)<br><br>dat = &#123;<br>        <span class="hljs-string">&quot;kw&quot;</span>:s<br>    &#125;<br><br>tou = &#123;<br>    <span class="hljs-string">&quot;user-agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Mobile Safari/537.36&quot;</span><br>&#125;<br><br>pachon = requests.post(url,headers=tou,data=dat)<br><br><span class="hljs-built_in">print</span>(pachon)<br><br><span class="hljs-built_in">print</span>(pachon.json())<br><br>pachon.close()  <span class="hljs-comment">#断开/关闭连接, 一定要断开</span><br></code></pre></td></tr></table></figure>
+<br>
+
+
+
 ]]></content>
       <categories>
         <category>爬虫</category>
@@ -16157,31 +16157,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
       </categories>
   </entry>
   <entry>
-    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
-    <url>/HigherMathematics-Differential-Derivative.html</url>
-    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
-<a id="more"></a>
-
-<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
-<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
-
-<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
-<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
-<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
-<br>
-
-
-
-]]></content>
-      <categories>
-        <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
     <title>导数与微分 (第二章)</title>
     <url>/HigherMathematics-derivative-differentiate.html</url>
     <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
@@ -16254,6 +16229,31 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <div class="shuxue">$$\;\frac{d^2\;y}{d^{2\;}x}\;=\;\frac d{dx}\;\left(\;\frac{dy}{dx}\;\right)\;=\;\frac{d\;(\;{\displaystyle\frac{dy}{dx}}\;)\;/\;dt}{dx\;/\;dt}$$</div>
 
 <br>]]></content>
+      <categories>
+        <category>跟我一起学数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高等数学 微分中值定理及导数的应用 (第三章)</title>
+    <url>/HigherMathematics-Differential-Derivative.html</url>
+    <content><![CDATA[<p><strong>跟我一起学数学</strong></p>
+<a id="more"></a>
+
+<h1 id="第一节-微分中值定理及洛必达法则"><a href="#第一节-微分中值定理及洛必达法则" class="headerlink" title="第一节 微分中值定理及洛必达法则"></a>第一节 微分中值定理及洛必达法则</h1><h2 id="考点1-罗尔定理"><a href="#考点1-罗尔定理" class="headerlink" title="考点1: 罗尔定理"></a>考点1: 罗尔定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b )</p>
+<h2 id="考点1-拉姆朗日中值定理"><a href="#考点1-拉姆朗日中值定理" class="headerlink" title="考点1: 拉姆朗日中值定理"></a>考点1: 拉姆朗日中值定理</h2><h3>设 f ( x )满足:</h3>
+
+<p><font color="#7bbfea">(1) </font>在 [ a , b ]上连续</p>
+<p><font color="#7bbfea">(2) </font>在 ( a , b )内可导</p>
+<p><font color="#7bbfea">(3) </font>f ( a ) = f ( b ), 则 ∃ § ∈ ( a , b ) 使 $$lim_{1\to+\infty}P(|\frac{1}{n}\sum_i^nX_i-\mu|&lt;\epsilon)=1, i=1,…,n$$  </p>
+<br>
+
+
+
+]]></content>
       <categories>
         <category>跟我一起学数学</category>
       </categories>
@@ -16634,167 +16634,6 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 ]]></content>
       <categories>
         <category>跟我一起学数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>鲲鹏微认证(日后会更新)</title>
-    <url>/Kunpeng-micro-authentication.html</url>
-    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
-<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
-</ul>
-<ul>
-<li>从源码到程序的过程<ul>
-<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
-<br>
-
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
-<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
-<li>架构差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>指令极差异:<ul>
-<li>x86属于复杂指令集</li>
-<li>鲲鹏处理器(aarch64)属于精简指令集</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>向量寄存器的差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
-</ul>
-</li>
-</ul>
-<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
-<li>编译构建脚本<ul>
-<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++源码<ul>
-<li>src examples tests等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
-<li>编译构建脚本类文件<ul>
-<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++代码类文件<ul>
-<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
-<li>编译器自带builtin函数移植</li>
-<li>内联汇编移植</li>
-<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
-</ul>
-</li>
-</ul>
-<!-- # C/C++代码编译构建过程
-
-~~~
-
-~~~ -->
-
-<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
-<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
-<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
-<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
-<p><strong>C/C++语言属于编译型语言, 其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的, 因此此类应用程序不需要移植</strong> ×</p>
-<p><strong>Centos是开源的操作系统, Debian不属于开源操作系统</strong> ×</p>
-<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
-<p><strong>华为鲲鹏云服务产品发布前, 需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
-<p><strong>通过”ps -ef | grep PostgreSQL “命令可以确认数据库进程是否启动</strong> ×</p>
-<p><strong>为方便客户业务的统一部署,  镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
-<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
-<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
-<p><strong>对于Java类应用程序进行性能分析时, 由于受java的jit编译的限制, 函数分析结果中只能查看到对应的源码, 无法查看汇编和代码流图</strong> √</p>
-<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
-<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
-<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
-<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
-<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
-<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
-<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
-<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
-<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
-<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时, RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
-<p>在BenchmarkSQL执行以下哪个脚本, 可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
-<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
-<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
-<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
-<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
-<p>关于容器的删除操作, 以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
-<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议, 以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证, 但无二进制安装包,则需要用户下载依赖库源码, 然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证, 且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地, 然后上传至目标服务器进行安装使用</p>
-<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
-<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
-<p>在修改BenchmarkSQL连接PostereSQL的配置文件时, 关于runMins和runTxnsPerTerminal这两个参数的设置, 以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等, 且均不为0</p>
-<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
-<p>如果要放开外部对弹性云服务器的8080端口访问, 可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
-<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
-<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
-<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
-<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
-<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
-<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
-<p>关于容器相关概念的描述, 以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库,  存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
-<p>使用gcc编译时, 编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
-<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
-<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
-<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
-<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
-<p>关于rpm包和SRPM包的描述, 以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装, SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序, 而SRPM不是</p>
-<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
-<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
-<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
-<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯, 软件名称, 软件用途等相关信息, 便于了解软件<br>B 内含编译程序, 免编译<br>C 使用数据库记录rpm文件的相关参数, 便于升级 移除 查询与验证<br>D 预先检查系统版本, 可避免文 件被错误安装</p>
-<p>创建C/C++程序性能分析任务时, 以下关于分析类型, 描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统, 无需关注系统中有哪些类型的应用在运行, 采集时长需要配置参数控制, 适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序, 通过关联到运行该应用程序的PID的方式, 来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制, 适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候, 同时启动Application,采集时长受Appl ication的执行时间来控制, 适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
-<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
-<p>关于使用源码方式安装加速引擎软件, 以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下, 使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
-<p>同一段C/C++代码, 在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
-<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
-<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
-<p>在PostgreSQL迁移流程中, 包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
-<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
-<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
-<p>在华为公有云中, 私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
-<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述, 以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”, 打开持久化配置<br>C 该命令功能是启动容器, 并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
-<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时, 需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
-<p>C/C++语言开发的源码在编译时, 以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
-<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
-<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口, 支持RoCE特性<br>C 相比同等性能的Intel处理器, 功耗更低<br>D 支持8内存通道, 带宽高于Intel Skyl ake (V5)的6通道</p>
-<p>BenchmarkSQL配置文件中loadWorkers指的是什么 ( )<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码, 并给出移植工作量<br>B、分析源码, 并给出分析报告和源码修改建议<br>C、分析源码, 并修改源码<br>D、分析源码, 并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构, 以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化, 自主安全可控<br>B、多物理核心, 并发性能高<br>C、低功耗, 绿色节能<br>D、生态完备, 上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用, 优先推荐, 快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训, 完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队, 专业工具, 1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上, 通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下, 如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境, 通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述, 以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述, 不正确的是?<br>A、用户可以快速复制私有镜像, 不受region限制<br>B、查询镜像时, 支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时, 不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供 ( ) 方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时, 以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库, 说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令”docker ps -a”后, 显示的标题含义描述, 正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供 ( ) 方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的 () ？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口, 并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业, 华为提供 ( ) 支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述, 以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中, 第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后, 可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前, 在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时, 能够查看到函数源代码、汇编代码, 以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码, 无依赖的SO库文件不需要编译, 可以直接在JVM (Java虚拟机) 中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法, 识别业务并匹配最佳资源模型, 实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中, Running Average tpmTOTAL 值和Current tpmTOTAL值越高, 表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>鲲鹏云</category>
       </categories>
   </entry>
   <entry>
@@ -17325,6 +17164,167 @@ $$x\;\sim\;\sin x\;\sim\;\tan x\;\sim\;arc\sin\;x\;\sim\;arc\tan\;x\;\sim\;\ln\l
 <font color="#F08080">正确答案 A B C D<br>解答: 注意问的是整机镜像</font>
 
 <br>]]></content>
+      <categories>
+        <category>鲲鹏云</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>鲲鹏微认证(日后会更新)</title>
+    <url>/Kunpeng-micro-authentication.html</url>
+    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
+<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
+</ul>
+<ul>
+<li>从源码到程序的过程<ul>
+<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
+<br>
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
+<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
+<li>架构差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>指令极差异:<ul>
+<li>x86属于复杂指令集</li>
+<li>鲲鹏处理器(aarch64)属于精简指令集</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>向量寄存器的差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
+</ul>
+</li>
+</ul>
+<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
+<li>编译构建脚本<ul>
+<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++源码<ul>
+<li>src examples tests等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
+<li>编译构建脚本类文件<ul>
+<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++代码类文件<ul>
+<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
+<li>编译器自带builtin函数移植</li>
+<li>内联汇编移植</li>
+<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
+</ul>
+</li>
+</ul>
+<!-- # C/C++代码编译构建过程
+
+~~~
+
+~~~ -->
+
+<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
+<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
+<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
+<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
+<p><strong>C/C++语言属于编译型语言, 其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的, 因此此类应用程序不需要移植</strong> ×</p>
+<p><strong>Centos是开源的操作系统, Debian不属于开源操作系统</strong> ×</p>
+<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
+<p><strong>华为鲲鹏云服务产品发布前, 需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
+<p><strong>通过”ps -ef | grep PostgreSQL “命令可以确认数据库进程是否启动</strong> ×</p>
+<p><strong>为方便客户业务的统一部署,  镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
+<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
+<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
+<p><strong>对于Java类应用程序进行性能分析时, 由于受java的jit编译的限制, 函数分析结果中只能查看到对应的源码, 无法查看汇编和代码流图</strong> √</p>
+<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
+<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
+<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
+<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
+<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
+<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
+<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
+<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
+<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
+<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时, RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
+<p>在BenchmarkSQL执行以下哪个脚本, 可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
+<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
+<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
+<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
+<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
+<p>关于容器的删除操作, 以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
+<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议, 以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证, 但无二进制安装包,则需要用户下载依赖库源码, 然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证, 且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地, 然后上传至目标服务器进行安装使用</p>
+<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
+<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
+<p>在修改BenchmarkSQL连接PostereSQL的配置文件时, 关于runMins和runTxnsPerTerminal这两个参数的设置, 以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等, 且均不为0</p>
+<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
+<p>如果要放开外部对弹性云服务器的8080端口访问, 可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
+<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
+<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
+<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
+<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
+<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
+<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
+<p>关于容器相关概念的描述, 以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库,  存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
+<p>使用gcc编译时, 编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
+<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
+<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
+<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
+<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
+<p>关于rpm包和SRPM包的描述, 以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装, SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序, 而SRPM不是</p>
+<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
+<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
+<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
+<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯, 软件名称, 软件用途等相关信息, 便于了解软件<br>B 内含编译程序, 免编译<br>C 使用数据库记录rpm文件的相关参数, 便于升级 移除 查询与验证<br>D 预先检查系统版本, 可避免文 件被错误安装</p>
+<p>创建C/C++程序性能分析任务时, 以下关于分析类型, 描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统, 无需关注系统中有哪些类型的应用在运行, 采集时长需要配置参数控制, 适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序, 通过关联到运行该应用程序的PID的方式, 来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制, 适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候, 同时启动Application,采集时长受Appl ication的执行时间来控制, 适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
+<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
+<p>关于使用源码方式安装加速引擎软件, 以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下, 使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
+<p>同一段C/C++代码, 在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
+<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
+<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
+<p>在PostgreSQL迁移流程中, 包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
+<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
+<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
+<p>在华为公有云中, 私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
+<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述, 以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”, 打开持久化配置<br>C 该命令功能是启动容器, 并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
+<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时, 需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
+<p>C/C++语言开发的源码在编译时, 以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
+<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
+<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口, 支持RoCE特性<br>C 相比同等性能的Intel处理器, 功耗更低<br>D 支持8内存通道, 带宽高于Intel Skyl ake (V5)的6通道</p>
+<p>BenchmarkSQL配置文件中loadWorkers指的是什么 ( )<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码, 并给出移植工作量<br>B、分析源码, 并给出分析报告和源码修改建议<br>C、分析源码, 并修改源码<br>D、分析源码, 并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构, 以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化, 自主安全可控<br>B、多物理核心, 并发性能高<br>C、低功耗, 绿色节能<br>D、生态完备, 上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用, 优先推荐, 快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训, 完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队, 专业工具, 1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上, 通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下, 如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境, 通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述, 以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述, 不正确的是?<br>A、用户可以快速复制私有镜像, 不受region限制<br>B、查询镜像时, 支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时, 不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供 ( ) 方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时, 以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库, 说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令”docker ps -a”后, 显示的标题含义描述, 正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供 ( ) 方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的 () ？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口, 并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业, 华为提供 ( ) 支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述, 以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中, 第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后, 可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前, 在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时, 能够查看到函数源代码、汇编代码, 以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码, 无依赖的SO库文件不需要编译, 可以直接在JVM (Java虚拟机) 中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法, 识别业务并匹配最佳资源模型, 实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中, Running Average tpmTOTAL 值和Current tpmTOTAL值越高, 表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
       <categories>
         <category>鲲鹏云</category>
       </categories>
