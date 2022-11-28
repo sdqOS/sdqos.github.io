@@ -929,6 +929,8 @@ var $main = document.querySelector('.main');
 		color: #000;
 		background-color: rgba(255, 255, 255, 0.5);
 		/* box-shadow: 0px 0px 10px 0px cornflowerblue ; */
+		/* 然文字永远在框框里面 */
+		overflow : hidden !important;
 	}
 
 	.words:hover {
@@ -936,9 +938,9 @@ var $main = document.querySelector('.main');
 		transform: translateY(-0.4375rem);
 	}
 	img {
-		/* width: 100%;
-		height: 100%; */
-		object-fit: cover;
+		/* 图片形状 */
+		border-radius: 0.8125rem 0.8125rem !important;
+		/* overflow : clip !important; */
 	}
 	.words > .block {
 		width: 90%;
@@ -947,21 +949,23 @@ var $main = document.querySelector('.main');
 	.words  .block:nth-child(1) {
 		width: 35%;
 		overflow: hidden;
-		border-radius: 0.8125rem;
   		/* 屏幕宽度33.33后再取33.33% */
-    	width: calc(33.33% - 1.62rem);
+    	width: calc(33.33% - 1.62rem) !important;
     	/* vw单位是相对于视口 (屏幕) 宽度的 */
-    	/* height: calc(33.33vw/3 - 1.6rem); */
+		/* height: calc(33.33vw/3 - 1.6rem); */
 		/* 图片位置 */
-    	margin: 1.2rem 1.2rem 1.2rem 1.2rem;
+		margin: 1.5rem !important;
 		/* 调试 */
     	/* outline: 1px solid #dedede; */
 	}
-	.words > .block:nth-child(2) {
+	.words > .block {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+	}
+	#sdq > div.main > div > div > div > a > div > span {
+
 	}
 
 /* rem width */
@@ -979,7 +983,13 @@ var $main = document.querySelector('.main');
 
 	}
 
-	a:hover:after{opacity:0}
+	a:hover:after{
+		opacity:0;
+	}
+	.sdq-post img {
+    width: auto !important;
+	max-width: 100% !important;
+	}
 </style>
 
 <div class="sdq-post">
