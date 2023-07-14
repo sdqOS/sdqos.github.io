@@ -11,7 +11,7 @@
 	<meta name="keywords" content="这是我的博客" />
 	<meta name="description" content="这是我的窝">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
-	<link rel="shortcut icon" href="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4ca0c73cf1.png" type="image/png" />
+	<link rel="shortcut icon" href="https://sdq3.coding.net/p/images/d/images/git/raw/master/sdq.png" type="image/png" />
 	
 	
 		 
@@ -209,7 +209,7 @@
 			<div class="sidebar-author">
 				<a href="/">
 					
-						<img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4ca0c71e14.jpg">
+						<img src="https://sdq3.coding.net/p/images/d/images/git/raw/master/sdq.jpg">
 						<img src="">
 					
 				</a>
@@ -217,9 +217,9 @@
 			<nav>
 				
 				<div class="sdq-count">
-					<span>文章</span>168
+					<span>文章</span>156
 					<span>标签</span>0
-					<span>分类</span>29
+					<span>分类</span>27
 				</div>		
 			<div class="social-btns">
 				
@@ -469,21 +469,7 @@
 
         <li>
           <a href="/categories/算法/">算法</a>
-          <span>2</span>
-        </li>
-
-        
-
-        <li>
-          <a href="/categories/考研必背/">考研必背</a>
-          <span>3</span>
-        </li>
-
-        
-
-        <li>
-          <a href="/categories/跟我一起学数学/">跟我一起学数学</a>
-          <span>7</span>
+          <span>1</span>
         </li>
 
         
@@ -522,23 +508,23 @@
       <ul>
         
           <li>
-            <a href="/College-English.html">大学英语</a>
-          </li>
-        
-          <li>
-            <a href="/Maogai-Mustback-Study.html">毛概学习</a>
-          </li>
-        
-          <li>
-            <a href="/Maogai-Mustback.html">毛概</a>
-          </li>
-        
-          <li>
             <a href="/photo-video.html">手机照片视频恢复工具</a>
           </li>
         
           <li>
             <a href="/Dad-n-Me.html">游戏篇 狂扁小朋友修仙版(攻略)</a>
+          </li>
+        
+          <li>
+            <a href="/Spark.html">大数据 Spark</a>
+          </li>
+        
+          <li>
+            <a href="/CSS-Flex.html">CSS Flex样式</a>
+          </li>
+        
+          <li>
+            <a href="/CSS-Static-Relative-Absolute-Fixed-Sticky.html">CSS 定位布局</a>
           </li>
         
       </ul>
@@ -631,10 +617,10 @@ function sdqimgbg(){
 
 				// Images (in the format of 'url': 'alignment').
 					images: {
-						'https://t1.pic.cdn.lkxin.cn/2022/10/06/633daf9524cec.jpg': 'center',
-						'https://t1.pic.cdn.lkxin.cn/2022/10/06/633db01fe5c16.jpg': 'center',
-						'https://t1.pic.cdn.lkxin.cn/2022/10/06/633db0319d980.jpg': 'center',
-						'https://t1.pic.cdn.lkxin.cn/2022/10/06/633db03e8c18b.jpg': 'center'
+						'': 'center',
+						'': 'center',
+						'': 'center',
+						'': 'center'
 					},
 
 				// Delay.
@@ -964,7 +950,8 @@ var $main = document.querySelector('.main');
 <h3 id="create-react-app-快速构建-React-开发环境"><a href="#create-react-app-快速构建-React-开发环境" class="headerlink" title="create-react-app 快速构建 React 开发环境"></a>create-react-app 快速构建 React 开发环境</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs PowerShell">// 安装依赖<br>cnpm install <span class="hljs-literal">-g</span> create<span class="hljs-literal">-react-sdq</span><br>// 自动创建的项目是基于 Webpack + ES6 <br>create<span class="hljs-literal">-react-app</span> my<span class="hljs-literal">-sdq</span><br>// 打开文件夹<br><span class="hljs-built_in">cd</span> my<span class="hljs-literal">-sdq</span>/<br>// 启动服务<br>npm <span class="hljs-built_in">start</span><br></code></pre></td></tr></table></figure>
 <p><strong>然后修改 my-sdq/src/App.js</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>, &#123; <span class="hljs-title class_">Component</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;<br><span class="hljs-keyword">import</span> logo <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./logo.svg&#x27;</span>;<br><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br> <br><span class="hljs-keyword">class</span> <span class="hljs-title class_">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Component</span> &#123;<br>  <span class="hljs-title function_">render</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> (<br>      &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>        &lt;div className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>          &lt;img src=&#123;logo&#125; className=<span class="hljs-string">&quot;App-logo&quot;</span> alt=<span class="hljs-string">&quot;logo&quot;</span> /&gt;<br>          &lt;h2&gt;你已经中了幻术, 浪费了你两秒的生命&lt;/h2&gt;<br>        &lt;/div&gt;<br>      &lt;/div&gt;<br>    );<br>  &#125;<br>&#125;<br><br><span class="hljs-comment">// 暴露</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
-<p><img src="https://t1.pic.cdn.lkxin.cn/2022/07/30/62e522ea7a2a9.jpgg"></p>
+<!-- 添加图片 -->
+<p><img src="https://img-oss.langs.ink/2023/07/14/64b0d92db3541.webp"></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br><br><span class="hljs-keyword">let</span> wbbl = <span class="hljs-string">&quot;外部变量&quot;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">let</span> nbbl = <span class="hljs-string">&quot;内部变量&quot;</span><br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1&gt;&#123;nbbl&#125;&lt;/h1&gt;<br>        &lt;h1&gt;&#123;wbbl&#125;&lt;/h1&gt;<br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">import</span> <span class="hljs-string">&#x27;./App.css&#x27;</span>;<br>&#123;<span class="hljs-comment">/*  useState是钩子函数  */</span>&#125;<br><span class="hljs-keyword">import</span> &#123; useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  &#123;<span class="hljs-comment">/*  初始值 = 数组  */</span>&#125;<br>  <span class="hljs-keyword">const</span> [nbbl, setTitle] = <span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;内部变量&quot;</span>)<br>    nbbl = <span class="hljs-string">&quot;本来就是内部变量&quot;</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(nbbl)<br>  <br>  <span class="hljs-keyword">return</span> (<br>    &lt;div className=<span class="hljs-string">&quot;App&quot;</span>&gt;<br>      &lt;header className=<span class="hljs-string">&quot;App-header&quot;</span>&gt;<br>        &lt;h1 onClik=<span class="hljs-string">&quot;&quot;</span><span class="hljs-title class_">App</span>-header&gt;&#123;nbbl&#125;&lt;/h1&gt; <br>      &lt;/header&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">App</span>;<br></code></pre></td></tr></table></figure>
@@ -979,7 +966,7 @@ var $main = document.querySelector('.main');
 		 	
 				<style>
 #wl-edit {
-	background: url('https://t1.pic.cdn.lkxin.cn/2022/07/30/62e4ca0c79d47.gif') no-repeat !important;
+	background: url('https://img-oss.langs.ink/2023/07/14/64b0f16203acc.gif') no-repeat !important;
 	background-size: auto 133px!important;
     background-position: right !important;
 }
@@ -1131,7 +1118,7 @@ var $main = document.querySelector('.main');
 	<div class="footer-content">
 		<div class="foor"></div>
 		<div class="foor">
-			© 2022 
+			© 2023 
 			我叫史迪奇
 			 <span id="sdq-time-box"> 
 				网站已经运行<span id="sdq-time"></span>

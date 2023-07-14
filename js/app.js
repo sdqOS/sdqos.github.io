@@ -18,8 +18,8 @@ $(window).on("load", function () {
 	});
 	
 	
-	//加载中延迟...................
-	$("#sdq").delay(333).addClass("wrapShow");
+	//sleep  等待几秒 delay  延迟几秒后执行函数
+	// $("#sdq").delay(333).addClass("wrapShow");
 	$("#sdq").css('display','block');
 	
 	
