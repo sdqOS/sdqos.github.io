@@ -260,13 +260,36 @@
 <!-- 添加图片 -->
 <p><img src="https://img-oss.langs.ink/2023/07/14/64b0cc84f3b1a.webp"></p>
 <p><strong>刷新数据库内容</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">pacmam -Syyu<br></code></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">n -Syyu<br></code></pre></td></tr></table></figure>
 <p><strong>然后重启一下 可选择物理重启和命令重启</strong></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">reboot<br></code></pre></td></tr></table></figure>
 <h1 id="Vim命令"><a href="#Vim命令" class="headerlink" title="Vim命令"></a>Vim命令</h1><p><strong>按A键是编辑模式</strong><br><strong>按回车键是执行</strong><br><strong>按两下D键是剪切</strong><br><strong>按两下G键是回到第一行</strong><br><strong>按P键粘贴</strong><br><strong>按N键查找下一个</strong><br><strong>按ESC 然后输入 :wq 是保存并退出</strong></p>
 <h1 id="neofetch查看系统"><a href="#neofetch查看系统" class="headerlink" title="neofetch查看系统"></a>neofetch查看系统</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">pacman -S neofetch<br><br>neofetch<br></code></pre></td></tr></table></figure>
 
-<br>]]></content>
+<br>
+
+<h1 id="更换语言为中文"><a href="#更换语言为中文" class="headerlink" title="更换语言为中文"></a>更换语言为中文</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo nano /etc/locale.gen<br><br><span class="hljs-meta"># </span><span class="language-bash">然后 找到zh_CN.UTF-8 去掉前面的注释 没有则添加</span><br><br>zh_CN.UTF-8 UTF-8<br><br><span class="hljs-meta"># </span><span class="language-bash">然后输入</span><br><br>sudo locale-gen<br><br><span class="hljs-meta"># </span><span class="language-bash">安装中文字体</span><br>sudo pacman -S wqy-zenhei<br></code></pre></td></tr></table></figure>
+<br>
+
+<h1 id="修复声音"><a href="#修复声音" class="headerlink" title="修复声音"></a>修复声音</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-jack<br></code></pre></td></tr></table></figure>
+
+<br>
+
+<h1 id="改源"><a href="#改源" class="headerlink" title="改源"></a>改源</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo nano /etc/pacman.d/mirrorlist<br><br><span class="hljs-meta"># </span><span class="language-bash">然后 添加在最前面 以下任意一条即可</span><br><br>Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch<br><br>Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch<br><br>Server = rsync://rsync.mirrors.ustc.edu.cn/archlinux/$repo/os/$arch<br><br>Server = rsync://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch<br><br>Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch<br><br>Server = rsync://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = https://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirror.lzu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = rsync://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirrors.wsyu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = https://mirrors.wsyu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirrors.shanghaitech.edu.cn/archlinux/$repo/os/$arch<br><br>Server = https://mirrors.shanghaitech.edu.cn/archlinux/$repo/os/$arch<br><br>Server = http://mirrors.jlu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = https://mirrors.jlu.edu.cn/archlinux/$repo/os/$arch<br><br>Server = rsync://mirrors.jlu.edu.cn/archlinux/$repo/os/$arch<br><br><span class="hljs-meta"># </span><span class="language-bash">如果不行那就是密钥过期 密钥过期换源有什么用</span><br><br>sudo pacman -S archlinux-keyring<br></code></pre></td></tr></table></figure>
+<br>
+
+<h1 id="安装fcitx5-实现输入中文"><a href="#安装fcitx5-实现输入中文" class="headerlink" title="安装fcitx5 实现输入中文"></a>安装fcitx5 实现输入中文</h1><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">sudo pacman -S fcitx5-im <br><br><span class="hljs-meta"># </span><span class="language-bash">如果报错就 没有报错则不用</span><br><br>sudo pacman -S gtk3<br><br><span class="hljs-meta"># </span><span class="language-bash">安装完成后</span><br><br>sudo pacman -S fcitx5-chinese-addons  fcitx5-rime<br></code></pre></td></tr></table></figure>
+<p><strong>fcitx5-chinese-addons 包含了大量中文输入方式 fcitx5-rime 对经典的 Rime IME 输入法的包装 内置了繁体中文和简体中文的支持</strong></p>
+<br>
+
+<p><strong>然后在环境变量配置文件/etc/environment中添加如下内容</strong></p>
+<br>
+
+<p><strong>然后在环境变量配置文件/etc/environment中添加如下内容</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">nano /etc/environment<br><br><span class="hljs-meta"># </span><span class="language-bash">然后配置自动启动 提供以下3种方法 第一个不行 试第2个 然后第3个 然后直接重启</span><br>GTK_IM_MODULE=fcitx<br>QT_IM_MODULE=fcitx<br>XMODIFIERS=@im=fcitx<br>SDL_IM_MODULE=fcitx<br></code></pre></td></tr></table></figure>
+
+<br>
+]]></content>
       <categories>
         <category>Linux</category>
       </categories>
@@ -393,21 +416,6 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS 列表</title>
-    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"> &lt;style&gt;<br>  <span class="hljs-selector-tag">ol</span> <span class="hljs-selector-tag">li</span>&#123;<br>        <span class="hljs-attribute">color</span>: blue;<br>       &#125;<br> &lt;/style&gt;<br> &lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">ol</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇法师&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇战士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇辅助&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇坦克&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇刺客&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ol</span>&gt;<br> &lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
-
-<h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"> &lt;style&gt;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span>&#123;<br>      <span class="hljs-attribute">list-style</span>: none;          //去掉原点<br>      <span class="hljs-attribute">list-style</span>: cirle;         //空心圆<br>      <span class="hljs-attribute">list-style</span>: decimal;       //数字<br>      <span class="hljs-attribute">list-style</span>: square;        //正方形<br>        &#125;<br> &lt;/style&gt;<br> &lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇法师&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇战士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇辅助&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇坦克&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇刺客&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br> &lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"> &lt;style&gt;<br>  <span class="hljs-selector-tag">dl</span> <span class="hljs-selector-tag">dd</span> <span class="hljs-selector-tag">dt</span>&#123;<br>        <span class="hljs-attribute">color</span>: blue;<br>       &#125;<br> &lt;/style&gt;<br> &lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">dl</span>&gt;<br>    &lt;<span class="hljs-selector-tag">dt</span>&gt;史迪奇近战&lt;/<span class="hljs-selector-tag">dt</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇战士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇辅助&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇坦克&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇刺客&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>    &lt;<span class="hljs-selector-tag">dt</span>&gt;史迪奇远程&lt;/<span class="hljs-selector-tag">dt</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇法师&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇射手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">dl</span>&gt;<br> &lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 层次选择器</title>
     <url>/CSS+.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -424,6 +432,21 @@
 <br>
 
 ]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS 列表</title>
+    <url>/CSS%E5%88%97%E8%A1%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"> &lt;style&gt;<br>  <span class="hljs-selector-tag">ol</span> <span class="hljs-selector-tag">li</span>&#123;<br>        <span class="hljs-attribute">color</span>: blue;<br>       &#125;<br> &lt;/style&gt;<br> &lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">ol</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇法师&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇战士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇辅助&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇坦克&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇刺客&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ol</span>&gt;<br> &lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"> &lt;style&gt;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span>&#123;<br>      <span class="hljs-attribute">list-style</span>: none;          //去掉原点<br>      <span class="hljs-attribute">list-style</span>: cirle;         //空心圆<br>      <span class="hljs-attribute">list-style</span>: decimal;       //数字<br>      <span class="hljs-attribute">list-style</span>: square;        //正方形<br>        &#125;<br> &lt;/style&gt;<br> &lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇法师&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇战士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇辅助&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇坦克&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>     &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇刺客&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br> &lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="自定义列表"><a href="#自定义列表" class="headerlink" title="自定义列表"></a>自定义列表</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS"> &lt;style&gt;<br>  <span class="hljs-selector-tag">dl</span> <span class="hljs-selector-tag">dd</span> <span class="hljs-selector-tag">dt</span>&#123;<br>        <span class="hljs-attribute">color</span>: blue;<br>       &#125;<br> &lt;/style&gt;<br> &lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">dl</span>&gt;<br>    &lt;<span class="hljs-selector-tag">dt</span>&gt;史迪奇近战&lt;/<span class="hljs-selector-tag">dt</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇战士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇辅助&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇坦克&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇刺客&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>    &lt;<span class="hljs-selector-tag">dt</span>&gt;史迪奇远程&lt;/<span class="hljs-selector-tag">dt</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇法师&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>        &lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇射手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">dl</span>&gt;<br> &lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
+<br>]]></content>
       <categories>
         <category>CSS</category>
       </categories>
@@ -2440,85 +2463,6 @@ graph TB
       </categories>
   </entry>
   <entry>
-    <title>C语 符号</title>
-    <url>/C-Symbols.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><ul>
-<li><p>只能由英文字母, 数字和下划线构成, 长度 1 ~ 32</p>
-</li>
-<li><p>必须以字母或者下划线开头</p>
-</li>
-<li><p>严格区分<font color="    #FA8072">大</font> <font color="#7bafea">小</font>写</p>
-</li>
-<li><p>不能以 <font color="    #FA8072">关键字</font> 作为标识符</p>
-</li>
-<li><p>由于系统内部使用了一些以下划线开头的标识符, 为了防止冲突建议用户尽量避免使用下划线开头的标识符</p>
-</li>
-<li><p>标识符应该做到 见名知意 用英文或者缩写或者拼音</p>
-</li>
-</ul>
-<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h4>C语言系统定义了32个专用名字</h4>
-
-<div class="mermaid">
-graph LR
-A[" 控制语句关键字 (12个) "]-->B[" break "]
-A[" 控制语句关键字 (12个) "]-->C[" case "]
-A[" 控制语句关键字 (12个) "]-->D[" continue "]
-A[" 控制语句关键字 (12个) "]-->E[" defaulf "]
-A[" 控制语句关键字 (12个) "]-->F[" do "]
-A[" 控制语句关键字 (12个) "]-->G[" break "]
-A[" 控制语句关键字 (12个) "]-->H[" else "]
-A[" 控制语句关键字 (12个) "]-->I[" for "]
-A[" 控制语句关键字 (12个) "]-->J[" goto "]
-A[" 控制语句关键字 (12个) "]-->K[" if "]
-A[" 控制语句关键字 (12个) "]-->L[" return "]
-A[" 控制语句关键字 (12个) "]-->M[" switch "]
-A[" 控制语句关键字 (12个) "]-->N[" while "]
-</div>
-
-<div class="mermaid">
-graph LR
-A[" 数据类型关键字 (12个) "]-->B[" char "]
-A[" 数据类型关键字 (12个) "]-->C[" enum "]
-A[" 数据类型关键字 (12个) "]-->D[" double "]
-A[" 数据类型关键字 (12个) "]-->E[" long "]
-A[" 数据类型关键字 (12个) "]-->F[" float "]
-A[" 数据类型关键字 (12个) "]-->G[" int "]
-A[" 数据类型关键字 (12个) "]-->H[" shoat "]
-A[" 数据类型关键字 (12个) "]-->I[" int "]
-A[" 数据类型关键字 (12个) "]-->J[" short "]
-A[" 数据类型关键字 (12个) "]-->K[" signed "]
-A[" 数据类型关键字 (12个) "]-->L[" stuct "]
-A[" 数据类型关键字 (12个) "]-->M[" unsigned "]
-A[" 数据类型关键字 (12个) "]-->N[" union "]
-A[" 数据类型关键字 (12个) "]-->O[" void "]
-</div>
-
-
-<div class="mermaid">
-graph LR
-A[" 储存类型关键字 (4个) "]-->B[" auto "]
-A[" 储存类型关键字 (4个) "]-->C[" exetern "]
-A[" 储存类型关键字 (4个) "]-->D[" register "]
-A[" 储存类型关键字 (4个) "]-->E[" static "]
-</div>
-
-<div class="mermaid">
-graph LR
-A[" 其它关键字 (4个) "]-->B[" const "]
-A[" 其它关键字 (4个) "]-->C[" sizeof "]
-A[" 其它关键字 (4个) "]-->D[" typedef "]
-A[" 其它关键字 (4个) "]-->E[" volatle "]
-</div>
-
-<br>]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
     <title>C语 概述(程序结构)</title>
     <url>/C-main().html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -2596,6 +2540,85 @@ A[" 其它关键字 (4个) "]-->E[" volatle "]
 </ul>
 <br>
 ]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C语 符号</title>
+    <url>/C-Symbols.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><ul>
+<li><p>只能由英文字母, 数字和下划线构成, 长度 1 ~ 32</p>
+</li>
+<li><p>必须以字母或者下划线开头</p>
+</li>
+<li><p>严格区分<font color="    #FA8072">大</font> <font color="#7bafea">小</font>写</p>
+</li>
+<li><p>不能以 <font color="    #FA8072">关键字</font> 作为标识符</p>
+</li>
+<li><p>由于系统内部使用了一些以下划线开头的标识符, 为了防止冲突建议用户尽量避免使用下划线开头的标识符</p>
+</li>
+<li><p>标识符应该做到 见名知意 用英文或者缩写或者拼音</p>
+</li>
+</ul>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h4>C语言系统定义了32个专用名字</h4>
+
+<div class="mermaid">
+graph LR
+A[" 控制语句关键字 (12个) "]-->B[" break "]
+A[" 控制语句关键字 (12个) "]-->C[" case "]
+A[" 控制语句关键字 (12个) "]-->D[" continue "]
+A[" 控制语句关键字 (12个) "]-->E[" defaulf "]
+A[" 控制语句关键字 (12个) "]-->F[" do "]
+A[" 控制语句关键字 (12个) "]-->G[" break "]
+A[" 控制语句关键字 (12个) "]-->H[" else "]
+A[" 控制语句关键字 (12个) "]-->I[" for "]
+A[" 控制语句关键字 (12个) "]-->J[" goto "]
+A[" 控制语句关键字 (12个) "]-->K[" if "]
+A[" 控制语句关键字 (12个) "]-->L[" return "]
+A[" 控制语句关键字 (12个) "]-->M[" switch "]
+A[" 控制语句关键字 (12个) "]-->N[" while "]
+</div>
+
+<div class="mermaid">
+graph LR
+A[" 数据类型关键字 (12个) "]-->B[" char "]
+A[" 数据类型关键字 (12个) "]-->C[" enum "]
+A[" 数据类型关键字 (12个) "]-->D[" double "]
+A[" 数据类型关键字 (12个) "]-->E[" long "]
+A[" 数据类型关键字 (12个) "]-->F[" float "]
+A[" 数据类型关键字 (12个) "]-->G[" int "]
+A[" 数据类型关键字 (12个) "]-->H[" shoat "]
+A[" 数据类型关键字 (12个) "]-->I[" int "]
+A[" 数据类型关键字 (12个) "]-->J[" short "]
+A[" 数据类型关键字 (12个) "]-->K[" signed "]
+A[" 数据类型关键字 (12个) "]-->L[" stuct "]
+A[" 数据类型关键字 (12个) "]-->M[" unsigned "]
+A[" 数据类型关键字 (12个) "]-->N[" union "]
+A[" 数据类型关键字 (12个) "]-->O[" void "]
+</div>
+
+
+<div class="mermaid">
+graph LR
+A[" 储存类型关键字 (4个) "]-->B[" auto "]
+A[" 储存类型关键字 (4个) "]-->C[" exetern "]
+A[" 储存类型关键字 (4个) "]-->D[" register "]
+A[" 储存类型关键字 (4个) "]-->E[" static "]
+</div>
+
+<div class="mermaid">
+graph LR
+A[" 其它关键字 (4个) "]-->B[" const "]
+A[" 其它关键字 (4个) "]-->C[" sizeof "]
+A[" 其它关键字 (4个) "]-->D[" typedef "]
+A[" 其它关键字 (4个) "]-->E[" volatle "]
+</div>
+
+<br>]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -3291,6 +3314,20 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>EJS常用标签</title>
+    <url>/EJS.html</url>
+    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
+<br>
+
+]]></content>
+      <categories>
+        <category>EJS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C语 填空题</title>
     <url>/C-x.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -3308,20 +3345,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 ]]></content>
       <categories>
         <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>EJS常用标签</title>
-    <url>/EJS.html</url>
-    <content><![CDATA[<p><strong>EJS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h1><figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs EJS"> &#x2F;&#x2F;用于控制流<br> &lt;%    %&gt;    &#x2F;&#x2F;逻辑代码输出(JS编辑), 如 if, for等使用 <br><br> &#x2F;&#x2F;用于转义的输出 <br> &lt;%&#x3D;  %&gt;     &#x2F;&#x2F;输出 HTML转义后  的字符串 到模板中      用于转义的输出<br><br> &#x2F;&#x2F;用于非转义的输出<br> &lt;%-  %&gt;     &#x2F;&#x2F;输出 原始的HTML串到模板中, 不对HTML进行转义    &lt;&gt;被浏览器识别  看做HTML  <br><br> &lt;%_ _%&gt;     &#x2F;&#x2F;控制流使用空白字符移除模式<br> <br> &lt;%#   %&gt;    &#x2F;&#x2F;注释<br><br> &lt;%%  %&gt;     &#x2F;&#x2F;直接输出 &lt;%  %&gt;<br><br> -%&gt;         &#x2F;&#x2F;结束标签用于换行移除模式<br><br>自定义分隔符 (例如, 使用 &#39;&lt;? ?&gt;&#39; 代替 &#39;&lt;% %&gt;&#39;)<br></code></pre></td></tr></table></figure>
-<br>
-
-]]></content>
-      <categories>
-        <category>EJS</category>
       </categories>
   </entry>
   <entry>
@@ -4210,6 +4233,25 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>JavaScript 数据类型之(Map和Set)</title>
+    <url>/JavaScript-Map-Set.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*ES6 Map*/</span><br><span class="hljs-comment">/*学生的成绩, 学生的名字 两种方式*/</span><br><span class="hljs-keyword">var</span> names = [<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-string">&quot;强霸&quot;</span>];<br><span class="hljs-keyword">var</span> scores = [<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">36</span>]<br><span class="hljs-comment">/*另一种*/</span><br><span class="hljs-keyword">var</span> map = naw <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">36</span>]]);<br><span class="hljs-keyword">var</span> name = map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);    <span class="hljs-comment">/*通过key获得value*/</span> <br>map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;独眼霹雳&quot;</span>,<span class="hljs-number">60</span>);          <span class="hljs-comment">/*新增或修改*/</span> <br>map.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);              <span class="hljs-comment">/*删除*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">set.<span class="hljs-title function_">add</span>(<span class="hljs-number">3</span>)                 <span class="hljs-comment">/*添加*/</span>  <br>set.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);        <span class="hljs-comment">/*删除*/</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(set.<span class="hljs-title function_">has</span>(<span class="hljs-number">3</span>))    <span class="hljs-comment">/*是否包含某个元素*/</span><br></code></pre></td></tr></table></figure>
+<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*通过for of, for in 下标 */</span>  <br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> arr)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>遍历map</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> map)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>遍历set</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title function_">set</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> set)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript 函数的定义和参数获取</title>
     <url>/JavaScript-function.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -4227,25 +4269,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// rest参数只能写在最后面, 必须用...标识</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">s,d,q,...rest</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;s=&gt;&quot;</span>+s);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;d=&gt;&quot;</span>+d);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;q=&gt;&quot;</span>+q);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rest);<br>&#125;<br></code></pre></td></tr></table></figure>
 <br>
 ]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 数据类型之(Map和Set)</title>
-    <url>/JavaScript-Map-Set.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*ES6 Map*/</span><br><span class="hljs-comment">/*学生的成绩, 学生的名字 两种方式*/</span><br><span class="hljs-keyword">var</span> names = [<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-string">&quot;强霸&quot;</span>];<br><span class="hljs-keyword">var</span> scores = [<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-number">36</span>]<br><span class="hljs-comment">/*另一种*/</span><br><span class="hljs-keyword">var</span> map = naw <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">36</span>]]);<br><span class="hljs-keyword">var</span> name = map.<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;史迪奇&quot;</span>);    <span class="hljs-comment">/*通过key获得value*/</span> <br>map.<span class="hljs-title function_">set</span>(<span class="hljs-string">&quot;独眼霹雳&quot;</span>,<span class="hljs-number">60</span>);          <span class="hljs-comment">/*新增或修改*/</span> <br>map.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);              <span class="hljs-comment">/*删除*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">set.<span class="hljs-title function_">add</span>(<span class="hljs-number">3</span>)                 <span class="hljs-comment">/*添加*/</span>  <br>set.<span class="hljs-title function_">delete</span>(<span class="hljs-string">&quot;强霸&quot;</span>);        <span class="hljs-comment">/*删除*/</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(set.<span class="hljs-title function_">has</span>(<span class="hljs-number">3</span>))    <span class="hljs-comment">/*是否包含某个元素*/</span><br></code></pre></td></tr></table></figure>
-<h1 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h1><p><strong>遍历数组</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">/*通过for of, for in 下标 */</span>  <br><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> arr)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>遍历map</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> map)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>遍历set</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> set = <span class="hljs-keyword">new</span> <span class="hljs-title function_">set</span>([[<span class="hljs-string">&quot;史迪奇&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;史迪仔&quot;</span>,<span class="hljs-number">100</span>],[<span class="hljs-string">&quot;强霸&quot;</span>,<span class="hljs-number">100</span>]]);<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x <span class="hljs-keyword">of</span> set)&#123;<br>     <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x)<br>&#125;<br></code></pre></td></tr></table></figure>
-<br>]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -4521,27 +4544,6 @@ Object()           Object.prototype
       </categories>
   </entry>
   <entry>
-    <title>Linux命令(未完工)</title>
-    <url>/Linux-command.html</url>
-    <content><![CDATA[<p><strong>Linux基本命令</strong></p>
-<a id="more"></a>
-
-<blockquote>
-<h1 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h1></blockquote>
-<p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ls 显示当前目录下文件<br><br>ls 目录名 显示指定目录下文件<br><br>ls -l 长格式显示目录文件<br><br>ls -l 文件名 长格式显示指定文件<br><br>ls -a 显示所有文件包含隐藏文件<br><br>ls -al 长格式显示当前目录下所有文件<br><br>ls -h 文件大小显示为常见大小单位 B KB MB …<br><br>ls -d 显示目录本身, 而不是里面的子文件<br></code></pre></td></tr></table></figure>
-<h1 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h1><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd /xx  切换到指定路径(使用绝对路径方式)<br><br>cd ~    进入当前用户的家目录<br><br>cd –    进入上次目录<br><br>cd ..   进入上一级目录<br><br>cd .    进入当前目录<br></code></pre></td></tr></table></figure>
-<br>
-
-<!-- ~~~ shell
-
-~~~ -->
-
-
-]]></content>
-  </entry>
-  <entry>
     <title>Java面向对象思维之构造方法需的重载</title>
     <url>/Object-oriented-constructor-heavy-load.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -4571,6 +4573,27 @@ Object()           Object.prototype
       <categories>
         <category>Java</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Linux命令(未完工)</title>
+    <url>/Linux-command.html</url>
+    <content><![CDATA[<p><strong>Linux基本命令</strong></p>
+<a id="more"></a>
+
+<blockquote>
+<h1 id="ls命令"><a href="#ls命令" class="headerlink" title="ls命令"></a>ls命令</h1></blockquote>
+<p><strong>命令英文原意: list</strong><br><strong>命令所在路径: /bin/ls</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 显示目录文件</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ls 显示当前目录下文件<br><br>ls 目录名 显示指定目录下文件<br><br>ls -l 长格式显示目录文件<br><br>ls -l 文件名 长格式显示指定文件<br><br>ls -a 显示所有文件包含隐藏文件<br><br>ls -al 长格式显示当前目录下所有文件<br><br>ls -h 文件大小显示为常见大小单位 B KB MB …<br><br>ls -d 显示目录本身, 而不是里面的子文件<br></code></pre></td></tr></table></figure>
+<h1 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h1><p><strong>命令英文原意: change directory</strong><br><strong>命令所在路径: shell内置命令</strong><br><strong>执行权限: 所有用户</strong><br><strong>功能描述: 切换所在目录</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd /xx  切换到指定路径(使用绝对路径方式)<br><br>cd ~    进入当前用户的家目录<br><br>cd –    进入上次目录<br><br>cd ..   进入上一级目录<br><br>cd .    进入当前目录<br></code></pre></td></tr></table></figure>
+<br>
+
+<!-- ~~~ shell
+
+~~~ -->
+
+
+]]></content>
   </entry>
   <entry>
     <title>React AJAX</title>
@@ -4758,23 +4781,6 @@ Object()           Object.prototype
       </categories>
   </entry>
   <entry>
-    <title>React 元素渲染</title>
-    <url>/React-Render-Elements.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="元素渲染"><a href="#元素渲染" class="headerlink" title="元素渲染"></a>元素渲染</h1><h2 id="元素是构成-React-应用的最小单位-用于描述屏幕上输出的内容"><a href="#元素是构成-React-应用的最小单位-用于描述屏幕上输出的内容" class="headerlink" title="元素是构成 React 应用的最小单位   用于描述屏幕上输出的内容"></a>元素是构成 React 应用的最小单位   用于描述屏幕上输出的内容</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-comment">&lt;!-- eact 的核心库 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 提供与 DOM 相关的功能 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- Babel 可以将 ES6 代码转为 ES5 代码 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 将元素渲染到 DOM 中 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>// 要将React元素渲染到根DOM节点中 通过把它们都传递给 ReactDOM.render()的方法来将其渲染到页面上<br>const element =<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>ReactDOM.render(<br>    element,<br>    document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="更新元素渲染"><a href="#更新元素渲染" class="headerlink" title="更新元素渲染"></a>更新元素渲染</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function tick() &#123;<br>  const element = (<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你已经浪费了的时间 &#123;new Date().toLocaleTimeString()&#125;秒<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>  // 当前更新界面的唯一办法<br>  ReactDOM.render(<br>    element,<br>    document.getElementById(&#x27;example&#x27;)<br>  );<br>&#125;<br> <br>setInterval(tick, 1000);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="用函数来表示"><a href="#用函数来表示" class="headerlink" title="用函数来表示"></a>用函数来表示</h3><p><strong>React 只会更新必要的部分</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Clock(props) &#123;<br>  return (<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    // this当前对象<br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>现在是 &#123;this.props.date.toLocaleTimeString()&#125;你又在这浪费时间<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    // <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>现在是 &#123;props.date.toLocaleTimeString()&#125;你又在这浪费时间<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>&#125;<br><br>function tick() &#123;<br>  ReactDOM.render(<br>    <span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> <span class="hljs-attr">date</span>=<span class="hljs-string">&#123;new</span> <span class="hljs-attr">Date</span>()&#125; /&gt;</span>,<br>    document.getElementById(&#x27;example&#x27;)<br>  );<br>&#125;<br><br>setInterval(tick, 1000);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<br>
-
-]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
     <title>React 事件处理</title>
     <url>/React-event-processing.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -4813,6 +4819,23 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">class MyNameIsStitch extends React.Component &#123;<br>  handleClick() &#123;<br>    console.log(&#x27;this is:&#x27;, this);<br>  &#125;<br> <br>  render() &#123;<br>    &#123;/*  这个语法确保了 `this` 绑定在  handleClick 中  */&#125;  <br>    return (<br>      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> this.handleClick(e)&#125;&gt;<br>        我叫史迪奇<br>      <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>    );<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h1 id="向事件处理程序传递参数-1"><a href="#向事件处理程序传递参数-1" class="headerlink" title="向事件处理程序传递参数"></a>向事件处理程序传递参数</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML">&#123;/*  参数 e 作为 React 事件对象将会被作为第二个参数进行传递<br>通过箭头函数的方式, 事件对象必须显式的进行传递, 但bind 的方式, 事件对象以及更多的参数会被隐式的进行传递<br>bind 方式向监听函数传参 在类组件中定义的监听函数 事件对象 e 要排在所传递参数的后面  */&#125;  <br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;(e)</span> =&gt;</span> this.deleteRow(id, e)&#125;&gt;Delete Row<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;this.deleteRow.bind(this,</span> <span class="hljs-attr">id</span>)&#125;&gt;</span>Delete Row<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <br>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React 元素渲染</title>
+    <url>/React-Render-Elements.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="元素渲染"><a href="#元素渲染" class="headerlink" title="元素渲染"></a>元素渲染</h1><h2 id="元素是构成-React-应用的最小单位-用于描述屏幕上输出的内容"><a href="#元素是构成-React-应用的最小单位-用于描述屏幕上输出的内容" class="headerlink" title="元素是构成 React 应用的最小单位   用于描述屏幕上输出的内容"></a>元素是构成 React 应用的最小单位   用于描述屏幕上输出的内容</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-comment">&lt;!-- eact 的核心库 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 提供与 DOM 相关的功能 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-comment">&lt;!-- Babel 可以将 ES6 代码转为 ES5 代码 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 将元素渲染到 DOM 中 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>// 要将React元素渲染到根DOM节点中 通过把它们都传递给 ReactDOM.render()的方法来将其渲染到页面上<br>const element =<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>;<br>ReactDOM.render(<br>    element,<br>    document.getElementById(&#x27;example&#x27;)<br>);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="更新元素渲染"><a href="#更新元素渲染" class="headerlink" title="更新元素渲染"></a>更新元素渲染</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function tick() &#123;<br>  const element = (<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>你已经浪费了的时间 &#123;new Date().toLocaleTimeString()&#125;秒<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>  // 当前更新界面的唯一办法<br>  ReactDOM.render(<br>    element,<br>    document.getElementById(&#x27;example&#x27;)<br>  );<br>&#125;<br> <br>setInterval(tick, 1000);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="用函数来表示"><a href="#用函数来表示" class="headerlink" title="用函数来表示"></a>用函数来表示</h3><p><strong>React 只会更新必要的部分</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react/16.4.0/umd/react.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;example&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>function Clock(props) &#123;<br>  return (<br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    // this当前对象<br>    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>现在是 &#123;this.props.date.toLocaleTimeString()&#125;你又在这浪费时间<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    // <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>现在是 &#123;props.date.toLocaleTimeString()&#125;你又在这浪费时间<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  );<br>&#125;<br><br>function tick() &#123;<br>  ReactDOM.render(<br>    <span class="hljs-tag">&lt;<span class="hljs-name">Clock</span> <span class="hljs-attr">date</span>=<span class="hljs-string">&#123;new</span> <span class="hljs-attr">Date</span>()&#125; /&gt;</span>,<br>    document.getElementById(&#x27;example&#x27;)<br>  );<br>&#125;<br><br>setInterval(tick, 1000);<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<br>
+
+]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -5176,6 +5199,19 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>React 面向组件编程</title>
+    <url>/React-Component-oriented.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上, 供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后, 发生了什么?<br>					React解析组件标签, 找到了MyNameIsStitch组件<br>					发现组件是使用类定义的, 随后new出来该类的实例, 并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React 受控组件与非受控组件</title>
     <url>/React-Controlled-Uncontrolle.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -5190,19 +5226,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <br>
 
 ]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React 面向组件编程</title>
-    <url>/React-Component-oriented.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上, 供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后, 发生了什么?<br>					React解析组件标签, 找到了MyNameIsStitch组件<br>					发现组件是使用类定义的, 随后new出来该类的实例, 并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<br>]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -5303,6 +5326,17 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>String 比较</title>
+    <url>/String-compare.html</url>
+    <content><![CDATA[<p><strong>个人笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Three.js 向量</title>
     <url>/Three.js-vector.html</url>
     <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
@@ -5400,17 +5434,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       <categories>
         <category>Three.js</category>
       </categories>
-  </entry>
-  <entry>
-    <title>String 比较</title>
-    <url>/String-compare.html</url>
-    <content><![CDATA[<p><strong>个人笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
-<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
-<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
   </entry>
   <entry>
     <title>Three.js 第一枪</title>
