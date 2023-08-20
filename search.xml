@@ -431,23 +431,6 @@
       </categories>
   </entry>
   <entry>
-    <title>CSS 属性选择器(常用)</title>
-    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br><br><span class="hljs-selector-class">.sdq1</span> <span class="hljs-selector-tag">a</span>&#123; <br>     <span class="hljs-attribute">float</span>: left;  //<span class="hljs-attribute">left</span>往左<span class="hljs-attribute">float</span>浮动<br>     dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素, 此元素前后会带有换行符<br>     heigh: <span class="hljs-number">50px</span>;  //heigh高度<br>     <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;  //<span class="hljs-attribute">width</span>宽度<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;  //<span class="hljs-attribute">border-radius</span>圆角边框<br>     <br>     <span class="hljs-attribute">text-align</span>: center;   //<span class="hljs-attribute">text-align</span>对齐center剧中<br>     <span class="hljs-attribute">color</span>: yellow;  //<span class="hljs-attribute">color</span>文字颜色<br>     <span class="hljs-attribute">text-decoration</span>: none;  //<span class="hljs-attribute">text-decoration</span>下划线<span class="hljs-attribute">none</span>不显示<br>     <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">5px</span>;    //<span class="hljs-attribute">margin-right</span>外边距向右<br>     <span class="hljs-attribute">font</span>: bold <span class="hljs-number">20px</span>/<span class="hljs-number">50px</span> Arial;   //<span class="hljs-attribute">font</span>设置文字的字体bold字体大小<span class="hljs-number">20px</span>字体的大小<span class="hljs-number">50px</span>行高Arial是一种字体<br> &#125;<br>  //格式<span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[]</span>&#123;&#125;  存在id的属性的元素  <br> a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素<br>     <span class="hljs-attribute">background</span>: yellow;<br> &#125;<br> a[href^=xxy]&#123;          //^=表示以什么开头     <br>     <span class="hljs-attribute">background</span>: green;<br> &#125;<br> a[href=ghfgh]&#123;          //=表示以什么结尾     <br>     <span class="hljs-attribute">background</span>: powder;<br> &#125;<br>  <br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;<br>&lt;a href=&quot;xxy.fgdhrth&quot; class=&quot;links item first&quot; id=&quot;first&quot;&gt;史迪奇&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪仔&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇骑士&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇国王&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇勇士&lt;a&gt;<br>&lt;a href=&quot;hh.ghfgh&quot; class=&quot;links item&quot;&gt;史迪奇巫师&lt;a&gt;<br>&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
-<br>
-
-
-
-
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CSS 层次选择器</title>
     <url>/CSS+.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -462,6 +445,23 @@
 <h1 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-class">.sdq</span>~<span class="hljs-selector-tag">h1</span>&#123;<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">h1</span>&gt;史迪奇骑士&lt;<span class="hljs-selector-tag">h1</span>&gt;<br>&lt;h1 class=&quot;sdq1&quot;&gt;史迪奇打手&lt;h1&gt;<br>&lt;<span class="hljs-selector-tag">h1</span>&gt;史迪奇国王&lt;<span class="hljs-selector-tag">h1</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
 <p><strong>通用选择器: 当前选中元素的向下的所有兄弟元素</strong></p>
 <br>
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CSS 属性选择器(常用)</title>
+    <url>/CSS%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br><br><span class="hljs-selector-class">.sdq1</span> <span class="hljs-selector-tag">a</span>&#123; <br>     <span class="hljs-attribute">float</span>: left;  //<span class="hljs-attribute">left</span>往左<span class="hljs-attribute">float</span>浮动<br>     dispay: block;  //dispay规定元素应该生成的框的类型block此元素将显示为块级元素, 此元素前后会带有换行符<br>     heigh: <span class="hljs-number">50px</span>;  //heigh高度<br>     <span class="hljs-attribute">width</span>: <span class="hljs-number">50px</span>;  //<span class="hljs-attribute">width</span>宽度<br>     <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;  //<span class="hljs-attribute">border-radius</span>圆角边框<br>     <br>     <span class="hljs-attribute">text-align</span>: center;   //<span class="hljs-attribute">text-align</span>对齐center剧中<br>     <span class="hljs-attribute">color</span>: yellow;  //<span class="hljs-attribute">color</span>文字颜色<br>     <span class="hljs-attribute">text-decoration</span>: none;  //<span class="hljs-attribute">text-decoration</span>下划线<span class="hljs-attribute">none</span>不显示<br>     <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">5px</span>;    //<span class="hljs-attribute">margin-right</span>外边距向右<br>     <span class="hljs-attribute">font</span>: bold <span class="hljs-number">20px</span>/<span class="hljs-number">50px</span> Arial;   //<span class="hljs-attribute">font</span>设置文字的字体bold字体大小<span class="hljs-number">20px</span>字体的大小<span class="hljs-number">50px</span>行高Arial是一种字体<br> &#125;<br>  //格式<span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[]</span>&#123;&#125;  存在id的属性的元素  <br> a[class*=first]&#123;        //=是绝对等于  *=是包含这个元素<br>     <span class="hljs-attribute">background</span>: yellow;<br> &#125;<br> a[href^=xxy]&#123;          //^=表示以什么开头     <br>     <span class="hljs-attribute">background</span>: green;<br> &#125;<br> a[href=ghfgh]&#123;          //=表示以什么结尾     <br>     <span class="hljs-attribute">background</span>: powder;<br> &#125;<br>  <br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;<br>&lt;a href=&quot;xxy.fgdhrth&quot; class=&quot;links item first&quot; id=&quot;first&quot;&gt;史迪奇&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪仔&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇骑士&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇国王&lt;a&gt;<br>&lt;a href=&quot;xxx&quot; class=&quot;links item&quot;&gt;史迪奇勇士&lt;a&gt;<br>&lt;a href=&quot;hh.ghfgh&quot; class=&quot;links item&quot;&gt;史迪奇巫师&lt;a&gt;<br>&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
+<br>
+
+
+
 
 ]]></content>
       <categories>
@@ -3899,6 +3899,49 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>JavaScript BOM</title>
+    <url>/JavaScript-BOM.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p><strong>作用: 有关浏览器窗口</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-number">1</span>)<br>undefind<br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span><br><span class="hljs-number">790</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span><br><span class="hljs-number">918</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerHeight</span><br><span class="hljs-number">28</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerWidth</span><br><span class="hljs-number">160</span><br></code></pre></td></tr></table></figure>
+<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p><strong>作用: 封装浏览器信息</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">navigator.<span class="hljs-property">appName</span><br><span class="hljs-string">&quot;Netscape&quot;</span><br>navigator.<span class="hljs-property">appVersion</span><br><span class="hljs-string">&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">userAgent</span><br><span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">platform</span><br><span class="hljs-string">&quot;Win32&quot;</span><br></code></pre></td></tr></table></figure>
+<h1 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h1><p><strong>作用: 代表屏幕尺寸</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">screen.<span class="hljs-property">width</span><br><span class="hljs-number">1536</span><br>screen.<span class="hljs-property">height</span><br><span class="hljs-number">864</span><br></code></pre></td></tr></table></figure>
+<h1 id="location-重要"><a href="#location-重要" class="headerlink" title="location (重要)"></a>location (重要)</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 主机</span><br><span class="hljs-attr">host</span>: <span class="hljs-string">&quot;www.baidu.com&quot;</span><br><span class="hljs-comment">// 当前指向的位置</span><br><span class="hljs-attr">href</span>: <span class="hljs-string">&quot;http://www.baidu.com/&quot;</span><br><span class="hljs-comment">// 协议</span><br><span class="hljs-attr">protocol</span>: <span class="hljs-string">&quot;http:&quot;</span><br><span class="hljs-comment">//重新加载/刷新</span><br><span class="hljs-attr">reload</span>: ƒ <span class="hljs-title function_">reload</span>()<br><span class="hljs-comment">// 设置新的地址</span><br>location.<span class="hljs-title function_">assign</span>(<span class="hljs-string">&#x27;https://sdq3.gitee.io/&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p><strong>document 表示当前页面, HTML DOM文档树</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span><br><span class="hljs-string">&quot;百度一下, 你就知道&quot;</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = <span class="hljs-string">&quot;我叫史迪奇&quot;</span><br><span class="hljs-string">&quot;我叫史迪奇&quot;</span><br></code></pre></td></tr></table></figure>
+<p><strong>获取具体的文档树节点</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">id</span> =<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇国王<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇骑士<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    var dl = document.getElementById(&#x27;app&#x27;)<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>获取cookie</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span><br><span class="hljs-string">&quot;BIDUPSID=EC9E21CA08B01D9E2E577F635293067...&quot;</span><br></code></pre></td></tr></table></figure>
+<p><strong>劫持cookie原理</strong><br>    + 劫持cookie: 获取你的cookie然后上传的它的服务器<br>    + 预防: 服务器端设置 cokie: httpOnly</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script src=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><strong>代表浏览器的历史记录</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 前进</span><br>history.<span class="hljs-title function_">forward</span>()<br><span class="hljs-comment">// 返回</span><br>history.<span class="hljs-title function_">back</span>()<br></code></pre></td></tr></table></figure>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
     <title>JavaScript jQuery</title>
     <url>/JavaScript-jQuery.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
@@ -3976,49 +4019,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 </html>
 
 <br>
-
-
-
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript BOM</title>
-    <url>/JavaScript-BOM.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p><strong>作用: 有关浏览器窗口</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-number">1</span>)<br>undefind<br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerHeight</span><br><span class="hljs-number">790</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">innerWidth</span><br><span class="hljs-number">918</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerHeight</span><br><span class="hljs-number">28</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-property">outerWidth</span><br><span class="hljs-number">160</span><br></code></pre></td></tr></table></figure>
-<h1 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h1><p><strong>作用: 封装浏览器信息</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">navigator.<span class="hljs-property">appName</span><br><span class="hljs-string">&quot;Netscape&quot;</span><br>navigator.<span class="hljs-property">appVersion</span><br><span class="hljs-string">&quot;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">userAgent</span><br><span class="hljs-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36&quot;</span><br>navigator.<span class="hljs-property">platform</span><br><span class="hljs-string">&quot;Win32&quot;</span><br></code></pre></td></tr></table></figure>
-<h1 id="screen"><a href="#screen" class="headerlink" title="screen"></a>screen</h1><p><strong>作用: 代表屏幕尺寸</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">screen.<span class="hljs-property">width</span><br><span class="hljs-number">1536</span><br>screen.<span class="hljs-property">height</span><br><span class="hljs-number">864</span><br></code></pre></td></tr></table></figure>
-<h1 id="location-重要"><a href="#location-重要" class="headerlink" title="location (重要)"></a>location (重要)</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 主机</span><br><span class="hljs-attr">host</span>: <span class="hljs-string">&quot;www.baidu.com&quot;</span><br><span class="hljs-comment">// 当前指向的位置</span><br><span class="hljs-attr">href</span>: <span class="hljs-string">&quot;http://www.baidu.com/&quot;</span><br><span class="hljs-comment">// 协议</span><br><span class="hljs-attr">protocol</span>: <span class="hljs-string">&quot;http:&quot;</span><br><span class="hljs-comment">//重新加载/刷新</span><br><span class="hljs-attr">reload</span>: ƒ <span class="hljs-title function_">reload</span>()<br><span class="hljs-comment">// 设置新的地址</span><br>location.<span class="hljs-title function_">assign</span>(<span class="hljs-string">&#x27;https://sdq3.gitee.io/&#x27;</span>)<br></code></pre></td></tr></table></figure>
-<h1 id="document"><a href="#document" class="headerlink" title="document"></a>document</h1><p><strong>document 表示当前页面, HTML DOM文档树</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span><br><span class="hljs-string">&quot;百度一下, 你就知道&quot;</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = <span class="hljs-string">&quot;我叫史迪奇&quot;</span><br><span class="hljs-string">&quot;我叫史迪奇&quot;</span><br></code></pre></td></tr></table></figure>
-<p><strong>获取具体的文档树节点</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">dl</span> <span class="hljs-attr">id</span> =<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇国王<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>史迪奇骑士<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><br>    var dl = document.getElementById(&#x27;app&#x27;)<br><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>获取cookie</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span><br><span class="hljs-string">&quot;BIDUPSID=EC9E21CA08B01D9E2E577F635293067...&quot;</span><br></code></pre></td></tr></table></figure>
-<p><strong>劫持cookie原理</strong><br>    + 劫持cookie: 获取你的cookie然后上传的它的服务器<br>    + 预防: 服务器端设置 cokie: httpOnly</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;script src=<span class="hljs-string">&quot;sdq.js&quot;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p><strong>代表浏览器的历史记录</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 前进</span><br>history.<span class="hljs-title function_">forward</span>()<br><span class="hljs-comment">// 返回</span><br>history.<span class="hljs-title function_">back</span>()<br></code></pre></td></tr></table></figure>
-<br>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4213,6 +4213,27 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
   </entry>
   <entry>
     <title>JavaScript 函数的定义和参数获取</title>
+    <url>/JavaScript-definition-obtain.html</url>
+    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p><strong>概念: 对象(属性, 函数/方法)</strong><br>    + 函数放在对象里面叫方法<br>    + 放在外面是函数</p>
+<h3 id="绝对值函数"><a href="#绝对值函数" class="headerlink" title="绝对值函数"></a>绝对值函数</h3><p><strong>后端写法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 如果没有执行return函数执行完也会返回结果, 结果是undefined</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>前端写法</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// function(x)&#123;...&#125;这是一个匿名函数, 但是可以把结果赋值给sdq, 通过sdq调用函数</span><br><span class="hljs-keyword">var</span> sdq = <span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-title function_">sdq</span>(<span class="hljs-number">3</span>)  <span class="hljs-comment">//输出3</span><br><span class="hljs-title function_">sdq</span>(-<span class="hljs-number">3</span>)  <span class="hljs-comment">//输出3</span><br></code></pre></td></tr></table></figure>
+<h3 id="异常判断"><a href="#异常判断" class="headerlink" title="异常判断"></a>异常判断</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> sdq = <span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-comment">// x的类型(typeof)是不是数字(number)不是数字规避</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x!== <span class="hljs-string">&#x27;number&#x27;</span>)&#123;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-string">&#x27;压根不是数字&#x27;</span><br>    &#125;<br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="arguments-数组"><a href="#arguments-数组" class="headerlink" title="arguments 数组"></a>arguments 数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> sdq = <span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;x=&gt;&quot;</span>+x);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable language_">arguments</span>.<span class="hljs-property">length</span>; i++)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>.[i]);<br>    &#125;<br><br>    <span class="hljs-comment">// if (arguments.length&gt;1)&#123;</span><br>    <span class="hljs-comment">//  arguments[1]</span><br>    <span class="hljs-comment">//&#125;</span><br><br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="rest"><a href="#rest" class="headerlink" title="rest"></a>rest</h3><p><strong>ES6 引入的型特性, 获取除了已经定义的参数之外的所有参数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// rest参数只能写在最后面, 必须用...标识</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">s,d,q,...rest</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;s=&gt;&quot;</span>+s);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;d=&gt;&quot;</span>+d);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;q=&gt;&quot;</span>+q);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rest);<br>&#125;<br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JavaScript 函数的定义和参数获取</title>
     <url>/JavaScript-function.html</url>
     <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
 <a id="more"></a>
@@ -4229,27 +4250,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// rest参数只能写在最后面, 必须用...标识</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">s,d,q,...rest</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;s=&gt;&quot;</span>+s);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;d=&gt;&quot;</span>+d);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;q=&gt;&quot;</span>+q);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rest);<br>&#125;<br></code></pre></td></tr></table></figure>
 <br>
 ]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JavaScript 函数的定义和参数获取</title>
-    <url>/JavaScript-definition-obtain.html</url>
-    <content><![CDATA[<p><strong>JavaScript个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><p><strong>概念: 对象(属性, 函数/方法)</strong><br>    + 函数放在对象里面叫方法<br>    + 放在外面是函数</p>
-<h3 id="绝对值函数"><a href="#绝对值函数" class="headerlink" title="绝对值函数"></a>绝对值函数</h3><p><strong>后端写法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 如果没有执行return函数执行完也会返回结果, 结果是undefined</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>前端写法</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// function(x)&#123;...&#125;这是一个匿名函数, 但是可以把结果赋值给sdq, 通过sdq调用函数</span><br><span class="hljs-keyword">var</span> sdq = <span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-comment">// 一旦执行到return代表函数结束, 返回结果</span><br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-title function_">sdq</span>(<span class="hljs-number">3</span>)  <span class="hljs-comment">//输出3</span><br><span class="hljs-title function_">sdq</span>(-<span class="hljs-number">3</span>)  <span class="hljs-comment">//输出3</span><br></code></pre></td></tr></table></figure>
-<h3 id="异常判断"><a href="#异常判断" class="headerlink" title="异常判断"></a>异常判断</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> sdq = <span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-comment">// x的类型(typeof)是不是数字(number)不是数字规避</span><br>    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x!== <span class="hljs-string">&#x27;number&#x27;</span>)&#123;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-string">&#x27;压根不是数字&#x27;</span><br>    &#125;<br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="arguments-数组"><a href="#arguments-数组" class="headerlink" title="arguments 数组"></a>arguments 数组</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> sdq = <span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;x=&gt;&quot;</span>+x);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-variable language_">arguments</span>.<span class="hljs-property">length</span>; i++)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">arguments</span>.[i]);<br>    &#125;<br><br>    <span class="hljs-comment">// if (arguments.length&gt;1)&#123;</span><br>    <span class="hljs-comment">//  arguments[1]</span><br>    <span class="hljs-comment">//&#125;</span><br><br>    <span class="hljs-keyword">if</span>(x&gt;=<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">else</span>&#123;<br>        <span class="hljs-keyword">return</span> -x;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h3 id="rest"><a href="#rest" class="headerlink" title="rest"></a>rest</h3><p><strong>ES6 引入的型特性, 获取除了已经定义的参数之外的所有参数</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// rest参数只能写在最后面, 必须用...标识</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sdq</span>(<span class="hljs-params">s,d,q,...rest</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;s=&gt;&quot;</span>+s);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;d=&gt;&quot;</span>+d);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;q=&gt;&quot;</span>+q);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(rest);<br>&#125;<br></code></pre></td></tr></table></figure>
-<br>]]></content>
       <categories>
         <category>JavaScript</category>
       </categories>
@@ -4499,29 +4499,6 @@ Object()           Object.prototype
       </categories>
   </entry>
   <entry>
-    <title>Java面向对象思维之构造方法</title>
-    <url>/Object-oriented-constructor.html</url>
-    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员变量</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> &#123;<br>String color;  <span class="hljs-comment">//颜色</span><br><span class="hljs-type">int</span> wheel;   <span class="hljs-comment">//轮子</span><br><span class="hljs-type">int</span> seat;   <span class="hljs-comment">//座位</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">自动生成一个无参数的构造方法 <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">()</span> &#123; <br><span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color, <span class="hljs-type">int</span> wheel, <span class="hljs-type">int</span> seat)</span> &#123; <span class="hljs-comment">//这里给它添加参数  </span><br>   设置属性信息<br>   <span class="hljs-built_in">this</span>.color = color; 颜色<br>   <span class="hljs-built_in">this</span>.wheel = wheel; 轮子<br>   <span class="hljs-built_in">this</span>.seat = seat; 座位<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">fly</span>()&#123;<br>System.out.println(<span class="hljs-built_in">this</span>.color+<span class="hljs-string">&quot;车能飞&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<p><strong>例如 车可以潜水</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">diving</span>()&#123;<br>System.out.println(<span class="hljs-built_in">this</span>.diving+<span class="hljs-string">&quot;车可以下水&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[ ] args)</span> &#123;<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;透明&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;黄&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   c1.fly();<br>   c1.diving();<br><br>   c2.fly();<br>   c2.diving();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong></p>
-<p><strong>在new的时候, 给对象设置属性信息</strong></p>
-<p><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
-<br>
-
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java核心面向对象之this</title>
     <url>/Object-oriented-this.html</url>
     <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
@@ -4568,6 +4545,29 @@ Object()           Object.prototype
 
 
 
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java面向对象思维之构造方法</title>
+    <url>/Object-oriented-constructor.html</url>
+    <content><![CDATA[<p><strong>学习Java个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位"><a href="#例如造一辆车-而车有什么属性？-例如-车有颜色-车有轮子-车座位" class="headerlink" title="例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位"></a>例如造一辆车 而车有什么属性？ 例如 车有颜色 车有轮子 车座位</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员变量</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Car</span> &#123;<br>String color;  <span class="hljs-comment">//颜色</span><br><span class="hljs-type">int</span> wheel;   <span class="hljs-comment">//轮子</span><br><span class="hljs-type">int</span> seat;   <span class="hljs-comment">//座位</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java">自动生成一个无参数的构造方法 <span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">()</span> &#123; <br><span class="hljs-keyword">public</span> <span class="hljs-title function_">Car</span><span class="hljs-params">(String color, <span class="hljs-type">int</span> wheel, <span class="hljs-type">int</span> seat)</span> &#123; <span class="hljs-comment">//这里给它添加参数  </span><br>   设置属性信息<br>   <span class="hljs-built_in">this</span>.color = color; 颜色<br>   <span class="hljs-built_in">this</span>.wheel = wheel; 轮子<br>   <span class="hljs-built_in">this</span>.seat = seat; 座位<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h1><p><strong>例如 车能飞</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">fly</span>()&#123;<br>System.out.println(<span class="hljs-built_in">this</span>.color+<span class="hljs-string">&quot;车能飞&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><strong>例如 车可以潜水</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">diving</span>()&#123;<br>System.out.println(<span class="hljs-built_in">this</span>.diving+<span class="hljs-string">&quot;车可以下水&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="执行main方法"><a href="#执行main方法" class="headerlink" title="执行main方法"></a>执行main方法</h1><figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs Java"> <span class="hljs-comment">//成员方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[ ] args)</span> &#123;<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c1</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;透明&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   <span class="hljs-type">Car</span> <span class="hljs-variable">c2</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Car</span>(<span class="hljs-string">&quot;黄&quot;</span>,<span class="hljs-number">5</span>,<span class="hljs-number">9</span>);<br>   c1.fly();<br>   c1.diving();<br><br>   c2.fly();<br>   c2.diving();<br>   &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="构造方法需要注意"><a href="#构造方法需要注意" class="headerlink" title="构造方法需要注意"></a>构造方法需要注意</h1><p><strong>没有返回值这一项</strong></p>
+<p><strong>在new的时候, 给对象设置属性信息</strong></p>
+<p><strong>Java会默认自动的送每个类一个无参数的构造方法, 如果你写了构造方法, 那么Java就不送了</strong></p>
+<br>
 
 ]]></content>
       <categories>
@@ -5157,19 +5157,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>React 面向组件编程</title>
-    <url>/React-Component-oriented.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上, 供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后, 发生了什么?<br>					React解析组件标签, 找到了MyNameIsStitch组件<br>					发现组件是使用类定义的, 随后new出来该类的实例, 并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
     <title>React 表单与事件</title>
     <url>/React-form-event.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -5206,6 +5193,19 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <p><font color="#DC143C">查看效果</font></p>
 <iframe id="iframe" src="/html/React onClick 事件"></iframe>
 
+<br>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>React 面向组件编程</title>
+    <url>/React-Component-oriented.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="创建函数式组件"><a href="#创建函数式组件" class="headerlink" title="创建函数式组件"></a>创建函数式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建函数式组件 需要定义的首字母一定要大写<br>		function MyNameIsStitch()&#123;<br>			console.log(this); //此处的this是undefined, 因为babel编译后开启了严格模式<br>			return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用函数定义的组件(适用于 简单组件 的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>		&#125;<br>		//2.渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>            之后, 发生了什么?<br>					1.React解析组件标签, 找到了MyNameIsStitch组件<br>					2.发现组件是使用函数定义的, 随后调用该函数, 将返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="创建类式组件"><a href="#创建类式组件" class="headerlink" title="创建类式组件"></a>创建类式组件</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		//创建类式组件<br>		class MyNameIsStitch extends React.Component &#123;<br>			render()&#123;<br>				//render是放在哪里的?—— MyNameIsStitch的原型对象上, 供实例使用<br>				//render中的this是谁?—— MyNameIsStitch的实例对象 &lt;=&gt; MyNameIsStitch组件实例对象<br>				console.log(&#x27;render中的this:&#x27;,this);<br>				return <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是用类定义的组件(适用于【复杂组件】的定义)<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br>			&#125;<br>		&#125;<br>		//渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>,document.getElementById(&#x27;test&#x27;))<br>		/* <br>			执行了ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">MyNameIsStitch</span>/&gt;</span>.......之后, 发生了什么?<br>					React解析组件标签, 找到了MyNameIsStitch组件<br>					发现组件是使用类定义的, 随后new出来该类的实例, 并通过该实例调用到原型上的render方法<br>					将render返回的虚拟DOM转为真实DOM, 随后呈现在页面中<br>		*/<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <br>]]></content>
       <categories>
         <category>React</category>
@@ -5326,6 +5326,17 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>String 比较</title>
+    <url>/String-compare.html</url>
+    <content><![CDATA[<p><strong>个人笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
+<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
+<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Three.js 向量</title>
     <url>/Three.js-vector.html</url>
     <content><![CDATA[<p><strong>Three.js学习笔记</strong></p>
@@ -5423,17 +5434,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       <categories>
         <category>Three.js</category>
       </categories>
-  </entry>
-  <entry>
-    <title>String 比较</title>
-    <url>/String-compare.html</url>
-    <content><![CDATA[<p><strong>个人笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="String-比较"><a href="#String-比较" class="headerlink" title="String 比较"></a>String 比较</h1><p><strong>当String进行比较时应该用equals</strong></p>
-<p><strong>因为equals是String类重写后的用于比较字符串内容的方法</strong></p>
-<p><strong>为什么不用==进行比较, 因为==是用于比较地址值</strong></p>
-]]></content>
   </entry>
   <entry>
     <title>Three.js 第一枪</title>
@@ -10031,167 +10031,6 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
       </categories>
   </entry>
   <entry>
-    <title>鲲鹏微认证(日后会更新)</title>
-    <url>/Kunpeng-micro-authentication.html</url>
-    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
-<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
-</ul>
-<ul>
-<li>从源码到程序的过程<ul>
-<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
-<br>
-
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
-<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
-<li>架构差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>指令极差异:<ul>
-<li>x86属于复杂指令集</li>
-<li>鲲鹏处理器(aarch64)属于精简指令集</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>向量寄存器的差异:<ul>
-<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
-</ul>
-</li>
-</ul>
-<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
-<li>编译构建脚本<ul>
-<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++源码<ul>
-<li>src examples tests等等</li>
-</ul>
-</li>
-</ul>
-<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
-<li>编译构建脚本类文件<ul>
-<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>C/C++代码类文件<ul>
-<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
-<li>编译器自带builtin函数移植</li>
-<li>内联汇编移植</li>
-<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
-</ul>
-</li>
-</ul>
-<!-- # C/C++代码编译构建过程
-
-~~~
-
-~~~ -->
-
-<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
-<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
-<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
-<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
-<p><strong>C/C++语言属于编译型语言, 其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的, 因此此类应用程序不需要移植</strong> ×</p>
-<p><strong>Centos是开源的操作系统, Debian不属于开源操作系统</strong> ×</p>
-<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
-<p><strong>华为鲲鹏云服务产品发布前, 需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
-<p><strong>通过”ps -ef | grep PostgreSQL “命令可以确认数据库进程是否启动</strong> ×</p>
-<p><strong>为方便客户业务的统一部署,  镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
-<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
-<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
-<p><strong>对于Java类应用程序进行性能分析时, 由于受java的jit编译的限制, 函数分析结果中只能查看到对应的源码, 无法查看汇编和代码流图</strong> √</p>
-<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
-<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
-<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
-<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
-<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
-<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
-<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
-<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
-<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
-<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时, RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
-<p>在BenchmarkSQL执行以下哪个脚本, 可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
-<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
-<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
-<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
-<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
-<p>关于容器的删除操作, 以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
-<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议, 以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证, 但无二进制安装包,则需要用户下载依赖库源码, 然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证, 且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地, 然后上传至目标服务器进行安装使用</p>
-<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
-<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
-<p>在修改BenchmarkSQL连接PostereSQL的配置文件时, 关于runMins和runTxnsPerTerminal这两个参数的设置, 以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等, 且均不为0</p>
-<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
-<p>如果要放开外部对弹性云服务器的8080端口访问, 可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
-<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
-<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
-<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
-<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
-<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
-<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
-<p>关于容器相关概念的描述, 以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库,  存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
-<p>使用gcc编译时, 编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
-<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
-<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
-<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
-<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
-<p>关于rpm包和SRPM包的描述, 以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装, SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序, 而SRPM不是</p>
-<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
-<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
-<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
-<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯, 软件名称, 软件用途等相关信息, 便于了解软件<br>B 内含编译程序, 免编译<br>C 使用数据库记录rpm文件的相关参数, 便于升级 移除 查询与验证<br>D 预先检查系统版本, 可避免文 件被错误安装</p>
-<p>创建C/C++程序性能分析任务时, 以下关于分析类型, 描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统, 无需关注系统中有哪些类型的应用在运行, 采集时长需要配置参数控制, 适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序, 通过关联到运行该应用程序的PID的方式, 来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制, 适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候, 同时启动Application,采集时长受Appl ication的执行时间来控制, 适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
-<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
-<p>关于使用源码方式安装加速引擎软件, 以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下, 使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
-<p>同一段C/C++代码, 在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
-<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
-<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
-<p>在PostgreSQL迁移流程中, 包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
-<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
-<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
-<p>在华为公有云中, 私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
-<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述, 以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”, 打开持久化配置<br>C 该命令功能是启动容器, 并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
-<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时, 需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
-<p>C/C++语言开发的源码在编译时, 以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
-<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
-<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口, 支持RoCE特性<br>C 相比同等性能的Intel处理器, 功耗更低<br>D 支持8内存通道, 带宽高于Intel Skyl ake (V5)的6通道</p>
-<p>BenchmarkSQL配置文件中loadWorkers指的是什么 ( )<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码, 并给出移植工作量<br>B、分析源码, 并给出分析报告和源码修改建议<br>C、分析源码, 并修改源码<br>D、分析源码, 并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构, 以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化, 自主安全可控<br>B、多物理核心, 并发性能高<br>C、低功耗, 绿色节能<br>D、生态完备, 上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用, 优先推荐, 快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训, 完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队, 专业工具, 1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上, 通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下, 如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境, 通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述, 以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述, 不正确的是?<br>A、用户可以快速复制私有镜像, 不受region限制<br>B、查询镜像时, 支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时, 不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供 ( ) 方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时, 以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库, 说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令”docker ps -a”后, 显示的标题含义描述, 正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供 ( ) 方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的 () ？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口, 并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业, 华为提供 ( ) 支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述, 以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中, 第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后, 可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前, 在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时, 能够查看到函数源代码、汇编代码, 以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码, 无依赖的SO库文件不需要编译, 可以直接在JVM (Java虚拟机) 中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法, 识别业务并匹配最佳资源模型, 实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中, Running Average tpmTOTAL 值和Current tpmTOTAL值越高, 表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>鲲鹏云</category>
-      </categories>
-  </entry>
-  <entry>
     <title>鲲鹏题库</title>
     <url>/Kunpeng-question.html</url>
     <content><![CDATA[<p><strong>鲲鹏笔记+题库</strong></p>
@@ -10719,6 +10558,167 @@ Set-Cookie | cookie到用户浏览器的缓存非常重要用于跳过账号密�
 <font color="#F08080">正确答案 A B C D<br>解答: 注意问的是整机镜像</font>
 
 <br>]]></content>
+      <categories>
+        <category>鲲鹏云</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>鲲鹏微认证(日后会更新)</title>
+    <url>/Kunpeng-micro-authentication.html</url>
+    <content><![CDATA[<p><strong>鲲鹏微认证笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="C-C-代码迁移"><a href="#C-C-代码迁移" class="headerlink" title="C/C++代码迁移"></a>C/C++代码迁移</h1><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><ul>
+<li>典型的如C/C++/Go语言, 都属于编译型语言, 编译型语言开发的程序从x86处理器迁移到鲲鹏处理器时, 必须经过重新编译才能运行</li>
+</ul>
+<ul>
+<li>从源码到程序的过程<ul>
+<li>源码需要由编译器, 汇编器翻译成机器指令, 再通过链接器链接库函数生成机器语言程序<br>
+<br>
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">源码</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预处理</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">预编译文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">编译</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编代码</span>    --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">汇编</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">目标文件</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">链接</span>  --<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span>&gt;  <span class="hljs-comment">可执行文件</span><br><br><span class="hljs-comment">testc</span>      <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">E</span> <span class="hljs-comment">testc</span> <span class="hljs-literal">-</span><span class="hljs-comment">o</span> <span class="hljs-comment">testi</span>      <span class="hljs-comment">texti</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testio</span> <span class="hljs-comment">tests</span>      <span class="hljs-comment">texts</span>          <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">testo</span>       <span class="hljs-comment">gcc</span> <span class="hljs-literal">-</span><span class="hljs-comment">S</span> <span class="hljs-comment">testso</span> <span class="hljs-comment">testo</span>     <span class="hljs-comment">text</span><br></code></pre></td></tr></table></figure>
+<h2 id="C-C-代码需要迁移的原因"><a href="#C-C-代码需要迁移的原因" class="headerlink" title="C/C++代码需要迁移的原因"></a>C/C++代码需要迁移的原因</h2><ul>
+<li>架构差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)属于不同架构</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>指令极差异:<ul>
+<li>x86属于复杂指令集</li>
+<li>鲲鹏处理器(aarch64)属于精简指令集</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>向量寄存器的差异:<ul>
+<li>x86和鲲鹏处理器(aarch64)使用向量寄存器不同, 向量指令集也存在差异</li>
+</ul>
+</li>
+</ul>
+<h1 id="C-C-代码构建编译过程"><a href="#C-C-代码构建编译过程" class="headerlink" title="C/C++代码构建编译过程"></a>C/C++代码构建编译过程</h1><h2 id="C-C-代码工程主要包括两类文件"><a href="#C-C-代码工程主要包括两类文件" class="headerlink" title="C/C++代码工程主要包括两类文件:"></a>C/C++代码工程主要包括两类文件:</h2><ul>
+<li>编译构建脚本<ul>
+<li>Makefile CmakeListstxt Configure autogensh bootstrapsh等等</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++源码<ul>
+<li>src examples tests等等</li>
+</ul>
+</li>
+</ul>
+<h2 id="可能涉及到的移植项"><a href="#可能涉及到的移植项" class="headerlink" title="可能涉及到的移植项"></a>可能涉及到的移植项</h2><ul>
+<li>编译构建脚本类文件<ul>
+<li>编译选项的移植(指定数据类型, 生成代码特性, 目标执行器架构, 处理器硬件加速功能等)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C/C++代码类文件<ul>
+<li>编译宏移植(用户自定义宏移植, 编译器自定义宏移植)</li>
+<li>编译器自带builtin函数移植</li>
+<li>内联汇编移植</li>
+<li>SSE intrinsic函数移植(MMX/SEE类函数移植, AVX函数移植)</li>
+</ul>
+</li>
+</ul>
+<!-- # C/C++代码编译构建过程
+
+~~~
+
+~~~ -->
+
+<h1 id="直接真题-CTRL-F"><a href="#直接真题-CTRL-F" class="headerlink" title="直接真题 CTRL+F"></a>直接真题 CTRL+F</h1><h2 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h2><p><strong>yum和rpm安装方式本质都是基于RPM包来安装软件</strong> √</p>
+<p><strong>交叉编译是在一个平台 上生成另一个平台上可执行的代码</strong> √</p>
+<p><strong>BenchmarkSQL使用GCC编译进行编译安装</strong> ×</p>
+<p><strong>Dockerfile中的每一条指令 都分别对应镜像的每一层</strong> √</p>
+<p><strong>C/C++语言属于编译型语言, 其编译后得到的可执行程序执行时依赖的指令是与CPU架构不相关的, 因此此类应用程序不需要移植</strong> ×</p>
+<p><strong>Centos是开源的操作系统, Debian不属于开源操作系统</strong> ×</p>
+<p><strong>Tai Shan服务器的CPU是ARM架构的</strong> √</p>
+<p><strong>华为鲲鹏云服务产品发布前, 需要先加入鲲鹏凌云伙伴计划并通过鲲鹏云服务兼容性认证</strong> √</p>
+<p><strong>通过”ps -ef | grep PostgreSQL “命令可以确认数据库进程是否启动</strong> ×</p>
+<p><strong>为方便客户业务的统一部署,  镜像服务建立起了镜像与弹性云服务器之间 镜像与裸金属服务器之间 以及镜像与外部文件之间的直接联系</strong> √</p>
+<p><strong>一个弹性公网IP能同时给多个弹性云服务器使用</strong> ×</p>
+<p><strong>华为鲲鹏性能优化工具支持分析C/C+ +和Java Mixed-Mode两种应用程序类型</strong> √</p>
+<p><strong>对于Java类应用程序进行性能分析时, 由于受java的jit编译的限制, 函数分析结果中只能查看到对应的源码, 无法查看汇编和代码流图</strong> √</p>
+<p><strong>HiBench支持在编译时指定编译模块</strong> √</p>
+<p><strong>docker的基础镜像中包含父镜像</strong> ×</p>
+<p><strong>华为鲲鹏云服务可提供KC1型ECS和KS1型BMS</strong> √</p>
+<p><strong>Tai Shan服务器必须使用特殊的专有内存和硬盘</strong> x</p>
+<p><strong>Java/Python的虚拟机不支撑再鲲鹏上源码编译, 只能使用yum方式安装</strong> x</p>
+<!-- **个人理解Python是解释型语言,Java在鲲鹏里面也被强制列为解释型语言** -->
+<!-- **用户想安装按RPM方式发行的软件, 只需简单地输入命令rpm -ivh xxxrpm即可** -->
+<h2 id="单选题"><a href="#单选题" class="headerlink" title="单选题"></a>单选题</h2><p>类RedHat系统提供了什么命令来安装, 卸载和升级rpm软件包    (A)<br>    A rpm<br>    B dpkg<br>    C tar<br>    D apt-get</p>
+<p>下面哪个工具不属于鲲鹏开发套件?      (A)<br>    A 分析扫码工具<br>    B 代码迁移工具<br>    C 性能调优工具<br>    D Vtune</p>
+<p>使用命令rpmbuild -bb XX spec (XX表示文件名)制作RPM包时, RPM包生成在什么目录下?      (C)<br>A BUILD B SOURCE C RPMS D SPEC</p>
+<p>在BenchmarkSQL执行以下哪个脚本, 可以对表中写入数据?      (A)<br>A runLoader sh B runBenchmark sh C runDatabaseBuild sh D runDatabaseDestroy Sh</p>
+<p>BenchmarkSQL执行以下哪个脚本加载数据?      (B)<br>A runBenchmark sh B runDat abaseBuild sh C runDat abaseDestroy sh D runLoader sh</p>
+<p>代码扫描工具Dependency Advisor是部署在哪种架构的服务器或者弹性云服务器上?      (D)<br>A ARM B 鲲鹏 C Power D x86</p>
+<p>以下哪个不属于镜像管理特性?      (D)<br>A 修改镜像 B 删除镜像 C 镜像导出 D 查询镜像</p>
+<p>Hi Bench是什么？      (C)<br>A 大数据开发框架 B 大数据可视化平台 C 大数据基准测试套件 D 大数据分析工具</p>
+<p>关于容器的删除操作, 以下哪项是正确的？      (C)<br>A 可通过”docker rm &lt;容器ID&gt;”删除正在运行的容器<br>B 可通过”docker rmi &lt;容器ID&gt;”删除已停止的容器<br>C 可通过”docker rm &lt;容器ID&gt;”删除已停止的容器<br>D 可通过”docker rmi &lt;容器ID&gt;”删除正在运行的容器</p>
+<p>关于华为鲲鹏迁移工具分析报告提供的依赖库so文件的操作建议, 以下哪项是不正确的?      (A)<br>A 目前不存在鲲鹏平台无法识别的依赖库So文件<br>B 鲲鹏平台不支持该类依赖库S0文件,需要用户自行处理<br>C 如果依赖库so文件已经过鲲鹏平台验证, 但无二进制安装包,则需要用户下载依赖库源码, 然后上传至目标服务器进行编译安装<br>D 如果依赖库S0文件已经过鲲鹏平台验证, 且已有二进制安装包,则用户可以直按将工具提供的开源版本依赖库安装包下载到本地, 然后上传至目标服务器进行安装使用</p>
+<p>以下关于web界面访问华为鲲鹏代码迁移工具的方式,描述正确的是      (A)<br>A 单用户单任务访问<br>B 多用户多任务并发访间<br>C 多用户同时访问<br>D 单用户多任务访问</p>
+<p>以下哪个选项不是iSula通用容器引辈的特点?      (C)<br>A 升级不中断业务 B 增强安全性和调测特性 C 大幅提升容器性能 D 快速灵活</p>
+<p>在修改BenchmarkSQL连接PostereSQL的配置文件时, 关于runMins和runTxnsPerTerminal这两个参数的设置, 以下哪项是正确的?      (A)<br>A 必须有一个设定为0  B 必须相等 C 均为0   D 必须不相等, 且均不为0</p>
+<p>扫描工具Dependency Advi sor支持以下哪种使用模式?      (A)<br>A web B make C test D name</p>
+<p>如果要放开外部对弹性云服务器的8080端口访问, 可以通过配置以下哪项功能实现?      (C)<br>A 弹性公网IP带宽 B 主机组 C 安全组 D VPC子网</p>
+<p>系统盘镜像类型不包含以下哪个      (A)<br>A 机架服务器系统盘镜像 B 普通云服务器系统盘镜像 C GPU加速云服务器系统盘镜像 D 裸金属云服务器系统盘镜像</p>
+<p>私有镜像通过以下哪个功能可以实现本地业务部署和公有云业务部署的统一化持久化?      (A)<br>A 镜像导出  B 镜像市场 C 镜像复制 D 镜像共享</p>
+<p>以下哪个命令表示只生成rpm源代码的命令?      (B)<br>A rpmbuild -ba B rpmbuild- bs C rpmbuild -bc D rpmbuild -bb</p>
+<p>以下哪个不是使用rpm工具安装软件?      (A)<br>A 自动安装依赖包 B 全自动安装 C 能够进行数据库的记载 D 自定义安装路径</p>
+<p>提供预装操作系统 应用环境和各类软件的优质第三方镜像是属于以下哪种镜像?      (C)<br>A 共享镜像 B 私有镜像 C 市场镜像 D 公共镜像</p>
+<p>ssh协议默认端口号是什么?      (C)<br>A 9600 B 23 C 22 D 513</p>
+<p>关于容器相关概念的描述, 以下哪项是错误的?      (C)<br>A 标签:可用于识别不同的变体或版本<br>B 仓库: 一个软件库,  存储了可下载并安装在系统中的软件包<br>C 镜像:容器的运行实例<br>D 容器:image的运行实例</p>
+<p>使用gcc编译时, 编译选项-march的作用是什么?      (A)<br>A 指定指令集<br>B 指定cpu型号<br>C 指定流水线<br>D 提升兼容性</p>
+<p>下列哪个是华为鲲鹏生态兼容的非国产操作系统?      (C)<br>A BCLinux<br>B openEuler<br>C Ubuntu<br>D Kylin</p>
+<p>谁是Linux之父?      (D)<br>A Richard Matthew Stal lman B Andrew Morton C Bill Gates D LimusTorval ds</p>
+<h2 id="多选题"><a href="#多选题" class="headerlink" title="多选题"></a>多选题</h2><p>可以从哪些方面对Post greSQL进行性能调优?      (A C)<br>A 数据库参数 B 硬件 C 编译参数 D 操作系统</p>
+<p>使用BenchmarkSQL前需要进行哪些操作?      (A C D)<br>A 配置环境变量 B 重启服务器 C 安装JDK  D 使环境变量生效</p>
+<p>关于rpm包和SRPM包的描述, 以下正确的是?      (A B D)<br>A SRPM包含源代码而RPM不包含 B rpm包可以直接安装, SRPM包不可以 C 两者都可修改编译参数 D rpm包是已编译的程序, 而SRPM不是</p>
+<p>镜像服务的典型应用场景有哪些?      (A B C)<br>A 快速部署应用 B 批量复制弹性云服务器 C 传统业务上云 D 实时同步数据</p>
+<p>镜像文件一般包括以下哪些内容?      (A C)<br>A 预装的软件 B 数据盘 C 操作系统 D 系统盘</p>
+<p>以下哪些不是针对spec文件的操作命令?      (A B)<br>A cmake B makefile C make D make install</p>
+<p>rpm安装包有哪些优点?      (A B C D)<br>A 提供软件版本资讯, 软件名称, 软件用途等相关信息, 便于了解软件<br>B 内含编译程序, 免编译<br>C 使用数据库记录rpm文件的相关参数, 便于升级 移除 查询与验证<br>D 预先检查系统版本, 可避免文 件被错误安装</p>
+<p>创建C/C++程序性能分析任务时, 以下关于分析类型, 描述正确的是?      (A B C)<br>A Profile System,即采集整个服务器系统, 无需关注系统中有哪些类型的应用在运行, 采集时长需要配置参数控制, 适用于多业务混合运行和有子进程的场景<br>B Attach to Process,即该采集对象针对正在运行的应用程序, 通过关联到运行该应用程序的PID的方式, 来实时跟踪和采集该应用程序的性能数据,采集时长需要配置参数控制, 适用于某些应用需要长时间持续运行和采集的场景<br>C Launch Application,即采集启动的时候, 同时启动Application,采集时长受Appl ication的执行时间来控制, 适用于Application运行时间较短的场景<br>D C/C++程序仅支持Launch Application和Attach to Process两种分析类型</p>
+<p>以下哪些属于Dockerfile的指令？      (A B C D)<br>A FROM B CMD C EXPOSE D RUN</p>
+<p>关于使用源码方式安装加速引擎软件, 以下说法正确的有哪些?      (A B C D)<br>A 编译安装zlib加速库<br>B 在下载好的源码目录下, 使用make命令编译加速器<br>C 编译安装加速器OpenSSL引擎<br>D 编译安装Warpdrive驱动开发库<br>E 安装openssl 111a或以上版本<br>F 安装内核开发包kernel-devel</p>
+<p>同一段C/C++代码, 在鲲鹏处理器与x86架构处理器上编译的可执行程序有哪些不同?      (A B)<br>A 指令 B 指令使用的寄存器 C 功能 D 文件结构</p>
+<p>以下关于X6000 V5描述正确的是?      (A C D)<br>A 机框支持2个3000w电源<br>B 每个服务器节点支持3个半高半长标准PCIe插槽<br>C 支持4个半宽双路服务器节点<br>D 每个服务器节点支持16个DDR4 DIM插槽</p>
+<p>以下哪些场景属于数据密集紧耦合场景?      (C D)<br>A 基因测序<br>B 流体动力学<br>C 天气预测<br>D 环境预测</p>
+<p>在PostgreSQL迁移流程中, 包含以下哪些步骤?      (A D)<br>A 迁移分析 B 性能测试 C 环境准备 D 源码修改</p>
+<p>通过以下哪些方式可以获取华为鲲鹏系列服务?      (B C)<br>A 购买华为云鲲鹏弹性云服务器<br>B 购买基于x86架构的弹性云服务器<br>C 购买RH服务器<br>D 购买Tai shan服务器</p>
+<p>私有镜像包含以下哪些功能?      (A B C D)<br>A 镜像加密 B 镜像共享 C 镜像导出 D 镜像复制</p>
+<p>在华为公有云中, 私有镜像包括?      (B C)<br>A 市场镜像 B 系统镜像 C 数据镜像 D 共享镜像</p>
+<p>docker run -p 6379:6379 v $PWD/data:/data -d t_arm64v8/centos_ redis:505 redis server –appendonly yes关于此命令的描述, 以下哪些是正确的?      (B C D)<br>A “6379:6379” :将主机的6379端口映射到容器的6379端口<br>B “appendonly yes”, 打开持久化配置<br>C 该命令功能是启动容器, 并在容器启动时候执行容器内的redis-server服务<br>D “$PWD/data: /data” :将主机中当前目录下的data挂载到容器的/data</p>
+<p>使用华为鲲鹏代码迁移工具对源码进行扫描分析时, 需要进行哪些方面的检查和分析?      (A B C D)<br>A 检查x86平台与鲲鹏平台相异的编译器宏 编译选项 buildin函数 attribute函数等列表<br>B 对比输入的(S0文件名)列表和S0依赖库白名单<br>C 扫描分析用户软件目标二进制文件依赖的源文件集合<br>D 检查Make file中的编译链接</p>
+<p>C/C++语言开发的源码在编译时, 以下哪些模块是不需要的？      (B C)<br>A 汇编器 B 存储器 C 加载器 D 编译器</p>
+<p>以下哪些是Tai Shan大数据方案使用的主要服务器型号?      (A B)<br>A 2280均衡型 B 5280存储型 C XA320计算节点 D X6000高密型</p>
+<p>以下关于华为鲲鹏920的特点描述正确的有哪些?      (C D)<br>A 性能可匹配Intel Skylake(V5) 高端处理器型号<br>B CPU最多支持2个100GE网口, 支持RoCE特性<br>C 相比同等性能的Intel处理器, 功耗更低<br>D 支持8内存通道, 带宽高于Intel Skyl ake (V5)的6通道</p>
+<p>BenchmarkSQL配置文件中loadWorkers指的是什么 ( )<br>A、并发用户数<br>B、数据库装载并发数<br>C、数据库并行数<br>D、数据库表的数量<br>答案：B<br>TPCC衡量标准是什么？<br>A、QphH<br>B、响应时间<br>C、tpmC<br>D、TPS<br>答案：C<br>Porting Advisor工具在移植源码过程中的作用是？<br>A、分析源码, 并给出移植工作量<br>B、分析源码, 并给出分析报告和源码修改建议<br>C、分析源码, 并修改源码<br>D、分析源码, 并给出性能优化建议<br>答案：B<br>华为鲲鹏BMS云服务器最高可提供多少核？<br>A、32<br>B、48<br>C、62<br>D、128<br>答案：D<br>IMS私有镜像类型不包括以下哪项？<br>A、系统盘镜像<br>B、整体镜像<br>C、数据盘镜像<br>D、整机镜像<br>答案：B<br>可以根据设定的寻路协议实时自动优化网络结构, 以保持客户使用的网络持续稳定、高效.这句话是关于以下哪项的描述？<br>A、静态BGP<br>B、全动态BGP<br>C、独享宽带<br>D、共享宽带<br>答案：B<br>以下哪条命令可以查看docker镜像？<br>A、docker images<br>B、docker list<br>C、docker container ls<br>D、docker -a<br>答案：A<br>以下哪个工具可以用于鲲鹏平台上进行代码迁移？<br>A、Tuning kit<br>B、Dependency Advisor<br>C、Porting Advisor<br>D、GCC<br>答案：C<br>Suse操作系统是从哪个版本开始处于Kunpeng 920的OS生态圈？<br>A、SLES 12.3<br>B、SLES 12.4<br>C、SLES 15<br>D、SLES 15.1<br>答案：D<br>以下哪项不是TaiShan服务器的优点？<br>A、国产化, 自主安全可控<br>B、多物理核心, 并发性能高<br>C、低功耗, 绿色节能<br>D、生态完备, 上层应用支持好<br>答案：D<br>以下哪个不是华为云鲲鹏生态帮助伙伴/开发者商业变现的方式?<br>A、华为鲲鹏严选馆:鲲鹏应用, 优先推荐, 快速商业变现<br>B、华为提供鲲鹏人才培养:专业培训, 完善的鲲鹏工程师认证体系<br>C、华为提供鲲鹏原厂认证:专业团队, 专业工具, 1对1技术支持<br>D、华为鲲鹏云专业服务:客户业务系统一站式搬迁服务<br>答案：D<br>金融行业的鲲鹏硬替代应用不包括以下哪项?<br>A、经营分析<br>B、核心应用<br>C、办公支撑<br>D、互联网银行<br>答案：B<br>以下哪种工具可用于制作RPM包?<br>A、rpm-cmake<br>B、rpm make<br>C、rpm-test<br>D、rpm-build<br>答案：D<br>对PostgreSQL的编译参数进行调优时需要在CFLAGS字段中添加哪些选项<br>A、-march= and<br>B、-march=armv8- a+crc+lse<br>C、-march=armv8-a<br>D、march =X86<br>答案：B<br>以下哪个是BenchmarkSQL连接PostgreSQL的配置文件?<br>A、props.mysq1<br>B、props.pg<br>C、props.ora<br>D、props.percona<br>答案：B<br>以下哪种语言的源码文件不能用Porting Advisor迁移工具进行迁移分析?<br>A、C++<br>B、C<br>C、Java<br>D、汇编<br>答案：C<br>在华为云上, 通过以下哪种方式或工具可以访问外网?<br>A、弹性公网IP<br>B、云硬盘<br>C、VPC<br>D、镜像<br>答案：A<br>在仅有x86服务器或者云服务器下, 如何编译出ARM环境下执行的程序?<br>A、安装交叉编译环境, 通过交叉编译环境执行编译<br>B、直接编译<br>C、使用x86下新版本gcc编译<br>D、修改权限编译<br>答案：A<br>关于加密镜像的描述, 以下哪项是正确的?<br>A、使用加密的弹性云服务器创建的镜像为加密镜像<br>B、使用加密镜像创建的弹性云服务器不一定被加密<br>C、使用加密的弹性云服务器创建的镜像密钥与加密云服务器的密钥不同<br>D、使用加密的弹性云服务器创建的镜像为非加密镜像<br>答案：A<br>以下关于镜像的描述, 不正确的是?<br>A、用户可以快速复制私有镜像, 不受region限制<br>B、查询镜像时, 支持通过标签过滤查询镜像<br>C、通过导入外部镜像文件创建镜像时, 不支持qcow2格式<br>D、支持key-value类型的镜像标签<br>答案：C<br>多选题<br>以下哪些属于华为云鲲鹏伙伴计划？<br>A、鲲鹏凌云伙伴计划<br>B、鲲鹏智数伙伴计划<br>C、鲲鹏展翅伙伴计划<br>D、鲲鹏翱翔伙伴计划<br>答案：ABC<br>以下哪些属于鲲鹏通用解决方案？<br>A、HCSO解决方案<br>B、大数据解决方案<br>C、HPC解决方案<br>D、分布式存储<br>答案：ABCD<br>华为鲲鹏性能优化工具能够提供 ( ) 方面的性能分析结果<br>A、分析Top热点函数<br>B、分析函数火焰图<br>C、分析热点函数代码映射<br>D、分析不同函数对应top-down模型的各指标值<br>答案：ABCD<br>华为鲲鹏性能优化工具支持从哪些维度分析应用的性能瓶颈？<br>A、C/C++<br>B、Java Mixed-Mode<br>C、Locks and Waits<br>D、LLC&amp;DDR<br>答案：AB<br>下列哪些选项可能会影响WRF性能<br>A、网络带宽<br>B、并行线程数<br>C、内存刷新频率<br>D、存储读写速度<br>答案：ABCD<br>HiBench支持的框架有哪些？<br>A、flinkbench<br>B、hadoopbench<br>C、stormbench<br>D、sparkbench<br>答案：ABCD<br>弱内存序问题主要与如下那些因素相关？<br>A、多线程<br>B、多进程<br>C、不同CPU之间Cache同步<br>D、一级、二级、三级Cache间数据同步<br>E、不同core之间Cache同步<br>答案：ACE<br>在向鲲鹏处理器迁移软件时, 以下哪些是可能导致编译错误或告警的原因？<br>A、编译选项<br>B、数据类型不同<br>C、汇编指令<br>D、弱内存序问题<br>答案：ABC<br>关于Docker的镜像仓库, 说法正确的是？<br>A、实现Docker镜像的全局存储<br>B、提供API接口<br>C、提供Docker镜像的下载/推送/查询<br>D、可用于租户管理<br>答案：ABCD<br>关于执行命令”docker ps -a”后, 显示的标题含义描述, 正确的是？<br>A、CONTAINER ID:容器的唯一表示ID<br>B、IMAGE:创建容器时使用的镜像<br>C、COMMAND:容器最后运行的命令<br>D、CREATED:创建容器的时间<br>答案：ABCD<br>华为鲲鹏代码迁移工具能够提供 ( ) 方面的移植评估结果<br>A、扫描源码中有多少个安装包<br>B、扫描源码中有多少可以移植的依赖库SO文件<br>C、扫描源码中有多少行可以移植的C/C++代码、汇编代码<br>D、预估移植所需的工作量<br>答案：BC<br>华为鲲鹏代码迁移工具适用于以下哪些类型的应用程序？<br>A、C/C++<br>B、Java<br>C、汇编<br>D、Python<br>答案：AC<br>为什么x86架构处理器上的软件在鲲鹏处理器使用时需要移植？<br>A、两种处理器的指令集不同<br>B、源代码需要按照目标处理的指令集编译成指令才能运行<br>C、编译型语言由编译器静态编译成指令和数据<br>D、解释型语言由语言的虚拟机在运行时将源码/字节码编译成指令和数据<br>答案：ABCD<br>TaiShan 200机架服务器包含哪些型号？<br>A、2280<br>B、5280<br>C、2480<br>D、X6000<br>答案：ABC<br>华为鲲鹏920处理器内置了那些加速器？<br>A、.SSL加速引擎<br>B、加解密加速引擎<br>C、压缩解压缩加速引擎<br>D、语音识别加速引擎<br>答案：ABC<br>以下哪些关于华为鲲鹏920处理器的描述是正确的 () ？<br>A、最多支持64核<br>B、采用了7nm的制造工艺<br>C、支持PCIe 4.0接口, 并兼容PCIe 3.0/2.0/1.0<br>D、支持多种加速器<br>答案：ABCD<br>围绕鲲鹏计算产业, 华为提供 ( ) 支持<br>A、云服务<br>B、工具链<br>C、社区服务<br>D、专业服务<br>答案：ABCD<br>华为鲲鹏计算产业相关产品有哪些？<br>A、华为鲲鹏处理器<br>B、TaiShan服务器<br>C、华为云鲲鹏云服务<br>D、X86服务器<br>答案：ABC<br>以下哪些是鲲鹏社区可以提供的服务？<br>A、获得海量软件的迁移指导<br>B、了解鲲鹏解决方案<br>C、获取最新的鲲鹏咨询<br>D、直接获得社区扶持<br>答案：ABC<br>镜像有哪些类别？<br>A、公共镜像<br>B、自由镜像<br>C、私有镜像<br>D、共享镜像<br>答案：ACD<br>以下哪些子文件包含在rpmbuild文件夹的目录结构中？<br>A、SOURCE<br>B、BUILD<br>C、SPEC<br>D、SRPMS<br>答案：BD<br>以下哪些命令可以安装C语言开发环境？<br>A、apt-get groupinstall build-essential<br>B、apt-get install build-essential<br>C、yum install Development Tools<br>D、yum groupinstall Development Tools<br>答案：BD<br>关于 Dockerfile 的描述, 以下哪些是正确的？<br>A、Dockerfile一般包含四部分内容：基础镜像信息、维护者信息、镜像操作指令和容器启动时执行指令<br>B、Dockerfile中, 第一条指令必须为 FROM指令<br>C、EXPOSE在Dockerfile中是必选的<br>D、完成Dockerfile编写后, 可以通过docker build命令来创建镜像<br>答案：ABD<br>华为鲲鹏云服务包括以下哪些？<br>A、华为鲲鹏裸金属服务器<br>B、鲲鹏弹性云服务器<br>C、鲲鹏容器<br>D、鲲鹏云手机<br>答案：ABCD<br>以下哪些属于华为鲲鹏920芯片的特点？<br>A、集成最多64个自研核<br>B、支持8通道DDR4控制器<br>C、支持CCIX接口<br>D、只支持GE/10GE网络<br>答案：ABC<br>以下哪些属于鲲鹏软件栈发布的五大软件领域？<br>A、操作系统<br>B、游戏软件<br>C、基础软件<br>D、应用软件<br>答案：ACD<br>在BenchmarkSQL连接PostgreSQL前, 在PostgreSQL侧需要修改哪些文件<br>A、pg_ident.conf<br>B、PosgreSQL.conf<br>C、pg_hba.conf<br>D、PostgreSQL.auto.conf<br>答案：BC<br>BenchmarkSQL可以对哪些数据库进行测试?<br>A、Post gresSQL<br>B、Oracle<br>C、SQL Server<br>D、MySQL<br>答案：ABCD<br>判断题<br>鲲鹏计算平台已经兼容的操作系统可通过<a href="http://support.huawei.com/onlinetoolweb/ftca/index?serise=9%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2">http://support.huawei.com/onlinetoolweb/ftca/index?serise=9链接查询</a> √<br>华为云鲲鹏社区目前是否提供软件下载功能？ √<br>可以执行rpmbuild -ba redis.spec生成二进制文件 ×<br>使用华为鲲鹏性能优化工具对C/C++应用程序进行性能分析时, 能够查看到函数源代码、汇编代码, 以及函数汇编代码basic block的控制流图 √<br>CPU性能和网络带宽都会影响HPC性能 √<br>纯Java语言开发的代码, 无依赖的SO库文件不需要编译, 可以直接在JVM (Java虚拟机) 中运行 √<br>鲲鹏处理器和x86处理器的add指令是一样的 ×<br>Tune是一种通过非侵入式系统画像的负载感知方法, 识别业务并匹配最佳资源模型, 实时响应业务特征变化的AI自动调优系统 √<br>Android手机应用在鲲鹏云服务上运行仍需要指令翻译器 ×<br>在BenchmarkSQL的测试结果中, Running Average tpmTOTAL 值和Current tpmTOTAL值越高, 表示性能越差. ×<br>Porting Advisor工具界面中的GCC版本需要与后台操作系统中的GCC版本保持一致 ×<br>rpm包中包含所有源代码文件 ×<br>私有镜像不能通过外部镜像文件创建 ×</p>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
       <categories>
         <category>鲲鹏云</category>
       </categories>
