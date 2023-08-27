@@ -376,6 +376,23 @@
       </categories>
   </entry>
   <entry>
+    <title>CSS 伪类选择器</title>
+    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
+    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
+<br>
+
+
+
+
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>CSS 三种基本选择器</title>
     <url>/CSS-selector.html</url>
     <content><![CDATA[<p><strong>CSS个人整理</strong></p>
@@ -393,23 +410,6 @@
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><strong>标签选择器: 选择一类标签 标签名{}</strong></p>
 <p><strong>类/class选择器: 选择所有的class属性一致的标签, 跨标签 .类名{}</strong></p>
 <p><strong>id选择器: 全局唯一 id名{}</strong></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>CSS 伪类选择器</title>
-    <url>/CSS%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
-    <content><![CDATA[<p><strong>CSS个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h1><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs CSS">&lt;style&gt;<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first</span>-child&#123;   //first-child意思是选中第一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: blue;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;   //选中p1: 定位到父元素, 选择当前的第一个元素也就是选择当前p元素的父级元素, 选中父级元素的第一个, 并且是当前元素才生效<br>      <span class="hljs-attribute">color</span>: yellow;   //黄色字体<br>  &#125;<br>  <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span>&#123;   //last-child意思是选中最后一个<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>  <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:nth-of-type</span>(<span class="hljs-number">2</span>)&#123;   //nth-of-type意思是选中父类下元素的第二个类型<br>      <span class="hljs-attribute">color</span>: red;   //红色字体<br>  &#125;<br>&lt;/style&gt;<br>&lt;<span class="hljs-selector-tag">body</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p1&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p2&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">p</span>&gt;p3&lt;/<span class="hljs-selector-tag">p</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇骑士&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇打手&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">li</span>&gt;史迪奇国王&lt;/<span class="hljs-selector-tag">li</span>&gt;<br>&lt;<span class="hljs-selector-tag">ul</span>&gt;<br>&lt;/<span class="hljs-selector-tag">body</span>&gt;<br></code></pre></td></tr></table></figure>
-<br>
-
-
-
-
 ]]></content>
       <categories>
         <category>CSS</category>
@@ -2463,6 +2463,85 @@ graph TB
       </categories>
   </entry>
   <entry>
+    <title>C语 符号</title>
+    <url>/C-Symbols.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><ul>
+<li><p>只能由英文字母, 数字和下划线构成, 长度 1 ~ 32</p>
+</li>
+<li><p>必须以字母或者下划线开头</p>
+</li>
+<li><p>严格区分<font color="    #FA8072">大</font> <font color="#7bafea">小</font>写</p>
+</li>
+<li><p>不能以 <font color="    #FA8072">关键字</font> 作为标识符</p>
+</li>
+<li><p>由于系统内部使用了一些以下划线开头的标识符, 为了防止冲突建议用户尽量避免使用下划线开头的标识符</p>
+</li>
+<li><p>标识符应该做到 见名知意 用英文或者缩写或者拼音</p>
+</li>
+</ul>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h4>C语言系统定义了32个专用名字</h4>
+
+<div class="mermaid">
+graph LR
+A[" 控制语句关键字 (12个) "]-->B[" break "]
+A[" 控制语句关键字 (12个) "]-->C[" case "]
+A[" 控制语句关键字 (12个) "]-->D[" continue "]
+A[" 控制语句关键字 (12个) "]-->E[" defaulf "]
+A[" 控制语句关键字 (12个) "]-->F[" do "]
+A[" 控制语句关键字 (12个) "]-->G[" break "]
+A[" 控制语句关键字 (12个) "]-->H[" else "]
+A[" 控制语句关键字 (12个) "]-->I[" for "]
+A[" 控制语句关键字 (12个) "]-->J[" goto "]
+A[" 控制语句关键字 (12个) "]-->K[" if "]
+A[" 控制语句关键字 (12个) "]-->L[" return "]
+A[" 控制语句关键字 (12个) "]-->M[" switch "]
+A[" 控制语句关键字 (12个) "]-->N[" while "]
+</div>
+
+<div class="mermaid">
+graph LR
+A[" 数据类型关键字 (12个) "]-->B[" char "]
+A[" 数据类型关键字 (12个) "]-->C[" enum "]
+A[" 数据类型关键字 (12个) "]-->D[" double "]
+A[" 数据类型关键字 (12个) "]-->E[" long "]
+A[" 数据类型关键字 (12个) "]-->F[" float "]
+A[" 数据类型关键字 (12个) "]-->G[" int "]
+A[" 数据类型关键字 (12个) "]-->H[" shoat "]
+A[" 数据类型关键字 (12个) "]-->I[" int "]
+A[" 数据类型关键字 (12个) "]-->J[" short "]
+A[" 数据类型关键字 (12个) "]-->K[" signed "]
+A[" 数据类型关键字 (12个) "]-->L[" stuct "]
+A[" 数据类型关键字 (12个) "]-->M[" unsigned "]
+A[" 数据类型关键字 (12个) "]-->N[" union "]
+A[" 数据类型关键字 (12个) "]-->O[" void "]
+</div>
+
+
+<div class="mermaid">
+graph LR
+A[" 储存类型关键字 (4个) "]-->B[" auto "]
+A[" 储存类型关键字 (4个) "]-->C[" exetern "]
+A[" 储存类型关键字 (4个) "]-->D[" register "]
+A[" 储存类型关键字 (4个) "]-->E[" static "]
+</div>
+
+<div class="mermaid">
+graph LR
+A[" 其它关键字 (4个) "]-->B[" const "]
+A[" 其它关键字 (4个) "]-->C[" sizeof "]
+A[" 其它关键字 (4个) "]-->D[" typedef "]
+A[" 其它关键字 (4个) "]-->E[" volatle "]
+</div>
+
+<br>]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
     <title>C语 概述(程序结构)</title>
     <url>/C-main().html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -2545,85 +2624,6 @@ graph TB
       </categories>
   </entry>
   <entry>
-    <title>C语 符号</title>
-    <url>/C-Symbols.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><ul>
-<li><p>只能由英文字母, 数字和下划线构成, 长度 1 ~ 32</p>
-</li>
-<li><p>必须以字母或者下划线开头</p>
-</li>
-<li><p>严格区分<font color="    #FA8072">大</font> <font color="#7bafea">小</font>写</p>
-</li>
-<li><p>不能以 <font color="    #FA8072">关键字</font> 作为标识符</p>
-</li>
-<li><p>由于系统内部使用了一些以下划线开头的标识符, 为了防止冲突建议用户尽量避免使用下划线开头的标识符</p>
-</li>
-<li><p>标识符应该做到 见名知意 用英文或者缩写或者拼音</p>
-</li>
-</ul>
-<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><h4>C语言系统定义了32个专用名字</h4>
-
-<div class="mermaid">
-graph LR
-A[" 控制语句关键字 (12个) "]-->B[" break "]
-A[" 控制语句关键字 (12个) "]-->C[" case "]
-A[" 控制语句关键字 (12个) "]-->D[" continue "]
-A[" 控制语句关键字 (12个) "]-->E[" defaulf "]
-A[" 控制语句关键字 (12个) "]-->F[" do "]
-A[" 控制语句关键字 (12个) "]-->G[" break "]
-A[" 控制语句关键字 (12个) "]-->H[" else "]
-A[" 控制语句关键字 (12个) "]-->I[" for "]
-A[" 控制语句关键字 (12个) "]-->J[" goto "]
-A[" 控制语句关键字 (12个) "]-->K[" if "]
-A[" 控制语句关键字 (12个) "]-->L[" return "]
-A[" 控制语句关键字 (12个) "]-->M[" switch "]
-A[" 控制语句关键字 (12个) "]-->N[" while "]
-</div>
-
-<div class="mermaid">
-graph LR
-A[" 数据类型关键字 (12个) "]-->B[" char "]
-A[" 数据类型关键字 (12个) "]-->C[" enum "]
-A[" 数据类型关键字 (12个) "]-->D[" double "]
-A[" 数据类型关键字 (12个) "]-->E[" long "]
-A[" 数据类型关键字 (12个) "]-->F[" float "]
-A[" 数据类型关键字 (12个) "]-->G[" int "]
-A[" 数据类型关键字 (12个) "]-->H[" shoat "]
-A[" 数据类型关键字 (12个) "]-->I[" int "]
-A[" 数据类型关键字 (12个) "]-->J[" short "]
-A[" 数据类型关键字 (12个) "]-->K[" signed "]
-A[" 数据类型关键字 (12个) "]-->L[" stuct "]
-A[" 数据类型关键字 (12个) "]-->M[" unsigned "]
-A[" 数据类型关键字 (12个) "]-->N[" union "]
-A[" 数据类型关键字 (12个) "]-->O[" void "]
-</div>
-
-
-<div class="mermaid">
-graph LR
-A[" 储存类型关键字 (4个) "]-->B[" auto "]
-A[" 储存类型关键字 (4个) "]-->C[" exetern "]
-A[" 储存类型关键字 (4个) "]-->D[" register "]
-A[" 储存类型关键字 (4个) "]-->E[" static "]
-</div>
-
-<div class="mermaid">
-graph LR
-A[" 其它关键字 (4个) "]-->B[" const "]
-A[" 其它关键字 (4个) "]-->C[" sizeof "]
-A[" 其它关键字 (4个) "]-->D[" typedef "]
-A[" 其它关键字 (4个) "]-->E[" volatle "]
-</div>
-
-<br>]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
     <title>C语 结构体 共用体 检举类型</title>
     <url>/C-struct-union-enum.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -2695,6 +2695,202 @@ A[" 其它关键字 (4个) "]-->E[" volatle "]
 <figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-class"><span class="hljs-keyword">enum</span> 标识名</span><br>&#123;<br>    枚举项<span class="hljs-number">0</span>, 枚举项<span class="hljs-number">1</span>, 枚举项<span class="hljs-number">2</span>; <br>&#125;;<br></code></pre></td></tr></table></figure>
 <p><strong>注意: 枚举项没赋值的情况下是从 0 开始, 赋值之后是从 赋值的那个值往后 依次加 1</strong></p>
 <br></h1></h1>]]></content>
+      <categories>
+        <category>C语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C语 选择结构程序设计</title>
+    <url>/C-if.html</url>
+    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
+<a id="more"></a>
+<h5>C语言提供了两种类型的选择结构</h5>
+
+<ul>
+<li>条件选择结构: 根据给定的条件表达式进行判断, 决定执行某个分支中的程序段</li>
+</ul>
+<ul>
+<li>开关选择结构: 根据给定的整型表达式的值进行判断, 然后决定执行多个分支中的某个分支</li>
+</ul>
+<h1 id="程序流程图"><a href="#程序流程图" class="headerlink" title="程序流程图"></a>程序流程图</h1><div class="mermaid">
+    graph LR
+    A([" 起始框 "])
+
+<pre><code>E[/&quot; 输入/输出框&quot; /]
+
+B&#123;&quot; 判断框 &quot;&#125;
+
+D[&quot; 处理框 &quot;]--&gt;流程线C((&quot; 连接点 &quot;))</code></pre>
+</div>
+
+
+<h1 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h1><h2 id="if的三种格式"><a href="#if的三种格式" class="headerlink" title="if的三种格式"></a>if的三种格式</h2><h3 id="单分支选择结构"><a href="#单分支选择结构" class="headerlink" title="单分支选择结构"></a>单分支选择结构</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句; &#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>单分支选择结构图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TB
+    A([" 开始 "])-->B{" 表达式 "}
+    B{" 表达式 "}--非0 / 真-->D[" 语句 "]
+    D[" 语句 "]-->E[" 结果 "]
+    B{" 表达式 "}--0 / 假-->E[" 结果 "]
+</div>
+
+<h3 id="双分支选择结构"><a href="#双分支选择结构" class="headerlink" title="双分支选择结构"></a>双分支选择结构</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span><br>&#123; 语句<span class="hljs-number">2</span>; &#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>双分支选择结构图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TB
+    A([" 开始 "])-->B{" 表达式 "}
+    B{" 表达式 "}--真-->D[" A "]
+    B{" 表达式 "}--假-->F[" B "]
+    D[" A "]-->E[" 结果 "]
+    F[" B "]-->E[" 结果 "]
+</div>
+
+<h3 id="多分支选择结构"><a href="#多分支选择结构" class="headerlink" title="多分支选择结构"></a>多分支选择结构</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> ) &#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) &#123; 语句<span class="hljs-number">2</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">3</span> ) &#123; 语句<span class="hljs-number">3</span>; &#125;<br>...<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式n ) &#123; 语句n; &#125;<br><span class="hljs-keyword">else</span> &#123; 语句 n+<span class="hljs-number">1</span>; &#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>多分支选择结构图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TD
+    A([" 开始 "])-->B{" 表达式1 "}
+    B{" 表达式1 "}--非0/真-->D[" 语句1 "]
+    B{" 表达式1 "}--0/假-->C{" 表达式2 "}
+
+<pre><code>C&#123;&quot; 表达式2 &quot;&#125;--0/假--&gt;F&#123;&quot; 表达式3 &quot;&#125;
+C&#123;&quot; 表达式2 &quot;&#125;--非0/真--&gt;G[&quot; 语句2 &quot;]
+
+F&#123;&quot; 表达式3 &quot;&#125;--0/假--&gt;H&#123;&quot; 表达式4 &quot;&#125;
+F&#123;&quot; 表达式3 &quot;&#125;--非0/真--&gt;I[&quot; 语句3 &quot;]
+
+H&#123;&quot; 表达式4 &quot;&#125;--0/假--&gt;J[&quot; 语句5 &quot;]
+H&#123;&quot; 表达式4 &quot;&#125;--非0/真--&gt;K[&quot; 语句4 &quot;]
+
+D[&quot; 语句1 &quot;]--&gt;L[&quot; 结果 &quot;]
+G[&quot; 语句2 &quot;]--&gt;L[&quot; 结果 &quot;]
+I[&quot; 语句3 &quot;]--&gt;L[&quot; 结果 &quot;]
+J[&quot; 语句4 &quot;]--&gt;L[&quot; 结果 &quot;]
+K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
+</div>
+
+<h3 id="if-语句的嵌套"><a href="#if-语句的嵌套" class="headerlink" title="if 语句的嵌套"></a>if 语句的嵌套</h3><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) 语句<span class="hljs-number">21</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">22</span>;<br><br><span class="hljs-comment">// 其中要注意以下两种if语句结构的差别</span><br><br><span class="hljs-comment">// 第一种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><br><span class="hljs-comment">// 第二种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    &#123; <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>; &#125;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>双分支选择结构图</h4>
+
+<br>
+
+<h2 id="多分支选择语句-switch-语句"><a href="#多分支选择语句-switch-语句" class="headerlink" title="多分支选择语句 ( switch 语句 )"></a>多分支选择语句 ( switch 语句 )</h2><br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式 )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">1</span>: 语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">2</span>: 语句组<span class="hljs-number">2</span>; <span class="hljs-keyword">break</span>;<br>    ...<br>    <span class="hljs-keyword">case</span> 常量表达式n: 语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:          语句组n+<span class="hljs-number">1</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<h4>switch语句执行流程图</h4>
+
+<br>
+
+<div class="mermaid">
+    graph TB
+    A([" 开始 "])-->B{" 表达式 "}
+    B{" 表达式 "}--值1-->F[" 语句1 "]
+    B{" 表达式 "}--值2-->G[" 语句2 "]
+    B{" 表达式 "}--值n-->H[" 语句n "]
+    B{" 表达式 "}--default-->I[" 语句n+1 "]
+    F[" 语句1 "]-->E[" 结果 "]
+    G[" 语句2 "]-->E[" 结果 "]
+    H[" 语句n "]-->E[" 结果 "]
+    I[" 语句n+1 "]-->E[" 结果 "]
+</div>
+
+<ol>
+<li><p>switch 后面小括号里的表达式可以是任何类型的, 其常用的是字符或整型表达式</p>
+</li>
+<li><p>case 后面的常量表达式是由常量组成的表达式, 其中的使用常量表达式的值必须互不相同, 且常量表达式的值必须与 switch 后面表达式的值类型相同</p>
+</li>
+<li><p>语句组是由若干个语句组成的, 但不需要用大括号括起来, 其中的语句可以是任何 C语言 的可执行语句, 当然也可以是另一个 switch 语句 ( 称为嵌套 switch 语句 ) ,即 switch 语句也是可以嵌套使用</p>
+</li>
+<li><p>break 是 C语言的一种语句, 其功能是跳出当前 switch 语句, 在  switch 语句中 当执行某个语句组后, 后面若有 break , 变退出该  switch 语句, 如果省略了 break 语句, 则执行完某个语句组后, 将连续执行其后的语句组, 直至遇到下一个 break 语句, 如果后面没有 break 语句, 则一直执行到 switch 语句的最后一个语句</p>
+</li>
+<li><p>在书写格式上, 所有的 case 应对齐, 每个 case 后的语句缩格并对齐, 以方便看出各个分支的条件依据和应执行的操作</p>
+</li>
+<li><p>注意 case 和常量表达式之间要有空格</p>
+</li>
+<li><p>当  switch 后面表达式的值与某个 case 后面常量表达式的值一直时, 就会执行该 case 后面的语句组, 若所有 case 后面常量表达式的值和 switch 后面表达式的值都不相同时, 便执行 default 后面的语句组</p>
+</li>
+<li><p>default 语句可以省略</p>
+</li>
+<li><p>case 和 default 语句的出现次序是任意的, 可以变换位置, 这并不影响 switch 的功能, 如可以先出现 “ default : … “, 再出现 “ case ‘B’ : … “, 然后是 “ case ‘A’ : … “</p>
+</li>
+<li><p>可将相同操作的 case 语句及对应的常量表达式连续排序, 其对应操作的语句组及 break 只在最后一个 case 语句后出现</p>
+</li>
+</ol>
+<br>
+
+<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式<span class="hljs-number">1</span> )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">2</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">3</span>:      语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br><br>    ...                      ...<br><br>    <span class="hljs-keyword">case</span> 常用表达式 n<span class="hljs-number">-1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 n:      语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:               语句组 n+<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<br>
+
+<!-- 
++ [矩形]
+
+- [[暂不支持]]
+
+- [(圆柱)]
+
+- [{暂不支持}]
+
+- [/平行四边形/]
+
+- [\平行四边形\]
+
+- [/梯形\]
+
+- [\梯形/]
+
++ (圆角矩形)
+
+- ((圆形))
+
+- ([体育场])
+
+- ({暂不支持})
+
++ {菱形}
+
+- 
+
+<ul>
+<li><p>{[暂不支持]}</p>
+</li>
+<li><p>{(暂不支持)}</p>
+</li>
+</ul>
+<ul>
+<li><blockquote>
+<p>不对称矩形] </p>
+</blockquote>
+</li>
+</ul>
+<p>–&gt;</p>
+-->]]></content>
       <categories>
         <category>C语</category>
       </categories>
@@ -3118,202 +3314,6 @@ A[" 其它关键字 (4个) "]-->E[" volatle "]
       </categories>
   </entry>
   <entry>
-    <title>C语 选择结构程序设计</title>
-    <url>/C-if.html</url>
-    <content><![CDATA[<p><strong>C语学习笔记</strong></p>
-<a id="more"></a>
-<h5>C语言提供了两种类型的选择结构</h5>
-
-<ul>
-<li>条件选择结构: 根据给定的条件表达式进行判断, 决定执行某个分支中的程序段</li>
-</ul>
-<ul>
-<li>开关选择结构: 根据给定的整型表达式的值进行判断, 然后决定执行多个分支中的某个分支</li>
-</ul>
-<h1 id="程序流程图"><a href="#程序流程图" class="headerlink" title="程序流程图"></a>程序流程图</h1><div class="mermaid">
-    graph LR
-    A([" 起始框 "])
-
-<pre><code>E[/&quot; 输入/输出框&quot; /]
-
-B&#123;&quot; 判断框 &quot;&#125;
-
-D[&quot; 处理框 &quot;]--&gt;流程线C((&quot; 连接点 &quot;))</code></pre>
-</div>
-
-
-<h1 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h1><h2 id="if的三种格式"><a href="#if的三种格式" class="headerlink" title="if的三种格式"></a>if的三种格式</h2><h3 id="单分支选择结构"><a href="#单分支选择结构" class="headerlink" title="单分支选择结构"></a>单分支选择结构</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句; &#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>单分支选择结构图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TB
-    A([" 开始 "])-->B{" 表达式 "}
-    B{" 表达式 "}--非0 / 真-->D[" 语句 "]
-    D[" 语句 "]-->E[" 结果 "]
-    B{" 表达式 "}--0 / 假-->E[" 结果 "]
-</div>
-
-<h3 id="双分支选择结构"><a href="#双分支选择结构" class="headerlink" title="双分支选择结构"></a>双分支选择结构</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式 )<br>&#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span><br>&#123; 语句<span class="hljs-number">2</span>; &#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>双分支选择结构图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TB
-    A([" 开始 "])-->B{" 表达式 "}
-    B{" 表达式 "}--真-->D[" A "]
-    B{" 表达式 "}--假-->F[" B "]
-    D[" A "]-->E[" 结果 "]
-    F[" B "]-->E[" 结果 "]
-</div>
-
-<h3 id="多分支选择结构"><a href="#多分支选择结构" class="headerlink" title="多分支选择结构"></a>多分支选择结构</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> ) &#123; 语句<span class="hljs-number">1</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) &#123; 语句<span class="hljs-number">2</span>; &#125;<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">3</span> ) &#123; 语句<span class="hljs-number">3</span>; &#125;<br>...<br><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> ( 表达式n ) &#123; 语句n; &#125;<br><span class="hljs-keyword">else</span> &#123; 语句 n+<span class="hljs-number">1</span>; &#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>多分支选择结构图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TD
-    A([" 开始 "])-->B{" 表达式1 "}
-    B{" 表达式1 "}--非0/真-->D[" 语句1 "]
-    B{" 表达式1 "}--0/假-->C{" 表达式2 "}
-
-<pre><code>C&#123;&quot; 表达式2 &quot;&#125;--0/假--&gt;F&#123;&quot; 表达式3 &quot;&#125;
-C&#123;&quot; 表达式2 &quot;&#125;--非0/真--&gt;G[&quot; 语句2 &quot;]
-
-F&#123;&quot; 表达式3 &quot;&#125;--0/假--&gt;H&#123;&quot; 表达式4 &quot;&#125;
-F&#123;&quot; 表达式3 &quot;&#125;--非0/真--&gt;I[&quot; 语句3 &quot;]
-
-H&#123;&quot; 表达式4 &quot;&#125;--0/假--&gt;J[&quot; 语句5 &quot;]
-H&#123;&quot; 表达式4 &quot;&#125;--非0/真--&gt;K[&quot; 语句4 &quot;]
-
-D[&quot; 语句1 &quot;]--&gt;L[&quot; 结果 &quot;]
-G[&quot; 语句2 &quot;]--&gt;L[&quot; 结果 &quot;]
-I[&quot; 语句3 &quot;]--&gt;L[&quot; 结果 &quot;]
-J[&quot; 语句4 &quot;]--&gt;L[&quot; 结果 &quot;]
-K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
-</div>
-
-<h3 id="if-语句的嵌套"><a href="#if-语句的嵌套" class="headerlink" title="if 语句的嵌套"></a>if 语句的嵌套</h3><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><span class="hljs-keyword">else</span><br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">2</span> ) 语句<span class="hljs-number">21</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">22</span>;<br><br><span class="hljs-comment">// 其中要注意以下两种if语句结构的差别</span><br><br><span class="hljs-comment">// 第一种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>; <br><br><span class="hljs-comment">// 第二种</span><br><span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">1</span> )<br>    &#123; <span class="hljs-keyword">if</span> ( 表达式<span class="hljs-number">11</span> ) 语句<span class="hljs-number">11</span>; &#125;<br>    <span class="hljs-keyword">else</span> 语句<span class="hljs-number">12</span>;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>双分支选择结构图</h4>
-
-<br>
-
-<h2 id="多分支选择语句-switch-语句"><a href="#多分支选择语句-switch-语句" class="headerlink" title="多分支选择语句 ( switch 语句 )"></a>多分支选择语句 ( switch 语句 )</h2><br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式 )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">1</span>: 语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">case</span> 常量表达式<span class="hljs-number">2</span>: 语句组<span class="hljs-number">2</span>; <span class="hljs-keyword">break</span>;<br>    ...<br>    <span class="hljs-keyword">case</span> 常量表达式n: 语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:          语句组n+<span class="hljs-number">1</span>; <br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<h4>switch语句执行流程图</h4>
-
-<br>
-
-<div class="mermaid">
-    graph TB
-    A([" 开始 "])-->B{" 表达式 "}
-    B{" 表达式 "}--值1-->F[" 语句1 "]
-    B{" 表达式 "}--值2-->G[" 语句2 "]
-    B{" 表达式 "}--值n-->H[" 语句n "]
-    B{" 表达式 "}--default-->I[" 语句n+1 "]
-    F[" 语句1 "]-->E[" 结果 "]
-    G[" 语句2 "]-->E[" 结果 "]
-    H[" 语句n "]-->E[" 结果 "]
-    I[" 语句n+1 "]-->E[" 结果 "]
-</div>
-
-<ol>
-<li><p>switch 后面小括号里的表达式可以是任何类型的, 其常用的是字符或整型表达式</p>
-</li>
-<li><p>case 后面的常量表达式是由常量组成的表达式, 其中的使用常量表达式的值必须互不相同, 且常量表达式的值必须与 switch 后面表达式的值类型相同</p>
-</li>
-<li><p>语句组是由若干个语句组成的, 但不需要用大括号括起来, 其中的语句可以是任何 C语言 的可执行语句, 当然也可以是另一个 switch 语句 ( 称为嵌套 switch 语句 ) ,即 switch 语句也是可以嵌套使用</p>
-</li>
-<li><p>break 是 C语言的一种语句, 其功能是跳出当前 switch 语句, 在  switch 语句中 当执行某个语句组后, 后面若有 break , 变退出该  switch 语句, 如果省略了 break 语句, 则执行完某个语句组后, 将连续执行其后的语句组, 直至遇到下一个 break 语句, 如果后面没有 break 语句, 则一直执行到 switch 语句的最后一个语句</p>
-</li>
-<li><p>在书写格式上, 所有的 case 应对齐, 每个 case 后的语句缩格并对齐, 以方便看出各个分支的条件依据和应执行的操作</p>
-</li>
-<li><p>注意 case 和常量表达式之间要有空格</p>
-</li>
-<li><p>当  switch 后面表达式的值与某个 case 后面常量表达式的值一直时, 就会执行该 case 后面的语句组, 若所有 case 后面常量表达式的值和 switch 后面表达式的值都不相同时, 便执行 default 后面的语句组</p>
-</li>
-<li><p>default 语句可以省略</p>
-</li>
-<li><p>case 和 default 语句的出现次序是任意的, 可以变换位置, 这并不影响 switch 的功能, 如可以先出现 “ default : … “, 再出现 “ case ‘B’ : … “, 然后是 “ case ‘A’ : … “</p>
-</li>
-<li><p>可将相同操作的 case 语句及对应的常量表达式连续排序, 其对应操作的语句组及 break 只在最后一个 case 语句后出现</p>
-</li>
-</ol>
-<br>
-
-<figure class="highlight c"><table><tr><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">switch</span> ( 表达式<span class="hljs-number">1</span> )<br>&#123;<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">2</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 <span class="hljs-number">3</span>:      语句组<span class="hljs-number">1</span>; <span class="hljs-keyword">break</span>;<br><br>    ...                      ...<br><br>    <span class="hljs-keyword">case</span> 常用表达式 n<span class="hljs-number">-1</span>:<br>    <span class="hljs-keyword">case</span> 常用表达式 n:      语句组n; <span class="hljs-keyword">break</span>;<br>    <span class="hljs-keyword">default</span>:               语句组 n+<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<br>
-
-<!-- 
-+ [矩形]
-
-- [[暂不支持]]
-
-- [(圆柱)]
-
-- [{暂不支持}]
-
-- [/平行四边形/]
-
-- [\平行四边形\]
-
-- [/梯形\]
-
-- [\梯形/]
-
-+ (圆角矩形)
-
-- ((圆形))
-
-- ([体育场])
-
-- ({暂不支持})
-
-+ {菱形}
-
-- 
-
-<ul>
-<li><p>{[暂不支持]}</p>
-</li>
-<li><p>{(暂不支持)}</p>
-</li>
-</ul>
-<ul>
-<li><blockquote>
-<p>不对称矩形] </p>
-</blockquote>
-</li>
-</ul>
-<p>–&gt;</p>
--->]]></content>
-      <categories>
-        <category>C语</category>
-      </categories>
-  </entry>
-  <entry>
     <title>C语 填空题</title>
     <url>/C-x.html</url>
     <content><![CDATA[<p><strong>C语学习笔记</strong></p>
@@ -3396,22 +3396,6 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
       </categories>
   </entry>
   <entry>
-    <title>HTML iframe内联框架</title>
-    <url>/HTML-iframe.html</url>
-    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
-<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<br>]]></content>
-      <categories>
-        <category>HTML</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Git 知识</title>
     <url>/Git.html</url>
     <content><![CDATA[<p><strong>Git学习笔记</strong></p>
@@ -3427,6 +3411,22 @@ K[&quot; 语句5 &quot;]--&gt;L[&quot; 结果 &quot;]</code></pre>
 ]]></content>
       <categories>
         <category>Git</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>HTML iframe内联框架</title>
+    <url>/HTML-iframe.html</url>
+    <content><![CDATA[<p><strong>HTML个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="iframe-内联框架"><a href="#iframe-内联框架" class="headerlink" title="iframe 内联框架"></a>iframe 内联框架</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;path&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;mainFrame&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>其中path是引用页面地址 mainFrame是框架标识名</strong></p>
+<h1 id="Iframe-删除边框"><a href="#Iframe-删除边框" class="headerlink" title="Iframe - 删除边框"></a>Iframe - 删除边框</h1><p><strong>frameborder 属性规定是否显示 iframe 周围的边框 设置属性值为 “0” 就可以移除边框</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;demo_iframe.html&quot;</span> <span class="hljs-attr">frameborder</span>=<span class="hljs-string">&quot;0&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h1 id="使用-iframe-作为链接的目标"><a href="#使用-iframe-作为链接的目标" class="headerlink" title="使用 iframe 作为链接的目标"></a>使用 iframe 作为链接的目标</h1><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;xxx/xxx.html&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://sdq3.gitee.io&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;iframe_a&quot;</span>&gt;</span>我叫史迪奇<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<br>]]></content>
+      <categories>
+        <category>HTML</category>
       </categories>
   </entry>
   <entry>
@@ -5057,6 +5057,48 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>React 组件实例的三大属性</title>
+    <url>/React-state-props-refs.html</url>
+    <content><![CDATA[<p><strong>React笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="props基本使用"><a href="#props基本使用" class="headerlink" title="props基本使用"></a>props基本使用</h1><h2 id="批量传递props-批量传递标签属性"><a href="#批量传递props-批量传递标签属性" class="headerlink" title="批量传递props / 批量传递标签属性"></a>批量传递props / 批量传递标签属性</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		// 创建组件<br>		class Person extends React.Component&#123;<br>			render()&#123;<br>				// console.log(this);<br>				const &#123;name,age,sex&#125; = this.props<br>				return (<br>					<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>						<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>姓名: &#123;name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>						<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>性别: &#123;sex&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>						<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>年龄: &#123;age+1&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>				)<br>			&#125;<br>		&#125;<br>		// 渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jerry&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;19&#125;</span>  <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;男&quot;</span>/&gt;</span>,document.getElementById(&#x27;test1&#x27;))<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tom&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;18&#125;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;女&quot;</span>/&gt;</span>,document.getElementById(&#x27;test2&#x27;))<br><br>		const p = &#123;name:&#x27;兰莉&#x27;,age:18,sex:&#x27;女&#x27;&#125;<br>		// console.log(&#x27;@&#x27;,...p);<br>		// ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#123;p.name&#125;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;p.age&#125;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&#123;p.sex&#125;/</span>&gt;</span>,document.getElementById(&#x27;test3&#x27;))<br><br>		//  展开运算符<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> &#123;<span class="hljs-attr">...p</span>&#125;/&gt;</span> 相当于 &#123;name:&#x27;兰莉&#x27;,age:18,sex:&#x27;女&#x27;&#125;<br>        &#123;...p&#125; 中&#123; &#125;是转义字符, 实际上是..p发挥作用, ..p仅在标签对中可以使用<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> &#123;<span class="hljs-attr">...p</span>&#125;/&gt;</span>,document.getElementById(&#x27;test3&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h3><p><strong>数组加减</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/javascript&quot;</span> &gt;<br>		<span class="hljs-keyword">let</span> arr1 = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>]<br>		<span class="hljs-keyword">let</span> arr2 = [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">10</span>]<br>           <span class="hljs-comment">// 展开一个数组</span><br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(...arr1); <br>           <span class="hljs-comment">// 连接数组</span><br>		<span class="hljs-keyword">let</span> arr3 = [...arr1,...arr2]<br>		<br>		<span class="hljs-comment">//  数组求和    在函数中使用</span><br>		<span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">...numbers</span>)&#123;<br>			<span class="hljs-keyword">return</span> numbers.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">preValue,currentValue</span>)=&gt;</span>&#123;<br>				<span class="hljs-keyword">return</span> preValue + currentValue<br>			&#125;)<br>		&#125;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>));<br>           &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+
+<p><strong>克隆</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> &gt;</span><br>		// 构造字面量对象时使用展开语法<br>		let person = &#123;name:&#x27;tom&#x27;,age:18&#125;<br>           //  展开运算符复制一个对象<br>		let person2 = &#123;...person&#125;<br>		// console.log(...person); <br>           // 报错, 展开运算符不能展开对象<br>		person.name = &#x27;jerry&#x27;<br>		console.log(person2);<br>		console.log(person);<br>       <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><strong>合并</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> &gt;</span><br>		// 合并<br>		let person3 = &#123;...person,name:&#x27;jack&#x27;,address:&quot;地球&quot;&#125;<br>		console.log(person3);<br>		<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;!-- 引入prop-types, 用于对组件标签属性进行限制 --&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/javascript&quot;</span> src=<span class="hljs-string">&quot;../js/prop-types.js&quot;</span>&gt;&lt;/script&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-comment">// console.log(this);</span><br>				<span class="hljs-keyword">const</span> &#123;name,age,sex&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">props</span><br>				<span class="hljs-comment">//props是只读的</span><br>				<span class="hljs-comment">//this.props.name = &#x27;jack&#x27; //此行代码会报错, 因为props是只读的</span><br>				<span class="hljs-keyword">return</span> (<br>					&lt;ul&gt;<br>						&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>						&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>						&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>					&lt;/ul&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//对标签属性进行类型、必要性的限制</span><br>		<span class="hljs-title class_">Person</span>.<span class="hljs-property">propTypes</span> = &#123;<br>            <span class="hljs-comment">//限制name必传, 且为字符串</span><br>			<span class="hljs-attr">name</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>.<span class="hljs-property">isRequired</span>,<br>            <span class="hljs-comment">//限制sex为字符串</span><br>			<span class="hljs-attr">sex</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<br>            <span class="hljs-comment">//限制age为数值</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">number</span>,<br>            <span class="hljs-comment">//限制speak为函数 func = function</span><br>			<span class="hljs-attr">speak</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">func</span>,<br>            <br>		&#125;<br>		<span class="hljs-comment">//指定默认标签属性值</span><br>		<span class="hljs-title class_">Person</span>.<span class="hljs-property">defaultProps</span> = &#123;<br>			<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;男女同体&#x27;</span>,<span class="hljs-comment">//sex默认值为男女同体</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-string">&quot;已经死了&quot;</span> <span class="hljs-comment">//age默认值为已经死了</span><br>		&#125;<br>		<span class="hljs-comment">//渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;哈哈哈&quot;</span> <span class="hljs-attr">speak</span>=<span class="hljs-string">&#123;speak&#125;/</span>&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tom&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;18&#125;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;女&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test2&#x27;</span>))<br><br>		<span class="hljs-keyword">const</span> p = &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;老刘&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">18</span>,<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;女&#x27;</span>&#125;<br>		<span class="hljs-comment">// console.log(&#x27;@&#x27;,...p);</span><br>		<span class="hljs-comment">// ReactDOM.render(&lt;Person name=&#123;p.name&#125; age=&#123;p.age&#125; sex=&#123;p.sex&#125;/&gt;,document.getElementById(&#x27;test3&#x27;))</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> &#123;<span class="hljs-attr">...p</span>&#125;/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test3&#x27;</span>))<br><br>		<span class="hljs-keyword">function</span> <span class="hljs-title function_">speak</span>(<span class="hljs-params"></span>)&#123;<br>			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;我会讲话了&#x27;</span>);<br>		&#125;<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<h3 id="构造器能省略尽量省略"><a href="#构造器能省略尽量省略" class="headerlink" title="构造器能省略尽量省略"></a>构造器能省略尽量省略</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 构造器是否接收props 是否传递给super 取决于是否希望在构造器中通过this访问props</span><br><span class="hljs-title function_">costructor</span>(<span class="hljs-params">props</span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(props)<br>	<span class="hljs-comment">// 构造器必写super 传值作用</span><br>	<span class="hljs-variable language_">super</span>(props)<br>	<span class="hljs-comment">// 接props或者不接props, 可以用this.props来分析区别</span><br>	<span class="hljs-comment">// console.log(&#x27;costructor&#x27;,this.props);</span><br>	<span class="hljs-comment">// 相当于</span><br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;costructor&#x27;</span>,props);<br>&#125;<br><br><span class="hljs-comment">// 也可以</span><br><br>state = &#123;&#125;<br><br><span class="hljs-comment">// 也可以用箭头函数</span><br><br>demo = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-comment">// 函数体</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h1 id="函数式组件使用props"><a href="#函数式组件使用props" class="headerlink" title="函数式组件使用props"></a>函数式组件使用props</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>	functiom <span class="hljs-title class_">Person</span> (props)&#123;<br>		<span class="hljs-keyword">const</span> &#123; name, age, sex &#125; = props<br>		<span class="hljs-keyword">return</span> (<br>			&lt;ul&gt;<br>				&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>				&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>				&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>			&lt;/ul&gt;<br>		)<br>	&#125;<br>	<span class="hljs-comment">// 渲染组件到页面</span><br>	<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;未知&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<h2 id="函数式组件也可以进行限制"><a href="#函数式组件也可以进行限制" class="headerlink" title="函数式组件也可以进行限制"></a>函数式组件也可以进行限制</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>	functiom <span class="hljs-title class_">Person</span> (props)&#123;<br>		<span class="hljs-keyword">const</span> &#123; name, age, sex &#125; = props<br>		<span class="hljs-keyword">return</span> (<br>			&lt;ul&gt;<br>				&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>				&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>				&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>			&lt;/ul&gt;<br>		)<br>	&#125;<br>			<span class="hljs-title class_">Person</span>.<span class="hljs-property">propTypes</span> = &#123;<br>			<span class="hljs-attr">name</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>.<span class="hljs-property">isRequired</span>, <span class="hljs-comment">//限制name必传, 且为字符串</span><br>			<span class="hljs-attr">sex</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<span class="hljs-comment">//限制sex为字符串</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<span class="hljs-comment">//限制age为字符串</span><br>		&#125;<br><br>		<span class="hljs-comment">//指定默认标签属性值</span><br>		<span class="hljs-title class_">Person</span>.<span class="hljs-property">defaultProps</span> = &#123;<br>			<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;未知&#x27;</span>,<span class="hljs-comment">//sex默认值为未知</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-comment">//age默认值为未知</span><br>		&#125;<br>	<span class="hljs-comment">// 渲染组件到页面</span><br>	<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;未知&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><h2 id="字符串写法-不建议用"><a href="#字符串写法-不建议用" class="headerlink" title="字符串写法 不建议用"></a>字符串写法 不建议用</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">// 展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-comment">// 展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input2&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input2.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;input ref=<span class="hljs-string">&quot;input1&quot;</span> type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&lt;input ref=<span class="hljs-string">&quot;input2&quot;</span> onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">// 渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">字符串写法效果</font></p>
+<iframe id="iframe" src="/html/字符串形式的ref.html"></iframe>
+
+<h2 id="回调函数的ref"><a href="#回调函数的ref" class="headerlink" title="回调函数的ref"></a>回调函数的ref</h2><p><strong>解释: 定义但没调用</strong></p>
+<p><strong>特点</strong><br>      <ol style="list-style-type:number"><br>        <li>定义</li><br>        <li>调2用</li><br>        <li>执行</li><br>      </ol></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">// 创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">// 展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-comment">// 展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input2&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input2.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&#123;<span class="hljs-comment">/*  cref=&#123;c =&gt; this.input1 = c &#125;是回调函数 剩下的交给React 仅ref  */</span>&#125; <br>						&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input1</span> = c &#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&lt;input onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input2</span> = c &#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;&amp;nbsp;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">回调函数效果</font></p>
+<iframe id="iframe" src="/html/回调函数形式的ref.html"></iframe>
+
+<h3 id="回调ref函数执行次数"><a href="#回调ref函数执行次数" class="headerlink" title="回调ref函数执行次数"></a>回调ref函数执行次数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br><br>			state = &#123;<span class="hljs-attr">isPai</span>:<span class="hljs-literal">false</span>&#125;<br><br>			showInfo = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br><br>			changeWeather = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-comment">//获取原来的状态</span><br>				<span class="hljs-keyword">const</span> &#123;isPai&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span><br>				<span class="hljs-comment">//更新状态</span><br>				<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setState</span>(&#123;<span class="hljs-attr">isPai</span>:!isPai&#125;)<br>			&#125;<br><br>			saveInput = <span class="hljs-function">(<span class="hljs-params">c</span>)=&gt;</span>&#123;<br>				<span class="hljs-variable language_">this</span>.<span class="hljs-property">input1</span> = c;<br>				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;@&#x27;</span>,c);<br>			&#125;<br><br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">const</span> &#123;isPai&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span><br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;h2&gt;派大星是&#123;isPai ? <span class="hljs-string">&#x27;大聪明&#x27;</span>:<span class="hljs-string">&#x27;骚话王&#x27;</span>&#125;&lt;/h2&gt;<br>						&#123;<span class="hljs-comment">/*&lt;input ref=&#123;(c)=&gt;&#123;this.input1 = c;console.log(&#x27;@&#x27;,c);&#125;&#125; type=&quot;text&quot;/&gt;&lt;br/&gt;&lt;br/&gt;*/</span>&#125;<br>						&lt;input ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">saveInput</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span>/&gt;<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span><br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showInfo</span>&#125;&gt;点我提示输入的数据&lt;/button&gt;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">changeWeather</span>&#125;&gt;点击切换头衔&lt;/button&gt;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">回调ref函数执行次数</font></p>
+<iframe id="iframe" src="/html/回调ref中回调执行次数的问题.html"></iframe>
+
+<h3 id="createRef的使用"><a href="#createRef的使用" class="headerlink" title="createRef的使用"></a>createRef的使用</h3><p><strong>createRef的官方推荐, alert(this.sDq.current.value) 用几个就要保证上方的 sDq = React.createRef() 就是需要创建的几个Ref的容器</strong> </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">// 创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">/* </span><br>				<span class="hljs-title class_">React</span>.<span class="hljs-property">createRef</span>调用后可以返回一个容器, 该容器可以存储被ref所标识的节点,该容器是<span class="hljs-string">&quot;专人专用&quot;</span>的<br>			 */<br>			sDq = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createRef</span>()<br>			sDz = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createRef</span>()<br>			<span class="hljs-comment">//展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-title function_">alert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDq</span>.<span class="hljs-property">current</span>.<span class="hljs-property">value</span>);<br>			&#125;<br>			<span class="hljs-comment">//展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-title function_">alert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDz</span>.<span class="hljs-property">current</span>.<span class="hljs-property">value</span>);<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;input ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDq</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&#123;<span class="hljs-comment">/* 点击焦点 onClick */</span>&#125;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&#123;<span class="hljs-comment">/* 失去焦点onBlur */</span>&#125;<br>						&lt;input onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDz</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;&amp;nbsp;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">// 渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
+<p><font color="#DC143C">回调ref函数执行次数</font></p>
+<iframe id="iframe" src="/html/createRef的使用.html"></iframe>
+
+<br>]]></content>
+      <categories>
+        <category>React</category>
+      </categories>
+  </entry>
+  <entry>
     <title>React 组件生命周期</title>
     <url>/React-Component-Lifecycles.html</url>
     <content><![CDATA[<p><strong>React笔记</strong></p>
@@ -5184,48 +5226,6 @@ this.handleClick = this.handleClick.bind(this);</code></pre>
 <br>
 
 ]]></content>
-      <categories>
-        <category>React</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>React 组件实例的三大属性</title>
-    <url>/React-state-props-refs.html</url>
-    <content><![CDATA[<p><strong>React笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="props基本使用"><a href="#props基本使用" class="headerlink" title="props基本使用"></a>props基本使用</h1><h2 id="批量传递props-批量传递标签属性"><a href="#批量传递props-批量传递标签属性" class="headerlink" title="批量传递props / 批量传递标签属性"></a>批量传递props / 批量传递标签属性</h2><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 准备好一个&quot;容器&quot; --&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;test3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;</span><br>		// 创建组件<br>		class Person extends React.Component&#123;<br>			render()&#123;<br>				// console.log(this);<br>				const &#123;name,age,sex&#125; = this.props<br>				return (<br>					<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span><br>						<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>姓名: &#123;name&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>						<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>性别: &#123;sex&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>						<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>年龄: &#123;age+1&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>					<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>				)<br>			&#125;<br>		&#125;<br>		// 渲染组件到页面<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;jerry&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;19&#125;</span>  <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;男&quot;</span>/&gt;</span>,document.getElementById(&#x27;test1&#x27;))<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tom&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;18&#125;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;女&quot;</span>/&gt;</span>,document.getElementById(&#x27;test2&#x27;))<br><br>		const p = &#123;name:&#x27;兰莉&#x27;,age:18,sex:&#x27;女&#x27;&#125;<br>		// console.log(&#x27;@&#x27;,...p);<br>		// ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&#123;p.name&#125;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;p.age&#125;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&#123;p.sex&#125;/</span>&gt;</span>,document.getElementById(&#x27;test3&#x27;))<br><br>		//  展开运算符<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> &#123;<span class="hljs-attr">...p</span>&#125;/&gt;</span> 相当于 &#123;name:&#x27;兰莉&#x27;,age:18,sex:&#x27;女&#x27;&#125;<br>        &#123;...p&#125; 中&#123; &#125;是转义字符, 实际上是..p发挥作用, ..p仅在标签对中可以使用<br>		ReactDOM.render(<span class="hljs-tag">&lt;<span class="hljs-name">Person</span> &#123;<span class="hljs-attr">...p</span>&#125;/&gt;</span>,document.getElementById(&#x27;test3&#x27;))<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h3 id="展开运算符"><a href="#展开运算符" class="headerlink" title="展开运算符"></a>展开运算符</h3><p><strong>数组加减</strong></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/javascript&quot;</span> &gt;<br>		<span class="hljs-keyword">let</span> arr1 = [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>,<span class="hljs-number">9</span>]<br>		<span class="hljs-keyword">let</span> arr2 = [<span class="hljs-number">2</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>,<span class="hljs-number">8</span>,<span class="hljs-number">10</span>]<br>           <span class="hljs-comment">// 展开一个数组</span><br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(...arr1); <br>           <span class="hljs-comment">// 连接数组</span><br>		<span class="hljs-keyword">let</span> arr3 = [...arr1,...arr2]<br>		<br>		<span class="hljs-comment">//  数组求和    在函数中使用</span><br>		<span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">...numbers</span>)&#123;<br>			<span class="hljs-keyword">return</span> numbers.<span class="hljs-title function_">reduce</span>(<span class="hljs-function">(<span class="hljs-params">preValue,currentValue</span>)=&gt;</span>&#123;<br>				<span class="hljs-keyword">return</span> preValue + currentValue<br>			&#125;)<br>		&#125;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">sum</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>));<br>           &lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-
-<p><strong>克隆</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> &gt;</span><br>		// 构造字面量对象时使用展开语法<br>		let person = &#123;name:&#x27;tom&#x27;,age:18&#125;<br>           //  展开运算符复制一个对象<br>		let person2 = &#123;...person&#125;<br>		// console.log(...person); <br>           // 报错, 展开运算符不能展开对象<br>		person.name = &#x27;jerry&#x27;<br>		console.log(person2);<br>		console.log(person);<br>       <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p><strong>合并</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> &gt;</span><br>		// 合并<br>		let person3 = &#123;...person,name:&#x27;jack&#x27;,address:&quot;地球&quot;&#125;<br>		console.log(person3);<br>		<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<h2 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;!-- 引入prop-types, 用于对组件标签属性进行限制 --&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/javascript&quot;</span> src=<span class="hljs-string">&quot;../js/prop-types.js&quot;</span>&gt;&lt;/script&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Person</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-comment">// console.log(this);</span><br>				<span class="hljs-keyword">const</span> &#123;name,age,sex&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">props</span><br>				<span class="hljs-comment">//props是只读的</span><br>				<span class="hljs-comment">//this.props.name = &#x27;jack&#x27; //此行代码会报错, 因为props是只读的</span><br>				<span class="hljs-keyword">return</span> (<br>					&lt;ul&gt;<br>						&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>						&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>						&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>					&lt;/ul&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//对标签属性进行类型、必要性的限制</span><br>		<span class="hljs-title class_">Person</span>.<span class="hljs-property">propTypes</span> = &#123;<br>            <span class="hljs-comment">//限制name必传, 且为字符串</span><br>			<span class="hljs-attr">name</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>.<span class="hljs-property">isRequired</span>,<br>            <span class="hljs-comment">//限制sex为字符串</span><br>			<span class="hljs-attr">sex</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<br>            <span class="hljs-comment">//限制age为数值</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">number</span>,<br>            <span class="hljs-comment">//限制speak为函数 func = function</span><br>			<span class="hljs-attr">speak</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">func</span>,<br>            <br>		&#125;<br>		<span class="hljs-comment">//指定默认标签属性值</span><br>		<span class="hljs-title class_">Person</span>.<span class="hljs-property">defaultProps</span> = &#123;<br>			<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;男女同体&#x27;</span>,<span class="hljs-comment">//sex默认值为男女同体</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-string">&quot;已经死了&quot;</span> <span class="hljs-comment">//age默认值为已经死了</span><br>		&#125;<br>		<span class="hljs-comment">//渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;哈哈哈&quot;</span> <span class="hljs-attr">speak</span>=<span class="hljs-string">&#123;speak&#125;/</span>&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tom&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&#123;18&#125;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;女&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test2&#x27;</span>))<br><br>		<span class="hljs-keyword">const</span> p = &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&#x27;老刘&#x27;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">18</span>,<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;女&#x27;</span>&#125;<br>		<span class="hljs-comment">// console.log(&#x27;@&#x27;,...p);</span><br>		<span class="hljs-comment">// ReactDOM.render(&lt;Person name=&#123;p.name&#125; age=&#123;p.age&#125; sex=&#123;p.sex&#125;/&gt;,document.getElementById(&#x27;test3&#x27;))</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> &#123;<span class="hljs-attr">...p</span>&#125;/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test3&#x27;</span>))<br><br>		<span class="hljs-keyword">function</span> <span class="hljs-title function_">speak</span>(<span class="hljs-params"></span>)&#123;<br>			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;我会讲话了&#x27;</span>);<br>		&#125;<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<h3 id="构造器能省略尽量省略"><a href="#构造器能省略尽量省略" class="headerlink" title="构造器能省略尽量省略"></a>构造器能省略尽量省略</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-comment">// 构造器是否接收props 是否传递给super 取决于是否希望在构造器中通过this访问props</span><br><span class="hljs-title function_">costructor</span>(<span class="hljs-params">props</span>)&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(props)<br>	<span class="hljs-comment">// 构造器必写super 传值作用</span><br>	<span class="hljs-variable language_">super</span>(props)<br>	<span class="hljs-comment">// 接props或者不接props, 可以用this.props来分析区别</span><br>	<span class="hljs-comment">// console.log(&#x27;costructor&#x27;,this.props);</span><br>	<span class="hljs-comment">// 相当于</span><br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;costructor&#x27;</span>,props);<br>&#125;<br><br><span class="hljs-comment">// 也可以</span><br><br>state = &#123;&#125;<br><br><span class="hljs-comment">// 也可以用箭头函数</span><br><br>demo = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-comment">// 函数体</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<h1 id="函数式组件使用props"><a href="#函数式组件使用props" class="headerlink" title="函数式组件使用props"></a>函数式组件使用props</h1><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>	functiom <span class="hljs-title class_">Person</span> (props)&#123;<br>		<span class="hljs-keyword">const</span> &#123; name, age, sex &#125; = props<br>		<span class="hljs-keyword">return</span> (<br>			&lt;ul&gt;<br>				&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>				&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>				&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>			&lt;/ul&gt;<br>		)<br>	&#125;<br>	<span class="hljs-comment">// 渲染组件到页面</span><br>	<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;未知&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<h2 id="函数式组件也可以进行限制"><a href="#函数式组件也可以进行限制" class="headerlink" title="函数式组件也可以进行限制"></a>函数式组件也可以进行限制</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>	functiom <span class="hljs-title class_">Person</span> (props)&#123;<br>		<span class="hljs-keyword">const</span> &#123; name, age, sex &#125; = props<br>		<span class="hljs-keyword">return</span> (<br>			&lt;ul&gt;<br>				&lt;li&gt;姓名：&#123;name&#125;&lt;/li&gt;<br>				&lt;li&gt;性别：&#123;sex&#125;&lt;/li&gt;<br>				&lt;li&gt;年龄：&#123;age&#125;&lt;/li&gt;<br>			&lt;/ul&gt;<br>		)<br>	&#125;<br>			<span class="hljs-title class_">Person</span>.<span class="hljs-property">propTypes</span> = &#123;<br>			<span class="hljs-attr">name</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>.<span class="hljs-property">isRequired</span>, <span class="hljs-comment">//限制name必传, 且为字符串</span><br>			<span class="hljs-attr">sex</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<span class="hljs-comment">//限制sex为字符串</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-title class_">PropTypes</span>.<span class="hljs-property">string</span>,<span class="hljs-comment">//限制age为字符串</span><br>		&#125;<br><br>		<span class="hljs-comment">//指定默认标签属性值</span><br>		<span class="hljs-title class_">Person</span>.<span class="hljs-property">defaultProps</span> = &#123;<br>			<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;未知&#x27;</span>,<span class="hljs-comment">//sex默认值为未知</span><br>			<span class="hljs-attr">age</span>:<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-comment">//age默认值为未知</span><br>		&#125;<br>	<span class="hljs-comment">// 渲染组件到页面</span><br>	<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Person</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;史迪奇&quot;</span> <span class="hljs-attr">age</span>=<span class="hljs-string">&quot;未知&quot;</span> <span class="hljs-attr">sex</span>=<span class="hljs-string">&quot;未知&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test1&#x27;</span>))<br>&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<h1 id="refs"><a href="#refs" class="headerlink" title="refs"></a>refs</h1><h2 id="字符串写法-不建议用"><a href="#字符串写法-不建议用" class="headerlink" title="字符串写法 不建议用"></a>字符串写法 不建议用</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">// 展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-comment">// 展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input2&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">refs</span><br>				<span class="hljs-title function_">alert</span>(input2.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;input ref=<span class="hljs-string">&quot;input1&quot;</span> type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&lt;input ref=<span class="hljs-string">&quot;input2&quot;</span> onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">// 渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">字符串写法效果</font></p>
-<iframe id="iframe" src="/html/字符串形式的ref.html"></iframe>
-
-<h2 id="回调函数的ref"><a href="#回调函数的ref" class="headerlink" title="回调函数的ref"></a>回调函数的ref</h2><p><strong>解释: 定义但没调用</strong></p>
-<p><strong>特点</strong><br>      <ol style="list-style-type:number"><br>        <li>定义</li><br>        <li>调2用</li><br>        <li>执行</li><br>      </ol></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">// 创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">// 展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-comment">// 展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input2&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input2.<span class="hljs-property">value</span>)<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&#123;<span class="hljs-comment">/*  cref=&#123;c =&gt; this.input1 = c &#125;是回调函数 剩下的交给React 仅ref  */</span>&#125; <br>						&lt;input ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input1</span> = c &#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&lt;input onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; ref=&#123;<span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">input2</span> = c &#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;&amp;nbsp;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">回调函数效果</font></p>
-<iframe id="iframe" src="/html/回调函数形式的ref.html"></iframe>
-
-<h3 id="回调ref函数执行次数"><a href="#回调ref函数执行次数" class="headerlink" title="回调ref函数执行次数"></a>回调ref函数执行次数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>	&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">//创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br><br>			state = &#123;<span class="hljs-attr">isPai</span>:<span class="hljs-literal">false</span>&#125;<br><br>			showInfo = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-keyword">const</span> &#123;input1&#125; = <span class="hljs-variable language_">this</span><br>				<span class="hljs-title function_">alert</span>(input1.<span class="hljs-property">value</span>)<br>			&#125;<br><br>			changeWeather = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-comment">//获取原来的状态</span><br>				<span class="hljs-keyword">const</span> &#123;isPai&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span><br>				<span class="hljs-comment">//更新状态</span><br>				<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setState</span>(&#123;<span class="hljs-attr">isPai</span>:!isPai&#125;)<br>			&#125;<br><br>			saveInput = <span class="hljs-function">(<span class="hljs-params">c</span>)=&gt;</span>&#123;<br>				<span class="hljs-variable language_">this</span>.<span class="hljs-property">input1</span> = c;<br>				<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;@&#x27;</span>,c);<br>			&#125;<br><br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">const</span> &#123;isPai&#125; = <span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span><br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;h2&gt;派大星是&#123;isPai ? <span class="hljs-string">&#x27;大聪明&#x27;</span>:<span class="hljs-string">&#x27;骚话王&#x27;</span>&#125;&lt;/h2&gt;<br>						&#123;<span class="hljs-comment">/*&lt;input ref=&#123;(c)=&gt;&#123;this.input1 = c;console.log(&#x27;@&#x27;,c);&#125;&#125; type=&quot;text&quot;/&gt;&lt;br/&gt;&lt;br/&gt;*/</span>&#125;<br>						&lt;input ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">saveInput</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span>/&gt;<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></span><br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showInfo</span>&#125;&gt;点我提示输入的数据&lt;/button&gt;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">changeWeather</span>&#125;&gt;点击切换头衔&lt;/button&gt;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">//渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">回调ref函数执行次数</font></p>
-<iframe id="iframe" src="/html/回调ref中回调执行次数的问题.html"></iframe>
-
-<h3 id="createRef的使用"><a href="#createRef的使用" class="headerlink" title="createRef的使用"></a>createRef的使用</h3><p><strong>createRef的官方推荐, alert(this.sDq.current.value) 用几个就要保证上方的 sDq = React.createRef() 就是需要创建的几个Ref的容器</strong> </p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs JavaScript">&lt;body&gt;<br>&lt;script type=<span class="hljs-string">&quot;text/babel&quot;</span>&gt;<br>		<span class="hljs-comment">// 创建组件</span><br>		<span class="hljs-keyword">class</span> <span class="hljs-title class_">Demo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">React.Component</span>&#123;<br>			<span class="hljs-comment">/* </span><br>				<span class="hljs-title class_">React</span>.<span class="hljs-property">createRef</span>调用后可以返回一个容器, 该容器可以存储被ref所标识的节点,该容器是<span class="hljs-string">&quot;专人专用&quot;</span>的<br>			 */<br>			sDq = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createRef</span>()<br>			sDz = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">createRef</span>()<br>			<span class="hljs-comment">//展示左侧输入框的数据</span><br>			showData = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-title function_">alert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDq</span>.<span class="hljs-property">current</span>.<span class="hljs-property">value</span>);<br>			&#125;<br>			<span class="hljs-comment">//展示右侧输入框的数据</span><br>			showData2 = <span class="hljs-function">()=&gt;</span>&#123;<br>				<span class="hljs-title function_">alert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDz</span>.<span class="hljs-property">current</span>.<span class="hljs-property">value</span>);<br>			&#125;<br>			<span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;<br>				<span class="hljs-keyword">return</span>(<br>					&lt;div&gt;<br>						&lt;input ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDq</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;点击按钮提示数据&quot;</span>/&gt;&amp;nbsp;<br>						&#123;<span class="hljs-comment">/* 点击焦点 onClick */</span>&#125;<br>						&lt;button onClick=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData</span>&#125;&gt;点我提示左侧的数据&lt;/button&gt;&amp;nbsp;<br>						&#123;<span class="hljs-comment">/* 失去焦点onBlur */</span>&#125;<br>						&lt;input onBlur=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">showData2</span>&#125; ref=&#123;<span class="hljs-variable language_">this</span>.<span class="hljs-property">sDz</span>&#125; type=<span class="hljs-string">&quot;text&quot;</span> placeholder=<span class="hljs-string">&quot;失去焦点提示数据&quot;</span>/&gt;&amp;nbsp;<br>					&lt;/div&gt;<br>				)<br>			&#125;<br>		&#125;<br>		<span class="hljs-comment">// 渲染组件到页面</span><br>		<span class="hljs-title class_">React</span>DOM.<span class="hljs-title function_">render</span>(<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Demo</span> <span class="hljs-attr">a</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">b</span>=<span class="hljs-string">&quot;2&quot;</span>/&gt;</span></span>,<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;test&#x27;</span>))<br>	&lt;/script&gt;<br>&lt;/body&gt;<br></code></pre></td></tr></table></figure>
-<p><font color="#DC143C">回调ref函数执行次数</font></p>
-<iframe id="iframe" src="/html/createRef的使用.html"></iframe>
-
-<br>]]></content>
       <categories>
         <category>React</category>
       </categories>
@@ -6246,324 +6246,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>人工智比赛</title>
-    <url>/AI-trainer-match.html</url>
-    <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
-<a id="more"></a>
-
-<h1 id="人工智能训练师-初赛复习资料"><a href="#人工智能训练师-初赛复习资料" class="headerlink" title="人工智能训练师 初赛复习资料"></a>人工智能训练师 初赛复习资料</h1><p><strong>2021.8.12</strong></p>
-<p><strong>1. JavaScript Object Notation(JavaScript 对象表示法, JSON是一种基于文本的数据交换格式)      (考判断题+多选题)</strong></p>
-<p><strong>2. JSON有两种表示结构, 对象和数组      (考判断题+多选题)</strong></p>
-<p><strong>3. JSON对象结构以”{“开始, 以”}”结束中间部分由0或多个以”,”分隔的”key(关键字)/value(值)”对构成, 关键字和值之间以”:”分隔      (考判断题)</strong></p>
-<p><strong>4. JSON数组结构以”[“开始, “]”结束中间由0或多个以”,”分隔的值列表组成   (考判断题)</strong></p>
-<p><strong>5. Extensible Markup Language(可扩展标记语言, XML), 是一种允许用户对自己的标记进行定义的源语言, 可以用来标记数据, 定义数据类型   (考单选题+判断题+多选题)</strong></p>
-<p><strong>6. XML格式的文件由标签对组成   (考判断题)</strong></p>
-<p><strong>7. XML格式的文件必须有根元素   (考判断题)</strong></p>
-<p><strong>8. XML格式的文件必须有关闭标签   (考判断题)</strong></p>
-<p><strong>9. XML格式的文件标签中区分大小写字母   (考判断题)</strong></p>
-<p><strong>10. XML属性必须加引号   (考判断题)</strong></p>
-<p><strong>11. TXT是微软在操作系统上附带的一种文本格式, 主要存储文本信息(文字信息)   (考判断题)</strong></p>
-<p><strong>12. Executable File(可执行文件, EXE File)可以加载到内存中, 并由操作系统加载程序执行, 是可以在操作系统存储空间中浮动定位的可执行程序   (考判断题)</strong></p>
-<p><strong>13. DOC是电脑文件常见文件扩展名的一种, 该格式原是纯文字文件使用的, 多见于不同的操作系统中软硬件的使用说明至20世纪90年代, 微软在Office Word中使用了.doc作为扩展名, 并成为了流行的格式   (考单选题+判断题)</strong></p>
-<p><strong>14. MOV即QuickTime封装格式(也叫影片格式), 它是Apple公司开发的一种音频, 视频文件封装, 用于存储常用数字媒体类型   (考单选题+判断题)</strong></p>
-<p><strong>15. Audio Video Interleaved(音频视频交错格式, AVI)由微软公司于1992年11月推出, 并作为其Windows视频软件一部分的一种多媒体容器格式   (考单选题+判断题)</strong></p>
-<p><strong>16. Joint Photographic Experts Group(JPEG)是JPEG标准的产物该标准国际标准化组织制订, 是面向连续色调静止图像的一种压缩标准JPEG格式是最常用的图像文件格式, 后缀名为.jpg或.jpeg   (考单选题+判断题)</strong></p>
-<p><strong>17. 逗号分隔值(Comma-Separated Values, CSV)有时也称为字符分隔值, 其文件以纯文本形式存储表格数据(数字和文本)   (考单选题+判断题)</strong></p>
-<p><strong>18. CSV文件开头不留空, 以行为单位   (考判断题)</strong></p>
-<p><strong>19. CSV文件可含或不含列名, 含列名则居文件第一行   (考单选题+判断题)</strong></p>
-<p><strong>20. CSV文件一行数据不跨行, 无空行   (考判断题)</strong></p>
-<p><strong>21. CSV文件列内容如存在半角引号(即”), 应替换成半角双引号(“”)转义, 即用半角双引号(即””)将该字段值包含起来   (考单选题+判断题)</strong></p>
-<p><strong>22. CSV文件内码格式不限, 可为 ASCII, Unicode 或者其他   (考单选题+判断题)</strong></p>
-<p><strong>24. FLASH VIDEO(FLV)流媒体格式是随着Flash MX的推出发展而来的视频格式   (考单选题+判断题)</strong></p>
-<p><strong>25. WPS指WPS OFFICEWPS Office是由北京金山办公软件股份有限公司自主研发的一款办公软件套件, 可以实现办公软件最常用的文字, 表格, 演示, PDF阅读等多种功能   (考单选题+判断题+多选题)</strong></p>
-<p><strong>26. BLP是一种图片压缩格式, 体积小, 不能直接编辑, 是游戏中模型贴图的应用格式   (考判断题)</strong></p>
-<p><strong>27. XLS指Microsoft Excel工作表, 是一种常用的电子表格的格式   (考判断题)</strong></p>
-<p><strong>28. 在同一台计算机中, 内存比外存存取速度快   (考判断题)</strong></p>
-<p><strong>29. 32位微处理器中的32表示的技术指标是字长   (考判断题)</strong></p>
-<p><strong>30. 目前制造计算机所采用的电子器件是超大规模集成电路   (考判断题)</strong></p>
-<p><strong>31. Microsoft Office PowerPoint是微软公司的演示文稿软件用户可以在投影仪或者计算机上进行演示, 也可以将演示文稿打印出来, 制作成胶片, 以便应用到更广泛的领域中   (考判断题)</strong></p>
-<p><strong>32. 计算机中常用的文本编码类型有ASCII, GB2312, Unicode, UTF-8      (考判断题+多选题)</strong></p>
-<p><strong>33. 二进制文件按二进制编码方式来存储文件   (考判断题)</strong></p>
-<p><strong>34. 数据以二进制编码方式存储在计算机文件中   (考判断题)</strong></p>
-<p><strong>35. 机器学习是一门多领域交叉学科, 涉及概率论, 统计学, 逼近论, 凸分析, 算法复杂度理论等多个领域机器学习专门研究计算机怎样模拟或实现人类的学习行为, 以获取新的知识或技能, 重新组织已有的知识结构使之不断改善自身的性能      (考判断题+多选题)</strong></p>
-<p><strong>36. 深度学习是通过建立人工神经网络, 用层次化机制来表示客观世界, 并解释所获取的知识, 例如图像, 声音和文本      (考判断题+多选题)</strong></p>
-<p><strong>37. 深度学习的主要方式是监督学习, 无监督学习, 半监督学习和强化学习</strong></p>
-<p><strong>38. 监督学习是利用一组已知类别的样本来调整分类器的参数, 使其达到所要求性能的过程, 也称为监督训练或有教师学习   (考判断题)</strong></p>
-<p><strong>39. 无监督学习根据类别未知(没有被标记)的训练样本解决模式识别中的各种问题   (考判断题)</strong></p>
-<p><strong>40. 半监督学习是监督学习与无监督学习相结合的一种学习方法半监督学习同时使用未标记数据和已标记数据来进行模式识别工作   (考判断题)</strong></p>
-<p><strong>41. 强化学习又称再励学习, 评价学习或增强学习, 用于描述和解决智能体在与环境的交互过程中通过学习策略以达成回报最大化或实现特定目标的问题   (考判断题)</strong></p>
-<p><strong>42. 智能语音处理技术包括身份识别, 语种识别, 情感识别, 语音分离, 语音合成等   (考多选题)</strong></p>
-<p><strong>43. 生物特征识别技术包括步态识别, 声纹识别, 虹膜识别等   (考多选题)</strong></p>
-<p><strong>44. 立体视觉是计算机视觉领域的一个重要课题, 它的目的在于重构场景的三维几何信息   (考判断题)</strong></p>
-<p><strong>45. 目前的自然语言处理技术未完全达到人类智能   (考判断题)</strong></p>
-<p><strong>46. 自然语言处理不一定以经过标注过的数据作为输入   (考判断题)</strong></p>
-<p><strong>47. 自然语言处理不一定以有监督学习的方式实现   (考判断题)</strong></p>
-<p><strong>48. 自然语言处理可以通过无监督学习的方式实现   (考判断题)</strong></p>
-<p><strong>49. 数据预处理是一种数据挖掘技术, 包括数据清洗, 数据集成, 数据归约, 数据变换等多种方法   (考多选题)</strong></p>
-<p><strong>50. 在数据挖掘之前使用数据预处理技术先对数据进行一定的处理, 将极大提高数据挖掘的质量, 降低实际数据挖掘所需的时间   (考判断题)</strong></p>
-<p><strong>51. 数据变换方法包括数据平滑, 数据聚集, 数据泛化, 数据规范化等   (考多选题)</strong></p>
-<p><strong>52. 训练有监督学习模型时会将数据集划分为训练集, 验证集和测试集   (考多选题)</strong></p>
-<p><strong>53. 数据分析方法包括聚类分析, 因子分析, 相关分析, 方差分析, 回归分析等   (考多选题)</strong></p>
-<p><strong>54. 缺失数据处理方法包括删除含有缺失值的记录, 均值插补, 同类均值插补等   (考多选题)</strong></p>
-<p><strong>55. 数据治理是指对于数据采集, 数据清洗, 数据标注到数据交付整个项目生命周期每个阶段进行识别, 度量, 监控, 预警等一系列管理措施   (考多选题)</strong></p>
-<p><strong>56. 数据分割是指把逻辑上是统一整体的数据分割成较小的, 可以独立管理的物理单元进行存储, 以便于重构, 重组和恢复, 以提高创建索引和顺序扫描的效率   (考多选题)</strong></p>
-<p><strong>57. 数据清洗是指发现并纠正数据文件中可识别错误的最后一道程序, 包括检查数据一致性, 处理无效值和缺失值等   (考单选题+判断题)</strong></p>
-<p><strong>58. 为了避免在数据传输过程中数据被窃取, 被复制等, 应对数据传输过程进行压缩, 加密等操作   (考单选题+判断题)</strong></p>
-<p><strong>59. 数据一致性检查是根据每个变量的合理取值范围和相互关系, 检查数据是否合乎要求, 以及发现超出正常范围, 逻辑不合理或者相互矛盾的数据, 便于进一步核对和纠正   (考单选题+判断题)</strong></p>
-<p><strong>60. 采用区块链的数据标注平台采用强加密算法和分布式技术来保证数据安全   (考单选题+判断题)</strong></p>
-<p><strong>61. True Positive(TP) 是指某(些)个正样本被预测判定为正, 此种情况可以称作判断为真的正确情况   (考判断题)</strong></p>
-<p><strong>62. True Negative(TN)是指某(些)个负样本被预测判定为负, 此种情况可以称作判断为假的正确情况   (考判断题)</strong></p>
-<p><strong>63. False Positive(FP) 是指某(些)个负样本被模型预测为正, 此种情况可以称作判断为真的错误情况, 或称为误报   (考判断题)</strong></p>
-<p><strong>64. False Negative(FN)是指某(些)个正样本被模型预测为负; 此种情况可以称作判断为假的错误情况, 或称为漏报   (考判断题)</strong></p>
-<p><strong>65. 数据标注员需要具备的基本素质为: 学习力, 专注力, 责任感持续的学习力是标注工作的基础, 有耐心才能坚持在标注行业, 较强专注力可提高个人工作效率      (考判断题+多选题)</strong></p>
-<p><strong>66. 数据标注员需要参照数据标注规则   (考判断题)</strong></p>
-<p><strong>67. 数据标注员遇到数据标注规则模糊的地方需要进行询问   (考判断题)</strong></p>
-<p><strong>68. 数据标注员需要总结经验并及时汇报遇到的问题   (考判断题)</strong></p>
-<p><strong>69. 初级数据标注员应具备的职业技能包括具备一定的职业道德规范; 掌握行业基础知识; 具备基础业务能力      (考判断题+多选题)</strong></p>
-<p><strong>70. 中级数据标注员应该具备的职业技能包括具备较高的职业道德和一定的从业经验; 具备较高的业务能力和责任心; 具备简单的质检能力      (考判断题+多选题)</strong></p>
-<p><strong>71. 高级数据标注员应该具备的职业技能包括具备一定的从业经验; 具备较高的业务能力和责任心; 能独立完成各类业务的示范模板和操作培训; 具备质检能力; 具备团队管理能力      (考判断题+多选题)</strong></p>
-<p><strong>72. 数据标注规则的特点包括数据标注规则需要一致; 数据标注规则需要不断完善; 需求方优先规则; 质检优先规则      (考判断题+多选题)</strong></p>
-<p><strong>73. 数据标注的应用场景包括自动驾驶, 智能安防, 智慧医疗, 工业4.0, 新零售等   (考多选题)</strong></p>
-<p><strong>74. 根据数据标注对象不同, 数据标注可分为文本标注, 语音标注, 图像标注和视频标注   (考多选题)</strong></p>
-<p><strong>75. Labelme是一个图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
-<p><strong>76. Labelme能对图像进行多边形, 矩形, 圆形, 多段线, 线段, 点形式, flag 形式的标注      (考判断题+多选题)</strong></p>
-<p><strong>77. Labelme可以在Ubuntu, macOS, Windows操作系统上使用   (考判断题)</strong></p>
-<p><strong>78. Labelme以JSON文件存储标注信息   (考判断题)</strong></p>
-<p><strong>79. LabelImg是一个图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
-<p><strong>80. LabelImg以PASCAL VOC格式(ImageNet使用的格式)的XML文件存储标注信息此外, 它还支持YOLO格式   (考单选题+判断题)</strong></p>
-<p><strong>81. Labelbox是一个图像标注软件</strong></p>
-<p><strong>82. 常见的图像数据标注类型包括关键点标注, 矩形框标注, 图像分割, 3D框标注, 属性标注等   (考多选题)</strong></p>
-<p><strong>83. 矩形框标注是一种对目标对象进行目标检测框标注的简单处理方式, 常用于标注自动驾驶下的人, 车, 物等   (考判断题)</strong></p>
-<p><strong>84. 区域标注指是指将图像分成各具特性的区域并提取出感兴趣部分的过程   (考单选题+判断题)</strong></p>
-<p><strong>85. 属性标注是用一个或多个标签标注目标物的属性   (考判断题)</strong></p>
-<p><strong>86. 关键点标注一般用于人体脸部轮廓, 五官定位, 身体部位和动物头像等   (考多选题)</strong></p>
-<p><strong>87. 视频数据标注任务包含视频标签的时间位置, 空间位置和标签信息标注等内容      (考判断题+多选题)</strong></p>
-<p><strong>88. 视频源数据管理包含视频信息管理和视频目录管理两大块      (考判断题+多选题)</strong></p>
-<p><strong>89. 视频信息管理包含视频上传, 视频修改, 视频查询, 视频删除, 下载视频等功能   (考多选题)</strong></p>
-<p><strong>90. 视频目录管理包含添加目录, 删除目录和目录排序功能   (考多选题)</strong></p>
-<p><strong>91. 视频数据标注通过语义, 内容等方式标注, 有利于视频数据搜索, 管理和收藏      (考判断题+多选题)</strong></p>
-<p><strong>92. 相较于图像数据而言, 图像数据是在一个时间点上的数据, 而视频数据是在一段时间上连续的一系列图像数据的集合, 表达的信息更加丰富, 因此具有更广的应用场景   (考判断题)</strong></p>
-<p><strong>93. 视频数据标注目的是对场景中活动目标进行位置, 形状, 动作, 色彩等有关特征进行标注      (考判断题+多选题)</strong></p>
-<p><strong>94. 常用的图像数据标注工具包括LabelMe, LabelImg和LabelBox   (考多选题)</strong></p>
-<p><strong>95. 目前常见的标注文档存储格式包括JSON, XML, TXT   (考多选题)</strong></p>
-<p><strong>96. 图像标注是实现图像分类, 目标检测, 图像分割的基础   (考多选题)</strong></p>
-<p><strong>97. ImageNet项目标注了一千四百多万张图像, 举办了八次图像任务挑战赛   (考单选题+判断题)</strong></p>
-<p><strong>98. ImageNet项目吸引了全球的参赛队伍通过编写相关算法来完成分类, 检测和定位等子任务   (考单选题+判断题)</strong></p>
-<p><strong>99. COCO数据集是一个大型的, 丰富的物体检测, 分割和字幕数据集   (考多选题)</strong></p>
-<p><strong>100. MNIST数据集是由0-9手写数字图片和数字标签所组成的   (考单选题+判断题)</strong></p>
-<p><strong>101. MNIST数据集由60000个训练样本和10000个测试样本组成   (考单选题+判断题)</strong></p>
-<p>*<em>102. MNIST数据集每个样本都是一张28 * 28像素的灰度手写数字图像   (考单选题+判断题)*</em></p>
-<p><strong>104. CIFAR-10是一个包含60000张图片的数据集   (考单选题+判断题)</strong></p>
-<p>*<em>105. CIFAR-10中, 每个图像为32</em>32的彩色图像   (考单选题+判断题)**</p>
-<p><strong>106. CIFAR-100有100个类, 每个类包含600个图像   (考单选题+判断题)</strong></p>
-<p><strong>107. CIFAR-100中, 每类各有500个训练图像和100个测试图像      (考判断题+多选题)</strong></p>
-<p><strong>108. 在图像数据标注中, 用户的角色可以分为3类, 分别是标注员, 审核员和管理员   (考判断题)</strong></p>
-<p><strong>109. 标注员负责对图像数据进行标注   (考判断题)</strong></p>
-<p><strong>110. 审核员负责对标注好的数据进行审核   (考判断题)</strong></p>
-<p><strong>111. 管理员负责对相关人员进行管理, 并对标注任务进行发放及回收   (考判断题)</strong></p>
-<p><strong>112. 图像数据标注流程: 图像获取-&gt;图像前处理-&gt;图像预识别-&gt;图像标注-&gt;结果输出      (考判断题+多选题)</strong></p>
-<p><strong>113. 项目不同图像的获取方式也不同, 一般可通过下采集, 网络采集等方式获取所需的图像   (考单选题+判断题)</strong></p>
-<p><strong>114. 图像前处理对图像进行查重处理, 将重复的图像删除   (考判断题)</strong></p>
-<p><strong>115. 可通过特定的程序, 先对数据做一个预标注, 标注员只需校验标注结果即可, 进而大幅提高标注效率   (考判断题)</strong></p>
-<p><strong>116. 在进行标注任务时, 首先要根据标注对象, 标注要求和不同的数据集格式选择合适的标注工具   (考判断题)</strong></p>
-<p><strong>117. 图像数据标注产业的蓬勃发展为人工智能行业计算机视觉方向的兴起奠定了扎实的基础   (考判断题)</strong></p>
-<p><strong>118. 不同行业对于数据的标注要求有所差异   (考判断题)</strong></p>
-<p><strong>119. 自动驾驶行业利用带有标签的数据集来对自动驾驶模型进行训练, 使其对路面情况具备判断能力, 并能做出相应的应对策略   (考判断题)</strong></p>
-<p><strong>120. 自动驾驶行业标注内容包括路面中行人识别, 车辆识别和道路识别等      (考判断题+多选题)</strong></p>
-<p><strong>121. 智慧医疗行业主要包括对解剖部位或病变部位对应的点线面以及轮廓进行标记, 如CT断层成像数据, 需要根据病理特点标注肺部边界轮廓   (考判断题)</strong></p>
-<p><strong>122. 智能安防行业通过对复杂条件下的人脸, 道路, 车辆, 动作的数据采集与标注实现城市道路监控, 车辆人流监测, 公共安全防范等应用      (考判断题+多选题)</strong></p>
-<p><strong>123. 区域标注需同时满足均匀性和连通性的条件, 其中均匀性指的是该区域中的所有像素点都满足灰度, 纹理, 彩色等特征的某种相似性准则; 连通性是指在该区域内存在的连接任意两点的路径      (考判断题+多选题)</strong></p>
-<p><strong>124. 与矩形框标注相比, 区域标注更加精确, 标注边缘可以是多边形甚至是柔性的, 常用于自动驾驶中的道路识别   (考单选题+判断题)</strong></p>
-<p><strong>125. 标注框标注用矩形框, 四边形框框选出目标物      (考判断题+多选题)</strong></p>
-<p><strong>126. 关键点标注用一个或多个关键点标注目标物特定局部的位置   (考单选题+判断题)</strong></p>
-<p><strong>127. 区域标注用开区域或闭区域分割出目标物的轮廓   (考判断题)</strong></p>
-<p><strong>128. 目前关键点标注常用于人脸识别, 人体骨骼检测, 手势确认等方面      (考判断题+多选题)</strong></p>
-<p><strong>129. 关键点标注虽然看起来比较简单, 只要在需要标注的地方打点标注就行, 但是实现起来难度非常大, 在图片标注任务中属于高难度标注      (考判断题)</strong></p>
-<p><strong>130. 关键点的数量一般较多, 在标注过程中需要搞清楚少则几个, 多则上百个点所代表的含义, 做得多就容易错得多      (考判断题)</strong></p>
-<p><strong>131. 关键点判断标注合格的标准不是很明确, 导致标注人员不能检查自己犯的错误      (考判断题)</strong></p>
-<p><strong>132. 在人脸关键点标注项目中, 标注的人脸图片通常是二维图片的, 但是需要标注员有三维立体感, 将标注后的图片具有立体效果   (考单选题+判断题)</strong></p>
-<p><strong>133. 当遇到遮挡点或不可见点, 关键点标注需要标注人员在标注过程时具有丰富的空间想象能力   (考单选题+判断题)</strong></p>
-<p><strong>134. 框标注包括矩形标注, 自由矩形标注, 3D框标注      (考判断题+多选题)</strong></p>
-<p><strong>135. 框标注应用方位广泛, 通过拉框的方式, 选定框区域内的内容来对图片的特征进行提取</strong></p>
-<p><strong>136. 在对图片进行框标注时, 由于框的图像形状受限, 会导致所标注的范围不够精确的问题      (考判断题)</strong></p>
-<p><strong>137. 图像区域标注分为开区域标注和闭区域标注      (考判断题+多选题)</strong></p>
-<p><strong>138. 开区域标注常见的标注有: 线标注; 闭区域标注常见的标注有: 曲线标注和多边形标注   (考单选题+判断题+多选题)</strong></p>
-<p><strong>139. 针对自动分割对多目标或背景复杂的图像难以奏效, 手工标注极为耗时且标注结果不准确和不可重复这两大问题, 提出了交互式图像分割      (考判断题)</strong></p>
-<p><strong>140. 交互式智能图像分割标注针对图像分割标注的预识别算法, 实现通过机器对图像进行智能分割, 再进行人工修边和筛选, 从而大幅提高生产效率, 减少人工成本, 减少人工差错      (考判断题+多选题)</strong></p>
-<p><strong>141. 线标注通常用于自动驾驶应用中的车道线标注, 主要用于自动驾驶车辆的道路识别      (考判断题+多选题)</strong></p>
-<p><strong>142. 多边形标注较为准确, 避免了大量白色空间的视觉模型偏差, 一般用于标注街景图片, 人物, 动物, 人体部位等      (考判断题+多选题)</strong></p>
-<p><strong>147. 采样精度: 指存放一个采样值所使用的比特数采样率和采样精度越大, 记录的波形更接近原始信号, 但同时占用的存储空间也越大      (考判断题)</strong></p>
-<p><strong>148. 声道: 声道指输入或输出信号的通道通常用多声道来输入或输出不同的信号   (考单选题+判断题)</strong></p>
-<p><strong>149. 信噪比: 信噪比指信号与噪声之间的能量比, 录音时信噪比越高越好   (考单选题+判断题)</strong></p>
-<p><strong>150. 声波: 声波是由物体震动产生, 使周围的介子(如空气)产生波动   (考单选题+判断题)</strong></p>
-<p><strong>151. 声速: 声波每秒在介质中传播的距离   (考单选题+判断题)</strong></p>
-<p><strong>152. 波长: 沿着声波传播方向, 声波震动一周所传播的距离或在波形上相同的相邻两点的距离   (考单选题+判断题)</strong></p>
-<p><strong>153. 振幅: 震动物体离开平衡位置的最大距离称为振幅, 通常用A表示   (考单选题+判断题)</strong></p>
-<p><strong>154. 分贝: 分贝是增益或衰减单位, 用来描述两个相同物理量之间的相对关系   (考单选题+判断题)</strong></p>
-<p><strong>155. TTS(语音合成)即从文本到语音, 是人机对话的一部分, 是指让计算机能够说话   (考单选题+判断题)</strong></p>
-<p><strong>156. TTS中最主要的一个指标是自然度, 也就是当我们听见计算机跟我们说话时, 能否区分出了是人还是计算机   (考单选题+判断题)</strong></p>
-<p><strong>157. ASR(语音识别)是将声音转换为文字   (考单选题+判断题)</strong></p>
-<p><strong>158. 语音标注数据的典型应用场景包括: 智能医疗, 智能驾驶, 智能家居, 智能教育, 智能客服, 机器人等      (考判断题+多选题)</strong></p>
-<p><strong>159. 音色/音质: 指能够区分两种不同声音的基本特征, 比如人说话的声音和小提琴的声音在语音信号处理技术中, 人声识别研究常将音色作为重要研究对象;    (考单选题+判断题)</strong></p>
-<p><strong>160. 音调: 指声音的高低, 由声波的频率决定比如在一般情况下, 男声听起来比较低沉, 而女声听起来会比较尖锐;    (考单选题+判断题)</strong></p>
-<p><strong>161. 音强: 指声音的强弱, 由声波的振动幅度决定, 可简单理解为语音信号波形图中的信号幅度;    (考单选题+判断题)</strong></p>
-<p><strong>162. 音长: 指声音的长短, 由发音时间的长短决定</strong></p>
-<p><strong>163. 语音编码格式: 指按一定格式压缩采样和量化后的数值, 从而降低音频的数据量, 便于音频数据的存储和传输常用的编码格式有PCM(WAV), MP3等   (考单选题+判断题)</strong></p>
-<p><strong>164. 按照智能应用场景, 语音数据标注任务可划分为智能家居, 智能会议, 智能客服, 智能车载等;       (考判断题+多选题)</strong></p>
-<p><strong>165. 按照语音信号处理研究方向, 语音数据标注任务可划分为语音识别, 语音合成, 说话人识别, 情感识别, 语音分离等;       (考判断题+多选题)</strong></p>
-<p><strong>166. 按照音源与拾音器之间的距离, 语音数据标注任务可划分为近场语音, 远场语音;       (考判断题+多选题)</strong></p>
-<p><strong>167. 按照语音时长, 语音数据标注任务可划分为短语音, 长语音;    (考单选题+判断题)</strong></p>
-<p><strong>169. 按照口音, 语音数据标注任务可划分为普通话, 方言, 带地方口音的普通话等      (考判断题+多选题)</strong></p>
-<p><strong>170. 丢帧: 在语音录制过程中, 由于音频设备的问题而表现出的发音卡顿, 比如语音段中某0.1秒内突然没有声音, 0.1秒过后语音又恢复正常, 此现象称为”丢帧”丢帧是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>171. 切音: 在语音录制过程中, 由于过早结束或过晚开始录制导致个别字被截断而表现出的发音不完整, 此现象称为”切音”, 切音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>172. 吞音: 在说话人发音时, 由于个别字的声母或韵母未完全发音而表现出的发音不完整, 此现象称为”吞音”; 是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>173. 喷麦: 在说话人发音时, 由于距离麦克风太近而表现出的录入语音不清晰, 听起来有明显噗噗的声音, 此现象称为”喷麦”喷麦是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>174. 重音: 在说话人发音时, 语音中出现两个或多个说话人, 他们的音量大小相近且有大段重叠, 无法分清主次, 此现象称为”重音”重音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>175. 空旷音: 在录制过程中, 由于周围环境较为空旷而表现出来的发音中带有回音, 此现象称为”空旷音”; 空旷音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>176. 混响: 混响是另一种常见的声学场景与回声不同, 混响是语音经多次反射, 折射后叠加而成的声音混响语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
-<p><strong>177. 通常情况下, 丢帧, 切音, 吞音, 喷麦, 重音, 空旷音, 混响等异常语音数据会被认定为无效语音      (考判断题+多选题)</strong></p>
-<p><strong>178. 数据和特征决定了机器学习的上限, 模型和算法只是逼近这个上限而已      (考判断题+多选题)</strong></p>
-<p><strong>179. 语音学软件Praat, 是一款跨平台的多功能语音学专业软件, 主要用于对数字化的语音信号进行分析, 标注, 处理及合成等实验目前, Praat语音标注常用的标注工具      (考判断题+多选题)</strong></p>
-<p><strong>180. 在操作标注软件Praat打开音频文件后, 点击Tab键可以进行播放和暂停      (考判断题+多选题)</strong></p>
-<p><strong>181. 在操作标注软件Praat标注完成后, 直接按Ctrl+s保存, 保存后为一个TextGrid文件   (考单选题+判断题)</strong></p>
-<p><strong>182. 音频切分是语音标注基础, 需要按照音频波形进行切割, 将有声频段切分出来   (考单选题+判断题)</strong></p>
-<p><strong>183. 音频切分时, 切分前后贴合音频波形, 前后留白不能超过0.05S, 贴合音频波形切分   (考单选题+判断题)</strong></p>
-<p><strong>184. 音频切分时, 句子静音间隔超过0.1s则需要切分开成两句   (考单选题+判断题)</strong></p>
-<p><strong>185. 音频切分时, 非正常人声大段噪音的情况, 中间静音部分超过 0.2S 需要切分开   (考单选题+判断题)</strong></p>
-<p><strong>186. 音频切分时, 不同角色层需要切分开   (考单选题+判断题)</strong></p>
-<p><strong>187. 标注中的噪音标签是指音频有波形, 但音频内容为非正常对话内容如波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N或一人说话连续的笑声, 哈欠, 呼吸声等作为噪音标签N, 极其轻的声音波形不明显可以不标   (考单选题+判断题)</strong></p>
-<p><strong>188. 进行语音角色标注时, 说话角色为客户的标记为客户 C   (考单选题+判断题)</strong></p>
-<p><strong>189. 进行语音角色标注时, 说话角色为客服的标记为客服 O   (考单选题+判断题)</strong></p>
-<p><strong>190. 进行语音角色标注时, 说话角色为非顾客或者客服音频, 电话录音系统, 电话彩铃出现正常人声, 机器人音频标记其他角色 S   (考单选题+判断题)</strong></p>
-<p><strong>191. 进行语音性别标注时, 说话角色男性标记C1,O1, 女性角色C2, O2   (考判断题)</strong></p>
-<p><strong>192. 进行背景人声标注时, 背景人声标签主要为远场人说话的音频, 能听清识别的正常转写文本, 无法听清的只标注标签即可, 例如两个人说话, 另一个人在远处说话, 归为背景人声   (考单选题+判断题)</strong></p>
-<p><strong>193. 在进行叠音标注时, 重叠标签主要通过音频波形图判断, 所有角色说话清晰, 但波形图上大块重叠, 标注重叠标签P, 标注重叠标签P后, 不能出现文本   (考单选题+判断题)</strong></p>
-<p><strong>194. 噪音标注, 噪音标签 N, 波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N   (考单选题+判断题)</strong></p>
-<p><strong>195. 常见的语音文件格式类型有: .WAV, .WMA, .MP3, .CDA, .MIDI, .RA等      (考判断题+多选题)</strong></p>
-<p><strong>196. 目前(2021年)语音标注主要是用于监督学习   (考单选题+判断题)</strong></p>
-<p><strong>197.  TTS(Text-to-Speech, 语音合成), 即”从文本到语音”, 是人机对话的一部分, 让机器能够说话目前在很多电话机器人上的使用很广泛, 而且几乎已经判断不出来是机器人在和你讲话   (考单选题+判断题)</strong></p>
-<p><strong>198. ASR(Automatic Speech Recognition, 语音识别), 是将声音转换为文字   (考单选题+判断题)</strong></p>
-<p><strong>199. ASR在中文领域有很大的难度, 中文由于其语言博大精深, 而且方言众多, 对于声音转换为文字具有很多不确定性   (考单选题+判断题)</strong></p>
-<p><strong>200. 语音处理工具主要包括能实现录音, 混音, 剪辑等功能的软件      (考判断题+多选题)</strong></p>
-<p><strong>201. audio-annotator是基于Javascript的 音频 标注工具, 它可以实现无形, 声谱图, 声波进行可视化标注, 通用性强, 应用广泛      (考判断题+多选题)</strong></p>
-<p><strong>202. EchoML是一种基于B/S架构的音频标注工具, 便于实现多人协同标注但需要搭建服务器   (考单选题+判断题)</strong></p>
-<p><strong>203. 语音识别, 语音合成等智能语音处理技术在单一说话人, 发音规范, 背景噪音良好的情况下已经具有较为突出的表现      (考判断题+多选题)</strong></p>
-<p><strong>204. 当前阻碍智能语音处理技术实用化的一大困难即是复杂条件下性能降低的问题在实际生活场景中, 自然发音, 口音, 复杂噪声, 声音混叠等现象随处可见, 导致语音识别性能下降      (考判断题+多选题)</strong></p>
-<p><strong>205. 随着深度学习技术的发展, 数据对于训练模型的影响越来越重要, 因此, 生产复杂场景下的智能语音数据无论对于学术研究还是对于企业开发, 均具有重大意义   (考判断题)</strong></p>
-<p><strong>206. 语音数据标注是语音数据产品生产流程中的一个环节, 总的来说, 语音数据产品生产包含了从语音采集到数据交付的各个环节, 各个环节之间相辅相成, 紧紧相扣语音数据产品生产过程具体包括语音采集, 数据预处理, 语音数据标注, 数据质检与数据交付模块      (考判断题+多选题)</strong></p>
-<p><strong>207. 数据清洗, 信息脱敏是常见的数据预处理方法      (考判断题+多选题)</strong></p>
-<p><strong>208. 多类型, 大体量的样本空间及高质量数据是人工智能技术精度的重要保障, 语音数据标注是语音数据产品生产流程中的关键环节      (考判断题+多选题)</strong></p>
-<p><strong>209. 常见的标注文档存储格式包括XML, TXT, JSON等      (考判断题+多选题)</strong></p>
-<p><strong>210. CSV格式的文件是以逗号为分隔符的   (考判断题)</strong></p>
-<p><strong>211. LabelHub 是为大型数据标注项目提供更好的管理方式及数据安全保障的数据标注系统, 它的结果文件同时支持CSV, XML, JSON三种格式      (考判断题+多选题)</strong></p>
-<p><strong>212. 文本数据异常包括语法类异常, 语义类异常, 覆盖类异常等      (考判断题+多选题)</strong></p>
-<p><strong>213. 语法类异常主要包括词法错误, 值域格式错误, 不规则的取值等      (考判断题+多选题)</strong></p>
-<p><strong>214. 语义类异常主要包括数据中出现矛盾, 数据中存在重复值和无效的元组等      (考判断题+多选题)</strong></p>
-<p><strong>215. 覆盖类异常主要包括数据中出现矛盾, 不规则的取值等   (考判断题)</strong></p>
-<p><strong>216. 目前(2021年)文本标注主要是用于监督学习   (考判断题)</strong></p>
-<p><strong>217. 文本标注的对象是自然语言文本   (考判断题)</strong></p>
-<p><strong>218. 自然语言处理技术达到人类智能的标准是通过图灵测试   (考单选题+判断题)</strong></p>
-<p><strong>219. 目前(2021年)最先进的自然语言处理技术是基于深度学习模型的   (考单选题+判断题)</strong></p>
-<p><strong>220. 中文文本需要进行分词标注   (考判断题)</strong></p>
-<p><strong>221. 标注出一句话中的动词属于词性标注   (考判断题)</strong></p>
-<p><strong>222. 词性标注属于序列标注   (考判断题)</strong></p>
-<p><strong>223. 分词标注属于序列标注   (考判断题)</strong></p>
-<p><strong>224. 标注一句话的情感状态属于属性标注   (考判断题)</strong></p>
-<p><strong>225. 文本标注的实体类别常见的有人名PER, 地名LOC和机构名ORG   (考单选题+判断题)</strong></p>
-<p><strong>226. 常见的文本标注工具包括doccano, YEDDA, Chinese-Annotator, IEPY, DeepDive, BRAT等      (考判断题+多选题)</strong></p>
-<p><strong>227. “小明给妈妈洗脚”一句话的直接宾语为脚   (考判断题)</strong></p>
-<p><strong>228. WORD文档文件的扩展名是DOC, EXCEL文档文件的扩展名是XLS   (考单选题+判断题)</strong></p>
-<p><strong>229. 机器翻译是自然语言处理领域的一个重要课题   (考单选题+判断题)</strong></p>
-<p><strong>230. Brat只能在Linux下运行   (考单选题+判断题)</strong></p>
-<p><strong>231. IEPY是一个Python开发的开源的语料标准工具   (考单选题+判断题)</strong></p>
-<p><strong>232. 文本数据标注的大致流程包括预处理, 标注, 质检和验收      (考判断题+多选题)</strong></p>
-<p><strong>233. 优秀的文本标注工具应具备的特点包括扩展性强, 操作便捷, 容错性强, 数据导出格式多样, 支持多语种      (考判断题+多选题)</strong></p>
-<p><strong>234. 文本数据标注主要应用的场景包括新零售行业, 广告行业, 客服行业, 公共安全和金融行业等      (考判断题+多选题)</strong></p>
-<p><strong>235. 文本标注工具BRAT的主要功能是实体标注和关系标注      (考判断题+多选题)</strong></p>
-<p><strong>236. 阅读理解标注的一般过程是标注者快速阅读段落内容, 根据内容提问以及标记问题答案   (考单选题+判断题)</strong></p>
-<p><strong>237. 文本标注的结果一般会作为自然语言处理算法的输入   (考判断题)</strong></p>
-<p><strong>238. 文本标注包括序列标注, 关系标注和属性标注   (考单选题+判断题)</strong></p>
-<p><strong>239. 序列标注包括分词, 实体, 关键字, 韵律和意图理解标注等   (考单选题+判断题)</strong></p>
-<p><strong>240. 关系标注所标注关系包括指向关系, 修饰关系, 平行语料等   (考单选题+判断题)</strong></p>
-<p><strong>241. Chinese-Annotator是支持中文的文本标注软件   (考单选题+判断题)</strong></p>
-<p><strong>242. 韵律标注主要是为了标注出句中字词间的停顿   (考单选题+判断题)</strong></p>
-<p><strong>243. 情感标注属于属性标注   (考单选题+判断题)</strong></p>
-<p><strong>244. 自然语言对话被誉为人工智能皇冠上的宝石   (考单选题+判断题)</strong></p>
-<p><strong>245. 标注需求不能脱离人工智能应用场景   (考单选题+判断题)</strong></p>
-<p><strong>246. 总体原则是文本标注过程中必须遵守的基本原则   (考单选题+判断题)</strong></p>
-<p><strong>247. 在分词当中遇到一些专有名词时, 无需进行拆分   (考单选题+判断题)</strong></p>
-<p><strong>248. 在日常生活中的书籍, 文档等等资料都可以整合处理后变成语料库来进行使用   (考单选题+判断题)</strong></p>
-<p><strong>249. 网上抓取到的语料处理难点在于网上的文本数据的用法和教科书所讲有较大差异   (考单选题+判断题)</strong></p>
-<p><strong>250. 语料处理过程的工作量大致会占据完整的中文自然语言处理工作量的50%-70%   (考单选题+判断题)</strong></p>
-<p><strong>251. 语料处理主要包括四个方面: 数据清洗, 分词, 词性标注和去停用词      (考判断题+多选题)</strong></p>
-<p><strong>252. 可以结合分词算法来加快文本数据标注的进度   (考单选题+判断题)</strong></p>
-<p><strong>253. 分词算法常见的有: 正向最大匹配算法, 逆向最大匹配算法, 最大Ngram分值算法, 全切分算法, 双向最大最小匹配算法等   (考单选题+判断题)</strong></p>
-<p><strong>254. 词性标注, 就是给每个词语打标签, 如形容词, 动词, 名词等      (考判断题+多选题)</strong></p>
-<p><strong>255. 停用词一般指对文本特征没有任何贡献作用的字词, 比如标点符号, 语气, 人称等一些词      (考判断题+多选题)</strong></p>
-<p><strong>256. 有些场景是需要语气词来进行判断情感, 所以去停用词的操作一定要根据场景进行   (考单选题+判断题)</strong></p>
-<p><strong>257. 自然语言处理可以在很多领域上进行应用, 如: 机器翻译, 情感分析, 智能问答, 文摘生成, 文本分类, 舆论分析, 知识图谱和销售分析等      (考判断题+多选题)</strong></p>
-<p><strong>258. 对于自然语言处理工程来说, 良好的语料标注是项目成功的基础   (考单选题+判断题)</strong></p>
-<p><strong>259. 语言学主要包括以下几个分支: 句法学, 语义学, 形态学(词根, 前缀后缀等), 音系学, 语音学, 词汇, 话语分析, 语用学和篇章结构分析等      (考判断题+多选题)</strong></p>
-<p><strong>260. 语料标注涵盖在自然语言处理任务的建模和标注两个步骤中, 语料标注过程常常需要在建模和标注之间反复进行迭代, 因为很难一次性建立完美的标注模型      (考判断题+多选题)</strong></p>
-<p><strong>261. 应该建立标注标准, 将标注方式细化, 才能保证标注数据的一致性   (考单选题+判断题)</strong></p>
-<p><strong>262. 当有多人对相同数据进行标注时, 可以采取交叉标注的方式   (考单选题+判断题)</strong></p>
-<p><strong>263. 在标注过程中, 应尽可能使用自动化方式减少标注人员工作量   (考单选题+判断题)</strong></p>
-<p><strong>264. 语料库选取应注意代表性, 不能只用单一新闻源构建语料库   (考单选题+判断题)</strong></p>
-<p><strong>265. 语料库选取的平衡性要求语料库中的类别组成应该与真实数据中的比例基本一致   (考单选题+判断题)</strong></p>
-<p><strong>266. 审核过程最好由参与制定标注标准的人来执行   (考单选题+判断题)</strong></p>
-<p><strong>267. 对专业度要求比较高的标注, 最好请从业人员参与标注   (考单选题+判断题)</strong></p>
-<p><strong>268. 语义标注中的自定义标签包括意图级别配置, 功能配置和预识别配置等      (考判断题+多选题)</strong></p>
-<p><strong>269. 音调包括阴平, 阳平, 上声, 去声和轻声      (考判断题+多选题)</strong></p>
-<p><strong>270. 韵律符号#1表示韵律词边界; 韵律符号#2表示韵律短语边界; 韵律符号#3表示语调短语边界; 韵律符号#4表示句末边界      (考判断题+多选题)</strong></p>
-<p><strong>271. Chinese-Annotator是一个较为完整的系统, 包括前端, 后台和数据库   (考单选题+判断题)</strong></p>
-<p><strong>272. 质量, 一组固有特性满足要求的程度   (考单选题+判断题)</strong></p>
-<p><strong>273. 产品, 过程的结果包括了硬件(如发动机机械零件), 软件(如计算机程序, 字典), 流程性材料(如润滑油), 服务(如运输)及其任意组合   (考单选题+判断题)</strong></p>
-<p><strong>274. 硬件产品是指由制作的零件和部件组成或由其组装成的产品, 如发动机机械零件   (考单选题+判断题)</strong></p>
-<p><strong>275. 软件是指由承载在媒体上的信息组成的智力产品软件能以概念, 记录或程序的形式存在计算机程序是软件产品的一个实例材料的定义   (考单选题+判断题)</strong></p>
-<p><strong>276. 服务是指在供方和顾客接口处完成的至少一项活动的结果   (考单选题+判断题)</strong></p>
-<p><strong>277. 过程: 将输入转化为输出的相互关联或相互作用的一组活动任何一个过程都由输入, 过程活动和输出三部分组成   (考单选题+判断题)</strong></p>
-<p><strong>278. 顾客: 接受产品的组织或个人(狭义: 产品和服务的最终使用者或接受者     广义: 要结合过程模型去理解, 任何一个过程输出的接受者都是顾客)      (考判断题+多选题)</strong></p>
-<p><strong>279. 质量管理的定义和方针: 质量管理: 在质量方面指挥, 控制, 组织和协调的活动质量方针: 由组织最高管理者正式发布的关于质量方面的全部意图和方向      (考判断题+多选题)</strong></p>
-<p><strong>280. 质量管理发展阶段: １检验阶段; 2, 统计质量控制阶段; 3, 全面质量管理阶段; 4, 经营质量管理阶段      (考判断题+多选题)</strong></p>
-<p><strong>281. 质量管理的八项管理原则: (1)以顾客为关注焦点(2)领导作用(3)全员参与(4)过程方法(5)管理的系统方法(6)持续改进(7)基于事实的决策方法(8)与供方互利的关系      (考判断题+多选题)</strong></p>
-<p><strong>282. PDCA循环(计划—执行—检查—处理)循环又称戴明循环      (考判断题+多选题)</strong></p>
-<p><strong>283. 6σ质量管理标准是一种以顾客为导向, 重视策划过程, 重视科学的数据分析, 明确量化的目标的一种持续改进管理模式      (考判断题+多选题)</strong></p>
-<p><strong>284. 质量屋定义及其方法, 一个完整的质量屋包括6个部分: (1)顾客需求及其权重, 即质量屋的”什么(What)”(2)技术需求(最终产品特性), 即质量屋的”如何(How)”(3)关系矩阵, 即顾客需求和技术需求之间的相关程度关系矩阵(4)竞争分析, 站在顾客的角度, 对本企业的产品和市场上其它竞争者的产品在满足顾客需求方面进行评估(5)技术需求相关关系矩阵, 质量屋的屋项(6)技术评估, 对技术需求进行竞争性评估, 确定技术需求的重要度和目标值等      (考判断题+多选题)</strong></p>
-<p><strong>285.  质量成本管理: 质量成本是为了确保和保证满意的质量而发生的费用以及没有达到满意稍微质量所造成的损失   (考单选题+判断题)</strong></p>
-<p><strong>286. 职能组织结构在职能组织结构中, 每一个职能部门可根据它的管理职能对其直接和非直接的下属工作部门下达工作指令   (考单选题+判断题)</strong></p>
-<p><strong>287. 线性组织结构中, 每一个工作部门只能对其直接的下属部门下达工作指令, 每一个工作部门也只有一个直接的上级部门, 因此, 每一个工作部门只有唯一一个指令源, 避免了由于矛盾的指令而影响组织系统的运行   (考单选题+判断题)</strong></p>
-<p><strong>288. 矩阵组织结构适用于大的组织系统在矩阵组织结构中, 每一项纵向和横向交汇的工作, 指令来自于纵向和横向两个工作部门, 此其指令源为两个   (考单选题+判断题)</strong></p>
-<p><strong>289. 进度管理计划为编制, 监督和控制项目进度建立准则和明确活动. 包括: 项目进度模型制定, 进度计划的发布和迭代长度, 准确度, 计量单位, 组织程序链接, 项目进度模型维护, 控制临界值, 绩效测量规则, 确定完成百分比的规则, EVM 技术, 如基准法, 固定公式法, 完成百分比法等   (考单选题+判断题)</strong></p>
-<p><strong>290. 紧前关系: FS, FF, SS, SF      (考判断题+多选题)</strong></p>
-<p><strong>291. 活动间依赖关系   (考判断题)</strong></p>
-<p><strong>292. 强制性依赖关系, 法律或合同要求的或工作的内在性质决定的依赖关系, 往往与客观限制有关      (考判断题+多选题)</strong></p>
-<p><strong>293. 选择性依赖关系, 基于具体应用领域的最佳实践或项目的某些特殊性质对活动顺序的要求来创建   (考单选题+判断题)</strong></p>
-<p><strong>294. 外部依赖关系, 项目活动与非项目活动之间的依赖关系, 不在项目团队的控制范围内   (考单选题+判断题)</strong></p>
-<p><strong>295. 内部依赖关系, 项目活动之间的紧前关系, 在项目团队的控制之中   (考单选题+判断题)</strong></p>
-<p><strong>296. 提前量&amp;滞后量(判断题+多选题)</strong></p>
-<p><strong>297. 项目进度网络图(紧前关系绘图法PDM, 前导图)   (考判断题+多选题)</strong></p>
-<p><strong>298. 估算活动持续时间依据的信息包括: 工作范围, 所需资源类型与技能水平, 估算的资源数量和资源日历      (考判断题+多选题)</strong></p>
-<p><strong>299. 边际收益递减规律      (考判断题+多选题)</strong></p>
-<p><strong>300. 估算活动持续时间的方法      (考判断题+多选题)</strong></p>
-<p><strong>301. 三点估算      (考判断题+多选题)</strong></p>
-<p><strong>302. 贝塔分布, Te=(O+4M+P)/6, σ=(P-O)/6      (考判断题+多选题)</strong></p>
-<p><strong>303. 三角分布, Te=(O+M+P)/3, σ=(P-O)/6      (考判断题+多选题)</strong></p>
-<p><strong>304. 正态分布(68.26%, 95.46%, 99.73%)      (考判断题+多选题)</strong></p>
-<p><strong>305. 自下而上估算(成本&amp;准确度最高)      (考判断题+多选题)</strong></p>
-<p><strong>306. 储备分析, 储备分析用于确定项目所需的应急储备量和管理储备      (考判断题)</strong></p>
-<p><strong>307. 制定进度计划      (考判断题)</strong></p>
-<p><strong>308. 进度网络分析CPM      (考判断题)</strong></p>
-<p><strong>309. CCM(资源约束型CPM)      (考判断题)</strong></p>
-<p><strong>310. 资源平滑, 利用非关键路径上活动的浮动时间, 调整非关键路径上的活动使项目资源数量减少波动      (考判断题)</strong></p>
-<p><strong>311. 会绘制分析横道图(甘特图)      (考判断题)</strong></p>
-<p><strong>312. 会绘制分析里程碑图      (考判断题)</strong></p>
-<p><strong>313. 会绘制分析项目进度网络图      (考判断题)</strong></p>
-<br>]]></content>
-      <categories>
-        <category>人工智能</category>
-      </categories>
-  </entry>
-  <entry>
     <title>人工智比赛资料</title>
     <url>/AI-trainer-match--examination.html</url>
     <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
@@ -6980,6 +6662,324 @@ json格式文件 "]
 ]]></content>
       <categories>
         <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>人工智比赛</title>
+    <url>/AI-trainer-match.html</url>
+    <content><![CDATA[<p><strong>人工智能训练师个人整理</strong></p>
+<a id="more"></a>
+
+<h1 id="人工智能训练师-初赛复习资料"><a href="#人工智能训练师-初赛复习资料" class="headerlink" title="人工智能训练师 初赛复习资料"></a>人工智能训练师 初赛复习资料</h1><p><strong>2021.8.12</strong></p>
+<p><strong>1. JavaScript Object Notation(JavaScript 对象表示法, JSON是一种基于文本的数据交换格式)      (考判断题+多选题)</strong></p>
+<p><strong>2. JSON有两种表示结构, 对象和数组      (考判断题+多选题)</strong></p>
+<p><strong>3. JSON对象结构以”{“开始, 以”}”结束中间部分由0或多个以”,”分隔的”key(关键字)/value(值)”对构成, 关键字和值之间以”:”分隔      (考判断题)</strong></p>
+<p><strong>4. JSON数组结构以”[“开始, “]”结束中间由0或多个以”,”分隔的值列表组成   (考判断题)</strong></p>
+<p><strong>5. Extensible Markup Language(可扩展标记语言, XML), 是一种允许用户对自己的标记进行定义的源语言, 可以用来标记数据, 定义数据类型   (考单选题+判断题+多选题)</strong></p>
+<p><strong>6. XML格式的文件由标签对组成   (考判断题)</strong></p>
+<p><strong>7. XML格式的文件必须有根元素   (考判断题)</strong></p>
+<p><strong>8. XML格式的文件必须有关闭标签   (考判断题)</strong></p>
+<p><strong>9. XML格式的文件标签中区分大小写字母   (考判断题)</strong></p>
+<p><strong>10. XML属性必须加引号   (考判断题)</strong></p>
+<p><strong>11. TXT是微软在操作系统上附带的一种文本格式, 主要存储文本信息(文字信息)   (考判断题)</strong></p>
+<p><strong>12. Executable File(可执行文件, EXE File)可以加载到内存中, 并由操作系统加载程序执行, 是可以在操作系统存储空间中浮动定位的可执行程序   (考判断题)</strong></p>
+<p><strong>13. DOC是电脑文件常见文件扩展名的一种, 该格式原是纯文字文件使用的, 多见于不同的操作系统中软硬件的使用说明至20世纪90年代, 微软在Office Word中使用了.doc作为扩展名, 并成为了流行的格式   (考单选题+判断题)</strong></p>
+<p><strong>14. MOV即QuickTime封装格式(也叫影片格式), 它是Apple公司开发的一种音频, 视频文件封装, 用于存储常用数字媒体类型   (考单选题+判断题)</strong></p>
+<p><strong>15. Audio Video Interleaved(音频视频交错格式, AVI)由微软公司于1992年11月推出, 并作为其Windows视频软件一部分的一种多媒体容器格式   (考单选题+判断题)</strong></p>
+<p><strong>16. Joint Photographic Experts Group(JPEG)是JPEG标准的产物该标准国际标准化组织制订, 是面向连续色调静止图像的一种压缩标准JPEG格式是最常用的图像文件格式, 后缀名为.jpg或.jpeg   (考单选题+判断题)</strong></p>
+<p><strong>17. 逗号分隔值(Comma-Separated Values, CSV)有时也称为字符分隔值, 其文件以纯文本形式存储表格数据(数字和文本)   (考单选题+判断题)</strong></p>
+<p><strong>18. CSV文件开头不留空, 以行为单位   (考判断题)</strong></p>
+<p><strong>19. CSV文件可含或不含列名, 含列名则居文件第一行   (考单选题+判断题)</strong></p>
+<p><strong>20. CSV文件一行数据不跨行, 无空行   (考判断题)</strong></p>
+<p><strong>21. CSV文件列内容如存在半角引号(即”), 应替换成半角双引号(“”)转义, 即用半角双引号(即””)将该字段值包含起来   (考单选题+判断题)</strong></p>
+<p><strong>22. CSV文件内码格式不限, 可为 ASCII, Unicode 或者其他   (考单选题+判断题)</strong></p>
+<p><strong>24. FLASH VIDEO(FLV)流媒体格式是随着Flash MX的推出发展而来的视频格式   (考单选题+判断题)</strong></p>
+<p><strong>25. WPS指WPS OFFICEWPS Office是由北京金山办公软件股份有限公司自主研发的一款办公软件套件, 可以实现办公软件最常用的文字, 表格, 演示, PDF阅读等多种功能   (考单选题+判断题+多选题)</strong></p>
+<p><strong>26. BLP是一种图片压缩格式, 体积小, 不能直接编辑, 是游戏中模型贴图的应用格式   (考判断题)</strong></p>
+<p><strong>27. XLS指Microsoft Excel工作表, 是一种常用的电子表格的格式   (考判断题)</strong></p>
+<p><strong>28. 在同一台计算机中, 内存比外存存取速度快   (考判断题)</strong></p>
+<p><strong>29. 32位微处理器中的32表示的技术指标是字长   (考判断题)</strong></p>
+<p><strong>30. 目前制造计算机所采用的电子器件是超大规模集成电路   (考判断题)</strong></p>
+<p><strong>31. Microsoft Office PowerPoint是微软公司的演示文稿软件用户可以在投影仪或者计算机上进行演示, 也可以将演示文稿打印出来, 制作成胶片, 以便应用到更广泛的领域中   (考判断题)</strong></p>
+<p><strong>32. 计算机中常用的文本编码类型有ASCII, GB2312, Unicode, UTF-8      (考判断题+多选题)</strong></p>
+<p><strong>33. 二进制文件按二进制编码方式来存储文件   (考判断题)</strong></p>
+<p><strong>34. 数据以二进制编码方式存储在计算机文件中   (考判断题)</strong></p>
+<p><strong>35. 机器学习是一门多领域交叉学科, 涉及概率论, 统计学, 逼近论, 凸分析, 算法复杂度理论等多个领域机器学习专门研究计算机怎样模拟或实现人类的学习行为, 以获取新的知识或技能, 重新组织已有的知识结构使之不断改善自身的性能      (考判断题+多选题)</strong></p>
+<p><strong>36. 深度学习是通过建立人工神经网络, 用层次化机制来表示客观世界, 并解释所获取的知识, 例如图像, 声音和文本      (考判断题+多选题)</strong></p>
+<p><strong>37. 深度学习的主要方式是监督学习, 无监督学习, 半监督学习和强化学习</strong></p>
+<p><strong>38. 监督学习是利用一组已知类别的样本来调整分类器的参数, 使其达到所要求性能的过程, 也称为监督训练或有教师学习   (考判断题)</strong></p>
+<p><strong>39. 无监督学习根据类别未知(没有被标记)的训练样本解决模式识别中的各种问题   (考判断题)</strong></p>
+<p><strong>40. 半监督学习是监督学习与无监督学习相结合的一种学习方法半监督学习同时使用未标记数据和已标记数据来进行模式识别工作   (考判断题)</strong></p>
+<p><strong>41. 强化学习又称再励学习, 评价学习或增强学习, 用于描述和解决智能体在与环境的交互过程中通过学习策略以达成回报最大化或实现特定目标的问题   (考判断题)</strong></p>
+<p><strong>42. 智能语音处理技术包括身份识别, 语种识别, 情感识别, 语音分离, 语音合成等   (考多选题)</strong></p>
+<p><strong>43. 生物特征识别技术包括步态识别, 声纹识别, 虹膜识别等   (考多选题)</strong></p>
+<p><strong>44. 立体视觉是计算机视觉领域的一个重要课题, 它的目的在于重构场景的三维几何信息   (考判断题)</strong></p>
+<p><strong>45. 目前的自然语言处理技术未完全达到人类智能   (考判断题)</strong></p>
+<p><strong>46. 自然语言处理不一定以经过标注过的数据作为输入   (考判断题)</strong></p>
+<p><strong>47. 自然语言处理不一定以有监督学习的方式实现   (考判断题)</strong></p>
+<p><strong>48. 自然语言处理可以通过无监督学习的方式实现   (考判断题)</strong></p>
+<p><strong>49. 数据预处理是一种数据挖掘技术, 包括数据清洗, 数据集成, 数据归约, 数据变换等多种方法   (考多选题)</strong></p>
+<p><strong>50. 在数据挖掘之前使用数据预处理技术先对数据进行一定的处理, 将极大提高数据挖掘的质量, 降低实际数据挖掘所需的时间   (考判断题)</strong></p>
+<p><strong>51. 数据变换方法包括数据平滑, 数据聚集, 数据泛化, 数据规范化等   (考多选题)</strong></p>
+<p><strong>52. 训练有监督学习模型时会将数据集划分为训练集, 验证集和测试集   (考多选题)</strong></p>
+<p><strong>53. 数据分析方法包括聚类分析, 因子分析, 相关分析, 方差分析, 回归分析等   (考多选题)</strong></p>
+<p><strong>54. 缺失数据处理方法包括删除含有缺失值的记录, 均值插补, 同类均值插补等   (考多选题)</strong></p>
+<p><strong>55. 数据治理是指对于数据采集, 数据清洗, 数据标注到数据交付整个项目生命周期每个阶段进行识别, 度量, 监控, 预警等一系列管理措施   (考多选题)</strong></p>
+<p><strong>56. 数据分割是指把逻辑上是统一整体的数据分割成较小的, 可以独立管理的物理单元进行存储, 以便于重构, 重组和恢复, 以提高创建索引和顺序扫描的效率   (考多选题)</strong></p>
+<p><strong>57. 数据清洗是指发现并纠正数据文件中可识别错误的最后一道程序, 包括检查数据一致性, 处理无效值和缺失值等   (考单选题+判断题)</strong></p>
+<p><strong>58. 为了避免在数据传输过程中数据被窃取, 被复制等, 应对数据传输过程进行压缩, 加密等操作   (考单选题+判断题)</strong></p>
+<p><strong>59. 数据一致性检查是根据每个变量的合理取值范围和相互关系, 检查数据是否合乎要求, 以及发现超出正常范围, 逻辑不合理或者相互矛盾的数据, 便于进一步核对和纠正   (考单选题+判断题)</strong></p>
+<p><strong>60. 采用区块链的数据标注平台采用强加密算法和分布式技术来保证数据安全   (考单选题+判断题)</strong></p>
+<p><strong>61. True Positive(TP) 是指某(些)个正样本被预测判定为正, 此种情况可以称作判断为真的正确情况   (考判断题)</strong></p>
+<p><strong>62. True Negative(TN)是指某(些)个负样本被预测判定为负, 此种情况可以称作判断为假的正确情况   (考判断题)</strong></p>
+<p><strong>63. False Positive(FP) 是指某(些)个负样本被模型预测为正, 此种情况可以称作判断为真的错误情况, 或称为误报   (考判断题)</strong></p>
+<p><strong>64. False Negative(FN)是指某(些)个正样本被模型预测为负; 此种情况可以称作判断为假的错误情况, 或称为漏报   (考判断题)</strong></p>
+<p><strong>65. 数据标注员需要具备的基本素质为: 学习力, 专注力, 责任感持续的学习力是标注工作的基础, 有耐心才能坚持在标注行业, 较强专注力可提高个人工作效率      (考判断题+多选题)</strong></p>
+<p><strong>66. 数据标注员需要参照数据标注规则   (考判断题)</strong></p>
+<p><strong>67. 数据标注员遇到数据标注规则模糊的地方需要进行询问   (考判断题)</strong></p>
+<p><strong>68. 数据标注员需要总结经验并及时汇报遇到的问题   (考判断题)</strong></p>
+<p><strong>69. 初级数据标注员应具备的职业技能包括具备一定的职业道德规范; 掌握行业基础知识; 具备基础业务能力      (考判断题+多选题)</strong></p>
+<p><strong>70. 中级数据标注员应该具备的职业技能包括具备较高的职业道德和一定的从业经验; 具备较高的业务能力和责任心; 具备简单的质检能力      (考判断题+多选题)</strong></p>
+<p><strong>71. 高级数据标注员应该具备的职业技能包括具备一定的从业经验; 具备较高的业务能力和责任心; 能独立完成各类业务的示范模板和操作培训; 具备质检能力; 具备团队管理能力      (考判断题+多选题)</strong></p>
+<p><strong>72. 数据标注规则的特点包括数据标注规则需要一致; 数据标注规则需要不断完善; 需求方优先规则; 质检优先规则      (考判断题+多选题)</strong></p>
+<p><strong>73. 数据标注的应用场景包括自动驾驶, 智能安防, 智慧医疗, 工业4.0, 新零售等   (考多选题)</strong></p>
+<p><strong>74. 根据数据标注对象不同, 数据标注可分为文本标注, 语音标注, 图像标注和视频标注   (考多选题)</strong></p>
+<p><strong>75. Labelme是一个图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
+<p><strong>76. Labelme能对图像进行多边形, 矩形, 圆形, 多段线, 线段, 点形式, flag 形式的标注      (考判断题+多选题)</strong></p>
+<p><strong>77. Labelme可以在Ubuntu, macOS, Windows操作系统上使用   (考判断题)</strong></p>
+<p><strong>78. Labelme以JSON文件存储标注信息   (考判断题)</strong></p>
+<p><strong>79. LabelImg是一个图像标注软件, 使用 Python 语言编写, 图形界面使用Qt   (考判断题)</strong></p>
+<p><strong>80. LabelImg以PASCAL VOC格式(ImageNet使用的格式)的XML文件存储标注信息此外, 它还支持YOLO格式   (考单选题+判断题)</strong></p>
+<p><strong>81. Labelbox是一个图像标注软件</strong></p>
+<p><strong>82. 常见的图像数据标注类型包括关键点标注, 矩形框标注, 图像分割, 3D框标注, 属性标注等   (考多选题)</strong></p>
+<p><strong>83. 矩形框标注是一种对目标对象进行目标检测框标注的简单处理方式, 常用于标注自动驾驶下的人, 车, 物等   (考判断题)</strong></p>
+<p><strong>84. 区域标注指是指将图像分成各具特性的区域并提取出感兴趣部分的过程   (考单选题+判断题)</strong></p>
+<p><strong>85. 属性标注是用一个或多个标签标注目标物的属性   (考判断题)</strong></p>
+<p><strong>86. 关键点标注一般用于人体脸部轮廓, 五官定位, 身体部位和动物头像等   (考多选题)</strong></p>
+<p><strong>87. 视频数据标注任务包含视频标签的时间位置, 空间位置和标签信息标注等内容      (考判断题+多选题)</strong></p>
+<p><strong>88. 视频源数据管理包含视频信息管理和视频目录管理两大块      (考判断题+多选题)</strong></p>
+<p><strong>89. 视频信息管理包含视频上传, 视频修改, 视频查询, 视频删除, 下载视频等功能   (考多选题)</strong></p>
+<p><strong>90. 视频目录管理包含添加目录, 删除目录和目录排序功能   (考多选题)</strong></p>
+<p><strong>91. 视频数据标注通过语义, 内容等方式标注, 有利于视频数据搜索, 管理和收藏      (考判断题+多选题)</strong></p>
+<p><strong>92. 相较于图像数据而言, 图像数据是在一个时间点上的数据, 而视频数据是在一段时间上连续的一系列图像数据的集合, 表达的信息更加丰富, 因此具有更广的应用场景   (考判断题)</strong></p>
+<p><strong>93. 视频数据标注目的是对场景中活动目标进行位置, 形状, 动作, 色彩等有关特征进行标注      (考判断题+多选题)</strong></p>
+<p><strong>94. 常用的图像数据标注工具包括LabelMe, LabelImg和LabelBox   (考多选题)</strong></p>
+<p><strong>95. 目前常见的标注文档存储格式包括JSON, XML, TXT   (考多选题)</strong></p>
+<p><strong>96. 图像标注是实现图像分类, 目标检测, 图像分割的基础   (考多选题)</strong></p>
+<p><strong>97. ImageNet项目标注了一千四百多万张图像, 举办了八次图像任务挑战赛   (考单选题+判断题)</strong></p>
+<p><strong>98. ImageNet项目吸引了全球的参赛队伍通过编写相关算法来完成分类, 检测和定位等子任务   (考单选题+判断题)</strong></p>
+<p><strong>99. COCO数据集是一个大型的, 丰富的物体检测, 分割和字幕数据集   (考多选题)</strong></p>
+<p><strong>100. MNIST数据集是由0-9手写数字图片和数字标签所组成的   (考单选题+判断题)</strong></p>
+<p><strong>101. MNIST数据集由60000个训练样本和10000个测试样本组成   (考单选题+判断题)</strong></p>
+<p>*<em>102. MNIST数据集每个样本都是一张28 * 28像素的灰度手写数字图像   (考单选题+判断题)*</em></p>
+<p><strong>104. CIFAR-10是一个包含60000张图片的数据集   (考单选题+判断题)</strong></p>
+<p>*<em>105. CIFAR-10中, 每个图像为32</em>32的彩色图像   (考单选题+判断题)**</p>
+<p><strong>106. CIFAR-100有100个类, 每个类包含600个图像   (考单选题+判断题)</strong></p>
+<p><strong>107. CIFAR-100中, 每类各有500个训练图像和100个测试图像      (考判断题+多选题)</strong></p>
+<p><strong>108. 在图像数据标注中, 用户的角色可以分为3类, 分别是标注员, 审核员和管理员   (考判断题)</strong></p>
+<p><strong>109. 标注员负责对图像数据进行标注   (考判断题)</strong></p>
+<p><strong>110. 审核员负责对标注好的数据进行审核   (考判断题)</strong></p>
+<p><strong>111. 管理员负责对相关人员进行管理, 并对标注任务进行发放及回收   (考判断题)</strong></p>
+<p><strong>112. 图像数据标注流程: 图像获取-&gt;图像前处理-&gt;图像预识别-&gt;图像标注-&gt;结果输出      (考判断题+多选题)</strong></p>
+<p><strong>113. 项目不同图像的获取方式也不同, 一般可通过下采集, 网络采集等方式获取所需的图像   (考单选题+判断题)</strong></p>
+<p><strong>114. 图像前处理对图像进行查重处理, 将重复的图像删除   (考判断题)</strong></p>
+<p><strong>115. 可通过特定的程序, 先对数据做一个预标注, 标注员只需校验标注结果即可, 进而大幅提高标注效率   (考判断题)</strong></p>
+<p><strong>116. 在进行标注任务时, 首先要根据标注对象, 标注要求和不同的数据集格式选择合适的标注工具   (考判断题)</strong></p>
+<p><strong>117. 图像数据标注产业的蓬勃发展为人工智能行业计算机视觉方向的兴起奠定了扎实的基础   (考判断题)</strong></p>
+<p><strong>118. 不同行业对于数据的标注要求有所差异   (考判断题)</strong></p>
+<p><strong>119. 自动驾驶行业利用带有标签的数据集来对自动驾驶模型进行训练, 使其对路面情况具备判断能力, 并能做出相应的应对策略   (考判断题)</strong></p>
+<p><strong>120. 自动驾驶行业标注内容包括路面中行人识别, 车辆识别和道路识别等      (考判断题+多选题)</strong></p>
+<p><strong>121. 智慧医疗行业主要包括对解剖部位或病变部位对应的点线面以及轮廓进行标记, 如CT断层成像数据, 需要根据病理特点标注肺部边界轮廓   (考判断题)</strong></p>
+<p><strong>122. 智能安防行业通过对复杂条件下的人脸, 道路, 车辆, 动作的数据采集与标注实现城市道路监控, 车辆人流监测, 公共安全防范等应用      (考判断题+多选题)</strong></p>
+<p><strong>123. 区域标注需同时满足均匀性和连通性的条件, 其中均匀性指的是该区域中的所有像素点都满足灰度, 纹理, 彩色等特征的某种相似性准则; 连通性是指在该区域内存在的连接任意两点的路径      (考判断题+多选题)</strong></p>
+<p><strong>124. 与矩形框标注相比, 区域标注更加精确, 标注边缘可以是多边形甚至是柔性的, 常用于自动驾驶中的道路识别   (考单选题+判断题)</strong></p>
+<p><strong>125. 标注框标注用矩形框, 四边形框框选出目标物      (考判断题+多选题)</strong></p>
+<p><strong>126. 关键点标注用一个或多个关键点标注目标物特定局部的位置   (考单选题+判断题)</strong></p>
+<p><strong>127. 区域标注用开区域或闭区域分割出目标物的轮廓   (考判断题)</strong></p>
+<p><strong>128. 目前关键点标注常用于人脸识别, 人体骨骼检测, 手势确认等方面      (考判断题+多选题)</strong></p>
+<p><strong>129. 关键点标注虽然看起来比较简单, 只要在需要标注的地方打点标注就行, 但是实现起来难度非常大, 在图片标注任务中属于高难度标注      (考判断题)</strong></p>
+<p><strong>130. 关键点的数量一般较多, 在标注过程中需要搞清楚少则几个, 多则上百个点所代表的含义, 做得多就容易错得多      (考判断题)</strong></p>
+<p><strong>131. 关键点判断标注合格的标准不是很明确, 导致标注人员不能检查自己犯的错误      (考判断题)</strong></p>
+<p><strong>132. 在人脸关键点标注项目中, 标注的人脸图片通常是二维图片的, 但是需要标注员有三维立体感, 将标注后的图片具有立体效果   (考单选题+判断题)</strong></p>
+<p><strong>133. 当遇到遮挡点或不可见点, 关键点标注需要标注人员在标注过程时具有丰富的空间想象能力   (考单选题+判断题)</strong></p>
+<p><strong>134. 框标注包括矩形标注, 自由矩形标注, 3D框标注      (考判断题+多选题)</strong></p>
+<p><strong>135. 框标注应用方位广泛, 通过拉框的方式, 选定框区域内的内容来对图片的特征进行提取</strong></p>
+<p><strong>136. 在对图片进行框标注时, 由于框的图像形状受限, 会导致所标注的范围不够精确的问题      (考判断题)</strong></p>
+<p><strong>137. 图像区域标注分为开区域标注和闭区域标注      (考判断题+多选题)</strong></p>
+<p><strong>138. 开区域标注常见的标注有: 线标注; 闭区域标注常见的标注有: 曲线标注和多边形标注   (考单选题+判断题+多选题)</strong></p>
+<p><strong>139. 针对自动分割对多目标或背景复杂的图像难以奏效, 手工标注极为耗时且标注结果不准确和不可重复这两大问题, 提出了交互式图像分割      (考判断题)</strong></p>
+<p><strong>140. 交互式智能图像分割标注针对图像分割标注的预识别算法, 实现通过机器对图像进行智能分割, 再进行人工修边和筛选, 从而大幅提高生产效率, 减少人工成本, 减少人工差错      (考判断题+多选题)</strong></p>
+<p><strong>141. 线标注通常用于自动驾驶应用中的车道线标注, 主要用于自动驾驶车辆的道路识别      (考判断题+多选题)</strong></p>
+<p><strong>142. 多边形标注较为准确, 避免了大量白色空间的视觉模型偏差, 一般用于标注街景图片, 人物, 动物, 人体部位等      (考判断题+多选题)</strong></p>
+<p><strong>147. 采样精度: 指存放一个采样值所使用的比特数采样率和采样精度越大, 记录的波形更接近原始信号, 但同时占用的存储空间也越大      (考判断题)</strong></p>
+<p><strong>148. 声道: 声道指输入或输出信号的通道通常用多声道来输入或输出不同的信号   (考单选题+判断题)</strong></p>
+<p><strong>149. 信噪比: 信噪比指信号与噪声之间的能量比, 录音时信噪比越高越好   (考单选题+判断题)</strong></p>
+<p><strong>150. 声波: 声波是由物体震动产生, 使周围的介子(如空气)产生波动   (考单选题+判断题)</strong></p>
+<p><strong>151. 声速: 声波每秒在介质中传播的距离   (考单选题+判断题)</strong></p>
+<p><strong>152. 波长: 沿着声波传播方向, 声波震动一周所传播的距离或在波形上相同的相邻两点的距离   (考单选题+判断题)</strong></p>
+<p><strong>153. 振幅: 震动物体离开平衡位置的最大距离称为振幅, 通常用A表示   (考单选题+判断题)</strong></p>
+<p><strong>154. 分贝: 分贝是增益或衰减单位, 用来描述两个相同物理量之间的相对关系   (考单选题+判断题)</strong></p>
+<p><strong>155. TTS(语音合成)即从文本到语音, 是人机对话的一部分, 是指让计算机能够说话   (考单选题+判断题)</strong></p>
+<p><strong>156. TTS中最主要的一个指标是自然度, 也就是当我们听见计算机跟我们说话时, 能否区分出了是人还是计算机   (考单选题+判断题)</strong></p>
+<p><strong>157. ASR(语音识别)是将声音转换为文字   (考单选题+判断题)</strong></p>
+<p><strong>158. 语音标注数据的典型应用场景包括: 智能医疗, 智能驾驶, 智能家居, 智能教育, 智能客服, 机器人等      (考判断题+多选题)</strong></p>
+<p><strong>159. 音色/音质: 指能够区分两种不同声音的基本特征, 比如人说话的声音和小提琴的声音在语音信号处理技术中, 人声识别研究常将音色作为重要研究对象;    (考单选题+判断题)</strong></p>
+<p><strong>160. 音调: 指声音的高低, 由声波的频率决定比如在一般情况下, 男声听起来比较低沉, 而女声听起来会比较尖锐;    (考单选题+判断题)</strong></p>
+<p><strong>161. 音强: 指声音的强弱, 由声波的振动幅度决定, 可简单理解为语音信号波形图中的信号幅度;    (考单选题+判断题)</strong></p>
+<p><strong>162. 音长: 指声音的长短, 由发音时间的长短决定</strong></p>
+<p><strong>163. 语音编码格式: 指按一定格式压缩采样和量化后的数值, 从而降低音频的数据量, 便于音频数据的存储和传输常用的编码格式有PCM(WAV), MP3等   (考单选题+判断题)</strong></p>
+<p><strong>164. 按照智能应用场景, 语音数据标注任务可划分为智能家居, 智能会议, 智能客服, 智能车载等;       (考判断题+多选题)</strong></p>
+<p><strong>165. 按照语音信号处理研究方向, 语音数据标注任务可划分为语音识别, 语音合成, 说话人识别, 情感识别, 语音分离等;       (考判断题+多选题)</strong></p>
+<p><strong>166. 按照音源与拾音器之间的距离, 语音数据标注任务可划分为近场语音, 远场语音;       (考判断题+多选题)</strong></p>
+<p><strong>167. 按照语音时长, 语音数据标注任务可划分为短语音, 长语音;    (考单选题+判断题)</strong></p>
+<p><strong>169. 按照口音, 语音数据标注任务可划分为普通话, 方言, 带地方口音的普通话等      (考判断题+多选题)</strong></p>
+<p><strong>170. 丢帧: 在语音录制过程中, 由于音频设备的问题而表现出的发音卡顿, 比如语音段中某0.1秒内突然没有声音, 0.1秒过后语音又恢复正常, 此现象称为”丢帧”丢帧是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>171. 切音: 在语音录制过程中, 由于过早结束或过晚开始录制导致个别字被截断而表现出的发音不完整, 此现象称为”切音”, 切音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>172. 吞音: 在说话人发音时, 由于个别字的声母或韵母未完全发音而表现出的发音不完整, 此现象称为”吞音”; 是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>173. 喷麦: 在说话人发音时, 由于距离麦克风太近而表现出的录入语音不清晰, 听起来有明显噗噗的声音, 此现象称为”喷麦”喷麦是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>174. 重音: 在说话人发音时, 语音中出现两个或多个说话人, 他们的音量大小相近且有大段重叠, 无法分清主次, 此现象称为”重音”重音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>175. 空旷音: 在录制过程中, 由于周围环境较为空旷而表现出来的发音中带有回音, 此现象称为”空旷音”; 空旷音是语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>176. 混响: 混响是另一种常见的声学场景与回声不同, 混响是语音经多次反射, 折射后叠加而成的声音混响语音标注过程中, 常见的语音异常之一   (考单选题+判断题)</strong></p>
+<p><strong>177. 通常情况下, 丢帧, 切音, 吞音, 喷麦, 重音, 空旷音, 混响等异常语音数据会被认定为无效语音      (考判断题+多选题)</strong></p>
+<p><strong>178. 数据和特征决定了机器学习的上限, 模型和算法只是逼近这个上限而已      (考判断题+多选题)</strong></p>
+<p><strong>179. 语音学软件Praat, 是一款跨平台的多功能语音学专业软件, 主要用于对数字化的语音信号进行分析, 标注, 处理及合成等实验目前, Praat语音标注常用的标注工具      (考判断题+多选题)</strong></p>
+<p><strong>180. 在操作标注软件Praat打开音频文件后, 点击Tab键可以进行播放和暂停      (考判断题+多选题)</strong></p>
+<p><strong>181. 在操作标注软件Praat标注完成后, 直接按Ctrl+s保存, 保存后为一个TextGrid文件   (考单选题+判断题)</strong></p>
+<p><strong>182. 音频切分是语音标注基础, 需要按照音频波形进行切割, 将有声频段切分出来   (考单选题+判断题)</strong></p>
+<p><strong>183. 音频切分时, 切分前后贴合音频波形, 前后留白不能超过0.05S, 贴合音频波形切分   (考单选题+判断题)</strong></p>
+<p><strong>184. 音频切分时, 句子静音间隔超过0.1s则需要切分开成两句   (考单选题+判断题)</strong></p>
+<p><strong>185. 音频切分时, 非正常人声大段噪音的情况, 中间静音部分超过 0.2S 需要切分开   (考单选题+判断题)</strong></p>
+<p><strong>186. 音频切分时, 不同角色层需要切分开   (考单选题+判断题)</strong></p>
+<p><strong>187. 标注中的噪音标签是指音频有波形, 但音频内容为非正常对话内容如波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N或一人说话连续的笑声, 哈欠, 呼吸声等作为噪音标签N, 极其轻的声音波形不明显可以不标   (考单选题+判断题)</strong></p>
+<p><strong>188. 进行语音角色标注时, 说话角色为客户的标记为客户 C   (考单选题+判断题)</strong></p>
+<p><strong>189. 进行语音角色标注时, 说话角色为客服的标记为客服 O   (考单选题+判断题)</strong></p>
+<p><strong>190. 进行语音角色标注时, 说话角色为非顾客或者客服音频, 电话录音系统, 电话彩铃出现正常人声, 机器人音频标记其他角色 S   (考单选题+判断题)</strong></p>
+<p><strong>191. 进行语音性别标注时, 说话角色男性标记C1,O1, 女性角色C2, O2   (考判断题)</strong></p>
+<p><strong>192. 进行背景人声标注时, 背景人声标签主要为远场人说话的音频, 能听清识别的正常转写文本, 无法听清的只标注标签即可, 例如两个人说话, 另一个人在远处说话, 归为背景人声   (考单选题+判断题)</strong></p>
+<p><strong>193. 在进行叠音标注时, 重叠标签主要通过音频波形图判断, 所有角色说话清晰, 但波形图上大块重叠, 标注重叠标签P, 标注重叠标签P后, 不能出现文本   (考单选题+判断题)</strong></p>
+<p><strong>194. 噪音标注, 噪音标签 N, 波形中是电话按键音, 纯唱歌彩铃, 电流杂音等嘈杂音频标记为噪音标签N   (考单选题+判断题)</strong></p>
+<p><strong>195. 常见的语音文件格式类型有: .WAV, .WMA, .MP3, .CDA, .MIDI, .RA等      (考判断题+多选题)</strong></p>
+<p><strong>196. 目前(2021年)语音标注主要是用于监督学习   (考单选题+判断题)</strong></p>
+<p><strong>197.  TTS(Text-to-Speech, 语音合成), 即”从文本到语音”, 是人机对话的一部分, 让机器能够说话目前在很多电话机器人上的使用很广泛, 而且几乎已经判断不出来是机器人在和你讲话   (考单选题+判断题)</strong></p>
+<p><strong>198. ASR(Automatic Speech Recognition, 语音识别), 是将声音转换为文字   (考单选题+判断题)</strong></p>
+<p><strong>199. ASR在中文领域有很大的难度, 中文由于其语言博大精深, 而且方言众多, 对于声音转换为文字具有很多不确定性   (考单选题+判断题)</strong></p>
+<p><strong>200. 语音处理工具主要包括能实现录音, 混音, 剪辑等功能的软件      (考判断题+多选题)</strong></p>
+<p><strong>201. audio-annotator是基于Javascript的 音频 标注工具, 它可以实现无形, 声谱图, 声波进行可视化标注, 通用性强, 应用广泛      (考判断题+多选题)</strong></p>
+<p><strong>202. EchoML是一种基于B/S架构的音频标注工具, 便于实现多人协同标注但需要搭建服务器   (考单选题+判断题)</strong></p>
+<p><strong>203. 语音识别, 语音合成等智能语音处理技术在单一说话人, 发音规范, 背景噪音良好的情况下已经具有较为突出的表现      (考判断题+多选题)</strong></p>
+<p><strong>204. 当前阻碍智能语音处理技术实用化的一大困难即是复杂条件下性能降低的问题在实际生活场景中, 自然发音, 口音, 复杂噪声, 声音混叠等现象随处可见, 导致语音识别性能下降      (考判断题+多选题)</strong></p>
+<p><strong>205. 随着深度学习技术的发展, 数据对于训练模型的影响越来越重要, 因此, 生产复杂场景下的智能语音数据无论对于学术研究还是对于企业开发, 均具有重大意义   (考判断题)</strong></p>
+<p><strong>206. 语音数据标注是语音数据产品生产流程中的一个环节, 总的来说, 语音数据产品生产包含了从语音采集到数据交付的各个环节, 各个环节之间相辅相成, 紧紧相扣语音数据产品生产过程具体包括语音采集, 数据预处理, 语音数据标注, 数据质检与数据交付模块      (考判断题+多选题)</strong></p>
+<p><strong>207. 数据清洗, 信息脱敏是常见的数据预处理方法      (考判断题+多选题)</strong></p>
+<p><strong>208. 多类型, 大体量的样本空间及高质量数据是人工智能技术精度的重要保障, 语音数据标注是语音数据产品生产流程中的关键环节      (考判断题+多选题)</strong></p>
+<p><strong>209. 常见的标注文档存储格式包括XML, TXT, JSON等      (考判断题+多选题)</strong></p>
+<p><strong>210. CSV格式的文件是以逗号为分隔符的   (考判断题)</strong></p>
+<p><strong>211. LabelHub 是为大型数据标注项目提供更好的管理方式及数据安全保障的数据标注系统, 它的结果文件同时支持CSV, XML, JSON三种格式      (考判断题+多选题)</strong></p>
+<p><strong>212. 文本数据异常包括语法类异常, 语义类异常, 覆盖类异常等      (考判断题+多选题)</strong></p>
+<p><strong>213. 语法类异常主要包括词法错误, 值域格式错误, 不规则的取值等      (考判断题+多选题)</strong></p>
+<p><strong>214. 语义类异常主要包括数据中出现矛盾, 数据中存在重复值和无效的元组等      (考判断题+多选题)</strong></p>
+<p><strong>215. 覆盖类异常主要包括数据中出现矛盾, 不规则的取值等   (考判断题)</strong></p>
+<p><strong>216. 目前(2021年)文本标注主要是用于监督学习   (考判断题)</strong></p>
+<p><strong>217. 文本标注的对象是自然语言文本   (考判断题)</strong></p>
+<p><strong>218. 自然语言处理技术达到人类智能的标准是通过图灵测试   (考单选题+判断题)</strong></p>
+<p><strong>219. 目前(2021年)最先进的自然语言处理技术是基于深度学习模型的   (考单选题+判断题)</strong></p>
+<p><strong>220. 中文文本需要进行分词标注   (考判断题)</strong></p>
+<p><strong>221. 标注出一句话中的动词属于词性标注   (考判断题)</strong></p>
+<p><strong>222. 词性标注属于序列标注   (考判断题)</strong></p>
+<p><strong>223. 分词标注属于序列标注   (考判断题)</strong></p>
+<p><strong>224. 标注一句话的情感状态属于属性标注   (考判断题)</strong></p>
+<p><strong>225. 文本标注的实体类别常见的有人名PER, 地名LOC和机构名ORG   (考单选题+判断题)</strong></p>
+<p><strong>226. 常见的文本标注工具包括doccano, YEDDA, Chinese-Annotator, IEPY, DeepDive, BRAT等      (考判断题+多选题)</strong></p>
+<p><strong>227. “小明给妈妈洗脚”一句话的直接宾语为脚   (考判断题)</strong></p>
+<p><strong>228. WORD文档文件的扩展名是DOC, EXCEL文档文件的扩展名是XLS   (考单选题+判断题)</strong></p>
+<p><strong>229. 机器翻译是自然语言处理领域的一个重要课题   (考单选题+判断题)</strong></p>
+<p><strong>230. Brat只能在Linux下运行   (考单选题+判断题)</strong></p>
+<p><strong>231. IEPY是一个Python开发的开源的语料标准工具   (考单选题+判断题)</strong></p>
+<p><strong>232. 文本数据标注的大致流程包括预处理, 标注, 质检和验收      (考判断题+多选题)</strong></p>
+<p><strong>233. 优秀的文本标注工具应具备的特点包括扩展性强, 操作便捷, 容错性强, 数据导出格式多样, 支持多语种      (考判断题+多选题)</strong></p>
+<p><strong>234. 文本数据标注主要应用的场景包括新零售行业, 广告行业, 客服行业, 公共安全和金融行业等      (考判断题+多选题)</strong></p>
+<p><strong>235. 文本标注工具BRAT的主要功能是实体标注和关系标注      (考判断题+多选题)</strong></p>
+<p><strong>236. 阅读理解标注的一般过程是标注者快速阅读段落内容, 根据内容提问以及标记问题答案   (考单选题+判断题)</strong></p>
+<p><strong>237. 文本标注的结果一般会作为自然语言处理算法的输入   (考判断题)</strong></p>
+<p><strong>238. 文本标注包括序列标注, 关系标注和属性标注   (考单选题+判断题)</strong></p>
+<p><strong>239. 序列标注包括分词, 实体, 关键字, 韵律和意图理解标注等   (考单选题+判断题)</strong></p>
+<p><strong>240. 关系标注所标注关系包括指向关系, 修饰关系, 平行语料等   (考单选题+判断题)</strong></p>
+<p><strong>241. Chinese-Annotator是支持中文的文本标注软件   (考单选题+判断题)</strong></p>
+<p><strong>242. 韵律标注主要是为了标注出句中字词间的停顿   (考单选题+判断题)</strong></p>
+<p><strong>243. 情感标注属于属性标注   (考单选题+判断题)</strong></p>
+<p><strong>244. 自然语言对话被誉为人工智能皇冠上的宝石   (考单选题+判断题)</strong></p>
+<p><strong>245. 标注需求不能脱离人工智能应用场景   (考单选题+判断题)</strong></p>
+<p><strong>246. 总体原则是文本标注过程中必须遵守的基本原则   (考单选题+判断题)</strong></p>
+<p><strong>247. 在分词当中遇到一些专有名词时, 无需进行拆分   (考单选题+判断题)</strong></p>
+<p><strong>248. 在日常生活中的书籍, 文档等等资料都可以整合处理后变成语料库来进行使用   (考单选题+判断题)</strong></p>
+<p><strong>249. 网上抓取到的语料处理难点在于网上的文本数据的用法和教科书所讲有较大差异   (考单选题+判断题)</strong></p>
+<p><strong>250. 语料处理过程的工作量大致会占据完整的中文自然语言处理工作量的50%-70%   (考单选题+判断题)</strong></p>
+<p><strong>251. 语料处理主要包括四个方面: 数据清洗, 分词, 词性标注和去停用词      (考判断题+多选题)</strong></p>
+<p><strong>252. 可以结合分词算法来加快文本数据标注的进度   (考单选题+判断题)</strong></p>
+<p><strong>253. 分词算法常见的有: 正向最大匹配算法, 逆向最大匹配算法, 最大Ngram分值算法, 全切分算法, 双向最大最小匹配算法等   (考单选题+判断题)</strong></p>
+<p><strong>254. 词性标注, 就是给每个词语打标签, 如形容词, 动词, 名词等      (考判断题+多选题)</strong></p>
+<p><strong>255. 停用词一般指对文本特征没有任何贡献作用的字词, 比如标点符号, 语气, 人称等一些词      (考判断题+多选题)</strong></p>
+<p><strong>256. 有些场景是需要语气词来进行判断情感, 所以去停用词的操作一定要根据场景进行   (考单选题+判断题)</strong></p>
+<p><strong>257. 自然语言处理可以在很多领域上进行应用, 如: 机器翻译, 情感分析, 智能问答, 文摘生成, 文本分类, 舆论分析, 知识图谱和销售分析等      (考判断题+多选题)</strong></p>
+<p><strong>258. 对于自然语言处理工程来说, 良好的语料标注是项目成功的基础   (考单选题+判断题)</strong></p>
+<p><strong>259. 语言学主要包括以下几个分支: 句法学, 语义学, 形态学(词根, 前缀后缀等), 音系学, 语音学, 词汇, 话语分析, 语用学和篇章结构分析等      (考判断题+多选题)</strong></p>
+<p><strong>260. 语料标注涵盖在自然语言处理任务的建模和标注两个步骤中, 语料标注过程常常需要在建模和标注之间反复进行迭代, 因为很难一次性建立完美的标注模型      (考判断题+多选题)</strong></p>
+<p><strong>261. 应该建立标注标准, 将标注方式细化, 才能保证标注数据的一致性   (考单选题+判断题)</strong></p>
+<p><strong>262. 当有多人对相同数据进行标注时, 可以采取交叉标注的方式   (考单选题+判断题)</strong></p>
+<p><strong>263. 在标注过程中, 应尽可能使用自动化方式减少标注人员工作量   (考单选题+判断题)</strong></p>
+<p><strong>264. 语料库选取应注意代表性, 不能只用单一新闻源构建语料库   (考单选题+判断题)</strong></p>
+<p><strong>265. 语料库选取的平衡性要求语料库中的类别组成应该与真实数据中的比例基本一致   (考单选题+判断题)</strong></p>
+<p><strong>266. 审核过程最好由参与制定标注标准的人来执行   (考单选题+判断题)</strong></p>
+<p><strong>267. 对专业度要求比较高的标注, 最好请从业人员参与标注   (考单选题+判断题)</strong></p>
+<p><strong>268. 语义标注中的自定义标签包括意图级别配置, 功能配置和预识别配置等      (考判断题+多选题)</strong></p>
+<p><strong>269. 音调包括阴平, 阳平, 上声, 去声和轻声      (考判断题+多选题)</strong></p>
+<p><strong>270. 韵律符号#1表示韵律词边界; 韵律符号#2表示韵律短语边界; 韵律符号#3表示语调短语边界; 韵律符号#4表示句末边界      (考判断题+多选题)</strong></p>
+<p><strong>271. Chinese-Annotator是一个较为完整的系统, 包括前端, 后台和数据库   (考单选题+判断题)</strong></p>
+<p><strong>272. 质量, 一组固有特性满足要求的程度   (考单选题+判断题)</strong></p>
+<p><strong>273. 产品, 过程的结果包括了硬件(如发动机机械零件), 软件(如计算机程序, 字典), 流程性材料(如润滑油), 服务(如运输)及其任意组合   (考单选题+判断题)</strong></p>
+<p><strong>274. 硬件产品是指由制作的零件和部件组成或由其组装成的产品, 如发动机机械零件   (考单选题+判断题)</strong></p>
+<p><strong>275. 软件是指由承载在媒体上的信息组成的智力产品软件能以概念, 记录或程序的形式存在计算机程序是软件产品的一个实例材料的定义   (考单选题+判断题)</strong></p>
+<p><strong>276. 服务是指在供方和顾客接口处完成的至少一项活动的结果   (考单选题+判断题)</strong></p>
+<p><strong>277. 过程: 将输入转化为输出的相互关联或相互作用的一组活动任何一个过程都由输入, 过程活动和输出三部分组成   (考单选题+判断题)</strong></p>
+<p><strong>278. 顾客: 接受产品的组织或个人(狭义: 产品和服务的最终使用者或接受者     广义: 要结合过程模型去理解, 任何一个过程输出的接受者都是顾客)      (考判断题+多选题)</strong></p>
+<p><strong>279. 质量管理的定义和方针: 质量管理: 在质量方面指挥, 控制, 组织和协调的活动质量方针: 由组织最高管理者正式发布的关于质量方面的全部意图和方向      (考判断题+多选题)</strong></p>
+<p><strong>280. 质量管理发展阶段: １检验阶段; 2, 统计质量控制阶段; 3, 全面质量管理阶段; 4, 经营质量管理阶段      (考判断题+多选题)</strong></p>
+<p><strong>281. 质量管理的八项管理原则: (1)以顾客为关注焦点(2)领导作用(3)全员参与(4)过程方法(5)管理的系统方法(6)持续改进(7)基于事实的决策方法(8)与供方互利的关系      (考判断题+多选题)</strong></p>
+<p><strong>282. PDCA循环(计划—执行—检查—处理)循环又称戴明循环      (考判断题+多选题)</strong></p>
+<p><strong>283. 6σ质量管理标准是一种以顾客为导向, 重视策划过程, 重视科学的数据分析, 明确量化的目标的一种持续改进管理模式      (考判断题+多选题)</strong></p>
+<p><strong>284. 质量屋定义及其方法, 一个完整的质量屋包括6个部分: (1)顾客需求及其权重, 即质量屋的”什么(What)”(2)技术需求(最终产品特性), 即质量屋的”如何(How)”(3)关系矩阵, 即顾客需求和技术需求之间的相关程度关系矩阵(4)竞争分析, 站在顾客的角度, 对本企业的产品和市场上其它竞争者的产品在满足顾客需求方面进行评估(5)技术需求相关关系矩阵, 质量屋的屋项(6)技术评估, 对技术需求进行竞争性评估, 确定技术需求的重要度和目标值等      (考判断题+多选题)</strong></p>
+<p><strong>285.  质量成本管理: 质量成本是为了确保和保证满意的质量而发生的费用以及没有达到满意稍微质量所造成的损失   (考单选题+判断题)</strong></p>
+<p><strong>286. 职能组织结构在职能组织结构中, 每一个职能部门可根据它的管理职能对其直接和非直接的下属工作部门下达工作指令   (考单选题+判断题)</strong></p>
+<p><strong>287. 线性组织结构中, 每一个工作部门只能对其直接的下属部门下达工作指令, 每一个工作部门也只有一个直接的上级部门, 因此, 每一个工作部门只有唯一一个指令源, 避免了由于矛盾的指令而影响组织系统的运行   (考单选题+判断题)</strong></p>
+<p><strong>288. 矩阵组织结构适用于大的组织系统在矩阵组织结构中, 每一项纵向和横向交汇的工作, 指令来自于纵向和横向两个工作部门, 此其指令源为两个   (考单选题+判断题)</strong></p>
+<p><strong>289. 进度管理计划为编制, 监督和控制项目进度建立准则和明确活动. 包括: 项目进度模型制定, 进度计划的发布和迭代长度, 准确度, 计量单位, 组织程序链接, 项目进度模型维护, 控制临界值, 绩效测量规则, 确定完成百分比的规则, EVM 技术, 如基准法, 固定公式法, 完成百分比法等   (考单选题+判断题)</strong></p>
+<p><strong>290. 紧前关系: FS, FF, SS, SF      (考判断题+多选题)</strong></p>
+<p><strong>291. 活动间依赖关系   (考判断题)</strong></p>
+<p><strong>292. 强制性依赖关系, 法律或合同要求的或工作的内在性质决定的依赖关系, 往往与客观限制有关      (考判断题+多选题)</strong></p>
+<p><strong>293. 选择性依赖关系, 基于具体应用领域的最佳实践或项目的某些特殊性质对活动顺序的要求来创建   (考单选题+判断题)</strong></p>
+<p><strong>294. 外部依赖关系, 项目活动与非项目活动之间的依赖关系, 不在项目团队的控制范围内   (考单选题+判断题)</strong></p>
+<p><strong>295. 内部依赖关系, 项目活动之间的紧前关系, 在项目团队的控制之中   (考单选题+判断题)</strong></p>
+<p><strong>296. 提前量&amp;滞后量(判断题+多选题)</strong></p>
+<p><strong>297. 项目进度网络图(紧前关系绘图法PDM, 前导图)   (考判断题+多选题)</strong></p>
+<p><strong>298. 估算活动持续时间依据的信息包括: 工作范围, 所需资源类型与技能水平, 估算的资源数量和资源日历      (考判断题+多选题)</strong></p>
+<p><strong>299. 边际收益递减规律      (考判断题+多选题)</strong></p>
+<p><strong>300. 估算活动持续时间的方法      (考判断题+多选题)</strong></p>
+<p><strong>301. 三点估算      (考判断题+多选题)</strong></p>
+<p><strong>302. 贝塔分布, Te=(O+4M+P)/6, σ=(P-O)/6      (考判断题+多选题)</strong></p>
+<p><strong>303. 三角分布, Te=(O+M+P)/3, σ=(P-O)/6      (考判断题+多选题)</strong></p>
+<p><strong>304. 正态分布(68.26%, 95.46%, 99.73%)      (考判断题+多选题)</strong></p>
+<p><strong>305. 自下而上估算(成本&amp;准确度最高)      (考判断题+多选题)</strong></p>
+<p><strong>306. 储备分析, 储备分析用于确定项目所需的应急储备量和管理储备      (考判断题)</strong></p>
+<p><strong>307. 制定进度计划      (考判断题)</strong></p>
+<p><strong>308. 进度网络分析CPM      (考判断题)</strong></p>
+<p><strong>309. CCM(资源约束型CPM)      (考判断题)</strong></p>
+<p><strong>310. 资源平滑, 利用非关键路径上活动的浮动时间, 调整非关键路径上的活动使项目资源数量减少波动      (考判断题)</strong></p>
+<p><strong>311. 会绘制分析横道图(甘特图)      (考判断题)</strong></p>
+<p><strong>312. 会绘制分析里程碑图      (考判断题)</strong></p>
+<p><strong>313. 会绘制分析项目进度网络图      (考判断题)</strong></p>
+<br>]]></content>
+      <categories>
+        <category>人工智能</category>
       </categories>
   </entry>
   <entry>
@@ -7747,112 +7747,6 @@ json格式文件 "]
       </categories>
   </entry>
   <entry>
-    <title>数据结构 必背内容</title>
-    <url>/DataStructure-Mustback.html</url>
-    <content><![CDATA[<p><strong>数据结构学习笔记</strong></p>
-<a id="more"></a>
-
-<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>数据是描述客观事物的符号, 是能够被计算机输入, 识别, 处理的各种符号, 是计算机化的信息</p>
-<h1 id="数据项"><a href="#数据项" class="headerlink" title="数据项"></a>数据项</h1><p>数据不可分割的最小单位, 一个元素由若干个数据项构成</p>
-<h1 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h1><p>它是组成数据的基本单位, 是数据集合中的个体, 在计算机程序中, 通常作为一个整体进行考虑和处理</p>
-<h1 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h1><p>是性质相同的数据元素的集合, 是数据的一个子集</p>
-<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><p>是指对数据进行查找, 插入, 删除, 合并, 排序, 统计以及简单计算等的操作过程</p>
-<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>是研究数据元素之间抽象化的相互关系和这种关系在计算机中的存储表示(即数据的逻辑结构和物理结构), 并对这种结构定义相适应的运算, 设计出相应的算法, 且确保经过这些运算后所得到的新结构仍然是原来的结构类型</p>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>数据类型是一个值的集合和定义在这个值集上的一组操作的总称</p>
-<h1 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h1><p>是指一个数学模型以及定义在该模型上的一组操作抽象数据类型的定义取决于它的一组逻辑特性, 而与其在计算机内部如何表示和实现无关</p>
-<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>解决一个问题的方法和步骤</p>
-<h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><p>T(N)＝O(F(N)), 它表示随问题规模Ｎ增大, 算法执行时间增长率与F(N)的增长率相同, F(N)算法的时间复杂性</p>
-<h1 id="原地工作"><a href="#原地工作" class="headerlink" title="原地工作"></a>原地工作</h1><p>算法执行时, 若额外空间相对于输入数据量来说是常数, 则称此算法为原地工作</p>
-<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><p>一种数据结构, 是N(N&gt;=# )个同质元素的有限序列, 除首尾元素外, 每个元素有唯一的前驱和唯一的后继</p>
-<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>是一种受限线性表, 是先进先出的线性表</p>
-<h1 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h1><p>在队列的顺序存储结构中, 把存储空间的首尾逻辑上相连, 构成一个环, 使得存储空间上只要有空余的地址, 就可以继续进行入队列操作, 极大利用了物理空间用头部和尾部两个指示器表示队列头和队列尾, 插入在尾部进行, 删除在头部进行</p>
-<h1 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h1><p>每一个数据元素, 都需用两部分来存储：一部分用于存放数据元素值, 称为数据域；另一部分用于存放直接后继结点的地址(指针), 称为指针域, 元素的存储空间可以连续, 也可以是不连续的而数据元素之间的逻辑关系由指针域来确定</p>
-<h1 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h1><p>线性表采用链式存储时, 每个结点除一个数据域外, 包含两个指针域, 一个指向该结点的直接后继, 一个指向该结点的直接前驱, 这种方式构成的链表, 即为双向链表</p>
-<h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><p>是插入排序的一种, 又叫缩小增量排序, 先按增量进行分组, 组内插入排序, 然后每次缩短增量, 再进行分组和组内插入排序,  直到增量为1时, 进行最后一次排序止</p>
-<h1 id="完全图"><a href="#完全图" class="headerlink" title="完全图"></a>完全图</h1><p>任何一个有N个结点的无向图, 若其边数为N(N-# )/# , 则这个无向图就是完全图</p>
-<h1 id="有向完全图"><a href="#有向完全图" class="headerlink" title="有向完全图"></a>有向完全图</h1><p>任何一个有N个结点的有向图, 若其弧个数为N(N-# )个, 则这个有向图就是有向完全图</p>
-<h1 id="广度遍历"><a href="#广度遍历" class="headerlink" title="广度遍历"></a>广度遍历</h1><p>按层次编历方式, 从某一点V0开始遍历它的所有邻接点V1, V2……, 再依次访问V1, V2的所有未被访问过的邻接点, 直到所有的点均遍历完成</p>
-<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><p>数据元素的某个数据项的值, 用它可以标识列表的一个或一组元素</p>
-<h1 id="串"><a href="#串" class="headerlink" title="串"></a>串</h1><p>串是字符线性的有限集合</p>
-<h1 id="子串"><a href="#子串" class="headerlink" title="子串"></a>子串</h1><p>串中任意个连续的字符组成的子序列称作该串的子串</p>
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p>是一种受限线性表, 是插入和删除操作在同一端进行的, 是后进先出的线性表</p>
-<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>树是n(n&gt;=# )个结点的有限集在任意一棵非空树中：</p>
-<p>(# )有且仅有一个特殊的称为根的结点;              </p>
-<p>(# )当n&gt;1时, 其余结点可分成m(m&gt;# )个互不相交的有限集T1, T2, , Tm, 其中每一个集合本身又是一棵树, 并且称为根的子树</p>
-<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>二叉树是每个结点至多有两个孩子结点的一种树其中两个孩子结点分别被称为左孩子结点和右孩子结点</p>
-<h1 id="子孙"><a href="#子孙" class="headerlink" title="子孙"></a>子孙</h1><p>子孙结点以某结点为根的子树中的任一结点都称为该结点的子孙</p>
-<h1 id="孩子结点与双亲结点"><a href="#孩子结点与双亲结点" class="headerlink" title="孩子结点与双亲结点"></a>孩子结点与双亲结点</h1><p>树中某个结点的子树的根结点称为该结点的孩子结点相反, 称该结点为孩子结点的双亲结点</p>
-<h1 id="结点的度"><a href="#结点的度" class="headerlink" title="结点的度"></a>结点的度</h1><p>树的某个结点的分支(子树)个数叫做该结点的度</p>
-<h1 id="树的度"><a href="#树的度" class="headerlink" title="树的度"></a>树的度</h1><p>树的度是树中所有结点的最大度数</p>
-<h1 id="平衡因子"><a href="#平衡因子" class="headerlink" title="平衡因子"></a>平衡因子</h1><p>结点的左子树深度与右子树深度之差</p>
-<h1 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h1><p>一个连通图的生成树是指一个极小连通子图, 它含有图中的全部顶点, N-1条边</p>
-<h1 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h1><p>深度为K, 且有2K -1个结点的二叉树</p>
-<h1 id="物理结构-存储结构"><a href="#物理结构-存储结构" class="headerlink" title="物理结构(存储结构)"></a>物理结构(存储结构)</h1><p>物理结构又称为数据的存储结构, 是指数据的逻辑结构在计算机中的映像(表示), 即数据结构在计算机中的存储方法</p>
-<h1 id="线索"><a href="#线索" class="headerlink" title="线索"></a>线索</h1><p>在二叉树中, 利用空余的指针指向二叉树某种遍历方式的结点的前驱和后继, 这种指向前驱和后继的指针, 叫线索</p>
-<h1 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h1><p>对二叉树以某种次序进行遍历并加上线索的过程叫做线索化线索化了的二叉树称为线索二叉树</p>
-<h1 id="广义表"><a href="#广义表" class="headerlink" title="广义表"></a>广义表</h1><p>广义表简称表, 是零个或多个原子表所组成的有限序列</p>
-<h1 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h1><p>有向图的极大强连通子图, 称为有向图的强连通分量</p>
-<h1 id="结点的带权路径长度"><a href="#结点的带权路径长度" class="headerlink" title="结点的带权路径长度"></a>结点的带权路径长度</h1><p>该结点到树根之间的路径长度与结点上权的乘积</p>
-<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p>在一个已排好序的记录子集的基础上, 每一步将下一个待排序的记录有序地插入到已排好序记录的子集上, 直到将所有待排记录全部插入为止</p>
-<h1 id="祖先"><a href="#祖先" class="headerlink" title="祖先"></a>祖先</h1><p>一个结点的祖先是指从根结点到该结点的路径上的所有结点</p>
-<h1 id="数据结构-1"><a href="#数据结构-1" class="headerlink" title="数据结构"></a>数据结构</h1><p>数据结构是数据元素的集合以及定义在该集合上的关系</p>
-<h1 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h1><p>子串的定位操作称作串的模式匹配</p>
-<h1 id="单循环链表"><a href="#单循环链表" class="headerlink" title="单循环链表"></a>单循环链表</h1><p>是单链表的另一种形式, 它是一个首尾相接的链表, 表中最后一个结点的指针域由null改为指向头结点或线性表的第一个结点, 整个链表形成了一个环．</p>
-<h1 id="线索-1"><a href="#线索-1" class="headerlink" title="线索"></a>线索</h1><p>在二叉树的存储结构中, 必有Ｎ＋１个空域, 利用这些空域存放某种遍历的前驱和后继, 其中指向前驱和后继的指针叫线索．</p>
-<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>图是顶点与边的集合一般表示为一个二元组, 即, 图G=(V, E), 各个顶点之间是多对多的关系</p>
-<h1 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h1><p>对于顺序存储的有序表, 先取中间位置的记录关键字与所给的关键字进行比较, 若相等, 则查找成功, 否则, 若给定的关键字比中间的关键字大, 在原表的后半部分比较, 反之, 在原表的前半部分比较, 如此反复, 逐步缩小范围, 直到找到为止, 或找不到, 最后查找范围为空．</p>
-<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><p>在图G的所有生成树中, 树权值最小的那棵生成树, 称作最小生成树．</p>
-<h1 id="广度优先搜索-BFS"><a href="#广度优先搜索-BFS" class="headerlink" title="广度优先搜索(BFS)"></a>广度优先搜索(BFS)</h1><p>首先访问出发点v, 接着依次访问v的所有邻接点w1, w2, …, wt, 然后再依次访问与wl, w2, …, wt邻接的所有未曾访问过的顶点依此类推, 直至图中所有和源点v有路径相通的顶点都已访问到为止此时从v开始的搜索过程结束</p>
-<p>(若G是连通图, 则遍历完成;否则, 在图C中另选一个尚未访问的顶点作为新源点继续上述的搜索过程, 直至G中所有顶点均已被访问为止)</p>
-<h1 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h1><p>对满二叉树的结点从上到下, 从左到右进行依次进行编号, 若有一棵二叉树的每一个结点都与深度为K的满二叉树中编号都一一对应时, 只是最后一层不满, 称做完全二叉树</p>
-<h1 id="前缀编码"><a href="#前缀编码" class="headerlink" title="前缀编码"></a>前缀编码</h1><p>任何一个字符的编码都不是另一个字符编码的前缀, 这种编码叫做前缀编码</p>
-<h1 id="广义表-1"><a href="#广义表-1" class="headerlink" title="广义表"></a>广义表</h1><p>是零个或多个原子表所构成的有序序列</p>
-<h1 id="线索二叉树-1"><a href="#线索二叉树-1" class="headerlink" title="线索二叉树"></a>线索二叉树</h1><p>利用二叉树的一些空闲指针指向该结点的前驱或后继, 这种指针叫线索, 线索后了的二叉树, 称为线索二叉树</p>
-<h1 id="树的高度"><a href="#树的高度" class="headerlink" title="树的高度"></a>树的高度</h1><p>树中所有结点的层次的最大值</p>
-<h1 id="堂兄弟"><a href="#堂兄弟" class="headerlink" title="堂兄弟"></a>堂兄弟</h1><p>同一层上不同双亲的结点, 互称堂兄弟</p>
-<h1 id="叶子结点"><a href="#叶子结点" class="headerlink" title="叶子结点"></a>叶子结点</h1><p>度为 #  的结点, 即没有后继的结点</p>
-<h1 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h1><p>M棵互相不相交的树构成的集合, 将一棵非空树的根结点删除, 树就变成了森林</p>
-<h1 id="树的路径长度"><a href="#树的路径长度" class="headerlink" title="树的路径长度"></a>树的路径长度</h1><p>树中每个结点到根结点的路径长度之和</p>
-<h1 id="树的带权路径长度-WPL"><a href="#树的带权路径长度-WPL" class="headerlink" title="树的带权路径长度(WPL)"></a>树的带权路径长度(WPL)</h1><p>树中所有叶子结点的带权路径长度之和</p>
-<h1 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h1><p>设有N个权值的结点构造一棵有N个叶子结点的二叉树, 其中WPL最小的那棵树, 为哈夫曼树</p>
-<h1 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h1><p>一般以N种字符出现的频率做权值, 构造哈付曼树, 左孩子边做0, 右孩子边做1, 那么从根到叶子结点经过的0和1序列, 构成了哈夫曼编码</p>
-<h1 id="图中顶点的度"><a href="#图中顶点的度" class="headerlink" title="图中顶点的度"></a>图中顶点的度</h1><p>顶点V的度是图中和顶点V相关联的边的数目包括入度和出度两种</p>
-<h1 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h1><p>图G=(V, E)与图G1=(V1, E1), 若V1包含于V, 且E1包含于E, 则G1是G的子图</p>
-<h1 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h1><p>对于无向图, 若V1到V2有路径, 称V1V2是连通的, 若图中任意两点都是连通的, 则称该无向图是连通图</p>
-<h1 id="网"><a href="#网" class="headerlink" title="网"></a>网</h1><p>图的弧或边有与它相关的有意义的数, 称作权, 带有权值的图称作网</p>
-<h1 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索(DFS)"></a>深度优先搜索(DFS)</h1><p>类似树的先序遍历, 在图中任选一个顶点作为出发顶点V0, 访问V0后, 依次从V0的没被访问过的邻接点出发进行深度优先搜索直到与V0所连通的所有顶点均被访问如果, 此时图中还有顶点尚未访问, 则从剩余的顶点中再任选一个顶点作为出发顶点V0, 重复上述过程, 直到图中全部顶点均被访问为止</p>
-<h1 id="简单回路"><a href="#简单回路" class="headerlink" title="简单回路"></a>简单回路</h1><p>除了第一个顶点和最后一个顶点之外, 其余顶点均不相同的回路称为简单回路</p>
-<h1 id="简单路径"><a href="#简单路径" class="headerlink" title="简单路径"></a>简单路径</h1><p>在用一个顶点序列表示一条路径时, 若序列中没有相同的顶点重复出现, 则称其为简单路径</p>
-<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><p>根据给定的关键字值, 在特定的表中, 确定一个其关键字与给定值相同的数据元素, 并返回该数据元素在列表中的位置这个过程叫查找</p>
-<h1 id="平均查找长度-ASL"><a href="#平均查找长度-ASL" class="headerlink" title="平均查找长度(ASL)"></a>平均查找长度(ASL)</h1><p>为确定数据元素在表中的位置, 需和给定值进行比较的关键字个数的数学期望值, 成为查找算法在查找成功的平均查找长度</p>
-<h1 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h1><p>它或是一棵空树, 或是有下面性质的树：若左或右子树不空, 左子树所有结点值小于根结点, 而右子树所有结点值大于根结点的值, 其左右子树也是二叉排序树</p>
-<h1 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h1><p>对于给定的关键字K, 从线性表的第一个(或最后一个)元素开始, 依次向后(或前)与元素的关键字比较, 若某个记录的关键字与K 相等, 查找成功, 否则失败</p>
-<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><p>或是一棵空树, 或左右子树高度差的绝对值小于等于1而且, 左右子树也是平衡二叉树</p>
-<h1 id="插入排序-1"><a href="#插入排序-1" class="headerlink" title="插入排序"></a>插入排序</h1><p>在一个已排好序的基础上, 每一步将下一个待排序记录插到已排好记录的子集上, 使之重新有序, 直到所有待排记录插完为止</p>
-<h1 id="分块查找-索引查找"><a href="#分块查找-索引查找" class="headerlink" title="分块查找(索引查找)"></a>分块查找(索引查找)</h1><p>分块查找以前两个为基础, 将待查记录分成若干块, 每块的关键字无序, 但每块的关键字的最大值有序, 查找时, 先查找到待查记录所在的块, 再在块内进行顺序查找找块时, 即可以用折半查找, 也可用顺序查找</p>
-<h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>由某个集合上的偏序集得到该集合上的一个全序, 这个操作叫做拓扑排序</p>
-<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>将两个或两个以上的有序表合并成一个新的有序表, 开始将每个元素当成是一个个单独的有序表, 逐渐表个数以原来一半的速度递减, 每个表的长度却是原来长度的2倍增加, 不断重复, 直到最后是一个表, 而表的长度是元素个数为止</p>
-<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p>根据关键字的递减或递增的次序, 把文件中的各个记录依次排列起来, 可使一个无序的数据元素序列变成一个有序的序列的操作</p>
-<h1 id="shell排序"><a href="#shell排序" class="headerlink" title="shell排序"></a>shell排序</h1><p>它是插入排序的一种, 又叫缩小增量排序, 先按增量进行分组, 组内插入排序, 然后每次缩短增量, 再进行分组和组内插入排序,  直到增量为1时, 进行最后一次排序止</p>
-<h1 id="内部排序"><a href="#内部排序" class="headerlink" title="内部排序"></a>内部排序</h1><p>指的是待排序记录存放在计算机存储器中进行的排序过程；</p>
-<h1 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h1><p>指的是待排序记录的数量很大, 以致内存一次不能容纳全部记录, 在排序过程中对外存进行访问的排序过程</p>
-<h1 id="不稳定排序"><a href="#不稳定排序" class="headerlink" title="不稳定排序"></a>不稳定排序</h1><p>假设Ki=Kj(1≤i≤n, 1≤j≤n, i≠j), 且在排序前的序列中Ri领先于Rj(即i＜j)若在排序后的序列中Rj 领先于Ri , 则称所用的排序方法是不稳定的</p>
-<h1 id="稳定排序"><a href="#稳定排序" class="headerlink" title="稳定排序"></a>稳定排序</h1><p>假设Ki=Kj(1≤i≤n, 1≤j≤n, i≠j), 且在排序前的序列中Ri领先于Rj(即i＜j)若在排序后的序列中Ri仍领先于Rj, 则称所用的排序方法是稳定的</p>
-<h1 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h1><p>第1遍, 将初始文件中的记录R1看作有序子文件, 将R2插入这个子文件中若R2的关键字小于R1的关键字, 则R2插在R1的前面, 否则R2插在R1的后面第2遍, 将R3插入前面的两个记录的有序子文件中, 得到3个记录的有序子文件依此类推, 继续进行下去, 直到将Rn插入到前面的n-1个记录的有序子文件中, 最后得到n个记录的有序文件 </p>
-<h1 id="气泡排序法"><a href="#气泡排序法" class="headerlink" title="气泡排序法"></a>气泡排序法</h1><p>气泡排序的过程很简单从第一记录开始, 相邻的两个记录关键字进行比较, 若顺序不对, 立即交换, 直至N-1个与第N个比较为止得到一个最大(或最小)的关键字记录的结果位置</p>
-<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>选择排序是每一趟在n-i+# (i= # , # , 3…n-# )个记录中选择关键字最小的记录作为有序序列中第i个记录其中最简单的是简单选择排序</p>
-<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>快速排序的基本思想是把当前待排序的记录, 存放到整个表排好序后, 它应当在的最终位置上将原来的待排序表分割成两部分, 其中一部分表中的关键字均比另一部分表中的关键字小然后, 分别对两部分表用同样的方式进行排序, 直到整个表排好序</p>
-<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p>首先将根结点的记录与当前树中具有最大序号的记录交换, 把交换后具有最大序号的记录输出, 得到一个排序的结果这时的树不再是堆树, 排序暂时停止然后, 必须把树重新调整成堆树, 再重复上述过程, 直到所有记录都排好序</p>
-<h1 id="归并排序-1"><a href="#归并排序-1" class="headerlink" title="归并排序"></a>归并排序</h1><p>归并排序是把两个或两个以上的有序表合并成一个新的有序表把含有N 个记录的无序表当成N 个有序的子表, 每个子表的的长度为1, 然后, 利用两两归并, 得到n/2个长度为2或1的有序子表再两两归并直到得到长度为N 的一个有序表</p>
-<h1 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h1><p>对于一个有向图, 每两个顶点之间都有路径, 称该图为强连通图</p>
-<h1 id="连通分量"><a href="#连通分量" class="headerlink" title="连通分量"></a>连通分量</h1><p>对于一个无向图, 其极大连通子图叫做该图一个连通分量</p>
-<h1 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h1><p>基数排序是借助 “分配” 和 “收集” 两种操作对单逻辑关键字进行排序的一种内排序方法</p>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数据结构 栈和堆</title>
     <url>/DataStructure-Stack-Heap.html</url>
     <content><![CDATA[<p><strong>数据结构学习笔记</strong></p>
@@ -7954,6 +7848,112 @@ json格式文件 "]
 
 <p><img src="/images/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E6%A0%88.jpg"></p>
 <br>]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据结构 必背内容</title>
+    <url>/DataStructure-Mustback.html</url>
+    <content><![CDATA[<p><strong>数据结构学习笔记</strong></p>
+<a id="more"></a>
+
+<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>数据是描述客观事物的符号, 是能够被计算机输入, 识别, 处理的各种符号, 是计算机化的信息</p>
+<h1 id="数据项"><a href="#数据项" class="headerlink" title="数据项"></a>数据项</h1><p>数据不可分割的最小单位, 一个元素由若干个数据项构成</p>
+<h1 id="数据元素"><a href="#数据元素" class="headerlink" title="数据元素"></a>数据元素</h1><p>它是组成数据的基本单位, 是数据集合中的个体, 在计算机程序中, 通常作为一个整体进行考虑和处理</p>
+<h1 id="数据对象"><a href="#数据对象" class="headerlink" title="数据对象"></a>数据对象</h1><p>是性质相同的数据元素的集合, 是数据的一个子集</p>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><p>是指对数据进行查找, 插入, 删除, 合并, 排序, 统计以及简单计算等的操作过程</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p>是研究数据元素之间抽象化的相互关系和这种关系在计算机中的存储表示(即数据的逻辑结构和物理结构), 并对这种结构定义相适应的运算, 设计出相应的算法, 且确保经过这些运算后所得到的新结构仍然是原来的结构类型</p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>数据类型是一个值的集合和定义在这个值集上的一组操作的总称</p>
+<h1 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h1><p>是指一个数学模型以及定义在该模型上的一组操作抽象数据类型的定义取决于它的一组逻辑特性, 而与其在计算机内部如何表示和实现无关</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>解决一个问题的方法和步骤</p>
+<h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><p>T(N)＝O(F(N)), 它表示随问题规模Ｎ增大, 算法执行时间增长率与F(N)的增长率相同, F(N)算法的时间复杂性</p>
+<h1 id="原地工作"><a href="#原地工作" class="headerlink" title="原地工作"></a>原地工作</h1><p>算法执行时, 若额外空间相对于输入数据量来说是常数, 则称此算法为原地工作</p>
+<h1 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h1><p>一种数据结构, 是N(N&gt;=# )个同质元素的有限序列, 除首尾元素外, 每个元素有唯一的前驱和唯一的后继</p>
+<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>是一种受限线性表, 是先进先出的线性表</p>
+<h1 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h1><p>在队列的顺序存储结构中, 把存储空间的首尾逻辑上相连, 构成一个环, 使得存储空间上只要有空余的地址, 就可以继续进行入队列操作, 极大利用了物理空间用头部和尾部两个指示器表示队列头和队列尾, 插入在尾部进行, 删除在头部进行</p>
+<h1 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h1><p>每一个数据元素, 都需用两部分来存储：一部分用于存放数据元素值, 称为数据域；另一部分用于存放直接后继结点的地址(指针), 称为指针域, 元素的存储空间可以连续, 也可以是不连续的而数据元素之间的逻辑关系由指针域来确定</p>
+<h1 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h1><p>线性表采用链式存储时, 每个结点除一个数据域外, 包含两个指针域, 一个指向该结点的直接后继, 一个指向该结点的直接前驱, 这种方式构成的链表, 即为双向链表</p>
+<h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><p>是插入排序的一种, 又叫缩小增量排序, 先按增量进行分组, 组内插入排序, 然后每次缩短增量, 再进行分组和组内插入排序,  直到增量为1时, 进行最后一次排序止</p>
+<h1 id="完全图"><a href="#完全图" class="headerlink" title="完全图"></a>完全图</h1><p>任何一个有N个结点的无向图, 若其边数为N(N-# )/# , 则这个无向图就是完全图</p>
+<h1 id="有向完全图"><a href="#有向完全图" class="headerlink" title="有向完全图"></a>有向完全图</h1><p>任何一个有N个结点的有向图, 若其弧个数为N(N-# )个, 则这个有向图就是有向完全图</p>
+<h1 id="广度遍历"><a href="#广度遍历" class="headerlink" title="广度遍历"></a>广度遍历</h1><p>按层次编历方式, 从某一点V0开始遍历它的所有邻接点V1, V2……, 再依次访问V1, V2的所有未被访问过的邻接点, 直到所有的点均遍历完成</p>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><p>数据元素的某个数据项的值, 用它可以标识列表的一个或一组元素</p>
+<h1 id="串"><a href="#串" class="headerlink" title="串"></a>串</h1><p>串是字符线性的有限集合</p>
+<h1 id="子串"><a href="#子串" class="headerlink" title="子串"></a>子串</h1><p>串中任意个连续的字符组成的子序列称作该串的子串</p>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p>是一种受限线性表, 是插入和删除操作在同一端进行的, 是后进先出的线性表</p>
+<h1 id="树"><a href="#树" class="headerlink" title="树"></a>树</h1><p>树是n(n&gt;=# )个结点的有限集在任意一棵非空树中：</p>
+<p>(# )有且仅有一个特殊的称为根的结点;              </p>
+<p>(# )当n&gt;1时, 其余结点可分成m(m&gt;# )个互不相交的有限集T1, T2, , Tm, 其中每一个集合本身又是一棵树, 并且称为根的子树</p>
+<h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p>二叉树是每个结点至多有两个孩子结点的一种树其中两个孩子结点分别被称为左孩子结点和右孩子结点</p>
+<h1 id="子孙"><a href="#子孙" class="headerlink" title="子孙"></a>子孙</h1><p>子孙结点以某结点为根的子树中的任一结点都称为该结点的子孙</p>
+<h1 id="孩子结点与双亲结点"><a href="#孩子结点与双亲结点" class="headerlink" title="孩子结点与双亲结点"></a>孩子结点与双亲结点</h1><p>树中某个结点的子树的根结点称为该结点的孩子结点相反, 称该结点为孩子结点的双亲结点</p>
+<h1 id="结点的度"><a href="#结点的度" class="headerlink" title="结点的度"></a>结点的度</h1><p>树的某个结点的分支(子树)个数叫做该结点的度</p>
+<h1 id="树的度"><a href="#树的度" class="headerlink" title="树的度"></a>树的度</h1><p>树的度是树中所有结点的最大度数</p>
+<h1 id="平衡因子"><a href="#平衡因子" class="headerlink" title="平衡因子"></a>平衡因子</h1><p>结点的左子树深度与右子树深度之差</p>
+<h1 id="生成树"><a href="#生成树" class="headerlink" title="生成树"></a>生成树</h1><p>一个连通图的生成树是指一个极小连通子图, 它含有图中的全部顶点, N-1条边</p>
+<h1 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h1><p>深度为K, 且有2K -1个结点的二叉树</p>
+<h1 id="物理结构-存储结构"><a href="#物理结构-存储结构" class="headerlink" title="物理结构(存储结构)"></a>物理结构(存储结构)</h1><p>物理结构又称为数据的存储结构, 是指数据的逻辑结构在计算机中的映像(表示), 即数据结构在计算机中的存储方法</p>
+<h1 id="线索"><a href="#线索" class="headerlink" title="线索"></a>线索</h1><p>在二叉树中, 利用空余的指针指向二叉树某种遍历方式的结点的前驱和后继, 这种指向前驱和后继的指针, 叫线索</p>
+<h1 id="线索二叉树"><a href="#线索二叉树" class="headerlink" title="线索二叉树"></a>线索二叉树</h1><p>对二叉树以某种次序进行遍历并加上线索的过程叫做线索化线索化了的二叉树称为线索二叉树</p>
+<h1 id="广义表"><a href="#广义表" class="headerlink" title="广义表"></a>广义表</h1><p>广义表简称表, 是零个或多个原子表所组成的有限序列</p>
+<h1 id="强连通分量"><a href="#强连通分量" class="headerlink" title="强连通分量"></a>强连通分量</h1><p>有向图的极大强连通子图, 称为有向图的强连通分量</p>
+<h1 id="结点的带权路径长度"><a href="#结点的带权路径长度" class="headerlink" title="结点的带权路径长度"></a>结点的带权路径长度</h1><p>该结点到树根之间的路径长度与结点上权的乘积</p>
+<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p>在一个已排好序的记录子集的基础上, 每一步将下一个待排序的记录有序地插入到已排好序记录的子集上, 直到将所有待排记录全部插入为止</p>
+<h1 id="祖先"><a href="#祖先" class="headerlink" title="祖先"></a>祖先</h1><p>一个结点的祖先是指从根结点到该结点的路径上的所有结点</p>
+<h1 id="数据结构-1"><a href="#数据结构-1" class="headerlink" title="数据结构"></a>数据结构</h1><p>数据结构是数据元素的集合以及定义在该集合上的关系</p>
+<h1 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h1><p>子串的定位操作称作串的模式匹配</p>
+<h1 id="单循环链表"><a href="#单循环链表" class="headerlink" title="单循环链表"></a>单循环链表</h1><p>是单链表的另一种形式, 它是一个首尾相接的链表, 表中最后一个结点的指针域由null改为指向头结点或线性表的第一个结点, 整个链表形成了一个环．</p>
+<h1 id="线索-1"><a href="#线索-1" class="headerlink" title="线索"></a>线索</h1><p>在二叉树的存储结构中, 必有Ｎ＋１个空域, 利用这些空域存放某种遍历的前驱和后继, 其中指向前驱和后继的指针叫线索．</p>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>图是顶点与边的集合一般表示为一个二元组, 即, 图G=(V, E), 各个顶点之间是多对多的关系</p>
+<h1 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h1><p>对于顺序存储的有序表, 先取中间位置的记录关键字与所给的关键字进行比较, 若相等, 则查找成功, 否则, 若给定的关键字比中间的关键字大, 在原表的后半部分比较, 反之, 在原表的前半部分比较, 如此反复, 逐步缩小范围, 直到找到为止, 或找不到, 最后查找范围为空．</p>
+<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><p>在图G的所有生成树中, 树权值最小的那棵生成树, 称作最小生成树．</p>
+<h1 id="广度优先搜索-BFS"><a href="#广度优先搜索-BFS" class="headerlink" title="广度优先搜索(BFS)"></a>广度优先搜索(BFS)</h1><p>首先访问出发点v, 接着依次访问v的所有邻接点w1, w2, …, wt, 然后再依次访问与wl, w2, …, wt邻接的所有未曾访问过的顶点依此类推, 直至图中所有和源点v有路径相通的顶点都已访问到为止此时从v开始的搜索过程结束</p>
+<p>(若G是连通图, 则遍历完成;否则, 在图C中另选一个尚未访问的顶点作为新源点继续上述的搜索过程, 直至G中所有顶点均已被访问为止)</p>
+<h1 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h1><p>对满二叉树的结点从上到下, 从左到右进行依次进行编号, 若有一棵二叉树的每一个结点都与深度为K的满二叉树中编号都一一对应时, 只是最后一层不满, 称做完全二叉树</p>
+<h1 id="前缀编码"><a href="#前缀编码" class="headerlink" title="前缀编码"></a>前缀编码</h1><p>任何一个字符的编码都不是另一个字符编码的前缀, 这种编码叫做前缀编码</p>
+<h1 id="广义表-1"><a href="#广义表-1" class="headerlink" title="广义表"></a>广义表</h1><p>是零个或多个原子表所构成的有序序列</p>
+<h1 id="线索二叉树-1"><a href="#线索二叉树-1" class="headerlink" title="线索二叉树"></a>线索二叉树</h1><p>利用二叉树的一些空闲指针指向该结点的前驱或后继, 这种指针叫线索, 线索后了的二叉树, 称为线索二叉树</p>
+<h1 id="树的高度"><a href="#树的高度" class="headerlink" title="树的高度"></a>树的高度</h1><p>树中所有结点的层次的最大值</p>
+<h1 id="堂兄弟"><a href="#堂兄弟" class="headerlink" title="堂兄弟"></a>堂兄弟</h1><p>同一层上不同双亲的结点, 互称堂兄弟</p>
+<h1 id="叶子结点"><a href="#叶子结点" class="headerlink" title="叶子结点"></a>叶子结点</h1><p>度为 #  的结点, 即没有后继的结点</p>
+<h1 id="森林"><a href="#森林" class="headerlink" title="森林"></a>森林</h1><p>M棵互相不相交的树构成的集合, 将一棵非空树的根结点删除, 树就变成了森林</p>
+<h1 id="树的路径长度"><a href="#树的路径长度" class="headerlink" title="树的路径长度"></a>树的路径长度</h1><p>树中每个结点到根结点的路径长度之和</p>
+<h1 id="树的带权路径长度-WPL"><a href="#树的带权路径长度-WPL" class="headerlink" title="树的带权路径长度(WPL)"></a>树的带权路径长度(WPL)</h1><p>树中所有叶子结点的带权路径长度之和</p>
+<h1 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h1><p>设有N个权值的结点构造一棵有N个叶子结点的二叉树, 其中WPL最小的那棵树, 为哈夫曼树</p>
+<h1 id="哈夫曼编码"><a href="#哈夫曼编码" class="headerlink" title="哈夫曼编码"></a>哈夫曼编码</h1><p>一般以N种字符出现的频率做权值, 构造哈付曼树, 左孩子边做0, 右孩子边做1, 那么从根到叶子结点经过的0和1序列, 构成了哈夫曼编码</p>
+<h1 id="图中顶点的度"><a href="#图中顶点的度" class="headerlink" title="图中顶点的度"></a>图中顶点的度</h1><p>顶点V的度是图中和顶点V相关联的边的数目包括入度和出度两种</p>
+<h1 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h1><p>图G=(V, E)与图G1=(V1, E1), 若V1包含于V, 且E1包含于E, 则G1是G的子图</p>
+<h1 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h1><p>对于无向图, 若V1到V2有路径, 称V1V2是连通的, 若图中任意两点都是连通的, 则称该无向图是连通图</p>
+<h1 id="网"><a href="#网" class="headerlink" title="网"></a>网</h1><p>图的弧或边有与它相关的有意义的数, 称作权, 带有权值的图称作网</p>
+<h1 id="深度优先搜索-DFS"><a href="#深度优先搜索-DFS" class="headerlink" title="深度优先搜索(DFS)"></a>深度优先搜索(DFS)</h1><p>类似树的先序遍历, 在图中任选一个顶点作为出发顶点V0, 访问V0后, 依次从V0的没被访问过的邻接点出发进行深度优先搜索直到与V0所连通的所有顶点均被访问如果, 此时图中还有顶点尚未访问, 则从剩余的顶点中再任选一个顶点作为出发顶点V0, 重复上述过程, 直到图中全部顶点均被访问为止</p>
+<h1 id="简单回路"><a href="#简单回路" class="headerlink" title="简单回路"></a>简单回路</h1><p>除了第一个顶点和最后一个顶点之外, 其余顶点均不相同的回路称为简单回路</p>
+<h1 id="简单路径"><a href="#简单路径" class="headerlink" title="简单路径"></a>简单路径</h1><p>在用一个顶点序列表示一条路径时, 若序列中没有相同的顶点重复出现, 则称其为简单路径</p>
+<h1 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h1><p>根据给定的关键字值, 在特定的表中, 确定一个其关键字与给定值相同的数据元素, 并返回该数据元素在列表中的位置这个过程叫查找</p>
+<h1 id="平均查找长度-ASL"><a href="#平均查找长度-ASL" class="headerlink" title="平均查找长度(ASL)"></a>平均查找长度(ASL)</h1><p>为确定数据元素在表中的位置, 需和给定值进行比较的关键字个数的数学期望值, 成为查找算法在查找成功的平均查找长度</p>
+<h1 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h1><p>它或是一棵空树, 或是有下面性质的树：若左或右子树不空, 左子树所有结点值小于根结点, 而右子树所有结点值大于根结点的值, 其左右子树也是二叉排序树</p>
+<h1 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h1><p>对于给定的关键字K, 从线性表的第一个(或最后一个)元素开始, 依次向后(或前)与元素的关键字比较, 若某个记录的关键字与K 相等, 查找成功, 否则失败</p>
+<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><p>或是一棵空树, 或左右子树高度差的绝对值小于等于1而且, 左右子树也是平衡二叉树</p>
+<h1 id="插入排序-1"><a href="#插入排序-1" class="headerlink" title="插入排序"></a>插入排序</h1><p>在一个已排好序的基础上, 每一步将下一个待排序记录插到已排好记录的子集上, 使之重新有序, 直到所有待排记录插完为止</p>
+<h1 id="分块查找-索引查找"><a href="#分块查找-索引查找" class="headerlink" title="分块查找(索引查找)"></a>分块查找(索引查找)</h1><p>分块查找以前两个为基础, 将待查记录分成若干块, 每块的关键字无序, 但每块的关键字的最大值有序, 查找时, 先查找到待查记录所在的块, 再在块内进行顺序查找找块时, 即可以用折半查找, 也可用顺序查找</p>
+<h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>由某个集合上的偏序集得到该集合上的一个全序, 这个操作叫做拓扑排序</p>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>将两个或两个以上的有序表合并成一个新的有序表, 开始将每个元素当成是一个个单独的有序表, 逐渐表个数以原来一半的速度递减, 每个表的长度却是原来长度的2倍增加, 不断重复, 直到最后是一个表, 而表的长度是元素个数为止</p>
+<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><p>根据关键字的递减或递增的次序, 把文件中的各个记录依次排列起来, 可使一个无序的数据元素序列变成一个有序的序列的操作</p>
+<h1 id="shell排序"><a href="#shell排序" class="headerlink" title="shell排序"></a>shell排序</h1><p>它是插入排序的一种, 又叫缩小增量排序, 先按增量进行分组, 组内插入排序, 然后每次缩短增量, 再进行分组和组内插入排序,  直到增量为1时, 进行最后一次排序止</p>
+<h1 id="内部排序"><a href="#内部排序" class="headerlink" title="内部排序"></a>内部排序</h1><p>指的是待排序记录存放在计算机存储器中进行的排序过程；</p>
+<h1 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h1><p>指的是待排序记录的数量很大, 以致内存一次不能容纳全部记录, 在排序过程中对外存进行访问的排序过程</p>
+<h1 id="不稳定排序"><a href="#不稳定排序" class="headerlink" title="不稳定排序"></a>不稳定排序</h1><p>假设Ki=Kj(1≤i≤n, 1≤j≤n, i≠j), 且在排序前的序列中Ri领先于Rj(即i＜j)若在排序后的序列中Rj 领先于Ri , 则称所用的排序方法是不稳定的</p>
+<h1 id="稳定排序"><a href="#稳定排序" class="headerlink" title="稳定排序"></a>稳定排序</h1><p>假设Ki=Kj(1≤i≤n, 1≤j≤n, i≠j), 且在排序前的序列中Ri领先于Rj(即i＜j)若在排序后的序列中Ri仍领先于Rj, 则称所用的排序方法是稳定的</p>
+<h1 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h1><p>第1遍, 将初始文件中的记录R1看作有序子文件, 将R2插入这个子文件中若R2的关键字小于R1的关键字, 则R2插在R1的前面, 否则R2插在R1的后面第2遍, 将R3插入前面的两个记录的有序子文件中, 得到3个记录的有序子文件依此类推, 继续进行下去, 直到将Rn插入到前面的n-1个记录的有序子文件中, 最后得到n个记录的有序文件 </p>
+<h1 id="气泡排序法"><a href="#气泡排序法" class="headerlink" title="气泡排序法"></a>气泡排序法</h1><p>气泡排序的过程很简单从第一记录开始, 相邻的两个记录关键字进行比较, 若顺序不对, 立即交换, 直至N-1个与第N个比较为止得到一个最大(或最小)的关键字记录的结果位置</p>
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>选择排序是每一趟在n-i+# (i= # , # , 3…n-# )个记录中选择关键字最小的记录作为有序序列中第i个记录其中最简单的是简单选择排序</p>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>快速排序的基本思想是把当前待排序的记录, 存放到整个表排好序后, 它应当在的最终位置上将原来的待排序表分割成两部分, 其中一部分表中的关键字均比另一部分表中的关键字小然后, 分别对两部分表用同样的方式进行排序, 直到整个表排好序</p>
+<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p>首先将根结点的记录与当前树中具有最大序号的记录交换, 把交换后具有最大序号的记录输出, 得到一个排序的结果这时的树不再是堆树, 排序暂时停止然后, 必须把树重新调整成堆树, 再重复上述过程, 直到所有记录都排好序</p>
+<h1 id="归并排序-1"><a href="#归并排序-1" class="headerlink" title="归并排序"></a>归并排序</h1><p>归并排序是把两个或两个以上的有序表合并成一个新的有序表把含有N 个记录的无序表当成N 个有序的子表, 每个子表的的长度为1, 然后, 利用两两归并, 得到n/2个长度为2或1的有序子表再两两归并直到得到长度为N 的一个有序表</p>
+<h1 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h1><p>对于一个有向图, 每两个顶点之间都有路径, 称该图为强连通图</p>
+<h1 id="连通分量"><a href="#连通分量" class="headerlink" title="连通分量"></a>连通分量</h1><p>对于一个无向图, 其极大连通子图叫做该图一个连通分量</p>
+<h1 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h1><p>基数排序是借助 “分配” 和 “收集” 两种操作对单逻辑关键字进行排序的一种内排序方法</p>
+]]></content>
       <categories>
         <category>数据结构</category>
       </categories>
@@ -9178,103 +9178,6 @@ option && myChart.setOption(option);
       </categories>
   </entry>
   <entry>
-    <title>爬虫 报文(吃牢饭集合)</title>
-    <url>/reptile-message.html</url>
-    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
-<a id="more"></a>
-
-<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
-<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
-<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
-<thead>
-<tr>
-<th>GET</th>
-<th>HTTP</th>
-<th>1.1</th>
-<th>Host</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>方法</td>
-<td>路径</td>
-<td>协议版本</td>
-<td>发送请求的域名</td>
-</tr>
-</tbody></table>
-<ul>
-<li>Content-Type</li>
-<li>Host (主机和端口号)</li>
-<li>Connection (链接类型/常链接)</li>
-<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
-<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
-<li>Referer (页面跳转处)</li>
-<li>Cookie (Cookie数据非常重要,)</li>
-<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
-</ul>
-
-<p><strong>请求头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">特别关注</th>
-<th align="center">以下几个请求头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Host</td>
-<td align="center">域名</td>
-</tr>
-<tr>
-<td align="center">Connection</td>
-<td align="center">常链接</td>
-</tr>
-<tr>
-<td align="center">UPgrade-Insecure-Requests</td>
-<td align="center">升级为HTTPS请求</td>
-</tr>
-<tr>
-<td align="center">User-Agent</td>
-<td align="center">用户代理</td>
-</tr>
-<tr>
-<td align="center">Refrer</td>
-<td align="center">页面跳转处, 防盗链</td>
-</tr>
-<tr>
-<td align="center">Cookie</td>
-<td align="center">保持状态, 用于跳过账号密码</td>
-</tr>
-</tbody></table>
-<p><strong>响应头表格形式</strong></p>
-<table>
-<thead>
-<tr>
-<th align="center">特别关注</th>
-<th align="center">以下几个请求头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">HTTP/1.1</td>
-<td align="center">协议</td>
-</tr>
-<tr>
-<td align="center">200</td>
-<td align="center">状态码</td>
-</tr>
-<tr>
-<td align="center">Set-Cookie</td>
-<td align="center">cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
-</tr>
-</tbody></table>
-<br>
-
-
-]]></content>
-      <categories>
-        <category>爬虫</category>
-      </categories>
-  </entry>
-  <entry>
     <title>爬虫 数据提取(吃牢饭集合)</title>
     <url>/reptile-Extraction.html</url>
     <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
@@ -9369,6 +9272,103 @@ option && myChart.setOption(option);
                                            \
                                             \   pyquery   css选择器
 ~~~ -->]]></content>
+      <categories>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>爬虫 报文(吃牢饭集合)</title>
+    <url>/reptile-message.html</url>
+    <content><![CDATA[<p><strong>每天一个入狱小技巧</strong></p>
+<a id="more"></a>
+
+<h1 id="查看报文"><a href="#查看报文" class="headerlink" title="查看报文"></a>查看报文</h1><p><strong>点击Request Headers旁边的view parsed</strong></p>
+<p><strong>注意: view parsed没点之前其实是给你优化过的</strong></p>
+<h1 id="报文格式"><a href="#报文格式" class="headerlink" title="报文格式"></a>报文格式</h1><table>
+<thead>
+<tr>
+<th>GET</th>
+<th>HTTP</th>
+<th>1.1</th>
+<th>Host</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>方法</td>
+<td>路径</td>
+<td>协议版本</td>
+<td>发送请求的域名</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Content-Type</li>
+<li>Host (主机和端口号)</li>
+<li>Connection (链接类型/常链接)</li>
+<li>UPgrade-Insecure-Requests (升级为HTTPS请求)</li>
+<li>User-Agent (用户代理 提供系统信息和浏览器信息)</li>
+<li>Referer (页面跳转处)</li>
+<li>Cookie (Cookie数据非常重要,)</li>
+<li>Authorization (表示HTTP协议中需要认证资源的认证信息, 例如用于jwt认证)</li>
+</ul>
+
+<p><strong>请求头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">特别关注</th>
+<th align="center">以下几个请求头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Host</td>
+<td align="center">域名</td>
+</tr>
+<tr>
+<td align="center">Connection</td>
+<td align="center">常链接</td>
+</tr>
+<tr>
+<td align="center">UPgrade-Insecure-Requests</td>
+<td align="center">升级为HTTPS请求</td>
+</tr>
+<tr>
+<td align="center">User-Agent</td>
+<td align="center">用户代理</td>
+</tr>
+<tr>
+<td align="center">Refrer</td>
+<td align="center">页面跳转处, 防盗链</td>
+</tr>
+<tr>
+<td align="center">Cookie</td>
+<td align="center">保持状态, 用于跳过账号密码</td>
+</tr>
+</tbody></table>
+<p><strong>响应头表格形式</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">特别关注</th>
+<th align="center">以下几个请求头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">HTTP/1.1</td>
+<td align="center">协议</td>
+</tr>
+<tr>
+<td align="center">200</td>
+<td align="center">状态码</td>
+</tr>
+<tr>
+<td align="center">Set-Cookie</td>
+<td align="center">cookie到用户浏览器的缓存非常重要用于跳过账号密码</td>
+</tr>
+</tbody></table>
+<br>
+
+
+]]></content>
       <categories>
         <category>爬虫</category>
       </categories>
